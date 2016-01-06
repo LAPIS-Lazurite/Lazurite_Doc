@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Motor</title>
+<style type="text/css">
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style2 {
+	border: 1px solid #000000;
+	margin-left: 40px;
+}
+.auto-style6 {
+	border: 1px solid #000000;
+	text-align: center;
+}
+.auto-style3 {
+	border: 1px solid #000000;
+}
+.auto-style7 {
+	margin-left: 80px;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style8 {
+	margin-left: 40px;
+	font-size: large;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style9 {
+	color: #666666;
+	font-family: メイリオ;
+	font-weight: normal;
+}
+.auto-style10 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style11 {
+	margin-left: 40px;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style12 {
+	font-family: メイリオ;
+}
+.auto-style13 {
+	border: 1px solid #000000;
+	font-family: メイリオ;
+	color: #666666;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style9">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<h1 class="auto-style9">モータ制御ライブラリ ※</h1>
+<h3 class="auto-style10">概要</h3>
+<p class="auto-style1"><span class="auto-style10">ML620Q504の多機能タイマー(FTM0～FTM3)を使用し、２種類のモーターを制御するためのライブラリです。</span><br class="auto-style10" />
+<span class="auto-style10">HardwareHBridge、HardwareServo共に1usecの時間精度でパルス幅を制御することができ、また割込み処理などによる影響で信号幅がずれるようなことが無いために、モータ制御に最適な関数です。analogWrite関数も同じ多機能タイマーを使用するため、排他使用となるので注意してください。</span></p>
+<p class="auto-style7">Servo(サーボモータ)用ライブラリ　　HardwareServo</p>
+<p class="auto-style7">H-Bridge(Hブリッジ）用ライブラリ　　HardwareHBridge</p>
+<p class="auto-style11">※本関数はLazurite専用の関数です。</p>
+<p class="auto-style8"><strong>HardwareServo</strong></p>
+<p class="auto-style1"><img height="221" src="hardware_servo.png" width="682" /></p>
+<p class="auto-style11"><strong>HardwareHBridge</strong></p>
+<p class="auto-style1">
+<img height="224" src="hardware_hbridge.png" width="682" /></p>
+<p class="auto-style1">
+<span class="auto-style10">HardwareServoは、ML620Q504の周期を生成するためのタイマーとしてTM45を使用し、出力信号を生成するためにFTMを使用します。1つのFTMで最大2本の出力まで生成することができ、FTM0から順番に必要な信号の本数分だけFTMを使用します。上図の場合、3本のServo用信号を生成していますので、FTM0とFTM1を使用することになります。</span><br class="auto-style10" />
+<span class="auto-style10">また、上図ではFTM1は1本のPWM信号しか使用していませんが、FTM1の残りの1本を別の機能で使用することはできません。</span></p>
+<p class="auto-style11">
+HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで正/負のPWMパルスを生成します。</p>
+<p class="auto-style11">&nbsp;信号の出力先は、PIN番号の3～10を任意で指定することができます。</p>
+<p class="auto-style11">たとえば、Servoモータ制御 
+6本(FTM0-2を使用)、H-Bridgeモータ1個(FTM3を使用)の様に使用することができます。</p>
+<p>&nbsp;</p>
+<h3 class="auto-style10">関数(HardwareServo)</h3>
+<table class="auto-style2" style="width: 80%">
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p class="auto-style10">関数</p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style10">機能</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		&nbsp;</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p class="auto-style12">
+		<a href="hsv_init.html"target="_blank">hsv.init(num, period)</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style10">HardwareServoの初期化を行います。numは出力する本数 1～8を、periodは周期(us)を指定します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 21px">
+		</td>
+		<td class="auto-style13" style="width: 467px; height: 21px">
+		<p class="auto-style12">
+		<a href="hsv_attach.html"target="_blank">hsv.attach(ch,pin)</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 21px">
+		<p class="auto-style10">chで指定されたチャンネルのPWM信号を、pinで指定された端子から出力します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		&nbsp;</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p class="auto-style12">
+		<a href="hsv_detach.html"target="_blank">hsv.detach(pin, level)</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style10">端子をPWM信号から解放し、levelによって指定された信号を出力します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		&nbsp;</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p class="auto-style12">
+		<a href="hsv_start.html"target="_blank">hsv.start()</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style10">Servo用PWM信号の出力を開始します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		&nbsp;</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p class="auto-style12">
+		<a href="hsv_stop.html"target="_blank">hsv.stop()</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style10">Servo用PWM信号の出力を停止します。本関数を実行した周期内は信号出力が継続し、その次のタイミングから出力が停止します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		&nbsp;</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p class="auto-style12">
+		<a href="hsv_close.html"target="_blank">hsv.close()</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style10">Servo制御に使用するタイマーへのクロック供給を停止し、スタンバイ状態にします。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		&nbsp;</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p class="auto-style12">
+		<a href="hsv_write.html"target="_blank">hsv.write(ch,time)</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style10">指定されたchの時間を設定します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		&nbsp;</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p class="auto-style12">
+		<a href="hsv_update.html"target="_blank">hsv.update()</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style10">動作中に値を更新するための関数です。hhb.update()関数と同じ機能のため、ServoとH-Bridgeモータの値を変更した後に1回、hhb.update()またはhsv.update()を実行してください。</p>
+		</td>
+	</tr>
+	</table>
+<h3 class="auto-style10">関数(HardwareHBridge)</h3>
+<table class="auto-style2" style="width: 80%">
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p>関数</p>
+		</td>
+		<td class="auto-style13" style="width: 673px; height: 18px">
+		<p>機能</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		&nbsp;</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p>
+		<a href="hhb_init.html"target="_blank"><span class="auto-style12">hhb.init(num, period)</span></a></p>
+		</td>
+		<td class="auto-style13" style="width: 673px; height: 18px">
+		<p>HardwareServoの初期化を行います。numは出力する本数 1～8を、periodは周期(us)を指定します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		&nbsp;</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p>
+		<a href="hhb_attach.html"target="_blank"><span class="auto-style12">hhb.attach(ch,pin1,pin2)</span></a></p>
+		</td>
+		<td class="auto-style13" style="width: 673px; height: 18px">
+		<p>chで指定されたチャンネルのPWM信号を、pinで指定された端子から出力します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		&nbsp;</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p>
+		<a href="hhb_detach.html"target="_blank"><span class="auto-style12">hhb.detach(pin1,pin2,level1,level2)</span></a></p>
+		</td>
+		<td class="auto-style13" style="width: 673px; height: 18px">
+		<p>端子をPWM信号から解放し、levelによって指定された信号を出力します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		&nbsp;</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p>
+		<a href="hhb_start.html"target="_blank"><span class="auto-style12">hhb.start(ch)</span></a></p>
+		</td>
+		<td class="auto-style13" style="width: 673px; height: 18px">
+		<p>Servo用PWM信号の出力を開始します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		&nbsp;</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p>
+		<a href="hhb_stop.html"target="_blank"><span class="auto-style12">hhb.stop(ch)</span></a></p>
+		</td>
+		<td class="auto-style13" style="width: 673px; height: 18px">
+		<p>Servo用PWM信号の出力を停止します。本関数を実行した周期内は信号出力が継続し、その次のタイミングから出力が停止します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		&nbsp;</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p>
+		<a href="hhb_close.html"target="_blank"><span class="auto-style12">hhb.close(ch)</span></a></p>
+		</td>
+		<td class="auto-style13" style="width: 673px; height: 18px">
+		<p>Servo用PWM信号のブロックをスタンバイします。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		&nbsp;</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p>
+		<a href="hhb_write.html"target="_blank"><span class="auto-style12">hhb.write(ch,time)</span></a></p>
+		</td>
+		<td class="auto-style13" style="width: 673px; height: 18px">
+		<p>指定されたchの時間を設定します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		&nbsp;</td>
+		<td class="auto-style13" style="width: 467px; height: 18px">
+		<p>
+		<a href="hhb_update.html"target="_blank"><span class="auto-style12">hhb.update()</span></a></p>
+		</td>
+		<td class="auto-style13" style="width: 673px; height: 18px">
+		<p>動作中に値を更新するための関数です。hhb.update()関数と同じ機能のため、ServoとH-Bridgeモータの値を変更した後に1回、hhb.update()またはhsv.update()を実行してください。</p>
+		</td>
+	</tr>
+	</table>
+<p>&nbsp;</p>
+
+
+
+
+
+<h3>&nbsp;</h3>
+<h3 class="auto-style10">サンプル</h3>
+<p class="auto-style11">Servoモータ 3つ、H-Bridgeのモータを1つ使用する例です。</p>
+<p class="auto-style11">■motor_init</p>
+<p class="auto-style11">
+Servoは、22msの周期で3ch分のパルス出力を行います。これは多機能タイマーFTM0とFTM1を使用して機能が実現されます。端子は、3,4,5をアサインしています。</p>
+<p class="auto-style11">
+H-BridgeはFTM2を使用して実現しており、周期を100Hz(10,000us)に指定しています。出力は6と7から行われます。</p>
+<p class="auto-style11">■motor_update</p>
+<p class="auto-style11">Servoモーターは、最小駆動時間 1000us、最大駆動時間 
+2000usとし、その間を256分割して制御しています。</p>
+<p class="auto-style11">H-Bridge制御部分については、最小値-10ms～最大値10msを256分割して制御をしています。</p>
+<p class="auto-style11">
+最後に1度だけupdate関数を実行して、書き込んだ値を有効化します。hhb.update、hsv.updateは同じ機能のため、どちらを実行しても構いません。</p>
+<p>
+<TEXTAREA wrap="off" name="empty" style="width: 576px; height: 285px" class="auto-style1">void moter_init(void)
+{
+	hsv.init(3,22000);			// servo moter use 3ch, period = 22msec
+	hsv.attach(0,3);
+	hsv.attach(1,4);
+	hsv.attach(2,5);
+	hhb.init(2,10000);			// h-bridge 100hz
+	hhb.attach(2,6,7);
+}
+
+void motor_update(char val1,char val2, char val3, char val4)
+{
+	hsv.write(0,(unsigned short)map((long)val1,-127L,127L,1000L,2000L));		//
+	hsv.write(1,(unsigned short)map((long)val2,-127L,127L,1000L,2000L));		//
+	hsv.write(2,(unsigned short)map((long)val3,-127L,127L,1000L,2000L));		//
+	hhb.write(2,map((long)val4,-127L,127L,-10000L,10000L));								//
+	hhb.update();
+}
+
+</TEXTAREA></p>
+<p>&nbsp;</p>
+
+
+
+
+
+
+
+</html>

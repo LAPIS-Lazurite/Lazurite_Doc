@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>pinMode</title>
+<style type="text/css">
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style2 {
+	border: 1px solid #000000;
+	margin-left: 40px;
+}
+.auto-style3 {
+	border: 1px solid #000000;
+}
+.auto-style4 {
+	text-align: center;
+	border: 1px solid #000000;
+	color: #666666;
+	font-family: メイリオ;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style6 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style7 {
+	margin-left: 40px;
+	color: #666666;
+	font-family: メイリオ;
+}
+.auto-style8 {
+	color: #666666;
+	font-family: メイリオ;
+}
+.auto-style9 {
+	border: 1px solid #000000;
+	color: #666666;
+	font-family: メイリオ;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<h2 class="auto-style6">pinMode (pin, mode)</h2>
+<h3 class="auto-style8">詳細</h3>
+<p class="auto-style7">void pinMode(uint8_t pin, uint8_t mode);</p>
+<h3 class="auto-style8">仕様</h3>
+<p class="auto-style7">端子の入出力を指定するパラメータです.</p>
+<p class="auto-style8">&nbsp;</p>
+<h3 class="auto-style8">パラメータ</h3>
+<h4 class="auto-style8">uint8_t pin</h4>
+<p class="auto-style7">ピン番号を指定します</p>
+<table class="auto-style2" style="width: 620px">
+	<tr>
+		<td class="auto-style9" style="width: 158px; height: 20px">0～13</td>
+		<td class="auto-style9" style="width: 389px; height: 20px">
+		IOの0～13にアサインされています.</td>
+	</tr>
+	<tr>
+		<td class="auto-style9" style="width: 158px">14～19</td>
+		<td class="auto-style3" style="width: 389px"><span class="auto-style8">A0～A5にアサインされています.</span><br class="auto-style8" />
+		<span class="auto-style8">A0～A5は、アナログ入力だけでなく、GPIOとしても使用することができます.</span></td>
+	</tr>
+	<tr>
+		<td class="auto-style9" style="width: 158px; height: 20px">25</td>
+		<td class="auto-style9" style="width: 389px; height: 20px">
+		オレンジのLEDにアサインされています</td>
+	</tr>
+	<tr>
+		<td class="auto-style9" style="width: 158px; height: 20px">26</td>
+		<td class="auto-style9" style="width: 389px; height: 20px">
+		青色のLEDにアサインされています.</td>
+	</tr>
+</table>
+<h4 class="auto-style8">uint8_t mode</h4>
+<p class="auto-style7">入出力を指定します</p>
+<table class="auto-style2" style="width: 620px">
+	<tr>
+		<td class="auto-style4" style="width: 30px">+</td>
+		<td class="auto-style9" style="width: 173px">INPUT_PULLUP</td>
+		<td class="auto-style9" style="width: 547px">プルアップ付き入力モード</td>
+	</tr>
+	<tr>
+		<td class="auto-style4" style="width: 30px">+</td>
+		<td class="auto-style9" style="width: 173px">INPUT_PULLDOWN</td>
+		<td class="auto-style9" style="width: 547px">プルダウン付き入力モード</td>
+	</tr>
+	<tr>
+		<td class="auto-style4" style="width: 30px">&nbsp;</td>
+		<td class="auto-style9" style="width: 173px">INPUT</td>
+		<td class="auto-style9" style="width: 547px">入力モード</td>
+	</tr>
+	<tr>
+		<td class="auto-style4" style="height: 20px; width: 30px">&nbsp;</td>
+		<td class="auto-style9" style="height: 20px; width: 173px">OUTPUT</td>
+		<td class="auto-style9" style="height: 20px; width: 547px">出力モード</td>
+	</tr>
+	<tr>
+		<td class="auto-style4" style="width: 30px">+</td>
+		<td class="auto-style9" style="width: 173px">HIZ</td>
+		<td class="auto-style9" style="width: 547px">入力 Hi-Z（初期値)</td>
+	</tr>
+	<tr>
+		<td class="auto-style4" style="width: 30px">+</td>
+		<td class="auto-style9" style="width: 173px">OPEN_DRAIN</td>
+		<td class="auto-style3" style="width: 547px"><span class="auto-style8">オープンドレイン出力</span><br class="auto-style8" />
+		<span class="auto-style8">&nbsp;(ただし、電源電圧以上の電圧は印加しないでください）</span></td>
+	</tr>
+</table>
+<p class="auto-style1"><span class="auto-style8">+&nbsp;&nbsp;&nbsp; Arduino無く、Lazuriteにはあるパラメータです.</span><br class="auto-style8" />
+<span class="auto-style8">-&nbsp;&nbsp;&nbsp; Arduinoにあって、Lazuriteに無いパラメータです.</span></p>
+<p class="auto-style7">&nbsp;</p>
+<h3 class="auto-style8">戻り値</h3>
+<p class="auto-style7">なし</p>
+<p class="auto-style8">&nbsp;</p>
+<h3 class="auto-style8">サンプル</h3>
+<p class="auto-style7">サンプルプログラムのblue_led.cで使用しています.</p>
+<p>
+<TEXTAREA wrap="off" name="empty" style="width: 559px; height: 321px" class="auto-style1">
+void setup(void)
+{
+	digitalWrite(BLUE_LED,HIGH);
+	pinMode(BLUE_LED,OUTPUT);
+}
+
+// Arduino loop sequence
+void loop(void)
+{
+	digitalWrite(BLUE_LED,HIGH);
+	delay(1000);
+	digitalWrite(BLUE_LED,LOW);
+	delay(1000);
+}
+</TEXTAREA></p>
+<h3 class="auto-style8"><strong>TIPS</strong></h3>
+<p><span class="auto-style8">INPUT_PULLUPは、電源との間に抵抗が挿入された状態の入力状態です。</span><br class="auto-style8" />
+<span class="auto-style8">例えば、Lazuriteのリセット端子はPULLUP抵抗が挿入されています。リセットボタンが押されていない時にリセット端子には信号がいんkされていませんが、内部のプルアップ抵抗により端子はHIGHを出力しています。リセットボタンを押すと端子がGNDにショートされるためリセット端子はLOWレベルとなり、LSIが初期状態になります。</span></p>
+<p class="auto-style8">INPUT_PULLDOWNは、GNDとの間に抵抗が挿入された入力状態です。</p>
+<p class="auto-style8">HIZは、入力ハイインピーダンスであり、端子は入力も出力もしていない状態です。</p>
+<p class="auto-style8">OPEN_DRAINは、LOWのみ駆動して、HIGHは出力しない(HIZと同じ状態)モードです。これは、I2Cインタrフェースで用いられています。</p>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>attachInterrupt</title>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<style type="text/css">
+.auto-style5 {
+	text-align: center;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style6 {
+	font-family: メイリオ;
+	font-weight: normal;
+	color: #666666;
+}
+.auto-style8 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style9 {
+	font-family: メイリオ;
+	font-weight: normal;
+	color: #666666;
+	margin-left: 40px;
+}
+.auto-style7 {
+	margin-left: 40px;
+	color: #666666;
+	font-family: メイリオ;
+}
+</style>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="40" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<h2 class="auto-style8">attachInterrupt()&nbsp;</h2>
+<h3 class="auto-style6"><strong>詳細</strong></h3>
+<p class="auto-style9">void attachInterrupt(unsigned char irqnum, void 
+(*func)(void), int mode)</p>
+<h3 class="auto-style6"><strong>仕様</strong></h3>
+<p class="auto-style7">attachInterrpt()は外部割込みを有効にするための関数です。<br />
+Lazurite Sub-GHzでは 2系統の外部割込みを使用することが出来ます。</p>
+<p class="auto-style8"><strong>パラメータ</strong></p>
+<p class="auto-style8"><strong>unsigned char irqnum</strong></p>
+<p class="auto-style7">irqnumは使用する外部割込みの番号を指定します。<br />
+LazuriteSubGHzでは0と1のみ指定することが出来ます。<br />
+0 = PIN2を外部割込み端子として使用します。<br />
+1 = PIN3を外部割込み端子として使用します。</p>
+<p class="auto-style8"><strong>void (*func)(void)</strong></p>
+<p class="auto-style7">割り込みが発生したときにcallする関数を指定します。<br />
+戻り値なし、変数無しの関数のみ指定することが出来ます。</p>
+<p class="auto-style8">&nbsp;<strong>int mode</strong></p>
+<p class="auto-style7">割り込みを発生させるためのモードを指定します。<br />
+指定可能なモードは次の通りです。<br />
+LOW: ローレベルのときに割り込みが発生します。<br />
+RISING:&nbsp; 信号の立ち上がりエッジで割り込みが発生します。<br />
+FALLING: 信号の立下りエッジで割込みが発生します。<br />
+CHANGE: 信号が変化したときに割り込みが発生します。</p>
+<h3 class="auto-style8">戻り値</h3>
+<p class="auto-style7">なし</p>
+<h3 class="auto-style8">サンプル</h3>
+<p class="auto-style7">PIN2の信号が変化すると割り込みが発生し、LEDの状態が変化します。</p>
+<p class="auto-style8">
+<TEXTAREA wrap="off" name="empty" style="width: 559px; height: 321px" class="auto-style1" cols="20" rows="1">unsigned char pin = 15;
+volatile int state = LOW;
+// blink()の関数が生成される前にsetup()内で使用しているため、
+// 事前に関数の宣言をしておく必要があります。
+
+void blink(void);
+
+void setup() {
+  pinMode(pin, OUTPUT);
+  attachInterrupt(0, blink, CHANGE);
+}
+
+void loop() {
+  digitalWrite(pin, state);
+}
+
+void blink() {
+  state = !state;
+}
+</TEXTAREA></p>
+<p class="auto-style1">&nbsp;</p>
+
+</body>
+
+</html>

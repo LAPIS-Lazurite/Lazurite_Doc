@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>delayMicroseconds</title>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<style type="text/css">
+.auto-style5 {
+	text-align: center;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style6 {
+	font-family: メイリオ;
+	font-weight: normal;
+	color: #666666;
+}
+.auto-style8 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style9 {
+	font-family: メイリオ;
+	font-weight: normal;
+	color: #666666;
+	margin-left: 40px;
+}
+.auto-style7 {
+	margin-left: 40px;
+	color: #666666;
+	font-family: メイリオ;
+}
+</style>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="40" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<h2 class="auto-style8">delay()&nbsp;</h2>
+<h3 class="auto-style6"><strong>詳細</strong></h3>
+<p class="auto-style9">void delay(unsigned long ms)</p>
+<h3 class="auto-style6"><strong>仕様</strong></h3>
+<p class="auto-style7">delay()は指定の時間、プログラムを停止します。時間の単位はミリ秒です。(1秒=1000ミリ秒)</p>
+<p class="auto-style7">delay()の間も外部割込みは有効です。</p>
+<p class="auto-style7">delay()と似た機能で消費電力が低いsleep()があります。sleep()については<a href="sleep.html">こちら</a>参照してください。</p>
+<p class="auto-style8"><strong>パラメータ</strong></p>
+<p class="auto-style8"><strong>unsigned long ms</strong></p>
+<p class="auto-style7">ミリ秒単位で時間を指定します。</p>
+<h3 class="auto-style8">戻り値</h3>
+<p class="auto-style7">なし</p>
+<h3 class="auto-style8">サンプル</h3>
+<p class="auto-style7">1秒ずつ青色のLEDをON/OFFします。</p>
+<p class="auto-style8">
+<TEXTAREA wrap="off" name="empty" style="width: 559px; height: 321px" class="auto-style1" cols="20" rows="1">
+void setup(void)
+{
+	digitalWrite(BLUE_LED,HIGH);
+	pinMode(BLUE_LED,OUTPUT);
+}
+
+// Arduino loop sequence
+void loop(void)
+{
+	digitalWrite(BLUE_LED,HIGH);
+	delay(1000);
+	digitalWrite(BLUE_LED,LOW);
+	delay(1000);
+}
+</TEXTAREA></p>
+<p class="auto-style1">&nbsp;</p>
+
+</body>
+
+</html>

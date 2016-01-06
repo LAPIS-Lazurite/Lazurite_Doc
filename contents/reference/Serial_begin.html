@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Serial.begin</title>
+<style type="text/css">
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style7 {
+	font-family: メイリオ;
+	font-weight: normal;
+	color: #666666;
+}
+.auto-style8 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style9 {
+	margin-left: 40px;
+	color: #666666;
+	font-family: メイリオ;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style7">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<h2 class="auto-style7">Serial.begin (baud)</h2>
+<h3 class="auto-style8">詳細</h3>
+<p class="auto-style9">void Serial.begin(unsigned long baud);</p>
+<h3 class="auto-style8">仕様</h3>
+<p class="auto-style9">非同期シリアル通信の初期化をする関数です。<br />
+LazuriteIDEの初期値は、115200bpsに設定されています。</p>
+<p>&nbsp;</p>
+<h3 class="auto-style8">パラメータ</h3>
+<h4 class="auto-style8">unsigned long baud</h4>
+<p class="auto-style9">通信速度を指定します。<br />
+Lazurite IDEで受信できる速度は次の通りです。<br />
+また記載されているより早い通信速度は評価していません。</p>
+<p class="auto-style9" style="width: 165px">300<br />
+1200<br />
+2400<br />
+4800<br />
+9600<br />
+19200<br />
+28800<br />
+38400<br />
+57600<br />
+115200<br />
+</p>
+<h3 class="auto-style8">戻り値</h3>
+<p class="auto-style9">なし</p>
+<h3 class="auto-style8">&nbsp;サンプル</h3>
+<p class="auto-style9">サンプルプログラムのhelloworld.cで使用しています.</p>
+<p>
+<TEXTAREA wrap="off" name="empty" style="width: 432px; height: 255px" class="auto-style1">//******************************************
+//  Lazurite Sample Program
+//******************************************
+
+
+void setup(void)
+{
+	Serial.begin(115200);
+}
+
+void loop(void)
+{
+	Serial.println("hello world");
+	delay(1000);
+}
+
+</TEXTAREA></p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

@@ -1,0 +1,435 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="ja" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Lazurite Pi Gatway サンプルソフト</title>
+<style type="text/css">
+.auto-style1 {
+	vertical-align: middle;
+}
+.auto-style2 {
+	margin-left: 40px;
+}
+.auto-style3 {
+	border-color: #000000;
+	border-width: 0px;
+	margin-left: 40px;
+}
+.auto-style11 {
+	border-style: solid;
+	border-width: 1px;
+}
+.auto-style12 {
+	border-width: 0px;
+	margin-left: 40px;
+}
+.auto-style13 {
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+}
+.auto-style14 {
+	text-align: center;
+	color: #FFFFFF;
+	border-style: solid;
+	border-width: 1px;
+	background-color: #0000FF;
+}
+.auto-style16 {
+	color: #FFFFFF;
+	border-style: solid;
+	border-width: 1px;
+	background-color: #0000FF;
+}
+.auto-style17 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style18 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style20 {
+	margin-left: 40px;
+	color: #666666;
+	font-family: メイリオ;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+<h1>
+<img height="45" src="Lazurite_logo1.png" width="195" class="auto-style1" /> 
+<span class="auto-style17">IEEE802.15.4e データフォーマット</span></h1>
+<hr />
+<p class="auto-style18">IEEE802.15.4eのデータフォーマットについて解説します。</p>
+<p class="auto-style18">&nbsp;</p>
+<h3 class="auto-style18">1. データの<span class="auto-style18">構</span>成</h3>
+<p class="auto-style20">IEEE802.15.4eのデータフォーマット、およびドライバから出力されるデータは次の通りとなっています。<br />
+フレームコントロールの中の各ビットに、フレームコントロールのversionや、<br />
+各データの有無がアサインされています。</p>
+<p class="auto-style20">下表はIEEE 802.15.4eで送信されるデータを表したものです。</p>
+<p class="auto-style2"><span class="auto-style18">その中で、「MACの仕様」は無線によって送信されるデータを表しています。</span><br class="auto-style18" />
+</p>
+<p class="auto-style2"><span class="auto-style18">「ドライバ仕様」は、本ドライバソフトを使用するときにデータとして通知されるデータになっています。</span></p>
+<p class="auto-style2"><span class="auto-style18">CRCはドライバ内で処理され上位の関数に通知されることはありませんが<br />
+代わりに受信時の感度を示すRSSI値が最後に付与されています。</span></p>
+<p class="auto-style2">&nbsp;<img height="411" src="dataformat.png" width="648" /></p>
+
+<h3 class="auto-style17">&nbsp;</h3>
+<h3 class="auto-style17"><strong class="auto-style18">2. フレームコントロールについて</strong></h3>
+<p class="auto-style20">フレームコントロールのデータは16bit(2バイト)で構成されています。<br />
+そのデータの各ビットには次のような機能が割り当てられています。</p>
+<p class="auto-style2">
+<img height="117" src="frame_control.png" width="817" /></p>
+<p class="auto-style18">&nbsp;</p>
+<p class="auto-style18"><strong>2-1. frame_type</strong></p>
+<p class="auto-style18">フレームタイプを示すビットです。</p>
+<table class="auto-style3" style="width: 713px">
+	<tr>
+		<td style="width: 106px" class="auto-style16">値</td>
+		<td class="auto-style16">フレームタイプ</td>
+		<td class="auto-style16">本システムでの使用可否</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">000</td>
+		<td class="auto-style11">ビーコンフレーム</td>
+		<td class="auto-style11">未使用</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">001</td>
+		<td class="auto-style11">データフレーム</td>
+		<td class="auto-style11">データを送信するために使用しています。</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">010</td>
+		<td class="auto-style11">ACKフレーム</td>
+		<td class="auto-style11">ACKを送信するために使用しています。</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">011</td>
+		<td class="auto-style11">コマンドフレーム</td>
+		<td class="auto-style11">未使用</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">100</td>
+		<td class="auto-style11">LLDNフレーム</td>
+		<td class="auto-style11">未使用</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">0101</td>
+		<td class="auto-style11">多目的フレーム</td>
+		<td class="auto-style11">未使用</td>
+	</tr>
+</table>
+<p class="auto-style18">&nbsp;</p>
+<p class="auto-style18"><strong>2-2. sec_enb</strong></p>
+<p class="auto-style18">セキュリティーの有無を示すビットです。</p>
+<table style="width: 475px" class="auto-style12">
+	<tr>
+		<td style="width: 106px" class="auto-style16">値</td>
+		<td class="auto-style16">説明</td>
+		<td class="auto-style16">本システムでの使用可否</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">0</td>
+		<td class="auto-style11">セキュリティ無効</td>
+		<td class="auto-style11">-</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">1</td>
+		<td class="auto-style11">セキュリティ有効</td>
+		<td class="auto-style11">非対応</td>
+	</tr>
+</table>
+<p class="auto-style18">&nbsp;</p>
+<p class="auto-style18"><strong>2-3. pending</strong></p>
+<table style="width: 653px" class="auto-style12">
+	<tr>
+		<td style="width: 106px" class="auto-style16">値</td>
+		<td class="auto-style16">説明</td>
+		<td class="auto-style16">本システムでの使用可否</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">0</td>
+		<td class="auto-style11">ペンディングデータなし</td>
+		<td class="auto-style11">-</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">1</td>
+		<td class="auto-style11">ペンディングデータあり</td>
+		<td class="auto-style11">非対応</td>
+	</tr>
+</table>
+<p class="auto-style18">&nbsp;</p>
+<p class="auto-style18"><strong>2-4.　ack_req</strong></p>
+<p class="auto-style18">ACK要求の有無を示すビットです。</p>
+<table style="width: 613px" class="auto-style12">
+	<tr>
+		<td style="width: 106px" class="auto-style16">値</td>
+		<td class="auto-style16">説明</td>
+		<td class="auto-style16">本システムでの使用可否</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">0</td>
+		<td class="auto-style11">ACK要求なし</td>
+		<td class="auto-style11">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">1</td>
+		<td class="auto-style11">ACK要求</td>
+		<td class="auto-style11">アドレスタイプ = 6のときのみ有効化しています。</td>
+	</tr>
+</table>
+<p class="auto-style18">&nbsp;</p>
+<p class="auto-style18"><strong>2-5. seq_comp</strong></p>
+<p class="auto-style18">
+シーケンス番号の有無を示すビットです。シーケンス番号はデータ送信時に付与されるもので、<br />
+受信先が同じ送信元から同じシーケンス番号のデータを連続して受け取ったらデータを破棄します。</p>
+<table class="auto-style12" style="width: 628px">
+	<tr>
+		<td style="width: 106px" class="auto-style16">値</td>
+		<td class="auto-style16">説明</td>
+		<td class="auto-style16">本システムでの使用可否</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">0</td>
+		<td class="auto-style11">ACK要求なし</td>
+		<td class="auto-style11">&nbsp;&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">1</td>
+		<td class="auto-style11">ACK要求</td>
+		<td class="auto-style11">アドレスタイプ = 6のときのみ有効化しています。</td>
+	</tr>
+</table>
+<p class="auto-style18">&nbsp;</p>
+<p class="auto-style18"><strong>2-6. ielist</strong></p>
+<p class="auto-style18">ielistの有無を示しています。</p>
+<table class="auto-style12" style="width: 583px">
+	<tr>
+		<td style="width: 106px" class="auto-style16">値</td>
+		<td class="auto-style16">説明</td>
+		<td class="auto-style16">本システムでの使用可否</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">0</td>
+		<td class="auto-style11">ielistなし</td>
+		<td class="auto-style11">対応</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">1</td>
+		<td class="auto-style11">ielistあり</td>
+		<td class="auto-style11">非対応</td>
+	</tr>
+</table>
+<p class="auto-style18">&nbsp;</p>
+<p class="auto-style18"><strong>2-7. frame_ver</strong></p>
+<p class="auto-style18">フレームコントロールのデータバージョンを示しています。</p>
+<table class="auto-style12" style="width: 559px">
+	<tr>
+		<td style="width: 106px" class="auto-style16">値</td>
+		<td class="auto-style16">説明</td>
+		<td class="auto-style16">本システムでの使用可否</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">00</td>
+		<td class="auto-style11">IEEE 802.15.4-2003</td>
+		<td class="auto-style11">非対応</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">01</td>
+		<td class="auto-style11">IEEE 802.15.4-2006</td>
+		<td class="auto-style11">非対応</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">10</td>
+		<td class="auto-style11">IEEE 802.15.4e</td>
+		<td class="auto-style11">対応</td>
+	</tr>
+</table>
+<p><br />
+</p>
+<p class="auto-style18"><strong>2-8. アドレスについて</strong></p>
+<p class="auto-style18">アドレスはpanid_comp, tx_addr_type, 
+rx_addr_typeにより、送信PANID、送信アドレス、受信PANID、<br />
+受信アドレスの有無、およびアドレスのモードが決まります。</p>
+<p class="auto-style18">rx_addr_typeについて</p>
+<table class="auto-style12" style="width: 566px">
+	<tr>
+		<td style="width: 106px" class="auto-style16">受信側</td>
+		<td class="auto-style16" style="width: 144px">自機アドレス</td>
+		<td class="auto-style16" style="width: 258px" rowspan="2">本システムでの使用可否</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style16">送信側</td>
+		<td class="auto-style16" style="width: 144px">送信先アドレス</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">00</td>
+		<td class="auto-style11" style="width: 144px">アドレス省略</td>
+		<td class="auto-style11" style="width: 258px">対応</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">01</td>
+		<td class="auto-style11" style="width: 144px">8bitアドレス</td>
+		<td class="auto-style11" style="width: 258px">非対応</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">10</td>
+		<td class="auto-style11" style="width: 144px">16bitアドレス</td>
+		<td class="auto-style11" style="width: 258px">対応</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">11</td>
+		<td class="auto-style11" style="width: 144px">64bitアドレス</td>
+		<td class="auto-style11" style="width: 258px">非対応</td>
+	</tr>
+</table>
+<p class="auto-style18">tx_addr_typeについて</p>
+<table class="auto-style12" style="width: 564px">
+	<tr>
+		<td style="width: 106px" class="auto-style16">受信側</td>
+		<td class="auto-style16" style="width: 165px">送信元アドレス</td>
+		<td class="auto-style16" rowspan="2">本システムでの使用可否</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style16">送信側</td>
+		<td class="auto-style16" style="width: 165px">自機アドレス</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">00</td>
+		<td class="auto-style11" style="width: 165px">アドレス省略</td>
+		<td class="auto-style11">対応</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">01</td>
+		<td class="auto-style11" style="width: 165px">8bitアドレス</td>
+		<td class="auto-style11">非対応</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">10</td>
+		<td class="auto-style11" style="width: 165px">16bitアドレス</td>
+		<td class="auto-style11">対応</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style11">11</td>
+		<td class="auto-style11" style="width: 165px">64bitアドレス</td>
+		<td class="auto-style11">非対応</td>
+	</tr>
+</table>
+<p class="auto-style18">PANIDの有無は、tx_addr_type, rx_addr_type, 
+panid_compの情報に応じて次のようになっています。</p>
+<table class="auto-style12" style="width: 690px">
+	<tr>
+		<td style="width: 106px" class="auto-style14">&nbsp;</td>
+		<td style="width: 133px" class="auto-style14">rx_addr_type</td>
+		<td class="auto-style14" style="width: 129px">tx_addr_type</td>
+		<td class="auto-style14" style="width: 116px" rowspan="3">panid_comp</td>
+		<td class="auto-style14" style="width: 123px">&nbsp;</td>
+		<td class="auto-style14" style="width: 174px">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style14">受信側</td>
+		<td style="width: 133px" class="auto-style14">自機アドレス</td>
+		<td class="auto-style14" style="width: 129px">送信元アドレス</td>
+		<td class="auto-style14" style="width: 123px">自機PANID</td>
+		<td class="auto-style14" style="width: 174px">送信元PANID</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style14">送信側</td>
+		<td style="width: 133px" class="auto-style14">送信先アドレス</td>
+		<td class="auto-style14" style="width: 129px">自機アドレス</td>
+		<td class="auto-style14" style="width: 123px">送信先PANID</td>
+		<td class="auto-style14" style="width: 174px">自機PANID</td>
+	</tr>
+	<tr>
+		<td style="width: 106px; height: 8px;" class="auto-style13">0</td>
+		<td style="width: 133px; height: 8px;" class="auto-style13">なし</td>
+		<td class="auto-style13" style="width: 129px; height: 8px;">なし</td>
+		<td class="auto-style13" style="width: 116px; height: 8px;">0</td>
+		<td class="auto-style13" style="width: 123px; height: 8px;">なし</td>
+		<td class="auto-style13" style="width: 174px; height: 8px;">なし</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style13">1</td>
+		<td style="width: 133px" class="auto-style13">なし</td>
+		<td class="auto-style13" style="width: 129px">なし</td>
+		<td class="auto-style13" style="width: 116px">1</td>
+		<td class="auto-style13" style="width: 123px">なし</td>
+		<td class="auto-style13" style="width: 174px">あり</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style13">2</td>
+		<td style="width: 133px" class="auto-style13">なし</td>
+		<td class="auto-style13" style="width: 129px">あり</td>
+		<td class="auto-style13" style="width: 116px">0</td>
+		<td class="auto-style13" style="width: 123px">あり</td>
+		<td class="auto-style13" style="width: 174px">なし</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style13">3</td>
+		<td style="width: 133px" class="auto-style13">なし</td>
+		<td class="auto-style13" style="width: 129px">あり</td>
+		<td class="auto-style13" style="width: 116px">1</td>
+		<td class="auto-style13" style="width: 123px">なし</td>
+		<td class="auto-style13" style="width: 174px">なし</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style13">4</td>
+		<td style="width: 133px" class="auto-style13">あり</td>
+		<td class="auto-style13" style="width: 129px">なし</td>
+		<td class="auto-style13" style="width: 116px">0</td>
+		<td class="auto-style13" style="width: 123px">なし</td>
+		<td class="auto-style13" style="width: 174px">あり</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style13">5</td>
+		<td style="width: 133px" class="auto-style13">あり</td>
+		<td class="auto-style13" style="width: 129px">なし</td>
+		<td class="auto-style13" style="width: 116px">1</td>
+		<td class="auto-style13" style="width: 123px">なし</td>
+		<td class="auto-style13" style="width: 174px">なし</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style13">6</td>
+		<td style="width: 133px" class="auto-style13">あり</td>
+		<td class="auto-style13" style="width: 129px">あり</td>
+		<td class="auto-style13" style="width: 116px">0</td>
+		<td class="auto-style13" style="width: 123px">なし</td>
+		<td class="auto-style13" style="width: 174px">あり</td>
+	</tr>
+	<tr>
+		<td style="width: 106px" class="auto-style13">7</td>
+		<td style="width: 133px" class="auto-style13">あり</td>
+		<td class="auto-style13" style="width: 129px">あり</td>
+		<td class="auto-style13" style="width: 116px">1</td>
+		<td class="auto-style13" style="width: 123px">なし</td>
+		<td class="auto-style13" style="width: 174px">なし</td>
+	</tr>
+</table>
+<h3 class="auto-style18">&nbsp;</h3>
+<h3 class="auto-style18">3. Lazurite Sub-GHzの実例</h3>
+<p>&nbsp;</p>
+
+<h1>&nbsp;</h1>
+
+</body>
+
+</html>

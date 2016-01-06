@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>GPIO</title>
+<style type="text/css">
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style6 {
+	font-family: メイリオ;
+	font-weight: normal;
+	color: #666666;
+}
+.auto-style7 {
+	margin-left: 40px;
+	color: #666666;
+	font-family: メイリオ;
+}
+.auto-style8 {
+	font-family: メイリオ;
+	color: #666666;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<h2 class="auto-style8">GPIO</h2>
+<h3 class="auto-style6"><strong>概要</strong></h3>
+<p class="auto-style7">GPIOはGereneral Purpose Input 
+Output(汎用入出力端子)の略で、ほとんどのマイコンの端子がこの機能を搭載しています。</p>
+<p class="auto-style7">
+以下の関数によって、pinMode関数によって端子を入力モードにすると、digitalRead関数で端子の状態を読み出すことができます。また、出力モードのときは端子からHIGH/LOWレベルを出力することができます。</p>
+<p class="auto-style7">このモードで読み取ったり、出力したりできるのは、HIGHまたはLOWのみです。</p>
+<p class="auto-style7">アナログ信号を入出力するときは、analogReadやanalogWriteの関数を使用してください。</p>
+<p class="auto-style1">&nbsp;</p>
+<h3 class="auto-style6"><strong>関数</strong></h3>
+<p class="auto-style1"><a href="pinmode.html">void pinMode(pin, mode)</a></p>
+<p class="auto-style1"><a href="digitalWrite.html">void digitalWrite(pin, val)</a></p>
+<p class="auto-style1"><a href="digitalread.html">int digitalRead(pin)</a></p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

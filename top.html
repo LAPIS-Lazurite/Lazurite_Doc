@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="ja" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Lazurite TOP</title>
+<style type="text/css">
+.auto-style1 {
+	vertical-align: middle;
+}
+.auto-style2 {
+	margin-left: 40px;
+}
+.auto-style3 {
+	border: 1px solid #000000;
+	margin-left: 40px;
+}
+.auto-style4 {
+	border: 1px solid #000000;
+}
+</style>
+</head>
+
+<body>
+
+<h1><img height="45" src="contents/Lazurite_logo.png" width="197" class="auto-style1" />　Lazuriteについて</h1>
+<p>LazuriteはIoTを簡単に実現することができる開発キット／リファレンスデザインです。</p>
+<p>回路はオープンハードウエア、ソフトウエアもオープンソースで開発しています。<br />
+Lazurite IDE、Rasberry Pi用の無線モジュールドライバソフトの双方ともGPLまたはLGPLのライセンスに基づき配布しています。</p>
+<p>&nbsp;</p>
+<p><img height="452" src="contents/Lazurite_system.jpg" width="947" /></p>
+<p>&nbsp;</p>
+
+<p class="auto-style2">&nbsp;</p>
+<h1>Lazurite IDE</h1>
+<h3>1. ソフトウエアのダウンロード方法</h3>
+<p class="auto-style2">Lazuriteのダウンロードサイトよりインストーラーをダウンロードしてください。</p>
+<p class="auto-style2">
+インストーラーのファイル名は、setup_001001_2015Jun15.exe です。</p>
+<h3>2 Lazurite IDEでダウンロードしたソフトウエアのライセンス情報</h3>
+<p class="auto-style2">Lazurite 
+Sub-GHz用のファームウエアである、LazuriteIDE\hardware、LazuriteIDE\librariesは、マイコン用のファームウエアです。マイコン用のファームウエハは、LGPL(Lesser 
+GPL)に基づき配布しています。<br />
+LazuriteIDE\BINのフォルダ内のファイルは、それぞれのソフトウエアのライセンスに基づき再配布しています。</p>
+<h3><a href="contents/InstallGuide.html">3. インストールの方法</a></h3>
+<h3><a href="contents/IDE/How_to_use.html">4. プログラム作成方法</a></h3>
+<h3><a href="contents/reference/Lazurite_Reference.html">5. Lazurite 関数リファレンス</a></h3>
+<h3>6. サンプルプログラムの解説</h3>
+<p>&nbsp;</p>
+<h1>Lazurite Sub-GHz</h1>
+<h3>回路図</h3>
+<p class="auto-style2"><a href="contents/sch/LAZURITE_V0.0.12.pdf">Lazurite Sub-GHz 
+Rev.1　回路図</a></p>
+<p class="auto-style2">&nbsp;</p>
+<h1>Lazurite Pi Gateway</h1>
+
+<h3>ご使用する前に</h3>
+<p>Lazurite Pi Gatwayを使用するためには、次のものを揃える必要があります。</p>
+<ol>
+	<li>Raspberry Pi (B+, A+)またはRaspberry Pi2　(26pinのRaspberry Pi 
+	Bには対応していません</li>
+	<li>Raspberry Pi用の備品 (電源、マイクロUSBコネクタ、８GB以上のマイクロSDカード、モニター、キーボード、マウス等）</li>
+</ol>
+<p>これは弊社の開発環境です。</p>
+<p><img src="contents/LazuritePi_complete.jpg" height="516" width="691" /></p>
+<p>&nbsp;</p>
+<h3>ソフトウエアのダウンロード</h3>
+<h3>1. Lazuriteのダウンロードサイトより、Lazurite Pi Gateway用のイメージファイルをダウンロードしてください。</h3>
+<p>◆Raspberry Pi別に２種類のイメージファイルがあります。</p>
+<table style="width: 419px; height: 15px" class="auto-style3">
+	<tr>
+		<td style="height: 20px; width: 294px" class="auto-style4">Raspbery Pi A+ / B+用</td>
+		<td style="width: 326px; height: 20px" class="auto-style4">150318_RPi_LAZURITE.zip</td>
+	</tr>
+	<tr>
+		<td style="width: 294px" class="auto-style4">Raspberyy Pi2用</td>
+		<td style="width: 326px" class="auto-style4">150401_RPi2_LAZURITE.zip</td>
+	</tr>
+</table>
+<h3>2. Raspberry Pi用ソフトウエアのライセンスについて</h3>
+<p class="auto-style2">
+driver\rtc、ならびにdriver\sub-ghzのフォルダ内のファイルはGPLライセンスに基づき配布しています。</p>
+<h3><a href="contents/Pi_setup_guide.html">3. Lazurite Pi Gatewayの立ち上げ方法／起動方法</a></h3>
+<h3>4. Gateway サンプルソフトの解説</h3>
+<h4 class="auto-style2">4-1. ruby\SerialMonitor.rb</h4>
+<p class="auto-style2">Lazurite 
+Sub-GHzに"Welcome_SubGHz"のサンプルプログラムを書込みし、そのデータをLazurite Pi 
+Gatewayで受信するのに使用するプログラムです。</p>
+<p class="auto-style2"><a href="contents/gateway/SerialMonitor解説.pdf">解説はこちら</a></p>
+<p class="auto-style2">&nbsp;</p>
+<h1>無線関連　技術情報</h1>
+<p class="auto-style2"><a href="contents/IEEE802154/ieee802154e_format.html">1. 
+IEEE 802.15.4eについて</a></p>
+<p class="auto-style2"><a href="contents/subghz/BP3596A_外付けアンテナリスト_150511.pdf">
+2. Lazurite Sub-GHz 技適取得済　外付けアンテナリスト</a></p>
+<p class="auto-style2">&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

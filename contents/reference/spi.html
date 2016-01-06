@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>SPI</title>
+<style type="text/css">
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style2 {
+	border: 1px solid #000000;
+	margin-left: 40px;
+}
+.auto-style3 {
+	border: 1px solid #000000;
+}
+.auto-style6 {
+	border: 1px solid #000000;
+	text-align: center;
+}
+.auto-style7 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style8 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style11 {
+	margin-left: 40px;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style12 {
+	margin-left: 40px;
+	font-family: メイリオ;
+}
+.auto-style13 {
+	border: 1px solid #000000;
+	color: #666666;
+	font-family: メイリオ;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style7">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<h1 class="auto-style7">SPI(Serial Peripheral Interface)</h1>
+<h3 class="auto-style8">概要</h3>
+<p class="auto-style11">SPIは様々なマイコンの周辺ICによってサポートされている同期式シリアル通信の一つです。
+Lazuriteでは、マイコン ML620Q504がマスターとなり、周辺ICはスレーブとして動作します。</p>
+<p class="auto-style11">
+本関数を使用するためには、"プロジェクト"メニューの"ライブラリを使用する"から、SPIのライブラリを有効にしてください。</p>
+<p class="auto-style1">
+<span class="auto-style8">Lazurite Sub-GHzで使用しているマイコン 
+ML620Q504は2系統のSPIを搭載しています。SPIはピン番号の11ピン(MOSI)、12ピン(MISO)、13ピン(SCLK)で使用することができます。</span><br class="auto-style8" />
+<span class="auto-style8">もう一系統は、SPI0というライブラリ群で、無線モジュールBP3596を制御するために使用しています。</span></p>
+<p class="auto-style11">
+&nbsp;</p>
+<p class="auto-style11">◆SPIによる周辺機器との接続方法</p>
+<p class="auto-style11">SPIでは次の様に周辺機器を接続することができます。</p>
+<p class="auto-style1"><span class="auto-style8">MOSIは、Master Out / Slave Inで、LazuriteがPeripheral ICに信号を送信します。</span><br class="auto-style8" />
+<span class="auto-style8">MISOは、Master In / Slave Outで、Peripheral 
+ICが出力する信号をLazuriteが受信します。</span><br class="auto-style8" />
+<span class="auto-style8">SCLKは、Lazuriteが出力する信号で、信号を伝送するためのクロックです。</span><br class="auto-style8" />
+<span class="auto-style8">SSは、Peripheral ICを識別するための信号として使用します。</span></p>
+<p class="auto-style1">
+<img height="309" src="spi_configuration.png" width="615" /></p>
+<p class="auto-style12">
+&nbsp;</p>
+<p class="auto-style11">
+◆シリアル転送のモード SPI.setDataMode</p>
+<p class="auto-style11">
+シリアル転送タイミングは、モードの設定によって次の4種類に対応しています。Peripheral 
+ICのデータシートに記載されているタイミングに合わせて、SPI.setDataMode関数で設定してください。また、この設定はSPI.begin()でSPIの動作を開始する前に設定する必要があります。</p>
+<p class="auto-style11">
+&nbsp;</p>
+<p class="auto-style11">
+◆ビットオーダー&nbsp; SPI.setBitOrder</p>
+<p class="auto-style11">
+SPI.transferで送受信する信号を、MSB firstで送信するかLSB firstか設定するコマンドです。</p>
+<p class="auto-style1">
+<img height="334" src="SPI_mode.png" width="776" /></p>
+<p class="auto-style1">
+&nbsp;</p>
+<p class="auto-style8">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+◆クロックの分周比 SPI.ClockDivider</p>
+<p>
+<span class="auto-style8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+SPIで送信するクロック SCLKの分周比を設定します。</span><br class="auto-style8" />
+<span class="auto-style8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Lazuriteのメインクロックは16MHzなので、それに合わせてSCLKの分周比を設定してください。</span></p>
+<table class="auto-style2" style="width: 341px">
+	<tr>
+		<td class="auto-style13" style="width: 164px">
+		<p>設定値</p>
+		</td>
+		<td class="auto-style13" style="width: 159px">
+		<p>SCLKの周波数</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="width: 164px">
+		<p>SPI_CLOCK_DIV2</p>
+		</td>
+		<td class="auto-style13" style="width: 159px">
+		<p>8MHz</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="width: 164px">
+		<p>SPI_CLOCK_DIV4 </p>
+		</td>
+		<td class="auto-style13" style="width: 159px">
+		<p>4MHz</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="width: 164px">
+		<p>SPI_CLOCK_DIV8 </p>
+		</td>
+		<td class="auto-style13" style="width: 159px">
+		<p>2MHz</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="width: 164px">
+		<p>SPI_CLOCK_DIV16 </p>
+		</td>
+		<td class="auto-style13" style="width: 159px">
+		<p>1MHz</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="width: 164px">
+		<p>SPI_CLOCK_DIV32 </p>
+		</td>
+		<td class="auto-style13" style="width: 159px">
+		<p>500kHz</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="width: 164px">
+		<p>SPI_CLOCK_DIV64 </p>
+		</td>
+		<td class="auto-style13" style="width: 159px">
+		<p>250kHz</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="width: 164px">
+		<p>SPI_CLOCK_DIV128 </p>
+		</td>
+		<td class="auto-style13" style="width: 159px">
+		<p>125kHz</p>
+		</td>
+	</tr>
+</table>
+<p class="auto-style1">&nbsp;</p>
+<h3 class="auto-style8">関数</h3>
+<table class="auto-style8" style="width: 80%">
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		SPI.begin();</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		SPIの初期化を行います。</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 18px">
+		&nbsp;</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		unsigned char SPI.transfer(data)</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		SPIのデータ Read/Writeを行います。</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 22px;">&nbsp;</td>
+		<td class="auto-style3" style="width: 467px; height: 22px;">
+		SPI.setBitOrder(mode)</td>
+		<td class="auto-style3" style="width: 673px; height: 22px;">
+		MSBFIRST, LSBFIRSTを指定します。</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 20px">
+		&nbsp;</td>
+		<td class="auto-style3" style="width: 467px; height: 20px">
+		SPI.setDataMode(mode)</td>
+		<td class="auto-style3" style="width: 673px; height: 20px">
+		SPIのMODE0～MODE3を指定するコマンドです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 20px">
+		&nbsp;</td>
+		<td class="auto-style3" style="width: 467px; height: 20px">
+		SPI.ClockDivider(ckdiv);</td>
+		<td class="auto-style3" style="width: 673px; height: 22px;">
+		SCLKのクロックの分周比を指定します。</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 34px; height: 20px">
+		+</td>
+		<td class="auto-style3" style="width: 467px; height: 20px">
+		SPI.end();</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		SPIの終了を行います。</td>
+	</tr>
+	</table>
+<p class="auto-style8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; Arduinoと差異がある関数です。<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
++&nbsp;&nbsp;&nbsp; Arduinoになく、Lazuriteにある関数です。&nbsp; </p>
+<p class="auto-style1">&nbsp;</p>
+<h3 class="auto-style8">サンプル</h3>
+<p class="auto-style11">Laurite Sub-GHzでは、BP3596モジュールに搭載されているML7395を制御するプログラムで使用しています。</p>
+<p class="auto-style11">
+下記は、LazuriteIDE\hardware\lazurite_subghz\sub_ghz\CTI\hwif\hal_lazurite.cのプログラムです。</p>
+<p class="auto-style11">HAL_SPI_setup(void)は、SPIブロックを初期化しています。<br />
+HAL_SPI_transferは、wdataのポインタが示すデータからsizeバイトの値をMOSIから転送し、MISOから受信したデータをrdataに格納するプログラムです。</p>
+<p class="auto-style11">
+driver_digitalWrite関数は、Arduino互換端子で公開されていない端子を使用するための関数で、機能はdigitalWriteと同じです。</p>
+<p class="auto-style1">
+<TEXTAREA wrap="off" name="empty" style="width: 576px; height: 377px" class="auto-style1" tabindex="4">int HAL_SPI_setup(void)
+{
+	SPI0.setDataMode(SPI_MODE0);
+	SPI0.setClockDivider(SPI_CLOCK_DIV8);
+	SPI0.begin();
+	return HAL_STATUS_OK;
+}
+
+int HAL_SPI_transfer(const unsigned char *wdata, unsigned char *rdata, unsigned char size)
+{
+	unsigned char n;
+	__DI();
+	drv_digitalWrite(HAL_GPIO_CSB, HIGH);
+	drv_digitalWrite(HAL_GPIO_CSB, LOW);
+	for(n=0;n<size;n++)
+	{
+		*(rdata + n) = SPI0.transfer(*(wdata + n));
+	}
+	drv_digitalWrite(HAL_GPIO_CSB, HIGH);
+	__EI();
+	return HAL_STATUS_OK;
+}
+</TEXTAREA></p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

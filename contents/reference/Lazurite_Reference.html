@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="ja" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Lazurite 日本語リファレンス</title>
+<style type="text/css">
+body{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto
+}
+.auto-style1 {
+	font-size: large;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style6 {
+	font-family: メイリオ;
+	color: #666666;
+	font-weight: normal;
+}
+.auto-style9 {
+	color: #666666;
+	font-family: メイリオ;
+}
+.auto-style10 {
+	text-align: center;
+	color: #666666;
+	font-family: メイリオ;
+}
+.auto-style11 {
+	font-weight: normal;
+}
+.auto-style12 {
+	color: #006CD8;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+<h1 class="auto-style5">
+<img height="45" src="../Lazurite_logo.png" width="197" class="auto-style1" />　<span class="auto-style6">Lazurite</span><span class="auto-style10">
+<span class="auto-style11">日本語リファレンス</span></span></h1>
+<hr />
+<p class="auto-style9">&nbsp;</p>
+<p class="auto-style9">LazuriteはC言語で開発されたArduino互換機です。<br />
+※がついている関数はArduinoと互換性が無い関数が含まれていますので注意してください。</p>
+<p class="auto-style9">リファレンスのページは随時更新していきます。</p>
+<p class="auto-style9">&nbsp;</p>
+<table style="width: 100%">
+	<tr>
+		<td style="width: 34%" valign="top" class="auto-style9">
+		<div class="auto-style1">
+			<p>setup関数とloop関数</p>
+		</div>
+		<p>- setup()</p>
+		<p>- loop ()</p>
+		<p>&nbsp;</p>
+		<div class="auto-style1">
+			<p>C言語の基本</p>
+		</div>
+		<p>- if ... else</p>
+		<p>- for文</p>
+		<p>- switch/case/default</p>
+		<p>- while</p>
+		<p>- do .. while</p>
+		<p>- continue</p>
+		<p>- return</p>
+		<p>- goto</p>
+		<p>- #define</p>
+		<p>- #include</p>
+		<p>&nbsp;</p>
+		</td>
+		<td style="width: 33%" valign="top" class="auto-style9">
+		<p>データ型<br />
+		<br />
+		void<br />
+		char<br />
+		unsigned char<br />
+		int<br />
+		unsigned int<br />
+		long<br />
+		unsigned long<br />
+		short<br />
+		unsigned short<br />
+		float<br />
+		double<br />
+		struct<br />
+		enum<br />
+		typedef<br />
+		uint8_t<br />
+		int8_t<br />
+		uint16_t<br />
+		int16_t<br />
+		uint32_t<br />
+		int32_t</p>
+		</td>
+		<td valign="top" style="width: 33%" class="auto-style9">
+		<p>関数<br />
+		<br />
+		<a href="gpio.html"target="_blank"><span class="auto-style12">GPIO</span></a><br class="auto-style12" />
+		<span class="auto-style12">- 
+		</span> 
+		<a href="pinmode.html"target="_blank"><span class="auto-style12">pinMode(pin, mode)</span></a><br class="auto-style12" />
+		<span class="auto-style12">- 
+		</span> 
+		<a href="digitalWrite.html"target="_blank"><span class="auto-style12">digitalWrite(pin, value)</span></a><br class="auto-style12" />
+		<span class="auto-style12">- 
+		</span> 
+		<a href="digitalread.html"target="_blank"><span class="auto-style12">digitalRead(pin)</span></a><br />
+		<br />
+		アナログ入出力<br />
+		** analogReference() -- not supported<br />
+		- analogRead()<br />
+		- anaglogWrite()<br />
+		<br />
+		時間<br />
+		- <a href="millis.html">millis()</a><br />
+		- <a href="micros.html">micros()</a> ※<br />
+		- <a href="delay.html">delay()</a><br />
+		- <a href="sleep.html">sleep()</a> ※<br />
+		- <a href="delayMicroseconds.html">delayMicroseconds()</a><br />
+		<br />
+		Math<br />
+		- lowByte()<br />
+		- highByte()<br />
+		-
+		bitRead()<br />
+		-
+		bitWrite()<br />
+		- bitSet<br />
+		- bitClear()<br />
+		<br />
+		外部割込み<br />
+		－<a href="attachInterrupt.html">attachInterrupt()</a><br />
+		- <a href="detachInterrupt.html">detachInterrupt()</a><br />
+		<br />
+		<a href="interrupts.html"target="_blank"><span class="auto-style12">割込み有効/無効設定</span><br class="auto-style12" />
+		<span class="auto-style12">- interrupts()</span><br class="auto-style12" />
+		<span class="auto-style12">- nointerrupts()</span></a><span class="auto-style12"><br />
+		<br />
+		</span>
+		<a href="flash.html"target="_blank"><span class="auto-style12">データFlash※</span></a><span class="auto-style12"><br />
+		<br />
+		</span>
+		<a href="serial.html"target="_blank"><span class="auto-style12">非同期シリアル通信 Serial※</span></a><span class="auto-style12"><br />
+		<br />
+		</span>
+		<a href="spi.html"target="_blank"><span class="auto-style12">SPI (Serial Peripheral Interfare)※</span></a><span class="auto-style12"><br />
+		<br />
+		</span>
+		<a href="I2C.html"target="_blank"><span class="auto-style12">I2Cインタフェース※</span></a><span class="auto-style12"><br />
+		<br />
+		</span>
+		<a href="subghz.html"target="_blank"><span class="auto-style12">SubGHz(920MHz)　※</span></a><span class="auto-style12"><br />
+		<br />
+		</span>
+		<a href="motor.html"><span class="auto-style12">モーター制御関連(H-Bridge/Servo)※</span></a><br class="auto-style12" />
+		<br />
+		</p>
+		</td>
+	</tr>
+</table>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

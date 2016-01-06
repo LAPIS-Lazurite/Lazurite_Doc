@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>hhb.write</title>
+<style type="text/css">
+.auto-style5 {
+	text-align: center;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style8 {
+	font-family: メイリオ;
+	color: #666666;
+	font-weight: normal;
+}
+.auto-style9 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style10 {
+	margin-left: 40px;
+	text-align: left;
+	font-family: メイリオ;
+	color: #666666;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style8">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<h2>&nbsp;<span class="auto-style8">hhb.write(ch, time); </span> </h2>
+<h3 class="auto-style9">詳細</h3>
+<p class="auto-style10">viod hhb.write(unsigned char ch, long time);</p>
+<h3 class="auto-style9">仕様</h3>
+<p class="auto-style10">指定したチャンネル(ch)からHIGHレベルを出力する時間(time)をマイクロ秒の単位で指定します。時間は -1 
+* period～periodを指定することができます。</p>
+<p class="auto-style10">
+HardwareHBridgeが動作している状態で時間変更を行うためには、hhb.update()またはhsv.update関数で時間情報を更新する必要があります。</p>
+<p class="auto-style1">
+<img height="224" src="hardware_hbridge.png" width="682" /></p>
+<h3 class="auto-style9">パラメータ</h3>
+<h4 class="auto-style9">unsigned char ch</h4>
+<p class="auto-style10">設定する多機能タイマー(FTM)の番号を指定します。</p>
+<p class="auto-style10">0～3が有効です。</p>
+<h4 class="auto-style9">long time</h4>
+<p class="auto-style10">HIGHレベルを出力する時間を指定します。時間(time)は 
+-1*periodからperiodの時間まで指定することができます。</p>
+<p class="auto-style10">値が正の時はpin1端子、負はpin2端子から信号が出力されます。</p>
+<h4>&nbsp;</h4>
+<h3 class="auto-style9">戻り値</h3>
+<p class="auto-style10">なし</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

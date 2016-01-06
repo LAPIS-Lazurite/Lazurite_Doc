@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Serial.print</title>
+<style type="text/css">
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style6 {
+	font-weight: normal;
+	color: #666666;
+}
+.auto-style7 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: #666666;
+}
+.auto-style8 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: #666666;
+	font-weight: normal;
+}
+.auto-style9 {
+	font-weight: normal;
+}
+.auto-style10 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style11 {
+	margin-left: 40px;
+	color: #666666;
+	font-family: メイリオ;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<h2><span class="auto-style8">Serial.print (char* data)</span><span class="auto-style9"><br class="auto-style7" />
+</span><span class="auto-style8">Serial.println(char* data)</span></h2>
+<h3 class="auto-style10">詳細</h3>
+<p class="auto-style1"><span class="auto-style10">void Serial.print(char* data);</span><br class="auto-style10" />
+<span class="auto-style10">void Serial.println(char* data);</span></p>
+<h3 class="auto-style10">仕様</h3>
+<p class="auto-style1">
+<span class="auto-style7">Serial.print関数はシリアル通信で文字列を送信する関数です。</span><br class="auto-style7" />
+<span class="auto-style7">Serial.println関数は文字列の最後に改行コードであるCR(\r)とLF(\n)を付与して送信する関数です。</span></p>
+<p class="auto-style1">
+<span class="auto-style10">本関数を実行したら送信するデータをバッファに格納し、送信を開始します。</span><br class="auto-style10" />
+<span class="auto-style10">全データがバッファに格納できたら送信が終わる前に本関数は終了し、バックグラウンドで1バイトずつデータの送信を行います。</span><br class="auto-style10" />
+<span class="auto-style10">バッファがフルになった時は、全データがバッファに格納できるまで待って本関数が終了します。</span><br />
+</p>
+<p class="auto-style11">
+本関数では文字列の最後をNULL(0)コードで認識しているため、構造体のデータやNULL(0)が無い文字列を送信することはできません。</p>
+<p>&nbsp;</p>
+<h3 class="auto-style10">パラメータ</h3>
+<h4 class="auto-style10">char* data</h4>
+<p class="auto-style1"><span class="auto-style10">送信する文字列の先頭ポインタです</span>。</p>
+<h3 class="auto-style10">戻り値</h3>
+<p class="auto-style11">なし</p>
+<p>&nbsp;</p>
+<h3 class="auto-style10">サンプル</h3>
+<p class="auto-style11">サンプルプログラムのhelloworld.cで使用しています.</p>
+<p>
+<TEXTAREA wrap="off" name="empty" style="width: 432px; height: 255px" class="auto-style1">//******************************************
+//  Lazurite Sample Program
+//******************************************
+
+
+void setup(void)
+{
+	Serial.begin(115200);
+}
+
+void loop(void)
+{
+	Serial.println("hello world");
+	delay(1000);
+}
+
+</TEXTAREA></p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

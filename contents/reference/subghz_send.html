@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>SUBGHZ_MSG SubGHz.send</title>
+<style type="text/css">
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style7 {
+	margin-left: 40px;
+	text-align: left;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style8 {
+	border: 1px solid #000000;
+}
+.auto-style10 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style11 {
+	font-family: メイリオ;
+	color: #666666;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style10">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<h2 class="auto-style10">SUBGHZ_MSG SubGHz.send(panid, dstAddr, *data, length, *callback);</h2>
+<h3 class="auto-style11">詳細</h3>
+<p class="auto-style7">SUBGHZ_MSG SubGHz.send(uint16_t panid, uint16_t dstAddr, 
+uint8_t *data, uint16_t len, void (*callback)(uint8_t rssi, uint8_t status));</p>
+<h3 class="auto-style11">仕様</h3>
+<p class="auto-style7">データを送信するための関数です。</p>
+<p>&nbsp;</p>
+<h3 class="auto-style11">パラメータ</h3>
+<h4 class="auto-style11">uint8_t ch</h4>
+<p class="auto-style7">使用する周波数を設定します。</p>
+<p class="auto-style1">&nbsp;</p>
+<h4 class="auto-style11">uint16_t panid</h4>
+<p class="auto-style7">
+送信先PANIDを指定します。自機と異なるPANIDを設定するとACKを受け取ることができなくなるので注意してください。</p>
+<p class="auto-style1">&nbsp;</p>
+<h4 class="auto-style11">uint16_t dstAddr</h4>
+<p class="auto-style7">送信先アドレスを指定します。</p>
+<p class="auto-style7">送信先アドレスはSubGHzモジュールに記載されているアドレスの下位16bitを使用します。<br />
+（BP3596モジュールに貼ってあるシールのMNOPの位置に記載されている値が使用するアドレスです。実際は実際にはABCD..ではなく合計64bitの固有のアドレスがHEX表記されています。)</p>
+<p class="auto-style1"><img height="448" src="myAddr.png" width="315" /></p>
+<h4 class="auto-style11">SUBGHZ_POWER txPower</h4>
+<p class="auto-style7">送信パワーを設定します。</p>
+<table class="auto-style7" style="width: 100%">
+	<tr>
+		<td class="auto-style8">設定値</td>
+		<td class="auto-style8">送信パワー</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_PWR_20MW</td>
+		<td class="auto-style8">20mW</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_PWR_1MW</td>
+		<td class="auto-style8">1mW</td>
+	</tr>
+</table>
+<h4 class="auto-style11">void (*callback)(uint8_t rssi, uint8_t status)</h4>
+<p class="auto-style7">受信完了時のcallback関数を指定します。<br />
+通常はNULLで使用してください。</p>
+<p class="auto-style1">&nbsp;</p>
+<h3 class="auto-style11">戻り値</h3>
+<table style="width: 100%" class="auto-style11">
+	<tr>
+		<td class="auto-style8">戻り値</td>
+		<td class="auto-style8">意味</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_OK</td>
+		<td class="auto-style8">正常に終了</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_RESET_FAIL</td>
+		<td class="auto-style8">リセット失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_SETUP_FAIL</td>
+		<td class="auto-style8">内部 セットアップ関数の失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_SLEEP_FAIL</td>
+		<td class="auto-style8">内部 スリープ関数の失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_WAKEUP_FAIL</td>
+		<td class="auto-style8">内部 wakeup関数の失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_MYADDR_FAIL</td>
+		<td class="auto-style8">内部 アドレス取得関数の失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_SETFIL_FAIL</td>
+		<td class="auto-style8">内部 アドレスフィルタ設定関数の失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_TX_COMP_FAIL</td>
+		<td class="auto-style8">送信CALLBACKの失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_TX_FAIL</td>
+		<td class="auto-style8">送信失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_TX_ACK_FAIL</td>
+		<td class="auto-style8">送信後のACK受信失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_RX_ENB_FAIL</td>
+		<td class="auto-style8">受信ENB関数の失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_RX_DIS_FAIL</td>
+		<td class="auto-style8">受信Disable関数の失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_RX_COMP_FAIL</td>
+		<td class="auto-style8">受信callback関数の失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_PANID</td>
+		<td class="auto-style8">PANIDエラー</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_ERR_ADDRTYPE</td>
+		<td class="auto-style8">ADDRESSエラー</td>
+	</tr>
+</table>
+<p>&nbsp;</p>
+<h3 class="auto-style11">サンプル</h3>
+<p class="auto-style7">サンプルプログラムのWelcome_SubGHzで使用しています。</p>
+<p class="auto-style7">3秒に1回、send_dataに格納された"Welcome to Lazurite 
+Sub-GHz\r\n"を送信し、送信処理中にLEDをONしています。</p>
+<p class="auto-style7">LEDは、26番の端子に接続されている青色LEDを使用しています。</p>
+<p class="auto-style7">
+SubGHzの周波数はCH=36を使用し、自機並びに送信先のPANIDを0xABCDに、送信先のアドレスは0x079Dとなっています。</p>
+<p>
+<TEXTAREA wrap="off" name="empty" style="width: 591px; height: 591px" class="auto-style1">//******************************************
+//  sample software
+//******************************************
+//*****************************************************
+// Local definition
+//*****************************************************
+
+#define LED 26
+#define SUBGHZ_CH		36
+#define PANID			0xABCD
+#define HOST_ADDRESS	0x079D
+
+unsigned char send_data[] = {"Welcome to Lazurite Sub-GHz\r\n"};
+
+void setup(void)
+{
+	
+	SubGHz.init();					// initializing Sub-GHz
+	
+	pinMode(LED,OUTPUT);			// setting of LED
+	digitalWrite(LED,HIGH);			// setting of LED
+}
+
+void loop(void)
+{
+	// Initializing
+	SubGHz.begin(SUBGHZ_CH, PANID,  SUBGHZ_100KBPS, SUBGHZ_PWR_1MW);			// setup Sub-GHz
+	
+	// preparing data
+	digitalWrite(LED,LOW);														// LED ON
+	SubGHz.send(PANID, HOST_ADDRESS, &send_data, sizeof(send_data),NULL);		// send data
+	digitalWrite(LED,HIGH);														// LED off
+	
+	// close
+	SubGHz.close();																// power down Sub-GHz
+	
+	sleep(3000);																// sleep
+
+	return;
+}
+
+</TEXTAREA></p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>
