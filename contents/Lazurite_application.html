@@ -9,7 +9,7 @@
 body{
 	width:800px;
 	margin-left:auto;
-	margin-right:auto
+	margin-right:auto;
 }
 .auto-style1 {
 	font-size: large;
@@ -25,6 +25,8 @@ body{
 .auto-style9 {
 	color: #666666;
 	font-family: メイリオ;
+	font-size:large;
+	padding-bottom:0.5em;
 }
 .auto-style10 {
 	text-align: center;
@@ -34,30 +36,33 @@ body{
 .auto-style11 {
 	font-weight: normal;
 }
-.auto-style12 {
-	color: #666666;
-	font-family: メイリオ;
-	margin-top: 19px;
-}
-.auto-style13 {
-	color: #666666;
-}
-.auto-style18 {
-	color: #006CD8;
-}
 .auto-style19 {
-	color: #333333;
+	color: #666666;
+	text-decoration:none;
+	margin-left:30px;
+}
+.auto-style19:hover{
+    color:#c0c0c0;
+    text-decoration:underline;
 }
 .menu{
-	color: #666666;
-	font-family: メイリオ;
+	color: #0D57A7;
+	font-family: 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;	
+	font-size:x-large;
     padding: .25em 0 .5em .75em;
-	border-left: 6px solid #006cd8;
+	border-left: 15px solid #F8B62D;
 	border-bottom: 1px solid #ccc;
-	margin-bottom:30px	
+	margin-bottom:30px;
 }
-P.menu:first-letter
-.auto-style20 {
+.menu:before{
+	width:0;
+	height:0;
+	border-width:20px 10px;
+	border-style:solid;
+	border-color:#0D57A7;
+	border-left-color:transparent;
+}
+.auto-style22 {
 	text-decoration: none;
 }
 </style>
@@ -86,50 +91,85 @@ P.menu:first-letter
 <p class="auto-style9">Lazuriteを使用したいろいろなアプリケーション例をご紹介します。</p>
 <br/>
 <p class="menu"><strong>展示会で大活躍！920MHz無線お手軽電波ポリス★</strong></p>
-<p class="auto-style9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://www.lapis-semi.com/lazurite-jp/lazurite/359.html" target="_blank">
-<span class="auto-style13">(</span><span class="auto-style19">1) 部品・仕様の説明 </span></a></p>
-<p class="auto-style9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.lapis-semi.com/lazurite-jp/lazurite/409.html"target="_blank">
+
+<p class="auto-style9">
+<a href="http://www.lapis-semi.com/lazurite-jp/lazurite/359.html" target="_blank" class="auto-style22">
 <span class="auto-style19">
-(2) 配線図とレイアウト</span><span class="auto-style13">
-</span></a>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</p>
-<p class="auto-style9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.lapis-semi.com/lazurite-jp/lazurite/527.html"target="_blank">
+(1) 部品・仕様の説明 
+</span>
+</a>
+</p>
+<p class="auto-style9"> 
+<a href="http://www.lapis-semi.com/lazurite-jp/lazurite/409.html"target="_blank" class="auto-style22">
 <span class="auto-style19">
-(3) ソフトウェア</span><span class="auto-style13"> </span></a></p>
+(2) 配線図とレイアウト
+</span>
+</a>
+</p>
+<p class="auto-style9"> 
+<a href="http://www.lapis-semi.com/lazurite-jp/lazurite/527.html"target="_blank" class="auto-style22">
+<span class="auto-style19">
+(3) ソフトウェア
+</span>
+</a>
+</p>
 <br/>
+
 <p class="menu" >
 <strong>温度、湿度、気圧をGoogleDriveに保存、スマホで見れるお手軽IoT</strong></p>
-<p class="auto-style12" >
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://www.lapis-semi.com/lazurite-jp/%25e3%2582%25a2%25e3%2583%2597%25e3%2583%25aa%25e3%2582%25b1%25e3%2583%25bc%25e3%2582%25b7%25e3%2583%25a7%25e3%2583%25b3%25e4%25be%258b/613.html"target="_blank">
-<span class="auto-style19">(1) Lazurite Sub-GHzでBME280のデータ受信 </span></a></p>
 
-<p class="auto-style12"><span class="auto-style19">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class="auto-style9" >
+<a href="http://www.lapis-semi.com/lazurite-jp/%25e3%2582%25a2%25e3%2583%2597%25e3%2583%25aa%25e3%2582%25b1%25e3%2583%25bc%25e3%2582%25b7%25e3%2583%25a7%25e3%2583%25b3%25e4%25be%258b/613.html"target="_blank" class="auto-style22">
+<span class="auto-style19">
+(1) Lazurite Sub-GHzでBME280のデータ受信
 </span>
-<a href="http://www.lapis-semi.com/lazurite-jp/%25e3%2582%25a2%25e3%2583%2597%25e3%2583%25aa%25e3%2582%25b1%25e3%2583%25bc%25e3%2582%25b7%25e3%2583%25a7%25e3%2583%25b3%25e4%25be%258b/576.html"target="_blank">
-<span class="auto-style19">(2) Raspberry Pi 
-の設定</span></a></p>
-
-<p class="auto-style12"><span class="auto-style19">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</a>
+</p>
+<p class="auto-style9">
+<a href="http://www.lapis-semi.com/lazurite-jp/%25e3%2582%25a2%25e3%2583%2597%25e3%2583%25aa%25e3%2582%25b1%25e3%2583%25bc%25e3%2582%25b7%25e3%2583%25a7%25e3%2583%25b3%25e4%25be%258b/576.html"target="_blank" class="auto-style22">
+<span class="auto-style19">
+(2) Raspberry Pi 
+の設定
 </span>
-<a href="http://www.lapis-semi.com/lazurite-jp/lazurite/669.html"target="_blank">
-<span class="auto-style19">(3) BME280のデータをRaspberry Piで受信 </span></a></p>
-<p class="auto-style12"><span class="auto-style19">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</a>
+</p>
+<p class="auto-style9">
+<a href="http://www.lapis-semi.com/lazurite-jp/lazurite/669.html"target="_blank" class="auto-style22">
+<span class="auto-style19">
+(3) BME280のデータをRaspberry Piで受信 </span>
+</a>
+</p>
+<p class="auto-style9">
+<a href="http://www.lapis-semi.com/lazurite-jp/lazurite/796.html"target="_blank" class="auto-style22">
+<span class="auto-style19">
+(4) 送信データをGoogleDriveに保存
 </span>
-<a href="http://www.lapis-semi.com/lazurite-jp/lazurite/796.html"target="_blank">
-<span class="auto-style19">(4) 送信データをGoogleDriveに保存</span></a></p>
+</a>
+</p>
 <br/>
 <p class="menu">
-<a href="http://www.lapis-semi.com/lazurite-jp/lazurite/890.html"target="_blank" class="auto-style20" style="text-decoration: none">
-<span class="auto-style13"><strong>Twitterで温度・湿度・気圧をつぶやく</strong></span></a></p>
+<strong>Twitterで温度・湿度・気圧をつぶやく</strong></p>
+<p class="auto-style9">
+<a href="http://www.lapis-semi.com/lazurite-jp/lazurite/890.html"target="_blank" class="auto-style22" >
+<span class="auto-style19">Twitterで温度・湿度・気圧をつぶやく</span></a></p>
 <br/>
 <p class="menu">
-<a href="http://www.lapis-semi.com/lazurite-jp/lazurite/1028.html"target="_blank" class="auto-style20" style="text-decoration: none">
-<span class="auto-style13"><strong>M2Xで気温・湿度・気圧データをグラフで楽々モニタリング</strong></span></a></p>
+<strong>M2Xで気温・湿度・気圧データをグラフで楽々モニタリング</strong></p>
+<p class="auto-style9">
+<a href="http://www.lapis-semi.com/lazurite-jp/lazurite/1028.html"target="_blank" class="auto-style22" >
+<span class="auto-style19">M2Xで気温・湿度・気圧データをグラフで楽々モニタリング
+</span>
+</a>
+</p>
 <br/>
 <p class="menu">
-<a href="http://www.lapis-semi.com/lazurite-jp/%25e3%2582%25a2%25e3%2583%2597%25e3%2583%25aa%25e3%2582%25b1%25e3%2583%25bc%25e3%2582%25b7%25e3%2583%25a7%25e3%2583%25b3%25e4%25be%258b/1231.html"target="_blank" class="auto-style20" style="text-decoration: none">
-<span class="auto-style13"><strong>Google Spread Sheet / M2Xによる長期モニタリング</strong></span></a></p>
+<strong>Google Spread Sheet / M2Xによる長期モニタリング</strong></p>
+<p class="auto-style9">
+<a href="http://www.lapis-semi.com/lazurite-jp/%25e3%2582%25a2%25e3%2583%2597%25e3%2583%25aa%25e3%2582%25b1%25e3%2583%25bc%25e3%2582%25b7%25e3%2583%25a7%25e3%2583%25b3%25e4%25be%258b/1231.html"target="_blank" class="auto-style22" >
+<span class="auto-style19">Google Spread Sheet / M2Xによる長期モニタリング
+</span>
+</a>
+</p>
 <br/>
 <br/>
 <br/>

@@ -5,11 +5,18 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>short SubGHz.getAddress</title>
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style1 {
 	margin-left: 40px;
 }
 .auto-style5 {
 	text-align: center;
+	font-family: メイリオ;
+
 }
 .auto-style7 {
 	margin-left: 40px;
@@ -20,7 +27,7 @@
 .auto-style8 {
 	color: #666666;
 	font-weight: normal;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-family: メイリオ;
 }
 .auto-style10 {
 	color: #666666;
@@ -30,6 +37,12 @@
 	font-family: メイリオ;
 	font-weight: normal;
 	color: #666666;
+}
+.auto-style12{
+	color: #666666;
+	font-family: メイリオ;
+    margin-bottom:40px;
+    margin-left:40px;
 }
 </style>
 
@@ -51,22 +64,22 @@
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style8">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
-<h2 class="auto-style11">short SubGHz.getAddress(void);</h2>
+<div id="contents">
+<h1 class="auto-style11">short SubGHz.getAddress(void);</h1>
+<br/>
 <h3 class="auto-style10">詳細</h3>
 <p class="auto-style7">short SubGHz.readData(uint8_t *data, uint16_t max_size);</p>
 <h3 class="auto-style10">仕様</h3>
 <p class="auto-style7">受信したデータを読み出す関数です。</p>
-<p class="auto-style1">&nbsp;</p>
-<p class="auto-style7">rxDisable関数を実行した後、close関数により待機電流を小さくすることができます。</p>
+<p class="auto-style12">rxDisable関数を実行した後、close関数により待機電流を小さくすることができます。</p>
 <h3 class="auto-style10">パラメータ</h3>
-<h4 class="auto-style10">uint8_t *data</h4>
+<h4 class="auto-style10">&nbsp;&nbsp;&nbsp; uint8_t *data</h4>
 <p class="auto-style7">データを格納するバッファの先頭ポインタを指定します。</p>
-<h4 class="auto-style10">uint8_t max_size</h4>
-<p class="auto-style7">データを格納するバッファのサイズを指定します。</p>
-<p class="auto-style1">&nbsp;</p>
+<h4 class="auto-style10">&nbsp;&nbsp;&nbsp; uint8_t max_size</h4>
+<p class="auto-style12">データを格納するバッファのサイズを指定します。</p>
 <h3 class="auto-style10">戻り値</h3>
 <p class="auto-style7">受信したデータのバイト数を戻します。戻り値が0または負の時はデータを受信していません。 </p>
-<p class="auto-style7">最大で250バイトのデータを受信することができます。</p>
+<p class="auto-style12">最大で250バイトのデータを受信することができます。</p>
 <h3 class="auto-style10">サンプル</h3>
 <p class="auto-style7">TBD</p>
 <p>

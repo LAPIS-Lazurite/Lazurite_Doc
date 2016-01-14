@@ -5,6 +5,11 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>hhb.write</title>
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style5 {
 	text-align: center;
 }
@@ -46,7 +51,9 @@
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style8">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
-<h2>&nbsp;<span class="auto-style8">hhb.write(ch, time); </span> </h2>
+<div id="contents">
+<h1 class="auto-style8">hhb.write(ch, time);</h1>
+<br/>
 <h3 class="auto-style9">詳細</h3>
 <p class="auto-style10">viod hhb.write(unsigned char ch, long time);</p>
 <h3 class="auto-style9">仕様</h3>
@@ -57,10 +64,10 @@ HardwareHBridgeが動作している状態で時間変更を行うためには�
 <p class="auto-style1">
 <img height="224" src="hardware_hbridge.png" width="682" /></p>
 <h3 class="auto-style9">パラメータ</h3>
-<h4 class="auto-style9">unsigned char ch</h4>
+<h4 class="auto-style9">&nbsp;&nbsp;&nbsp; unsigned char ch</h4>
 <p class="auto-style10">設定する多機能タイマー(FTM)の番号を指定します。</p>
 <p class="auto-style10">0～3が有効です。</p>
-<h4 class="auto-style9">long time</h4>
+<h4 class="auto-style9">&nbsp;&nbsp;&nbsp; long time</h4>
 <p class="auto-style10">HIGHレベルを出力する時間を指定します。時間(time)は 
 -1*periodからperiodの時間まで指定することができます。</p>
 <p class="auto-style10">値が正の時はpin1端子、負はpin2端子から信号が出力されます。</p>
@@ -68,7 +75,10 @@ HardwareHBridgeが動作している状態で時間変更を行うためには�
 <h3 class="auto-style9">戻り値</h3>
 <p class="auto-style10">なし</p>
 <p>&nbsp;</p>
-
+<br/>
+<br/>
+<br/>
+</div>
 </body>
 
 </html>

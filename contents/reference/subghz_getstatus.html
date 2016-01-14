@@ -5,6 +5,11 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>SubGHz.getStatus</title>
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style1 {
 	margin-left: 40px;
 }
@@ -34,11 +39,15 @@
 	margin-left: 40px;
 	font-family: メイリオ;
 	color: #666666;
+	margin-bottom:40px;
 }
 .auto-style13 {
 	border: 1px solid #000000;
 	color: #666666;
 	font-family: メイリオ;
+}
+td{
+	padding:0px 5px;
 }
 </style>
 
@@ -60,17 +69,18 @@
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style10">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
-<h2 class="auto-style10">SubGHz.getStatus(*tx, *rx);</h2>
+<div id="contents">
+<h1 class="auto-style10">SubGHz.getStatus(*tx, *rx);</h1>
+<br/>
 <h3 class="auto-style11">詳細</h3>
 <p class="auto-style7">void SubGHz.getStatus(SUBGHZ_STATUS *tx, SUBGHZ_STATUS 
 *rx);</p>
 <h3 class="auto-style11">仕様</h3>
 <p class="auto-style12">最後に送受信したステータスを返します。</p>
-<p class="auto-style1">&nbsp;</p>
 <h3 class="auto-style11">パラメータ</h3>
-<h4 class="auto-style10"><strong>SUBGHZ_STATUS *tx</strong></h4>
-<p class="auto-style12">最後に送信した時のステータスを格納するバッファのポインタを指定します。不要な時はNULLを指定してください。</p>
-<p class="auto-style12">SUBGHZ_STATUSは次のメンバーで構成されています。</p>
+<h4 class="auto-style10"><strong>&nbsp;&nbsp; SUBGHZ_STATUS *tx</strong></h4>
+<p class="auto-style7">最後に送信した時のステータスを格納するバッファのポインタを指定します。不要な時はNULLを指定してください。</p>
+<p class="auto-style7">SUBGHZ_STATUSは次のメンバーで構成されています。</p>
 <table class="auto-style9" style="width: 100%">
 	<tr>
 		<td class="auto-style13">
@@ -97,9 +107,9 @@
 		</td>
 	</tr>
 </table>
-<h4 class="auto-style11">SUBGHZ_STATUS *rx</h4>
-<p class="auto-style12">最後に受信した時のステータスを格納するバッファのポインタを指定します。不要な時はNULLを指定してください。</p>
-<p class="auto-style12">SUBGHZ_STATUSは次のメンバーで構成されています。</p>
+<h4 class="auto-style11">&nbsp;&nbsp;&nbsp; SUBGHZ_STATUS *rx</h4>
+<p class="auto-style7">最後に受信した時のステータスを格納するバッファのポインタを指定します。不要な時はNULLを指定してください。</p>
+<p class="auto-style7">SUBGHZ_STATUSは次のメンバーで構成されています。</p>
 <table class="auto-style9" style="width: 100%">
 	<tr>
 		<td class="auto-style13">
@@ -129,13 +139,14 @@
 <p class="auto-style1">&nbsp;</p>
 <h3 class="auto-style11">戻り値</h3>
 <p class="auto-style12">なし</p>
-<p>&nbsp;</p>
 <p class="auto-style11"><strong>サンプル</strong></p>
 <p class="auto-style12">TBD</p>
 <p>
 <TEXTAREA wrap="off" name="empty" style="width: 591px; height: 591px" class="auto-style1"></TEXTAREA></p>
 <p>&nbsp;</p>
-
+<br/>
+<br/>
+</div>
 </body>
 
 </html>

@@ -6,6 +6,11 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>Lazurite Pi Gatway サンプルソフト</title>
 <style type="text/css">
+body{
+	width:850px;
+	margin-right:auto;
+	margin-left:auto;
+}
 .auto-style1 {
 	vertical-align: middle;
 }
@@ -79,8 +84,8 @@
 <span class="auto-style17">IEEE802.15.4e データフォーマット</span></h1>
 <hr />
 <p class="auto-style18">IEEE802.15.4eのデータフォーマットについて解説します。</p>
-<p class="auto-style18">&nbsp;</p>
-<h3 class="auto-style18">1. データの<span class="auto-style18">構</span>成</h3>
+<br/>
+<h3 class="auto-style18">1. データの構成</h3>
 <p class="auto-style20">IEEE802.15.4eのデータフォーマット、およびドライバから出力されるデータは次の通りとなっています。<br />
 フレームコントロールの中の各ビットに、フレームコントロールのversionや、<br />
 各データの有無がアサインされています。</p>
@@ -91,14 +96,13 @@
 <p class="auto-style2"><span class="auto-style18">CRCはドライバ内で処理され上位の関数に通知されることはありませんが<br />
 代わりに受信時の感度を示すRSSI値が最後に付与されています。</span></p>
 <p class="auto-style2">&nbsp;<img height="411" src="dataformat.png" width="648" /></p>
-
-<h3 class="auto-style17">&nbsp;</h3>
+<br/>
 <h3 class="auto-style17"><strong class="auto-style18">2. フレームコントロールについて</strong></h3>
 <p class="auto-style20">フレームコントロールのデータは16bit(2バイト)で構成されています。<br />
 そのデータの各ビットには次のような機能が割り当てられています。</p>
 <p class="auto-style2">
 <img height="117" src="frame_control.png" width="817" /></p>
-<p class="auto-style18">&nbsp;</p>
+<br/>
 <p class="auto-style18"><strong>2-1. frame_type</strong></p>
 <p class="auto-style18">フレームタイプを示すビットです。</p>
 <table class="auto-style3" style="width: 713px">
@@ -138,7 +142,7 @@
 		<td class="auto-style11">未使用</td>
 	</tr>
 </table>
-<p class="auto-style18">&nbsp;</p>
+<br/>
 <p class="auto-style18"><strong>2-2. sec_enb</strong></p>
 <p class="auto-style18">セキュリティーの有無を示すビットです。</p>
 <table style="width: 475px" class="auto-style12">
@@ -158,7 +162,7 @@
 		<td class="auto-style11">非対応</td>
 	</tr>
 </table>
-<p class="auto-style18">&nbsp;</p>
+<br/>
 <p class="auto-style18"><strong>2-3. pending</strong></p>
 <table style="width: 653px" class="auto-style12">
 	<tr>
@@ -177,7 +181,7 @@
 		<td class="auto-style11">非対応</td>
 	</tr>
 </table>
-<p class="auto-style18">&nbsp;</p>
+<br/>
 <p class="auto-style18"><strong>2-4.　ack_req</strong></p>
 <p class="auto-style18">ACK要求の有無を示すビットです。</p>
 <table style="width: 613px" class="auto-style12">
@@ -197,7 +201,7 @@
 		<td class="auto-style11">アドレスタイプ = 6のときのみ有効化しています。</td>
 	</tr>
 </table>
-<p class="auto-style18">&nbsp;</p>
+<br/>
 <p class="auto-style18"><strong>2-5. seq_comp</strong></p>
 <p class="auto-style18">
 シーケンス番号の有無を示すビットです。シーケンス番号はデータ送信時に付与されるもので、<br />
@@ -219,7 +223,7 @@
 		<td class="auto-style11">アドレスタイプ = 6のときのみ有効化しています。</td>
 	</tr>
 </table>
-<p class="auto-style18">&nbsp;</p>
+<br/>
 <p class="auto-style18"><strong>2-6. ielist</strong></p>
 <p class="auto-style18">ielistの有無を示しています。</p>
 <table class="auto-style12" style="width: 583px">
@@ -239,7 +243,7 @@
 		<td class="auto-style11">非対応</td>
 	</tr>
 </table>
-<p class="auto-style18">&nbsp;</p>
+<br/>
 <p class="auto-style18"><strong>2-7. frame_ver</strong></p>
 <p class="auto-style18">フレームコントロールのデータバージョンを示しています。</p>
 <table class="auto-style12" style="width: 559px">
@@ -264,8 +268,7 @@
 		<td class="auto-style11">対応</td>
 	</tr>
 </table>
-<p><br />
-</p>
+<br />
 <p class="auto-style18"><strong>2-8. アドレスについて</strong></p>
 <p class="auto-style18">アドレスはpanid_comp, tx_addr_type, 
 rx_addr_typeにより、送信PANID、送信アドレス、受信PANID、<br />
@@ -424,7 +427,7 @@ panid_compの情報に応じて次のようになっています。</p>
 		<td class="auto-style13" style="width: 174px">なし</td>
 	</tr>
 </table>
-<h3 class="auto-style18">&nbsp;</h3>
+<br/>
 <h3 class="auto-style18">3. Lazurite Sub-GHzの実例</h3>
 <p>&nbsp;</p>
 

@@ -5,6 +5,11 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>I2C</title>
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style1 {
 	margin-left: 40px;
 }
@@ -43,6 +48,9 @@
 	color: #666666;
 	font-family: メイリオ;
 }
+td{
+    padding:10px;
+}
 </style>
 
 <script>
@@ -63,7 +71,10 @@
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style7">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
+<div id="contents">
+<div id="contents">
 <h1 class="auto-style7">I2Cインタフェース</h1>
+<br/>
 <h3 class="auto-style8">概要</h3>
 <p class="auto-style9">
 I2Cは、SPI同様にマイコンと周辺機器の通信で使用される一般的なインタフェースで、SDAとSCLの2線でデータの送受信を行います。また、I2Cは通信速度が仕様化されています。本Lazuriteでは400kbpsのファーストモードでやり取りをするように設計されています。</p>
@@ -71,24 +82,22 @@ I2Cは、SPI同様にマイコンと周辺機器の通信で使用される一�
 I2Cは、通常マイコンがI2CのMasterデバイス、周辺機器がSlaveデバイスとなり信号のやり取りが行われます。ArduinoはI2CのMaster／Slaveの両方に対応していますが、LazuriteはI2Cのマスター機能しか搭載しておりません。</p>
 <p class="auto-style9">
 本関数を使用するためには、"プロジェクトメニュー"の"ライブラリを使用する"から、Wireのライブラリを選択して有効にしてください。</p>
-<p class="auto-style1">
-<span class="auto-style8">Lazurite Sub-GHzで使用しているマイコン 
-ML620Q504は2系統のI2Cインタフェースを搭載しています。I2Cはピン番号の18ピンまたはA4端子がSDA、19ピンまたたA5端子がSCLとなります。</span><br class="auto-style8" />
-<span class="auto-style8">もう一系統は、Wire0というライブラリ群で、無線モジュールBP3596を制御するために使用しています。</span></p>
-<p class="auto-style9">
-&nbsp;</p>
+<p class="auto-style9">Lazurite Sub-GHzで使用しているマイコン 
+ML620Q504は2系統のI2Cインタフェースを搭載しています。I2Cはピン番号の18ピンまたはA4端子がSDA、19ピンまたたA5端子がSCLとなります。</p>
+<p class="auto-style9">もう一系統は、Wire0というライブラリ群で、無線モジュールBP3596を制御するために使用しています。</p>
+<br/>
 <p class="auto-style9">◆I2Cの接続方法</p>
 <p class="auto-style9">I2Cは、信号線を回路上でプルアップして複数のSlaveデバイスを接続します。</p>
 <p class="auto-style1">
 <img height="309" src="I2C_configuration.png" width="615" /></p>
 <p class="auto-style1">&nbsp;</p>
 <h3 class="auto-style8">関数</h3>
-<table class="auto-style2" style="width: 80%">
+<table class="auto-style2" style="width: 90%">
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		<p>*</p>
 		</td>
-		<td class="auto-style12" style="width: 467px; height: 18px">
+		<td class="auto-style12" style="width: 374px; height: 18px">
 		<p>Wire.begin()</p>
 		</td>
 		<td class="auto-style12" style="width: 673px; height: 18px">
@@ -99,7 +108,7 @@ ML620Q504は2系統のI2Cインタフェースを搭載しています。I2Cは�
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		<p></p>
 		</td>
-		<td class="auto-style12" style="width: 467px; height: 18px">
+		<td class="auto-style12" style="width: 374px; height: 18px">
 		<p>Wire.beginTransmission(address)</p>
 		</td>
 		<td class="auto-style12" style="width: 673px; height: 18px">
@@ -110,7 +119,7 @@ ML620Q504は2系統のI2Cインタフェースを搭載しています。I2Cは�
 		<td class="auto-style6" style="width: 34px; height: 22px;">
 		<p>+</p>
 		</td>
-		<td class="auto-style12" style="width: 467px; height: 22px;">
+		<td class="auto-style12" style="width: 374px; height: 22px;">
 		<p>size_t Wire.write_byte(data)</p>
 		</td>
 		<td class="auto-style12" style="width: 673px; height: 22px;">
@@ -121,7 +130,7 @@ ML620Q504は2系統のI2Cインタフェースを搭載しています。I2Cは�
 		<td class="auto-style6" style="width: 34px; height: 20px">
 		<p>*</p>
 		</td>
-		<td class="auto-style12" style="width: 467px; height: 20px">
+		<td class="auto-style12" style="width: 374px; height: 20px">
 		<p>size_t Wire.write(data,quantity)</p>
 		</td>
 		<td class="auto-style12" style="width: 673px; height: 20px">
@@ -132,7 +141,7 @@ ML620Q504は2系統のI2Cインタフェースを搭載しています。I2Cは�
 		<td class="auto-style6" style="width: 34px; height: 20px">
 		<p></p>
 		</td>
-		<td class="auto-style12" style="width: 467px; height: 20px">
+		<td class="auto-style12" style="width: 374px; height: 20px">
 		<p>int Wire.available()</p>
 		</td>
 		<td class="auto-style12" style="width: 673px; height: 22px;">
@@ -143,7 +152,7 @@ ML620Q504は2系統のI2Cインタフェースを搭載しています。I2Cは�
 		<td class="auto-style6" style="width: 34px; height: 20px">
 		<p>*</p>
 		</td>
-		<td class="auto-style12" style="width: 467px; height: 20px">
+		<td class="auto-style12" style="width: 374px; height: 20px">
 		<p>Wire.endTransmission(sendStop)</p>
 		</td>
 		<td class="auto-style3" style="width: 673px; height: 18px">
@@ -155,8 +164,8 @@ ML620Q504は2系統のI2Cインタフェースを搭載しています。I2Cは�
 		<td class="auto-style6" style="width: 34px; height: 20px">
 		<p>*</p>
 		</td>
-		<td class="auto-style12" style="width: 467px; height: 20px">
-		<p>Wire.requestFrom(address, quantity, sendStop)</p>
+		<td class="auto-style12" style="width: 374px; height: 20px">
+		<p>Wire.requestFrom(address, quantity,sendStop)</p>
 		</td>
 		<td class="auto-style3" style="width: 673px; height: 18px">
 		<p><span class="auto-style8">データの読み出しを行い、受信用バッファにデータを格納します。</span><br class="auto-style8" />
@@ -167,7 +176,7 @@ ML620Q504は2系統のI2Cインタフェースを搭載しています。I2Cは�
 		<td class="auto-style6" style="width: 34px; height: 20px">
 		<p></p>
 		</td>
-		<td class="auto-style12" style="width: 467px; height: 20px">
+		<td class="auto-style12" style="width: 374px; height: 20px">
 		<p>int Wire.read(void)</p>
 		</td>
 		<td class="auto-style3" style="width: 673px; height: 18px">
@@ -180,23 +189,16 @@ ML620Q504は2系統のI2Cインタフェースを搭載しています。I2Cは�
 <span class="auto-style8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 +&nbsp;&nbsp;&nbsp; Arduinoになく、Lazuriteにある関数です。&nbsp; </span> </p>
 <p class="auto-style8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (注意) Arduinoとは異なり、引数の省略を行うことができません。</p>
+<br/>
 <p class="auto-style8"><strong>サンプル</strong></p>
-<p class="auto-style8" style="width: 844px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Laurite Sub-GHzでは、BP3596モジュールに搭載されているEEPROMからデータを読み出すプログラムで使用しています。</p>
-<p class="auto-style8">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-下記は、LazuriteIDE\hardware\lazurite_subghz\sub_ghz\CTI\hwif\hal_lazurite.cのプログラムです。</p>
-<p>
-<span class="auto-style8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-devAddrは、EEPROMのスレーブアドレスを指定します。</span><br class="auto-style8" />
-<span class="auto-style8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-addrは、データを読み出すEEPROMメモリの番地を指定します。</span><br class="auto-style8" />
-<span class="auto-style8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-*dataは読み出したデータを格納する先頭ポインタで、sizeは読み出すバイト数になっています。</span></p>
-<p>
-<span class="auto-style8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Wire0.endTransmission(false)は、STOPビットを発行せずに続けてデータを読み出すために使用しています。</span><br class="auto-style8" />
-<span class="auto-style8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Wire0.endTransmission(true)にしたら、I2Cブロックはストップビットを発行してdevAddrとのデータのやり取りを終了するため、正常な値を読み出すことができなくなります。</span></p>
+<p class="auto-style9" style="width: 755px; height: 49px;">&nbsp;Laurite Sub-GHzでは、BP3596モジュールに搭載されているEEPROMからデータを読み出すプログラムで使用しています。</p>
+<p class="auto-style9">下記は、LazuriteIDE\hardware\lazurite_subghz\sub_ghz\CTI\hwif\hal_lazurite.cのプログラムです。</p>
+<p class="auto-style9">devAddrは、EEPROMのスレーブアドレスを指定します。<br class="auto-style8" />
+addrは、データを読み出すEEPROMメモリの番地を指定します。<br />
+*dataは読み出したデータを格納する先頭ポインタで、sizeは読み出すバイト数になっています。</p>
+<p class="auto-style9">Wire0.endTransmission(false)は、STOPビットを発行せずに続けてデータを読み出すために使用しています。</p>
+<p class="auto-style9">Wire0.endTransmission(true)にしたら、I2Cブロックはストップビットを発行してdevAddrとのデータのやり取りを終了するため、正常な値を読み出すことができなくなります。</p>
+<br/>
 <p class="auto-style1">
 <TEXTAREA wrap="off" name="empty" style="width: 576px; height: 377px" class="auto-style1" tabindex="4">int HAL_I2C_read(unsigned char devAddr, unsigned char addr, unsigned char *data, unsigned char size)
 {
@@ -217,9 +219,12 @@ Wire0.endTransmission(true)にしたら、I2Cブロックはストップビッ�
 	
 	return HAL_STATUS_OK;
 }
-</TEXTAREA></p>
+</TEXTAREA>
 <p>&nbsp;</p>
-
+<br/>
+<br/>
+<br/>
+</div>
 </body>
 
 </html>

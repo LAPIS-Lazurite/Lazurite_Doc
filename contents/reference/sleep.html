@@ -5,6 +5,11 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>sleep</title>
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style1 {
 	margin-left: 40px;
 }
@@ -30,6 +35,7 @@
 	font-weight: normal;
 	color: #666666;
 	margin-left: 40px;
+	margin-bottom:40px;
 }
 </style>
 
@@ -51,7 +57,9 @@
 <img height="40" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
-<h2 class="auto-style8">sleep()&nbsp;</h2>
+<div id="contents">
+<h1 class="auto-style6">sleep()&nbsp;</h1>
+<br/>
 <h3 class="auto-style6"><strong>詳細</strong></h3>
 <p class="auto-style9">void sleep(unsigned long ms)</p>
 <h3 class="auto-style6"><strong>仕様</strong></h3>
@@ -60,12 +68,12 @@ delay()と同じ機能ですが、sleep()は、16MHzのメインクロックを�
 <p class="auto-style7">
 シリアル送信中にsleepを実行すると、シリアル送信中はdelay()と同じ状態で停止し、シリアル送信完了後からsleep()の動作になります。</p>
 <p class="auto-style7">sleep()の間も外部割込みは有効です。</p>
-<p class="auto-style7">sleep()と似た機能でdelay()があります。delay()については<a href="delay.html">こちら</a>参照してください。</p>
+<p class="auto-style9">sleep()と似た機能でdelay()があります。delay()については<a href="delay.html">こちら</a>参照してください。</p>
 <p class="auto-style8"><strong>パラメータ</strong></p>
-<p class="auto-style8"><strong>unsigned long ms</strong></p>
-<p class="auto-style7">ミリ秒単位で時間を指定します。</p>
+<p class="auto-style8">&nbsp;&nbsp;&nbsp; <strong>unsigned long ms</strong></p>
+<p class="auto-style9">ミリ秒単位で時間を指定します。</p>
 <h3 class="auto-style8">戻り値</h3>
-<p class="auto-style7">なし</p>
+<p class="auto-style9">なし</p>
 <h3 class="auto-style8">サンプル</h3>
 <p class="auto-style7">1秒ずつ青色のLEDをON/OFFします。</p>
 <p class="auto-style8">
@@ -86,7 +94,9 @@ void loop(void)
 }
 </TEXTAREA></p>
 <p class="auto-style1">&nbsp;</p>
-
+<br/>
+<br/>
+</div>
 </body>
 
 </html>

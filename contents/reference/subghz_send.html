@@ -5,6 +5,11 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>SUBGHZ_MSG SubGHz.send</title>
 <style type="text/css">
+#contents{
+	width:850px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style1 {
 	margin-left: 40px;
 }
@@ -29,6 +34,16 @@
 	font-family: メイリオ;
 	color: #666666;
 }
+.auto-style12{
+	font-family: メイリオ;
+	color: #666666;
+	margin-bottom:40px;
+	margin-left:40px;
+}
+td{
+	padding:0px 5px;
+}
+
 </style>
 
 <script>
@@ -49,27 +64,26 @@
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style10">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
+<div id="contents">
 <h2 class="auto-style10">SUBGHZ_MSG SubGHz.send(panid, dstAddr, *data, length, *callback);</h2>
+<br/>
 <h3 class="auto-style11">詳細</h3>
 <p class="auto-style7">SUBGHZ_MSG SubGHz.send(uint16_t panid, uint16_t dstAddr, 
 uint8_t *data, uint16_t len, void (*callback)(uint8_t rssi, uint8_t status));</p>
 <h3 class="auto-style11">仕様</h3>
-<p class="auto-style7">データを送信するための関数です。</p>
-<p>&nbsp;</p>
+<p class="auto-style12">データを送信するための関数です。</p>
 <h3 class="auto-style11">パラメータ</h3>
-<h4 class="auto-style11">uint8_t ch</h4>
+<h4 class="auto-style11">&nbsp;&nbsp;&nbsp; uint8_t ch</h4>
 <p class="auto-style7">使用する周波数を設定します。</p>
-<p class="auto-style1">&nbsp;</p>
-<h4 class="auto-style11">uint16_t panid</h4>
+<h4 class="auto-style11">&nbsp;&nbsp;&nbsp; uint16_t panid</h4>
 <p class="auto-style7">
 送信先PANIDを指定します。自機と異なるPANIDを設定するとACKを受け取ることができなくなるので注意してください。</p>
-<p class="auto-style1">&nbsp;</p>
-<h4 class="auto-style11">uint16_t dstAddr</h4>
+<h4 class="auto-style11">&nbsp;&nbsp;&nbsp; uint16_t dstAddr</h4>
 <p class="auto-style7">送信先アドレスを指定します。</p>
 <p class="auto-style7">送信先アドレスはSubGHzモジュールに記載されているアドレスの下位16bitを使用します。<br />
 （BP3596モジュールに貼ってあるシールのMNOPの位置に記載されている値が使用するアドレスです。実際は実際にはABCD..ではなく合計64bitの固有のアドレスがHEX表記されています。)</p>
 <p class="auto-style1"><img height="448" src="myAddr.png" width="315" /></p>
-<h4 class="auto-style11">SUBGHZ_POWER txPower</h4>
+<h4 class="auto-style11">&nbsp;&nbsp;&nbsp; SUBGHZ_POWER txPower</h4>
 <p class="auto-style7">送信パワーを設定します。</p>
 <table class="auto-style7" style="width: 100%">
 	<tr>
@@ -85,10 +99,9 @@ uint8_t *data, uint16_t len, void (*callback)(uint8_t rssi, uint8_t status));</p
 		<td class="auto-style8">1mW</td>
 	</tr>
 </table>
-<h4 class="auto-style11">void (*callback)(uint8_t rssi, uint8_t status)</h4>
-<p class="auto-style7">受信完了時のcallback関数を指定します。<br />
+<h4 class="auto-style11">&nbsp;&nbsp;&nbsp; void (*callback)(uint8_t rssi, uint8_t status)</h4>
+<p class="auto-style12">受信完了時のcallback関数を指定します。<br />
 通常はNULLで使用してください。</p>
-<p class="auto-style1">&nbsp;</p>
 <h3 class="auto-style11">戻り値</h3>
 <table style="width: 100%" class="auto-style11">
 	<tr>

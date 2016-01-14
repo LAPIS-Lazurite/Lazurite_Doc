@@ -5,14 +5,16 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>Serial.print_double</title>
 <style type="text/css">
+#contents{
+	width:800px;
+    margin-left:auto;
+    margin-right:auto;
+}
 .auto-style1 {
 	margin-left: 40px;
 }
 .auto-style5 {
 	text-align: center;
-}
-.auto-style6 {
-	margin-top: 0px;
 }
 .auto-style7 {
 	font-weight: normal;
@@ -30,6 +32,7 @@
 	margin-left: 40px;
 	font-family: メイリオ;
 	color: #666666;
+	margin-bottom:40px;
 }
 </style>
 
@@ -50,34 +53,35 @@
 <h1 class="auto-style5">
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style7">Lazurite 
 日本語リファレンス</span></h1>
-<hr class="auto-style6" />
-<h2><span class="auto-style7">Serial.print_double (data, digit)</span><span class="auto-style10"><br class="auto-style8" />
-</span><span class="auto-style7">Serial.println_double(data, digit)</span></h2>
+<hr/>
+<div id="contents">
+<h1 class="auto-style7">Serial.print_double (data, digit)<span class="auto-style10"><br class="auto-style8" />
+</span><span class="auto-style7">Serial.println_double(data, digit)</span></h1>
+<br/>
 <h3 class="auto-style8">詳細</h3>
-<p class="auto-style1"><span class="auto-style8">void Serial.print_double(double data, unsigned char digit);</span><br class="auto-style8" />
+<p class="auto-style11">void Serial.print_double(double data, unsigned char digit);<br class="auto-style8" />
 <span class="auto-style8">void Serial.println_double(double data, unsigned char digit);</span></p>
-<p class="auto-style1">&nbsp;</p>
 <h3 class="auto-style8">仕様</h3>
 <p class="auto-style1">
 <span class="auto-style8">Serial.print_double関数は、浮動小数点 double型データを数値の文字列に変換して送信する関数です。</span><br class="auto-style8" />
 <span class="auto-style8">Serial.println_double関数は、Serial.println_double関数で作成した文字列の最後に改行コードを付与します。</span></p>
-<p class="auto-style1">
-<span class="auto-style8">本関数を実行したら送信するデータをバッファに格納し、送信を開始します。</span><br class="auto-style8" />
-<span class="auto-style8">全データがバッファに格納できたら送信が終わる前に本関数は終了し、バックグラウンドで1バイトずつデータの送信を行います。</span><br class="auto-style8" />
-<span class="auto-style8">バッファがフルになった時は、全データがバッファに格納できるまで待って本関数が終了します。</span><br class="auto-style8" />
+<p class="auto-style11">
+本関数を実行したら送信するデータをバッファに格納し、送信を開始します。<br class="auto-style8" />
+全データがバッファに格納できたら送信が終わる前に本関数は終了し、バックグラウンドで1バイトずつデータの送信を行います。<br class="auto-style8" />
+バッファがフルになった時は、全データがバッファに格納できるまで待って本関数が終了します。<br class="auto-style8" />
 </p>
-<p>&nbsp;</p>
 <h3 class="auto-style7"><strong>パラメータ</strong></h3>
-<h4 class="auto-style7"><strong>double data</strong></h4>
+<h4 class="auto-style7"><strong>&nbsp;&nbsp; double data</strong></h4>
 <p class="auto-style11">文字列に変換する浮動小数点 double型データです。</p>
-<h4 class="auto-style8">unsigned char digit</h4>
+<h4 class="auto-style8">&nbsp;&nbsp;&nbsp; unsigned char digit</h4>
 <p class="auto-style11"><span class="auto-style8">&nbsp;</span>表示する小数点の桁数を指定します。</p>
-<p class="auto-style1">&nbsp;</p>
 <h3 class="auto-style8">戻り値</h3>
 <p class="auto-style11">なし</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-
+<br/>
+<br/>
+</div>
 </body>
 
 </html>

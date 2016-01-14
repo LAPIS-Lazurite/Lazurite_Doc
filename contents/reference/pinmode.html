@@ -5,6 +5,11 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>pinMode</title>
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style1 {
 	margin-left: 40px;
 }
@@ -33,6 +38,7 @@
 	margin-left: 40px;
 	color: #666666;
 	font-family: メイリオ;
+	margin-bottom:30px;
 }
 .auto-style8 {
 	color: #666666;
@@ -42,6 +48,9 @@
 	border: 1px solid #000000;
 	color: #666666;
 	font-family: メイリオ;
+}
+td{
+	padding:5px;
 }
 </style>
 
@@ -63,14 +72,15 @@
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
-<h2 class="auto-style6">pinMode (pin, mode)</h2>
+<div id="contents">
+<h1 class="auto-style6">pinMode (pin, mode)</h1>
+<br/>
 <h3 class="auto-style8">詳細</h3>
 <p class="auto-style7">void pinMode(uint8_t pin, uint8_t mode);</p>
 <h3 class="auto-style8">仕様</h3>
 <p class="auto-style7">端子の入出力を指定するパラメータです.</p>
-<p class="auto-style8">&nbsp;</p>
 <h3 class="auto-style8">パラメータ</h3>
-<h4 class="auto-style8">uint8_t pin</h4>
+<h4 class="auto-style8">&nbsp;&nbsp;&nbsp; uint8_t pin</h4>
 <p class="auto-style7">ピン番号を指定します</p>
 <table class="auto-style2" style="width: 620px">
 	<tr>
@@ -94,7 +104,7 @@
 		青色のLEDにアサインされています.</td>
 	</tr>
 </table>
-<h4 class="auto-style8">uint8_t mode</h4>
+<h4 class="auto-style8">&nbsp;&nbsp;&nbsp; uint8_t mode</h4>
 <p class="auto-style7">入出力を指定します</p>
 <table class="auto-style2" style="width: 620px">
 	<tr>
@@ -129,12 +139,11 @@
 		<span class="auto-style8">&nbsp;(ただし、電源電圧以上の電圧は印加しないでください）</span></td>
 	</tr>
 </table>
-<p class="auto-style1"><span class="auto-style8">+&nbsp;&nbsp;&nbsp; Arduino無く、Lazuriteにはあるパラメータです.</span><br class="auto-style8" />
-<span class="auto-style8">-&nbsp;&nbsp;&nbsp; Arduinoにあって、Lazuriteに無いパラメータです.</span></p>
-<p class="auto-style7">&nbsp;</p>
-<h3 class="auto-style8">戻り値</h3>
+<p class="auto-style1"><span class="auto-style8">+&nbsp;&nbsp;&nbsp; Arduinoに無く、Lazuriteにはあるパラメータです.</span><br class="auto-style8" />
+－&nbsp;&nbsp;&nbsp; <span class="auto-style8">Arduinoにあって、Lazuriteに無いパラメータです.</span></p>
+<br/>
+	<h3 class="auto-style8">戻り値</h3>
 <p class="auto-style7">なし</p>
-<p class="auto-style8">&nbsp;</p>
 <h3 class="auto-style8">サンプル</h3>
 <p class="auto-style7">サンプルプログラムのblue_led.cで使用しています.</p>
 <p>

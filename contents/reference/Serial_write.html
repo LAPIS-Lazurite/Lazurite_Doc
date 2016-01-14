@@ -5,14 +5,16 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>Serial.write</title>
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style1 {
 	margin-left: 40px;
 }
 .auto-style5 {
 	text-align: center;
-}
-.auto-style6 {
-	margin-top: 0px;
 }
 .auto-style7 {
 	color: #666666;
@@ -27,6 +29,12 @@
 	margin-left: 40px;
 	font-family: メイリオ;
 	color: #666666;
+	margin-bottom:40px;
+}
+.auto-style10 {
+	font-family: メイリオ;
+	color: #666666;
+	margin-left:40px;
 }
 </style>
 
@@ -47,29 +55,30 @@
 <h1 class="auto-style5">
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style7">Lazurite 
 日本語リファレンス</span></h1>
-<hr class="auto-style6" />
-<h2 class="auto-style7">Serial.write(data, quantity)</h2>
+<hr/>
+<div id="contents">
+<h1 class="auto-style7">Serial.write(data, quantity)</h1>
+<br/>
 <h3 class="auto-style8">詳細</h3>
 <p class="auto-style9">size_t Serial.write(char* data, size_t quantity);</p>
-<p class="auto-style1">&nbsp;</p>
 <h3 class="auto-style8">仕様</h3>
-<p class="auto-style9">
+<p class="auto-style10">
 Serial.write関数はchar型構造体のデータを、quantityで示すバイト数送信する関数です。</p>
 <p class="auto-style9">
 本関数を実行したら送信するデータをバッファに格納し、送信を開始します。<br />
 </p>
 <h3 class="auto-style8">パラメータ</h3>
-<h4 class="auto-style8">char* data</h4>
+<h4 class="auto-style8">&nbsp;&nbsp;&nbsp; char* data</h4>
 <p class="auto-style9">送信するchar型構造体の先頭ポインタを示します。</p>
-<h4 class="auto-style8">size_t quantity</h4>
+<h4 class="auto-style8">&nbsp;&nbsp;&nbsp; size_t quantity</h4>
 <p class="auto-style9">送信するデータのバイト数を指定します。</p>
-<p class="auto-style1">&nbsp;</p>
 <h3 class="auto-style8">戻り値</h3>
-<p class="auto-style9">送信バッファに格納したバイト数を返します。<br />
-途中で送信バッファがフルになった場合は、そこで処理を中断しバッファに格納できたバイト数を返します。</p>
+<p class="auto-style9">送信バッファに格納したバイト数を返します。途中で送信バッファがフルになった場合は、そこで処理を中断しバッファに格納できたバイト数を返します。</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-
+<br/>
+<br/>
+</div>
 </body>
 
 </html>

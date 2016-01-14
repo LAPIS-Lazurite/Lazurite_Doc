@@ -5,6 +5,11 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>SUBGHz_MSG SubGHz.rxEnable</title>
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style1 {
 	margin-left: 40px;
 }
@@ -29,6 +34,13 @@
 	font-family: メイリオ;
 	color: #666666;
 }
+.auto-style12{
+	font-family: メイリオ;
+	color: #666666;
+	margin-bottom:40px;
+	margin-left:40px;
+}
+
 </style>
 
 <script>
@@ -49,18 +61,18 @@
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style10">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
-<h2 class="auto-style10">SUBGHZ_MSG SubGHz.rxEnable(*callback)</h2>
+<div id="contents" class="auto-style11">
+<h1 class="auto-style10">SUBGHZ_MSG SubGHz.rxEnable(*callback)</h1>
+<br/>
 <h3 class="auto-style11">詳細</h3>
 <p class="auto-style7">SUBGHZ_MSG SubGHz.rxEnable(void (*callback)(uint8_t rssi, 
 int status, uint16_t size));</p>
 <h3 class="auto-style11">仕様</h3>
-<p class="auto-style7">データ受信を有効にするための関数です。<br />
-データ受信を有効のままだと消費電力が小さいsleepモードに入らないので注意してください。</p>
-<p>&nbsp;</p>
+<p class="auto-style7">データ受信を有効にするための関数です。</p>
+	<p class="auto-style12">データ受信を有効のままだと消費電力が小さいsleepモードに入らないので注意してください。</p>
 <h3 class="auto-style11">パラメータ</h3>
-<h4 class="auto-style11">void (*callback)(uint8_t rssi, int status, uint16_t size)</h4>
-<p class="auto-style7">受信時のcallback関数を指定します。通常はNULLで使用してください。</p>
-<p class="auto-style1">&nbsp;</p>
+<h4 class="auto-style11">&nbsp;&nbsp;&nbsp; void (*callback)(uint8_t rssi, int status, uint16_t size)</h4>
+<p class="auto-style12">受信時のcallback関数を指定します。通常はNULLで使用してください。</p>
 <h3>戻り値</h3>
 <table style="width: 100%" class="auto-style7">
 	<tr>
@@ -128,13 +140,15 @@ int status, uint16_t size));</p>
 		<td class="auto-style8">ADDRESSエラー</td>
 	</tr>
 </table>
-<p>&nbsp;</p>
+<br/>
 <h3 class="auto-style11">サンプル</h3>
 <p class="auto-style7">TBD</p>
 <p>
 <TEXTAREA wrap="off" name="empty" style="width: 591px; height: 591px" class="auto-style1"></TEXTAREA></p>
 <p>&nbsp;</p>
-
+<br/>
+<br/>
+</div>
 </body>
 
 </html>

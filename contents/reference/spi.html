@@ -5,6 +5,11 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>SPI</title>
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style1 {
 	margin-left: 40px;
 }
@@ -45,6 +50,10 @@
 	color: #666666;
 	font-family: メイリオ;
 }
+td{
+	padding:0px 5px;
+	border:1px #666666 solid;
+}
 </style>
 
 <script>
@@ -65,7 +74,9 @@
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style7">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
+<div id="contents">
 <h1 class="auto-style7">SPI(Serial Peripheral Interface)</h1>
+<br/>
 <h3 class="auto-style8">概要</h3>
 <p class="auto-style11">SPIは様々なマイコンの周辺ICによってサポートされている同期式シリアル通信の一つです。
 Lazuriteでは、マイコン ML620Q504がマスターとなり、周辺ICはスレーブとして動作します。</p>
@@ -263,9 +274,11 @@ int HAL_SPI_transfer(const unsigned char *wdata, unsigned char *rdata, unsigned 
 	__EI();
 	return HAL_STATUS_OK;
 }
-</TEXTAREA></p>
+</TEXTAREA>
 <p>&nbsp;</p>
-
+<br/>
+<br/>
+</div>
 </body>
 
 </html>

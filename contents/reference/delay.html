@@ -17,6 +17,11 @@
 </script>
 
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style5 {
 	text-align: center;
 }
@@ -32,12 +37,6 @@
 	font-family: メイリオ;
 	color: #666666;
 }
-.auto-style9 {
-	font-family: メイリオ;
-	font-weight: normal;
-	color: #666666;
-	margin-left: 40px;
-}
 .auto-style7 {
 	margin-left: 40px;
 	color: #666666;
@@ -52,19 +51,21 @@
 <img height="40" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
-<h2 class="auto-style8">delay()&nbsp;</h2>
+<div id="contents">
+<h1 class="auto-style6">delay()&nbsp;</h1>
+<br/>
 <h3 class="auto-style6"><strong>詳細</strong></h3>
-<p class="auto-style9">void delay(unsigned long ms)</p>
+<p class="auto-style7">void delay(unsigned long ms)</p>
 <h3 class="auto-style6"><strong>仕様</strong></h3>
 <p class="auto-style7">delay()は指定の時間、プログラムを停止します。時間の単位はミリ秒です。(1秒=1000ミリ秒)</p>
 <p class="auto-style7">delay()の間も外部割込みは有効です。</p>
 <p class="auto-style7">delay()と似た機能で消費電力が低いsleep()があります。sleep()については<a href="sleep.html">こちら</a>参照してください。</p>
-<p class="auto-style8"><strong>パラメータ</strong></p>
-<p class="auto-style8"><strong>unsigned long ms</strong></p>
+<p class="auto-style8"><strong class="auto-style8">パラメータ</strong></p>
+<p class="auto-style8"><strong>&nbsp;&nbsp; unsigned long ms</strong></p>
 <p class="auto-style7">ミリ秒単位で時間を指定します。</p>
-<h3 class="auto-style8">戻り値</h3>
+<h3 class="auto-style6"><strong>戻り値</strong></h3>
 <p class="auto-style7">なし</p>
-<h3 class="auto-style8">サンプル</h3>
+<h3 class="auto-style6"><strong>サンプル</strong></h3>
 <p class="auto-style7">1秒ずつ青色のLEDをON/OFFします。</p>
 <p class="auto-style8">
 <TEXTAREA wrap="off" name="empty" style="width: 559px; height: 321px" class="auto-style1" cols="20" rows="1">
@@ -84,7 +85,7 @@ void loop(void)
 }
 </TEXTAREA></p>
 <p class="auto-style1">&nbsp;</p>
-
+</div>
 </body>
 
 </html>

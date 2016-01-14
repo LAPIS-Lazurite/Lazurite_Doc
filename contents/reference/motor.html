@@ -5,12 +5,20 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>Motor</title>
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;]
+}
 .auto-style1 {
 	margin-left: 40px;
 }
 .auto-style2 {
 	border: 1px solid #000000;
 	margin-left: 40px;
+}
+.auto-style5{
+	text-align:center;
 }
 .auto-style6 {
 	border: 1px solid #000000;
@@ -52,6 +60,9 @@
 	font-family: メイリオ;
 	color: #666666;
 }
+td{
+	padding:5px;
+}
 </style>
 
 <script>
@@ -72,13 +83,16 @@
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style9">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
+<div id="contents">
 <h1 class="auto-style9">モータ制御ライブラリ ※</h1>
+<br/>
 <h3 class="auto-style10">概要</h3>
 <p class="auto-style1"><span class="auto-style10">ML620Q504の多機能タイマー(FTM0～FTM3)を使用し、２種類のモーターを制御するためのライブラリです。</span><br class="auto-style10" />
 <span class="auto-style10">HardwareHBridge、HardwareServo共に1usecの時間精度でパルス幅を制御することができ、また割込み処理などによる影響で信号幅がずれるようなことが無いために、モータ制御に最適な関数です。analogWrite関数も同じ多機能タイマーを使用するため、排他使用となるので注意してください。</span></p>
 <p class="auto-style7">Servo(サーボモータ)用ライブラリ　　HardwareServo</p>
 <p class="auto-style7">H-Bridge(Hブリッジ）用ライブラリ　　HardwareHBridge</p>
 <p class="auto-style11">※本関数はLazurite専用の関数です。</p>
+<br/>
 <p class="auto-style8"><strong>HardwareServo</strong></p>
 <p class="auto-style1"><img height="221" src="hardware_servo.png" width="682" /></p>
 <p class="auto-style11"><strong>HardwareHBridge</strong></p>
@@ -94,11 +108,11 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 6本(FTM0-2を使用)、H-Bridgeモータ1個(FTM3を使用)の様に使用することができます。</p>
 <p>&nbsp;</p>
 <h3 class="auto-style10">関数(HardwareServo)</h3>
-<table class="auto-style2" style="width: 80%">
+<table class="auto-style2" style="width: 90%">
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 504px; height: 18px">
 		<p class="auto-style10">関数</p>
 		</td>
 		<td class="auto-style3" style="width: 673px; height: 18px">
@@ -108,7 +122,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		&nbsp;</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 504px; height: 18px">
 		<p class="auto-style12">
 		<a href="hsv_init.html"target="_blank">hsv.init(num, period)</a></p>
 		</td>
@@ -119,7 +133,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 21px">
 		</td>
-		<td class="auto-style13" style="width: 467px; height: 21px">
+		<td class="auto-style13" style="width: 504px; height: 21px">
 		<p class="auto-style12">
 		<a href="hsv_attach.html"target="_blank">hsv.attach(ch,pin)</a></p>
 		</td>
@@ -130,7 +144,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		&nbsp;</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 504px; height: 18px">
 		<p class="auto-style12">
 		<a href="hsv_detach.html"target="_blank">hsv.detach(pin, level)</a></p>
 		</td>
@@ -141,7 +155,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		&nbsp;</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 504px; height: 18px">
 		<p class="auto-style12">
 		<a href="hsv_start.html"target="_blank">hsv.start()</a></p>
 		</td>
@@ -152,7 +166,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		&nbsp;</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 504px; height: 18px">
 		<p class="auto-style12">
 		<a href="hsv_stop.html"target="_blank">hsv.stop()</a></p>
 		</td>
@@ -163,7 +177,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		&nbsp;</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 504px; height: 18px">
 		<p class="auto-style12">
 		<a href="hsv_close.html"target="_blank">hsv.close()</a></p>
 		</td>
@@ -174,7 +188,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		&nbsp;</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 504px; height: 18px">
 		<p class="auto-style12">
 		<a href="hsv_write.html"target="_blank">hsv.write(ch,time)</a></p>
 		</td>
@@ -185,7 +199,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		&nbsp;</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 504px; height: 18px">
 		<p class="auto-style12">
 		<a href="hsv_update.html"target="_blank">hsv.update()</a></p>
 		</td>
@@ -194,12 +208,13 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		</td>
 	</tr>
 	</table>
+<br/>
 <h3 class="auto-style10">関数(HardwareHBridge)</h3>
-<table class="auto-style2" style="width: 80%">
+<table class="auto-style2" style="width: 90%">
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>関数</p>
 		</td>
 		<td class="auto-style13" style="width: 673px; height: 18px">
@@ -209,7 +224,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		&nbsp;</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>
 		<a href="hhb_init.html"target="_blank"><span class="auto-style12">hhb.init(num, period)</span></a></p>
 		</td>
@@ -220,7 +235,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		&nbsp;</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>
 		<a href="hhb_attach.html"target="_blank"><span class="auto-style12">hhb.attach(ch,pin1,pin2)</span></a></p>
 		</td>
@@ -231,7 +246,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		&nbsp;</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>
 		<a href="hhb_detach.html"target="_blank"><span class="auto-style12">hhb.detach(pin1,pin2,level1,level2)</span></a></p>
 		</td>
@@ -242,7 +257,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		&nbsp;</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>
 		<a href="hhb_start.html"target="_blank"><span class="auto-style12">hhb.start(ch)</span></a></p>
 		</td>
@@ -253,7 +268,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		&nbsp;</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>
 		<a href="hhb_stop.html"target="_blank"><span class="auto-style12">hhb.stop(ch)</span></a></p>
 		</td>
@@ -264,7 +279,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		&nbsp;</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>
 		<a href="hhb_close.html"target="_blank"><span class="auto-style12">hhb.close(ch)</span></a></p>
 		</td>
@@ -275,7 +290,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		&nbsp;</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>
 		<a href="hhb_write.html"target="_blank"><span class="auto-style12">hhb.write(ch,time)</span></a></p>
 		</td>
@@ -286,7 +301,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 	<tr>
 		<td class="auto-style6" style="width: 34px; height: 18px">
 		&nbsp;</td>
-		<td class="auto-style13" style="width: 467px; height: 18px">
+		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>
 		<a href="hhb_update.html"target="_blank"><span class="auto-style12">hhb.update()</span></a></p>
 		</td>
@@ -337,11 +352,10 @@ void motor_update(char val1,char val2, char val3, char val4)
 
 </TEXTAREA></p>
 <p>&nbsp;</p>
-
-
-
-
-
+<br/>
+<br/>
+</div>
+</body>
 
 
 </html>

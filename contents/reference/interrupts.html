@@ -5,6 +5,11 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>interrupts, noInterrupts</title>
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style1 {
 	margin-left: 40px;
 }
@@ -16,15 +21,9 @@
 	font-weight: normal;
 	font-family: メイリオ;
 }
-.auto-style7 {
-	margin-left: 0px;
-}
 .auto-style8 {
 	font-family: メイリオ;
 	color: #666666;
-}
-.auto-style10 {
-	font-weight: normal;
 }
 .auto-style11 {
 	margin-left: 40px;
@@ -50,23 +49,25 @@
 <h1 class="auto-style5">
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
 日本語リファレンス</span></h1>
-<hr class="auto-style7" />
-<h1><span class="auto-style6">interrupts()</span><span class="auto-style10"><br class="auto-style8" />
-</span><span class="auto-style6">noInterrupts()</span></h1>
+<hr/>
+<div id="contents">
+<h1 class="auto-style6">interrupts()<br/>
+noInterrupts()</h1>
+<h3 class="auto-style1">&nbsp;</h3>
 <h3 class="auto-style8">概要</h3>
-<p class="auto-style1"><span class="auto-style8">interrupts()は、マスター割り込みを許可をするための関数です。</span><br class="auto-style8" />
-<span class="auto-style8">noInterrupts()は、マスター割り込みの禁止をするための関数です。</span></p>
+<p class="auto-style11">interrupts()は、マスター割り込みを許可をするための関数です。</p>
+<p class="auto-style11">noInterrupts()は、マスター割り込みの禁止をするための関数です。</p>
 <p class="auto-style11">初期値は割り込み有効になっています。</p>
 <p class="auto-style11">noInterrupts()を実行すると、すべての割り込み機能が停止します。</p>
 <p class="auto-style11">
 メインルーティンと割り込み処理で同じメモリの値を参照する場合など、クリティカルな場合のみ割り込み処理を追加するのが一般的です。</p>
+<br/>
 <h3 class="auto-style8">注意事項</h3>
-<p class="auto-style11">sleep、delay、SubGHz関連の関数、シリアル通信等の機能が損なわれますので注意してください。<br />
-割り込み処理内で本関数を実行すると誤動作しますので注意してください。</p>
-<p class="auto-style1">
-&nbsp;</p>
+<p class="auto-style11">sleep、delay、SubGHz関連の関数、シリアル通信等の機能が損なわれますので注意してください。割り込み処理内で本関数を実行すると誤動作しますので注意してください。</p>
+<br/>
 <h3 class="auto-style8">パラメータ</h3>
 <p class="auto-style11">なし</p>
+<br/>
 <h3 class="auto-style8">戻り値</h3>
 <p class="auto-style11">なし</p>
 <p class="auto-style1">&nbsp;</p>
@@ -74,7 +75,7 @@
 <p class="auto-style1">&nbsp;</p>
 <p class="auto-style1">&nbsp;</p>
 <p>&nbsp;</p>
-
+</div>
 </body>
 
 </html>

@@ -5,6 +5,11 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>データFlash</title>
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style1 {
 	margin-left: 40px;
 }
@@ -12,12 +17,11 @@
 	border: 1px solid #000000;
 	margin-left: 40px;
 }
-.auto-style6 {
-	border: 1px solid #000000;
-	text-align: center;
-}
 .auto-style3 {
 	border: 1px solid #000000;
+}
+.auto-style5{
+	text-align:center;
 }
 .auto-style7 {
 	font-family: メイリオ;
@@ -39,6 +43,8 @@
 }
 .auto-style15 {
 	color: #666666;
+	font-size:medium;
+	font-family: メイリオ;
 }
 .auto-style16 {
 	font-family: メイリオ;
@@ -52,6 +58,17 @@
 	margin-left: 40px;
 	color: #666666;
 	font-family: メイリオ;
+}
+.auto-style19 {
+	border: 1px solid #000000;
+	margin-left: 40px;
+	margin-bottom: 0px;
+}
+td{
+	padding-left:10px;
+}
+table tr{
+	height:0.5em;
 }
 </style>
 
@@ -73,97 +90,94 @@
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style7">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
+<div id="contents">
 <h1 class="auto-style7">データFlash</h1>
+<br/>
 <h3 class="auto-style8">概要</h3>
 <p class="auto-style15">データFlashは、データ用Flashメモリへのデータ書き込み／読み出しを行う関数です。</p>
-<p class="auto-style15">&nbsp;</p>
+<br/>
 <p class="auto-style15">データFlash仕様</p>
-<table class="auto-style2" style="width: 52%">
+<table class="auto-style19" style="width: 58%">
 	<tr>
-		<td class="auto-style10" style="width: 286px; height: 18px">
+		<td class="auto-style10" style="width: 197px; height: 30px;">
 		<p class="auto-style15">項目</p>
 		</td>
-		<td class="auto-style9" style="width: 259px; height: 18px">
+		<td class="auto-style9" style="height: 30px">
 		<p class="auto-style15">単位</p>
 		</td>
 	</tr>
 	<tr>
-		<td class="auto-style10" style="width: 286px; height: 18px">
+		<td class="auto-style10" style="width: 197px">
 		<p class="auto-style15">メモリ容量</p>
 		</td>
-		<td class="auto-style9" style="width: 259px; height: 18px">
+		<td class="auto-style9">
 		<p class="auto-style15">2セクタ x 512ワード x 16bit</p>
 		</td>
 	</tr>
 	<tr>
-		<td class="auto-style10" style="width: 286px; height: 18px">
+		<td class="auto-style10" style="width: 197px">
 		<p class="auto-style15">消去単位</p>
 		</td>
-		<td class="auto-style9" style="width: 259px; height: 18px">
+		<td class="auto-style9">
 		<p class="auto-style15">1セクタ (512ワード)</p>
 		</td>
 	</tr>
 	<tr>
-		<td class="auto-style10" style="width: 286px; height: 22px;">
+		<td class="auto-style10" style="width: 197px">
 		<p class="auto-style15">書込み／読み出し単位</p>
 		</td>
-		<td class="auto-style9" style="width: 259px; height: 22px;">
+		<td class="auto-style9">
 		<p class="auto-style15">1ワード(16bit)</p>
 		</td>
 	</tr>
 	</table>
-<p>&nbsp;</p>
+<br/>
 <h3 class="auto-style8">関数</h3>
-<table class="auto-style2" style="width: 80%">
+<table class="auto-style2" style="width: 90%">
 	<tr>
-		<td class="auto-style6" style="width: 43px; height: 18px">
-		</td>
-		<td class="auto-style17" style="width: 467px; height: 18px">
+		<td class="auto-style17" style="height: 30px; width: 264px">
 		<p class="auto-style8">関数</p>
 		</td>
-		<td class="auto-style3" style="width: 673px; height: 18px">
+		<td class="auto-style3" style="height: 30px">
 		<p class="auto-style8">機能</p>
 		</td>
 	</tr>
 	<tr>
-		<td class="auto-style6" style="width: 43px; height: 18px">
-		&nbsp;</td>
-		<td class="auto-style17" style="width: 467px; height: 18px">
+		<td class="auto-style17" style="width: 264px">
 		<p class="auto-style16">
 		<a href="flash_write.html"target="
 		">Flash.write(sector,address,data);</a></p>
 		</td>
-		<td class="auto-style3" style="width: 673px; height: 18px">
-		<p class="auto-style8">sector, addressが示すアドレスにdataを書き込みます。書き込む前にeraseがされている必要があります。</p>
+		<td class="auto-style3">
+		<p class="auto-style8">sector, addressが示すアドレスにdataを書き込みます。<br />
+		書き込む前にeraseがされている必要があります。</p>
 		</td>
 	</tr>
 	<tr>
-		<td class="auto-style6" style="width: 43px; height: 18px">
-		&nbsp;</td>
-		<td class="auto-style17" style="width: 467px; height: 18px">
+		<td class="auto-style17" style="width: 264px">
 		<p class="auto-style16">
 		<a href="flash_read.html"target="_blank">Flash.read(sector,address);</a></p>
 		</td>
-		<td class="auto-style3" style="width: 673px; height: 18px">
+		<td class="auto-style3">
 		<p class="auto-style8">sector, addressが示すアドレスのデータを読み出します。</p>
 		</td>
 	</tr>
 	<tr>
-		<td class="auto-style6" style="width: 43px; height: 18px">
-		&nbsp;</td>
-		<td class="auto-style17" style="width: 467px; height: 18px">
+		<td class="auto-style17" style="width: 264px">
 		<p class="auto-style16">
 		<a href="flash_erase.html"target="_blank">Flash.erase(sector);</a></p>
 		</td>
-		<td class="auto-style3" style="width: 673px; height: 18px">
+		<td class="auto-style3">
 		<p class="auto-style8">指定されたsectorを消去します。</p>
 		</td>
 	</tr>
 	</table>
 <p class="auto-style18">本関数群はLazurite専用の関数です。</p>
-<p>&nbsp;</p>
+<br/>
+<br/>
+<br/>
+<br/>
 
-
-
-
+</div>
+</body>
 </html>

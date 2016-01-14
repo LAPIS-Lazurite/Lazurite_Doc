@@ -5,6 +5,11 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>Serial.print</title>
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style1 {
 	margin-left: 40px;
 }
@@ -36,6 +41,13 @@
 	color: #666666;
 	font-family: メイリオ;
 }
+.auto-style12 {
+	margin-left: 40px;
+	color: #666666;
+	font-family: メイリオ;
+	font-weight: normal;
+	margin-bottom:40px;
+}
 </style>
 
 <script>
@@ -56,11 +68,13 @@
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
-<h2><span class="auto-style8">Serial.print (char* data)</span><span class="auto-style9"><br class="auto-style7" />
-</span><span class="auto-style8">Serial.println(char* data)</span></h2>
+<div id="contents">
+<h1 class="auto-style8">Serial.print (char* data)<span class="auto-style9"><br class="auto-style7" />
+</span><span class="auto-style8">Serial.println(char* data)</span></h1>
+<br/>
 <h3 class="auto-style10">詳細</h3>
-<p class="auto-style1"><span class="auto-style10">void Serial.print(char* data);</span><br class="auto-style10" />
-<span class="auto-style10">void Serial.println(char* data);</span></p>
+<p class="auto-style12">void Serial.print(char* data);<br class="auto-style10" />
+void Serial.println(char* data);</p>
 <h3 class="auto-style10">仕様</h3>
 <p class="auto-style1">
 <span class="auto-style7">Serial.print関数はシリアル通信で文字列を送信する関数です。</span><br class="auto-style7" />
@@ -70,12 +84,11 @@
 <span class="auto-style10">全データがバッファに格納できたら送信が終わる前に本関数は終了し、バックグラウンドで1バイトずつデータの送信を行います。</span><br class="auto-style10" />
 <span class="auto-style10">バッファがフルになった時は、全データがバッファに格納できるまで待って本関数が終了します。</span><br />
 </p>
-<p class="auto-style11">
+<p class="auto-style12">
 本関数では文字列の最後をNULL(0)コードで認識しているため、構造体のデータやNULL(0)が無い文字列を送信することはできません。</p>
-<p>&nbsp;</p>
 <h3 class="auto-style10">パラメータ</h3>
-<h4 class="auto-style10">char* data</h4>
-<p class="auto-style1"><span class="auto-style10">送信する文字列の先頭ポインタです</span>。</p>
+<h4 class="auto-style10">&nbsp;&nbsp;&nbsp; char* data</h4>
+	<h4 class="auto-style12">送信する文字列の先頭ポインタです。</h4>
 <h3 class="auto-style10">戻り値</h3>
 <p class="auto-style11">なし</p>
 <p>&nbsp;</p>
@@ -100,7 +113,9 @@ void loop(void)
 
 </TEXTAREA></p>
 <p>&nbsp;</p>
-
+<br/>
+<br/>
+</div>
 </body>
 
 </html>

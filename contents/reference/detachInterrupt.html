@@ -17,6 +17,11 @@
 </script>
 
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style5 {
 	text-align: center;
 }
@@ -52,21 +57,25 @@
 <img height="40" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
-<h2 class="auto-style8">detachInterrupt()&nbsp;</h2>
+<div id="contents">
+<h1 class="auto-style6">detachInterrupt()&nbsp;</h1>
+<br/>
 <h3 class="auto-style6"><strong>詳細</strong></h3>
 <p class="auto-style9">void detachInterrupt(unsigned char irqnum)</p>
 <h3 class="auto-style6"><strong>仕様</strong></h3>
 <p class="auto-style7">detachInterrupt()は外部割込みを無効にするための関数です。<br />
 Lazurite Sub-GHzでは 2系統の外部割込みを使用することが出来ます。</p>
-<p class="auto-style8"><strong>パラメータ</strong></p>
-<p class="auto-style8"><strong>unsigned char irqnum</strong></p>
+<p class="auto-style6"><strong>パラメータ</strong></p>
+<p class="auto-style8">&nbsp;&nbsp;&nbsp; <strong>unsigned char irqnum</strong></p>
 <p class="auto-style7">irqnumは無効にする外部割込みの番号を指定します。<br />
 LazuriteSubGHzでは0と1のみ指定することが出来ます。<br />
 0 = PIN2による外部割込みを無効にします。<br />
 1 = PIN3による外部割込みを無効にします。</p>
-<h3 class="auto-style8">戻り値</h3>
+<h3 class="auto-style6"><strong>戻り値</strong></h3>
 <p class="auto-style7">なし</p>
-
+<br/>
+<br/>
+</div>
 </body>
 
 </html>

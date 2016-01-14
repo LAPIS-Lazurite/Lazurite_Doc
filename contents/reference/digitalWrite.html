@@ -5,6 +5,11 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>digitalWrite</title>
 <style type="text/css">
+#contents{
+    width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style1 {
 	margin-left: 40px;
 }
@@ -44,6 +49,9 @@
 .auto-style12 {
 	color: #666666;
 }
+td{
+	padding:0px 10px;
+}
 </style>
 
 <script>
@@ -64,18 +72,20 @@
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
-<h1>&nbsp;<span class="auto-style6">digitalWrite(pin, value)</span></h1>
+<div id="contents">
+<h1><span class="auto-style6">digitalWrite(pin, value)</span></h1>
+<br/>
 <h3 class="auto-style7">詳細</h3>
 <p class="auto-style8">void digitalWrite(uint8_t pin, uint8_t val);</p>
 <h3 class="auto-style7">仕様</h3>
 <p class="auto-style8">端子にHIGHまたはLOWを出力します。</p>
 <p>&nbsp;</p>
 <h3 class="auto-style6"><strong>パラメータ</strong></h3>
-<p class="auto-style7"><strong>uint8_t pin</strong></p>
+<p class="auto-style7"><strong>&nbsp;&nbsp; uint8_t pin</strong></p>
 <p class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ピン番号を指定します</p>
 <table class="auto-style2" style="width: 620px">
 	<tr>
-		<td class="auto-style3" style="width: 158px; height: 20px">
+		<td class="auto-style3" style="width: 122px; height: 20px">
 		<p class="auto-style7">0～13</p>
 		</td>
 		<td class="auto-style3" style="width: 389px; height: 20px">
@@ -83,7 +93,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td class="auto-style3" style="width: 158px">
+		<td class="auto-style3" style="width: 122px">
 		<p class="auto-style7">14～19</p>
 		</td>
 		<td class="auto-style3" style="width: 389px">
@@ -92,7 +102,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td class="auto-style3" style="width: 158px; height: 20px">
+		<td class="auto-style3" style="width: 122px; height: 20px">
 		<p class="auto-style7">25</p>
 		</td>
 		<td class="auto-style3" style="width: 389px; height: 20px">
@@ -100,7 +110,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td class="auto-style3" style="width: 158px; height: 20px">
+		<td class="auto-style3" style="width: 122px; height: 20px">
 		<p class="auto-style7">26</p>
 		</td>
 		<td class="auto-style3" style="width: 389px; height: 20px">
@@ -108,14 +118,14 @@
 		</td>
 	</tr>
 </table>
-<p class="auto-style7"><strong>uint8_t val</strong></p>
+<p class="auto-style7"><strong>&nbsp;&nbsp; uint8_t val</strong></p>
 <p class="auto-style12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 入出力を指定します</p>
 <table class="auto-style2" style="width: 620px">
 	<tr>
 		<td class="auto-style4" style="width: 30px">
 		<p></p>
 		</td>
-		<td class="auto-style10" style="width: 173px">
+		<td class="auto-style10" style="width: 122px">
 		<p class="auto-style12">HIGH</p>
 		</td>
 		<td class="auto-style10" style="width: 547px">
@@ -126,7 +136,7 @@
 		<td class="auto-style4" style="width: 30px">
 		<p></p>
 		</td>
-		<td class="auto-style10" style="width: 173px">
+		<td class="auto-style10" style="width: 122px">
 		<p class="auto-style12">LOW</p>
 		</td>
 		<td class="auto-style10" style="width: 547px">
@@ -134,8 +144,8 @@
 		</td>
 	</tr>
 </table>
-<p><span class="auto-style7">+&nbsp;&nbsp;&nbsp; Arduino無く、Lazuriteにはあるパラメータです.</span><br class="auto-style7" />
-<span class="auto-style7">-&nbsp;&nbsp;&nbsp; Arduinoにあって、Lazuriteに無いパラメータです.</span></p>
+<p><span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +&nbsp;&nbsp;&nbsp;Arduinoに無く、Lazuriteにはあるパラメータです.</span><br class="auto-style7" />
+<span class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp; Arduinoにあって、Lazuriteに無いパラメータです.</span></p>
 <p class="auto-style1">&nbsp;</p>
 <h3 class="auto-style12"><strong class="auto-style7">戻り値</strong></h3>
 <p class="auto-style8">なし</p>
@@ -160,7 +170,10 @@ void loop(void)
 }
 </TEXTAREA></p>
 <p>&nbsp;</p>
-
+</div>
+<br/>
+<br/>
+<br/>
 </body>
 
 </html>

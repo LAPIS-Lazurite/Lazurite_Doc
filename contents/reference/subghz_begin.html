@@ -5,6 +5,11 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>SUBGHZ_MSG SubGHz.begin</title>
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style1 {
 	margin-left: 40px;
 }
@@ -34,6 +39,15 @@
 	font-family: メイリオ;
 	color: #666666;
 }
+.auto-style13{
+	font-family: メイリオ;
+	color: #666666;
+    margin-bottom:40px;
+    margin-left:40px;
+}
+td{
+	padding:0px 5px;
+}
 </style>
 
 <script>
@@ -54,22 +68,21 @@
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style10">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
+<div id="contents">
 <h2 class="auto-style11">SUBGHZ_MSG SubGHz.begin(ch, panid, rate, txPower); 
 </h2>
+<br/>
 <h3 class="auto-style12">詳細</h3>
-<p class="auto-style7">SUBGHZ_MSG SubGHz.begin(uint8_t ch, uint16_t panid, 
+<p class="auto-style13">SUBGHZ_MSG SubGHz.begin(uint8_t ch, uint16_t panid, 
 SUBGHZ_RATE rate, SUBGHZ_POWER txPower);</p>
 <h3 class="auto-style12">仕様</h3>
-<p class="auto-style7">SubGHzのモジュールの初期設定を行う関数です。init関数後、またはclose関数後に実行してください。</p>
-<p>&nbsp;</p>
+<p class="auto-style13">SubGHzのモジュールの初期設定を行う関数です。使用するチャンネル、自機のPANID、ビットレート、出力パワーの設定を行います。init関数後、またはclose関数後に実行してください。</p>
 <h3 class="auto-style12">パラメータ</h3>
-<h4 class="auto-style12">uint8_t ch</h4>
+<h4 class="auto-style12">&nbsp;&nbsp;&nbsp; uint8_t ch</h4>
 <p class="auto-style7">使用する周波数を設定します。</p>
-<p class="auto-style1">&nbsp;</p>
-<h4 class="auto-style12">uint16_t panid</h4>
+<h4 class="auto-style12">&nbsp;&nbsp;&nbsp; uint16_t panid</h4>
 <p class="auto-style7">自機のPANIDを設定します。PANIDは、0x0000 ～ 0xFFFEまで任意に指定することができます。<br />
 0xFFFFはグローバルPANIDとなっており、PANIDを無効化するために使用します。</p>
-<p class="auto-style1">&nbsp;</p>
 <h4 class="auto-style12">SUBGHZ_RATE rate</h4>
 <p class="auto-style7">ビットレートを設定します。</p>
 <p class="auto-style7">ビットレートは次の2種類を指定することができます。</p>

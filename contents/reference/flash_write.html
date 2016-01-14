@@ -5,6 +5,11 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>Flash.write</title>
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style1 {
 	margin-left: 40px;
 }
@@ -46,29 +51,31 @@
 <img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style8">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
-<h2>&nbsp;<span class="auto-style8">Flash.write(sector, address, data); </span> 
-</h2>
+<div id="contents">
+<h1 class="auto-style8">Flash.write(sector, address, data);
+</h1>
+<br/>
 <h3 class="auto-style9">詳細</h3>
 <p class="auto-style7">viod Flash.write(unsigned char sector, unsigned short 
 address, unsigned short data);</p>
 <h3 class="auto-style9">仕様</h3>
-<p class="auto-style7">データFlashのsector, addressが示すアドレスにデータを書き込みます。</p>
-<p>&nbsp;</p>
+<p class="auto-style7">データFlashのsector, addressが示すアドレスにデータを書き込みます。書き込む前にeraseがされている必要があります。</p>
+<br/>
 <h3 class="auto-style9">パラメータ</h3>
-<h4 class="auto-style9">unsigned char sector</h4>
+<h4 class="auto-style9">&nbsp;&nbsp;&nbsp; unsigned char sector</h4>
 <p class="auto-style7">書込みするセクターを指定します。</p>
 <p class="auto-style7">0か1を指定してください。</p>
-<p class="auto-style1">&nbsp;</p>
-<h4 class="auto-style9">unsigned short address</h4>
+<br/>
+<h4 class="auto-style9">&nbsp;&nbsp;&nbsp; unsigned short address</h4>
 <p class="auto-style7">データを書込みするアドレスを指定します。0～1023(0x0000～0x03FF)を指定してください。</p>
-<p class="auto-style1">&nbsp;</p>
-<h4 class="auto-style9">unsigned short data</h4>
+<br/>
+<h4 class="auto-style9">&nbsp;&nbsp;&nbsp; unsigned short data</h4>
 <p class="auto-style7">書き込むデータを指定します。</p>
 <h3 class="auto-style9">戻り値</h3>
 <p class="auto-style7">なし</p>
 <p>&nbsp;</p>
 <h3 class="auto-style9">サンプル</h3>
-<p class="auto-style1">サンプルプログラムのDa<span class="auto-style7">t</span>aflash_test.cです。</p>
+<p class="auto-style7">サンプルプログラムのDataflash_test.cです。</p>
 <p class="auto-style7">PCから指定したセクター(s)、アドレス(a)にデータ(d)を書込むテスト用プログラムです。</p>
 <p class="auto-style7">書込み:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 w,(s),(a),(d)⏎<br />
@@ -271,7 +278,7 @@ void loop(void)
 
 </TEXTAREA></p>
 <p>&nbsp;</p>
-
+</div>
 </body>
 
 </html>

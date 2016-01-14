@@ -17,6 +17,11 @@
 </script>
 
 <style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
 .auto-style5 {
 	text-align: center;
 }
@@ -52,32 +57,34 @@
 <img height="40" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
 日本語リファレンス</span></h1>
 <hr />
-<h2 class="auto-style8">attachInterrupt()&nbsp;</h2>
+<div id="contents">
+<h1 class="auto-style6">attachInterrupt()</h1>
+<br/>
 <h3 class="auto-style6"><strong>詳細</strong></h3>
 <p class="auto-style9">void attachInterrupt(unsigned char irqnum, void 
 (*func)(void), int mode)</p>
 <h3 class="auto-style6"><strong>仕様</strong></h3>
 <p class="auto-style7">attachInterrpt()は外部割込みを有効にするための関数です。<br />
 Lazurite Sub-GHzでは 2系統の外部割込みを使用することが出来ます。</p>
-<p class="auto-style8"><strong>パラメータ</strong></p>
-<p class="auto-style8"><strong>unsigned char irqnum</strong></p>
+<h3 class="auto-style6"><strong>パラメータ</strong></h3>
+<p class="auto-style8"><strong>&nbsp; unsigned char irqnum</strong></p>
 <p class="auto-style7">irqnumは使用する外部割込みの番号を指定します。<br />
 LazuriteSubGHzでは0と1のみ指定することが出来ます。<br />
 0 = PIN2を外部割込み端子として使用します。<br />
 1 = PIN3を外部割込み端子として使用します。</p>
-<p class="auto-style8"><strong>void (*func)(void)</strong></p>
+<p class="auto-style8"><strong>&nbsp; void (*func)(void)</strong></p>
 <p class="auto-style7">割り込みが発生したときにcallする関数を指定します。<br />
 戻り値なし、変数無しの関数のみ指定することが出来ます。</p>
-<p class="auto-style8">&nbsp;<strong>int mode</strong></p>
+<p class="auto-style8">&nbsp;<strong>&nbsp; int mode</strong></p>
 <p class="auto-style7">割り込みを発生させるためのモードを指定します。<br />
 指定可能なモードは次の通りです。<br />
 LOW: ローレベルのときに割り込みが発生します。<br />
 RISING:&nbsp; 信号の立ち上がりエッジで割り込みが発生します。<br />
 FALLING: 信号の立下りエッジで割込みが発生します。<br />
 CHANGE: 信号が変化したときに割り込みが発生します。</p>
-<h3 class="auto-style8">戻り値</h3>
+<h3 class="auto-style6"><strong>戻り値</strong></h3>
 <p class="auto-style7">なし</p>
-<h3 class="auto-style8">サンプル</h3>
+<h3 class="auto-style6"><strong>サンプル</strong></h3>
 <p class="auto-style7">PIN2の信号が変化すると割り込みが発生し、LEDの状態が変化します。</p>
 <p class="auto-style8">
 <TEXTAREA wrap="off" name="empty" style="width: 559px; height: 321px" class="auto-style1" cols="20" rows="1">unsigned char pin = 15;
@@ -101,7 +108,7 @@ void blink() {
 }
 </TEXTAREA></p>
 <p class="auto-style1">&nbsp;</p>
-
+</div>
 </body>
 
 </html>
