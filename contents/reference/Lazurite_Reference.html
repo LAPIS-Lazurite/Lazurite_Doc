@@ -49,10 +49,6 @@ td{
 .auto-style12 {
 	color: #006CD8;
 }
-.auto-style13{
-	font-size:medium;
-	
-}
 .auto-style17 {
 	color: #006CD8;
 	font-size: medium;
@@ -91,6 +87,9 @@ table.dataflash{
 }
 .auto-style25 {
 	text-decoration: none;
+}
+.auto-style26 {
+	font-size: small;
 }
 </style>
 
@@ -196,9 +195,10 @@ table.dataflash{
 			<ul>
 		 <li>- <a href="millis.html" class="auto-style12"target="_blank">millis()</a></li>
 		 <li>- <a href="micros.html" class="auto-style12"target="_blank">micros()</a>※</li>
-		 <li>- <a href="delay.html" class="auto-style12"target="_blank">delay()</a></li>
-		 <li>- <a href="sleep.html" class="auto-style12"target="_blank">sleep()</a> ※</li>
-		 <li>- <a href="delayMicroseconds.html" class="auto-style12"target="_blank">delayMicroseconds()</a></li>
+		 <li>- <a href="delay.html" class="auto-style12"target="_blank">delay(ms)</a></li>
+		 <li>- <a href="sleep.html" class="auto-style12"target="_blank">sleep(ms)</a> ※</li>
+		 <li>- <a href="delayMicroseconds.html" class="auto-style12"target="_blank">delayMicroseconds(us)</a></li>
+				<li>- <a href="wait_event.html">wait_event(event)</a></li>
 		 </ul>
 		 <br/>
 			<h2>Math</h2>
@@ -313,7 +313,15 @@ table.dataflash{
 		<a href="hsv_close.html"target="_blank">hsv.close()</a> <br />
 		<a href="hsv_write.html"target="_blank">hsv.write(ch,time)</a><br />
         <a href="hsv_update.html"target="_blank">hsv.update()</a>				
-	</td>
+	<br />
+		<br />
+		<h2>タイマー割込み用ライブラリ(MsTimer2)</h2>
+		<span class="auto-style26">ミリ秒</span><span class="auto-style21">(msec)単位でタイマー割込みを発生させることができるタイマー割込み用ライブラリです。<br />
+		使用するためには、MsTimer2のライブラリを有効にしてください。</span><br />
+		<br />
+		<a href="timer2_set.html">timer2.set(ms,callback)</a><br />
+		<a href="timer2_start.html">timer2.start()</a><br />
+		<a href="timer2_stop.html">timer2.stop()</a></td>
 </table>
 
 <p>&nbsp;</p>

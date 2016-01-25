@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>timer2.set</title>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style6 {
+	font-family: メイリオ;
+	font-weight: normal;
+	color: #666666;
+}
+.auto-style8 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style7 {
+	margin-left: 40px;
+	color: #666666;
+	font-family: メイリオ;
+}
+</style>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="40" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<div id="contents">
+<h1 class="auto-style6">timer2.set(ms, callback)&nbsp;</h1>
+<br/>
+<h3 class="auto-style6"><strong>詳細</strong></h3>
+<p class="auto-style7">void timer2.set(unsigned long ms, void (*callback)(void))</p>
+<h3 class="auto-style6"><strong>仕様</strong></h3>
+<p class="auto-style7">
+timer2.set()関数は、ミリ秒単位の割り込みを発生させるための時間、および割込み発生時のcallback関数を指定するための関数です。</p>
+	<p class="auto-style7">ML620Q504のTM1,TM2を使用し、16bitタイマーとして動作します。</p>
+	<p class="auto-style7">
+	callback関数内でsleepやSubGHz関連の関数を実行するとその他の割り込み処理が行われなくなりますので、それらはloop()関数内で実行するようにしてください。</p>
+<p class="auto-style8"><strong class="auto-style8">パラメータ</strong></p>
+<p class="auto-style8"><strong>&nbsp;&nbsp; unsigned long ms</strong></p>
+<p class="auto-style7">ミリ秒単位で時間を指定します。</p>
+<p class="auto-style8"><strong>&nbsp; void (*callback)(void)</strong></p>
+<p class="auto-style7">割込み発生した時にcallbackする関数を指定します。</p>
+<h3 class="auto-style6"><strong>戻り値</strong></h3>
+<p class="auto-style7">なし</p>
+<h3 class="auto-style6"><strong>サンプル</strong></h3>
+<p class="auto-style7">10秒に1回、920MHz無線で"Welcome 
+Sub-GHz"のテキストメッセージを送信するサンプルプログラムです。10000ms(10秒)に1回タイマー割込みを発生させ、そのcallback()関数内でeventというflagを用いてwait_eventから次のプログラムに進むためのトリガーを発生させています。</p>
+<p class="auto-style8">
+<TEXTAREA wrap="off" name="empty" style="width: 719px; height: 638px" class="auto-style1">#include "Welcome_SubGHz2_ide.h"		// Additional Header
+
+
+#define LED 26						// pin number of Blue LED
+#define SUBGHZ_CH		36			// channel number (frequency)
+#define SUBGHZ_PANID	0xABCD		// panid
+#define HOST_ADDRESS	0x5FAC		// distination address
+
+unsigned char send_data[] = {"Welcome to Lazurite Sub-GHz\r\n"};
+
+bool event=false;
+
+void callback(void)
+{
+	event = true;
+}
+
+void setup(void)
+{
+	SubGHz.init();					// initializing Sub-GHz
+	
+	pinMode(LED,OUTPUT);			// setting of LED
+	digitalWrite(LED,HIGH);			// setting of LED
+	
+	timer2.set(10000L,callback);
+	timer2.start();
+	
+}
+
+void loop(void)
+{
+	
+	wait_event(&event);
+	
+	// Initializing
+	SubGHz.begin(SUBGHZ_CH, SUBGHZ_PANID,  SUBGHZ_100KBPS, SUBGHZ_PWR_20MW);		// start Sub-GHz
+	
+	// preparing data
+	digitalWrite(LED,LOW);														// LED ON
+	SubGHz.send(SUBGHZ_PANID, HOST_ADDRESS, &send_data, sizeof(send_data),NULL);// send data
+	digitalWrite(LED,HIGH);														// LED off
+	
+	// close
+	SubGHz.close();																// Sub-GHz module sets into power down mode.
+	
+	return;
+}
+
+</TEXTAREA></p>
+<p class="auto-style1">&nbsp;</p>
+</div>
+</body>
+
+</html>
