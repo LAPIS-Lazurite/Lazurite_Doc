@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="ja" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>About LazuriteGraph</title>
+<style type="text/css">
+body{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+h2
+	{margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:10.5pt;
+	font-family:"Arial","sans-serif";
+	font-weight:normal;
+	margin-left: 0mm;
+	margin-right: 0mm;
+	margin-top: 0mm;
+}
+.auto-style1 {
+	vertical-align: middle;
+}
+.auto-style2 {
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family: メイリオ;
+	font-weight: normal;
+	color: #666666;
+}
+.auto-style5 {
+	font-family: メイリオ;
+	color: #666666;
+}
+
+.auto-style11 {
+	margin-left: 40px;
+}
+.auto-style15 {
+	text-align: left;
+}
+
+.auto-style16 {
+	margin-left: 80px;
+}
+
+.auto-style17 {
+	vertical-align: super;
+}
+.auto-style18 {
+	vertical-align: top;
+}
+.auto-style19 {
+	border-style: solid;
+	border-width: 1px;
+}
+.auto-style21 {
+	border-width: 0px;
+	margin-left: 80px;
+}
+
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+
+<body style="width: 1187px; margin-left: 0px; margin-right: 0px">
+
+<h1>
+<img height="45" src="../Lazurite_logo.png" width="197" class="auto-style1" /> 
+<span class="auto-style2">LazuriteGraphの技術情報</span></h1>
+<p class="auto-style5">概要</p>
+<ol>
+	<li class="auto-style5"><a href="#1._グラフ表示をするためのデータフォーマット">グラフ表示をするためのデータフォーマット</a></li>
+	<li class="auto-style5"><a href="#2._設定画面">設定画面</a></li>
+	<li class="auto-style5"><a href="#3._ソースコード">ソースコード</a></li>
+</ol>
+<hr class="auto-style15" />
+<h1><a name="1._グラフ表示をするためのデータフォーマット">1. グラフ表示をするためのデータフォーマット</a></h1>
+<p class="auto-style11">LazuriteGraphは特定の書式で受信したデータをグラフ表示するソフトウエアです。</p>
+<p class="auto-style11">書式は次の通り</p>
+<p class="auto-style16">STX,data[0],data[1],data[2]..... ,data[n],ENX</p>
+<p class="auto-style11">条件：</p>
+<p class="auto-style16">1. STXで始まること<br />
+2. カンマ区切りの数値文字列でデータを送信すること<br />
+3. 表示に必要なデータの数がそろっていること<br />
+4. 一回に表示するデータは改行で終わること<br />
+5. 改行前の最後の文字列はETXであること</p>
+<p class="auto-style11">サンプル:<br />
+&nbsp;&nbsp; これらの条件を満たすシリアル出力の結果はこのような文字列となります。</p>
+<p class="auto-style16">
+<img alt="" height="354" src="rx_sample.png" width="826" /></p>
+<p class="auto-style11">&nbsp;</p>
+<h1><a name="2._設定画面">2. 設定画面</a></h1>
+<p class="auto-style11">
+<img alt="" class="auto-style18" height="491" src="setting.png" width="555" /><img alt="" class="auto-style17" height="560" src="graphtool.png" width="547" /></p>
+<p class="auto-style11">設定画面：</p>
+<table class="auto-style21" style="width: 67%">
+	<tr>
+		<td class="auto-style19">Graph Title</td>
+		<td class="auto-style19">グラフのタイトルを設定します。</td>
+	</tr>
+	<tr>
+		<td class="auto-style19">Enable</td>
+		<td class="auto-style19">グラフの表示可否を設定します。最大で4つのグラフまで表示することができます。</td>
+	</tr>
+	<tr>
+		<td class="auto-style19">Number of line</td>
+		<td class="auto-style19">
+		1つのグラフに表示する軸の数を指定します。たとえば、3軸加速度などの場合は3に、温度のように1つのデータしかないときは1にしてください。</td>
+	</tr>
+	<tr>
+		<td class="auto-style19">Y Axis Label</td>
+		<td class="auto-style19">各グラフのY軸のラベルを設定します。</td>
+	</tr>
+	<tr>
+		<td class="auto-style19">COMタブ</td>
+		<td class="auto-style19">現状はCOMポートのみ対応しています。</td>
+	</tr>
+	<tr>
+		<td class="auto-style19">SubGHzタブ</td>
+		<td class="auto-style19">Windows版は非対応です。Linux版では使用できます。</td>
+	</tr>
+	<tr>
+		<td class="auto-style19">Com port</td>
+		<td class="auto-style19">Lazuriteが接続されているCOMポートを指定してください。</td>
+	</tr>
+	<tr>
+		<td class="auto-style19">Baud rate</td>
+		<td class="auto-style19">シリアルのボーレート(通信速度)を指定してください。</td>
+	</tr>
+</table>
+<p class="auto-style11">&nbsp;</p>
+<h1><a name="3._ソースコード">3. ソースコード</a></h1>
+<p class="auto-style11">ソースコードは<a href="https://github.com/LAPIS-Lazurite/LazuriteGraph">こちら</a>からダウンロード可能です。</p>
+<p class="auto-style11">&nbsp;</p>
+
+</body>
+
+</html>

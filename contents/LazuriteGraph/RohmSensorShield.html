@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>無題 1</title>
+<style type="text/css">
+.auto-style1 {
+	vertical-align: middle;
+}
+.auto-style2 {
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family: メイリオ;
+	font-weight: normal;
+	color: #666666;
+}
+.auto-style5 {
+	font-family: メイリオ;
+	color: #666666;
+}
+
+.auto-style11 {
+	margin-left: 40px;
+}
+.auto-style12 {
+	border-width: 0px;
+	margin-left: 40px;
+}
+.auto-style13 {
+	border-style: solid;
+	border-width: 1px;
+}
+
+.auto-style14 {
+	margin-left: 40px;
+	color: #FF0000;
+}
+</style>
+</head>
+
+<body style="width: 1156px">
+
+<h1>
+<img height="45" src="../Lazurite_logo.png" width="197" class="auto-style1" /> 
+<span class="auto-style2">ロームセンサーシールドの使用方法</span></h1>
+<p class="auto-style5">概要</p>
+<ol>
+	<li class="auto-style5">LazuriteIDEの更新</li>
+	<li class="auto-style5">センサーモジュールの組み立て</li>
+	<li class="auto-style5">ソフトウエアの書き込みを行う</li>
+</ol>
+<hr />
+<h1>1. LazuriteIDEの更新</h1>
+<p class="auto-style11">最新のLazuriteIDEをダウンロードし、インストールしてください。<br />
+ロームセンサーシールドのライブラリが更新されています。</p>
+<p class="auto-style11">&nbsp;</p>
+<h1>2. センサーモジュールの組み立て</h1>
+<p class="auto-style11">センサーシールドに各センサーが搭載された小型のセンサーモジュールを挿入して使用します。使用するセンサーによって、電圧や挿入場所を変更する必要がありますので注意してください。詳細は「2-2. 
+センサーモジュールの外観とセンサーの種類」をご確認ください。</p>
+<p class="auto-style11">&nbsp;</p>
+<p class="auto-style11">センサーシールドの外観と挿入位置</p>
+<p class="auto-style11">
+<img alt="センサーシールド" height="507" longdesc="挿入場所の番号" src="sensor/shield_block.png" width="695" /></p>
+<p class="auto-style14">
+注意： 5Vで使用すると無線モジュールとの併用はできませんので注意してください。</p>
+<p class="auto-style11">&nbsp;</p>
+<table class="auto-style12">
+	<tr>
+		<td class="auto-style13" style="width: 127px">センサーシールド</td>
+		<td class="auto-style13" style="width: 117px">センサー型番</td>
+		<td class="auto-style13" style="width: 143px">センサーの種類</td>
+		<td class="auto-style13" style="width: 356px">参考資料</td>
+		<td class="auto-style13" style="width: 151px">サンプルプログラム<br />
+		グラフ設定ファイル</td>
+		<td class="auto-style13" style="width: 95px">挿入場所</td>
+		<td class="auto-style13" style="width: 89px">⑤電圧設定</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="width: 127px">
+		<img alt="" height="129" src="sensor/bd1020.png" width="133" /></td>
+		<td class="auto-style13" style="width: 117px">
+		<a href="http://www.rohm.co.jp/web/japan/products/-/product/BD1020HFV">BD1020HFV</a></td>
+		<td class="auto-style13" style="width: 143px">温度センサー</td>
+		<td class="auto-style13" style="width: 356px">基板の温度を測定します。<br />
+		センサーシールドには4つ端子がありますが、モジュールには3つしか端子がありません。右に寄せて配置してください。<br />
+		<img alt="" height="294" src="sensor/position.png" width="307" /><br />
+		・Lazuriteの電圧設定は5Vにしてください。<br />
+		・920MHz無線モジュールは接続しないでください。<br />
+		・LazuriteのAREFとIOREF端子をショートして使用してください。</td>
+		<td class="auto-style13" style="width: 151px">BD1020_serial</td>
+		<td class="auto-style13" style="width: 95px">②</td>
+		<td class="auto-style13" style="width: 89px">3V, 5V</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="width: 127px">
+		<img alt="" height="127" src="sensor/bd7411.png" width="129" /></td>
+		<td class="auto-style13" style="width: 117px">BD7411</td>
+		<td class="auto-style13" style="width: 143px">ホールセンサー</td>
+		<td class="auto-style13" style="width: 356px">
+		磁気が近づくと0を出力し、磁気がないと1を出力します。<br />
+		ドアや蓋などに磁石を搭載しておくことで、開閉を検出ことができます。<br />
+		センサーシールドには4つ端子がありますが、モジュールには3つしか端子がありません。右に寄せて配置してください。<br />
+		<img alt="" height="294" src="sensor/position.png" width="307" /><br />
+		・Lazuriteも5Vの設定にしてください。<br />
+		・920MHz無線モジュールは接続しないでください。</td>
+		<td class="auto-style13" style="width: 151px">BD7411_serial</td>
+		<td class="auto-style13" style="width: 95px">②</td>
+		<td class="auto-style13" style="width: 89px">5V</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="width: 127px">
+		<img alt="" height="122" src="sensor/bh1745.png" width="127" /></td>
+		<td class="auto-style13" style="width: 117px">BH1745</td>
+		<td class="auto-style13" style="width: 143px">カラーセンサー<br />
+		(R、G、B、クリア)</td>
+		<td class="auto-style13" style="width: 356px">
+		光の三原色であるRGB（赤、青、緑)を検出することができるセンサーです。</td>
+		<td class="auto-style13" style="width: 151px">BH1745_serial</td>
+		<td class="auto-style13" style="width: 95px">①</td>
+		<td class="auto-style13" style="width: 89px">3V</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="height: 22px; width: 127px"><br />
+		<img alt="" height="128" src="sensor/BM1383.png" width="131" /></td>
+		<td class="auto-style13" style="height: 22px; width: 117px">BM1383</td>
+		<td class="auto-style13" style="height: 22px; width: 143px">気圧センサー<br />
+		(温度、気圧)</td>
+		<td class="auto-style13" style="height: 22px; width: 356px">
+		気圧と温度を検出することができるセンサーです。気圧は、高いところが値が小さくなり、低いと値が大きくなります。数10cmのレベルを検出することができるため、高さを推測することも可能です。<br />
+		気圧の値は大気圧をはじめとする環境によって変化するため、相対値で計算する必要があります。</td>
+		<td class="auto-style13" style="height: 22px; width: 151px;">
+		BM1383_serial</td>
+		<td class="auto-style13" style="height: 22px; width: 95px;">①</td>
+		<td class="auto-style13" style="height: 22px; width: 89px;">1.8V<br />
+		3V</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="width: 127px">
+		<img alt="" height="128" src="sensor/bm1422.png" width="129" /></td>
+		<td class="auto-style13" style="width: 117px">BM1422</td>
+		<td class="auto-style13" style="width: 143px">&nbsp;3軸　地磁気センサー</td>
+		<td class="auto-style13" style="width: 356px">
+		地磁気を検出することができるセンサーです。東西南北等の方角を得ることができます。<br />
+		近くにモーター等の磁気があると値がずれるので注意してください。</td>
+		<td class="auto-style13" style="width: 151px">BM1422_serial</td>
+		<td class="auto-style13" style="width: 95px">①</td>
+		<td class="auto-style13" style="width: 89px">1.8V</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="width: 127px">
+		<img alt="" height="134" src="sensor/combo.png" width="134" /></td>
+		<td class="auto-style13" style="width: 117px">10軸コンボモジュール<br />
+		(現段階では未発売です)</td>
+		<td class="auto-style13" style="width: 143px">3軸 加速度 <br />
+		3軸 ジャイロ<br />
+		3軸 地磁気<br />
+		1軸 気圧<br />
+		合計10軸</td>
+		<td class="auto-style13" style="width: 356px">
+		加速度とジャイロ(KXG03)、地磁気(BM1422)、気圧(BM1383)を搭載したセンサーモジュールです。</td>
+		<td class="auto-style13" style="width: 151px">Axis10_serial</td>
+		<td class="auto-style13" style="width: 95px">①</td>
+		<td class="auto-style13" style="width: 89px">3V</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="width: 127px">
+		<img alt="" height="129" src="sensor/kx022.png" width="135" /></td>
+		<td class="auto-style13" style="width: 117px">KX022</td>
+		<td class="auto-style13" style="width: 143px">3軸 加速度</td>
+		<td class="auto-style13" style="width: 356px">加速度を測定します。<br />
+		加速度を静止させておくと重力の向きを検出することができます。<br />
+		加速度センサーを動かすと、その動きに応じた加速度が発生するためにセンサーがどの方向に動いたかを検出することができます。<br />
+		一定の速度で動作していると加速度は発生しません。</td>
+		<td class="auto-style13" style="width: 151px">KX022_serial</td>
+		<td class="auto-style13" style="width: 95px">①</td>
+		<td class="auto-style13" style="width: 89px">1.8V<br />
+		3V</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="width: 127px">
+		<img alt="" height="135" src="sensor/kxg03.png" width="134" /></td>
+		<td class="auto-style13" style="width: 117px">KXG03<br />
+		(現段階では未発売です)</td>
+		<td class="auto-style13" style="width: 143px">3軸 加速度<br />
+		3軸 角速度(ジャイロ)</td>
+		<td class="auto-style13" style="width: 356px">加速度と角速度(ジャイロ)の測定が可能です。<br />
+		</td>
+		<td class="auto-style13" style="width: 151px">KXG03_serial</td>
+		<td class="auto-style13" style="width: 95px">①</td>
+		<td class="auto-style13" style="width: 89px">3V</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="width: 127px">
+		<img alt="" height="126" src="sensor/ml8511.png" width="136" /></td>
+		<td class="auto-style13" style="width: 117px">ML8511</td>
+		<td class="auto-style13" style="width: 143px">UVセンサー</td>
+		<td class="auto-style13" style="width: 356px">
+		・センサーについては、<a href="http://www.lapis-semi.com/jp/semicon/sensor/ml8511.html">紫外線 
+		(UV) センサ&nbsp;ML8511A</a>を参照してください。<br />
+		・Lazuriteの電圧設定は5Vにしてください。<br />
+		・920MHz無線モジュールは接続しないでください。<br />
+		・LazuriteのAREFとIOREF端子をショートして使用してください。</td>
+		<td class="auto-style13" style="width: 151px">ML8511_serial</td>
+		<td class="auto-style13" style="width: 95px">②</td>
+		<td class="auto-style13" style="width: 89px">3V</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" style="width: 127px">
+		<img alt="" height="133" src="sensor/rpr052.png" width="132" /></td>
+		<td class="auto-style13" style="width: 117px">RPR-0521</td>
+		<td class="auto-style13" style="width: 143px">照度<br />
+		近接</td>
+		<td class="auto-style13" style="width: 356px">照度は明るさを測定するセンサーです。<br />
+		<br />
+		近接センサーはセンサーの前に物体が来たことを検出することができます。検出可能な距離は数センチの範囲です。近接センサーの代表的なアプリケーションはスマートフォンで通話時に画面操作を無効にするのに利用されており、耳が近づいたことを検出するセンサーに</td>
+		<td class="auto-style13" style="width: 151px">RPR0521_serial</td>
+		<td class="auto-style13" style="width: 95px">①</td>
+		<td class="auto-style13" style="width: 89px">3V</td>
+	</tr>
+	</table>
+<h1>3. ソフトウエアの書き込みを行う</h1>
+<h2>3-1.LazuriteIDEを起動し、搭載したセンサーモジュールのサンプルプログラムを選択してください。</h2>
+<p class="auto-style11">ここでは、照度／近接センサー RPR0521_graphをセンサーシールドにさした例で説明します。</p>
+<p class="auto-style11"><img height="695" src="SampleProgram.png" width="734" />&nbsp;</p>
+<p>&nbsp;</p>
+<h2>3-2. COMポートの設定を行います。</h2>
+<p class="auto-style11"><img alt="" height="695" src="com_setting.png" width="734" /></p>
+<h2>3-3. マイコンボードに転送のボタンを押してプログラムの書き込みを行います。</h2>
+<p class="auto-style11">プログラムの書き込みが終了するまで待ってください。</p>
+<p class="auto-style11"><img alt="" height="695" src="write.png" width="734" /></p>
+<p></p>
+<h2>3-4. LazuriteGraphを起動し、OPENをクリックします。</h2>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img alt="" height="480" src="graph_open.png" width="600" /></p>
+<p>&nbsp;</p>
+<h2>3-5. LazuriteIDE\settingのフォルダに移動し、「RPR0521.graph」を選択します。</h2>
+<p class="auto-style11">
+<img alt="" height="394" src="sel_rpr0521.png" width="664" /></p>
+<p>&nbsp;</p>
+<h2>3-6. COMポートの確認を行った後、「Start graph」のボタンを押してください。</h2>
+<p class="auto-style11">
+<img alt="" height="480" src="graph_start.png" width="600" /></p>
+<p class="auto-style11">&nbsp;</p>
+<p class="auto-style11">グラフの画面が立ち上がり、照度や近接センサーの値をリアルタイムにモニタリングした結果が表示されます。</p>
+<p class="auto-style11">
+<img alt="" height="458" src="rpr0521_graph.png" width="696" /></p>
+
+</body>
+
+</html>
