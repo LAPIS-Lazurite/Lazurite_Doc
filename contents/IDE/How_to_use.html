@@ -11,21 +11,7 @@ body{
 	margin-right:auto;
 	margin-left:auto;
 }
-.auto-style2 {
-	color: #FF0000;
-	font-family: メイリオ;
-}
-.auto-style3 {
-	border-collapse: collapse;
-	border: 1px solid #000000;
-}
-.auto-style4 {
-	border: 1px solid #000000;
-}
 .f{color:#666}.ab_ctl{display:inline-block;position:relative;margin-left:16px;margin-top:1px;vertical-align:middle}.ab_button{background-color:#f5f5f5;background-image:linear-gradient(top,#f5f5f5,#f1f1f1);border:1px solid #dcdcdc;border:1px solid rgba(0,0,0,0.1);color:#444;}.ab_button{border-radius:2px;cursor:default;font-family:arial,sans-serif;font-size:11px;font-weight:bold;height:27px;line-height:27px;margin:2px 0;min-width:54px;padding:0 8px;text-align:center;transition:all 0.218s,visibility 0s;}.ab_button{font-size:12px !important}.ab_dropdown{background:#fff;border:1px solid #dcdcdc;border:1px solid rgba(0,0,0,0.2);font-size:13px;padding:6px 0;position:absolute;right:0;top:28px;white-space:nowrap;z-index:3;transition:opacity 0.218s;box-shadow:0 2px 4px rgba(0,0,0,0.2)}ul{border:0;margin:0;padding:0}ul{margin:0;padding:0}.ab_dropdownitem{margin:0;padding:0;}ol li{list-style:none}li{border:0;margin:0;padding:0}li{margin:0;padding:0}.fl{text-decoration:none}.st{line-height:1.4;word-wrap:break-word}.s .st em{color:#6a6a6a}em{font-weight:bold;font-style:normal}
-.auto-style5 {
-	font-size: large;
-}
 .auto-style6 {
 	margin-bottom: 0px;
 }
@@ -38,10 +24,6 @@ body{
 	font-family: メイリオ;
 	color: #666666;
 	text-indent:1em;	
-}
-.auto-style12 {
-	border: 1px solid #000000;
-	font-family: メイリオ;
 }
 .auto-style11 {
 	font-family: メイリオ;
@@ -59,12 +41,6 @@ body{
 	vertical-align: middle;
 }
 td{padding:7px;	
-}
-.auto-style13 {
-	font-size: large;
-	font-family: メイリオ;
-	color: #666666;
-	margin-bottom: 19px;
 }
 </style>
 
@@ -86,222 +62,110 @@ td{padding:7px;
 <h1>
 <img height="45" src="../Lazurite_logo.png" width="197" class="auto-style1" />　<span class="auto-style8"><span class="auto-style11">Lazurite 
 IDE</span>の</span><span class="auto-style7">使用方法</span></h1>
-<br/>
-<br/>
-<h3 class="auto-style10">1. 言語ファイルの切り替え方法</h3>
+<p>
 </body>
 <body>
-<p class="auto-style10">c:\lazuriteideのフォルダを開き、"LAZURITE_IDE.PREF"をテキストエディタで開いてください。</p>
-<table style="width: 63%; height: 42px;" class="auto-style5">
-	<tr>
-		<td style="width: 299px" class="auto-style9">LANGUAGE=languages/japanese.pref</td>
-		<td class="auto-style9">日本語環境</td>
-	</tr>
-	<tr>
-		<td style="width: 299px" class="auto-style9">LANGUAGE=languages/english.pref</td>
-		<td class="auto-style9">英語環境</td>
-	</tr>
-</table>
+<p class="auto-style10">ここでは、LEDを1秒間隔でON/OFFをするプログラムを作成しながら、
+Lazurite IDEの使用方法を説明しています。<br />
+Lazurite IDEはマイコンボード（Lazurite Basic、Lazurite SubGHz）のための開発環境です。</p>
+<h3 class="auto-style10">&nbsp;</h3>
+<h3 class="auto-style10">事前準備</strong></h3>
+<p class="auto-style10">
+<body>
+デスクトップにプロジェクト用のフォルダを準備します。<br />
+ここでは「lazurite」という名のフォルダを作成することにします。</p>
+<p class="auto-style10"><img alt="" src="lazurite_folder.jpg" /></p>
+<h3 class="auto-style10">&nbsp;</h3>
+<h3 class="auto-style10">Lazurite IDEの使用方法</h3>
+<h3 class="auto-style10">1. Windowsのプログラムメニューから、Lazurite IDEを起動します。</h3>
+<p class="auto-style10">&nbsp;</p>
+<h3 class="auto-style10">2. 「開く」画面が表示されるので、「キャンセル」をクリックして画面を閉じます。</h3>
+<p class="auto-style10">既に作成済みのファイルがある場合は、ファイルが表示されます。</p>
+<img alt="" src="lazurite_open.jpg" /><br />
+<br />
 <br/>
-<br/>
-<h3 class="auto-style10">2. アプリケーションの起動</h3>
-<p class="auto-style10">Windowsのプログラムメニューから、Lazurite IDEを起動して下さい。</p>
-<br/>
-<br/>
-<h3 class="auto-style10">3. Lazurite IDEの使用方法</h3>
-<p class="auto-style10"><span class="auto-style10">ここでは、LEDを1秒間隔でON/OFFをするプログラムを作成しながら、<br />
-Lazurite IDEの使用方法を説明します。</span></p>
-<br/>
-<p class="auto-style13" >なお、Lazurite 
-IDEはArduinoと異なりテキストエディタの機能を搭載していません。<br />
-テキストエディタは用意して頂けるようお願いします。なお、ここではサクラエディタを使用しています。</p>
-<br/>
-<p class="auto-style10">また、以下で作成する手順は、C:\LazuriteIDE\examples\blue_led\blue_led.cを、<br />
-led_test.cとしてデスクトップにプロジェクトを作成しています。</p>
-<br/>
-<p class="auto-style9"><strong>3-1. プロジェクト用のフォルダを作成</strong></p>
-<p class="auto-style10">デスクトップにプロジェクトのフォルダを作成します。<br class="auto-style9" />
-<span class="auto-style9">後々、LazuriteIDEが複数のファイルを作成するため、<br />
-プロジェクト専用のフォルダを作成してその中で作業をしたほうが便利です。</span></p>
-<p>
-<img height="103" src="make_folder.png" width="112" /></p>
-<br/>
-<p class="auto-style9"><strong>3-2. C言語のファイルを作成</strong></p>
-<p class="auto-style10">テキストエディタを起動し、以下の様にsetupとloopの関数を記載して保存します。<br class="auto-style9" />
-<span class="auto-style9">ファイル名は test_led.cとします。（↑保存時に拡張子が.txtとなっていたら.cに変更してください。）</span></p>
-<FORM>
-<TEXTAREA wrap="off" name="empty" style="width: 571px; height: 160px" cols="20" rows="1">// test led
-
-
-void setup(void)
-{
-}
-
-void loop(void)
-{
-}
-
-</TEXTAREA>
-</FORM>
-<p class="auto-style10">このファイルを保存しました。</p>
-<p>
-<img height="130" src="test_led_c.png" width="144" /></p>
-<p class="auto-style10">次のようにコードを書いていき、保存します。</p>
-<p>
-<TEXTAREA cols="20" wrap="off" name="empty0" style="width: 571px; height: 328px" rows="1">// test led
+<h3 class="auto-style10"><strong class="auto-style10">3.「ファイル」メニューから「新規作成」を選択します。</strong></h3>
+<img alt="" src="make_file0.jpg" />&nbsp;<p class="auto-style9">&nbsp;</p>
+<h3 class="auto-style10"><strong>
+4．事前に作成した「lazurite」フォルダにファイルを作成し、「新規作成」をクリックします。</strong></h3>
+<p class="auto-style10">ここではファイル名をled_testとして「新規作成」をクリックしてください。</p>
+<img alt="" src="make_file1.jpg" />&nbsp;<p class="auto-style10">次のようにテンプレートが挿入されます。</p>
+<h3>
+<img alt="" src="make_file2.jpg" /></h3>
+<p>&nbsp;</p>
+<h3 class="auto-style10"><strong><span class="auto-style9">5．次のようにコードを入力します。</span></strong></h3>
+<p style="color: rgb(0, 0, 0); font-family: 'MS PGothic'; font-size: medium; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<textarea cols="20" name="empty0" rows="1" style="width: 571px; height: 328px;" wrap="off">#include "led_test_ide.h"		// Additional Header
 
 #define BLUE_LED 26
 #define LED_ON	LOW
 #define LED_OFF	HIGH
 
-void setup(void)
-{
+void setup() {
+  // put your setup code here, to run once:
 	pinMode(BLUE_LED,OUTPUT);
-	
 	digitalWrite(BLUE_LED, LED_OFF);
 	
+
 }
 
-void loop(void)
-{
+void loop() {
+  // put your main code here, to run repeatedly:
 	digitalWrite(BLUE_LED, LED_ON);
 	delay(1000);
-	
 	digitalWrite(BLUE_LED, LED_OFF);
 	delay(1000);
-}
 
-</TEXTAREA></p>
+}
+</textarea></p>
+<p class="auto-style10">完成したコードは次の通りです。</p>
+<p><img height="550" src="code.jpg" width="655" /></p>
+<p>&nbsp;<br/>
+</p>
+<h3 class="auto-style10"><strong class="auto-style10">6. USBケーブルでPCとLazurite Sub-GHzを接続します。</strong></h3>
+<p class="auto-style10">&nbsp;</p>
+<h3 class="auto-style10"><span class="auto-style11"><strong>7. Lazurite IDEの「ツール」メニューから「シリアル通信」、「通信ポート」を選択し、「COMxxx」を選択します。</strong></span></h3>
+<h3 class="auto-style10">
+<img alt="" src="toolmenu_serial.jpg" /><span style="color: rgb(102, 102, 102); font-family: メイリオ; font-size: large; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;"><br />
+<br />
+選択すると「COMxxx」の前にマークが表示されるようになります。</span></h3>
+<h3 class="auto-style10"><img alt="" src="toolmenu_serial2.jpg" /><span style="color: rgb(102, 102, 102); font-family: メイリオ; font-size: large; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;"><br />
+</span><br/>
+</h3>
+<h3 class="auto-style10"><strong>8.&nbsp; </strong>「ツール」メニューから「マイコンボード」を選択し「Lazurite Sub-GHz」を選択します。</h3>
+<p class="auto-style10"><img alt="" src="toolmenu_comboad.jpg" /></p>
 <br/>
-<p class="auto-style9"><strong>3-3.Lazurite IDEを起動</strong></p>
-<p class="auto-style10">プログラムメニューからLazurite IDEを起動してください。</p>
-<br/>
-<p class="auto-style9"><strong>3-4. USBケーブルでPCとLazurite Sub-GHzを接続してください。</strong></p>
-<br/>
-<p class="auto-style9"><strong>3-5. Lazurite IDEのメニューでCOMポートを設定してください。</strong></p>
-<p style="width: 503px; height: 635px">
-<img alt="" height="628" src="toolmenu_serial.png" width="496" /></p>
-<br/>
-<p class="auto-style9"><strong>3-6. プロジェクトファイルを開く</strong></p>
-<p class="auto-style10">開くボタンを押して、先ほど作成したtest_led.cを選択します。<br />
-開くと以下のような画面になります。<br class="auto-style9" />
-<span class="auto-style9">その時、プロジェクトにはtest_led.ssfというファイルができます。</span></p>
-<p style="width: 461px; height: 592px">
-<img alt="" height="590" src="LazuriteIDE_test_led.c.png" width="459" /></p>
-<br/>
-<p class="auto-style9"><strong>3-7. プロジェクトの設定を行います。</strong></p>
-<p class="auto-style10">「ツール」メニューから「マイコンボード」を選択し「Lazurite Sub-GHz」を選択してください。</p>
-<p style="width: 513px; height: 610px">
-<img alt="" height="604" src="toolmenu_comboad.png" width="496" /></p>
-<br/>
-<p class="auto-style10">続いて「ツール」メニューから「オプション」を選択し「Lazurite Basic」を選択してください。</p>
-<p style="width: 507px; height: 609px">
-<img alt="" height="606" src="toolmenu_option.png" width="501" /></p>
-<p class="auto-style9"><br />
+<h3 class="auto-style10">9．「ツール」メニューから「オプション」を選択し「Lazurite Basic」を選択します。</h3>
+<img alt="" height="550" src="toolmenu_option.jpg" width="661" /><p class="auto-style9"><br />
 ※「Lazurite Sub-GHz」は、920MHzによる送信／受信をするためのオプションで「Lazurite Basic」はそれを含まないオプションです。<br />
-今回はLEDのON/OFFのみなので、「Lazurite Basic」を選択します。</p>
+今回はLEDのON/OFFのみなので、「Lazurite Basic」を選択してください。</p>
 <br/>
-<p class="auto-style9"><strong>3-8. ビルドしてマイコンボードに書き込む</strong></p>
-<p class="auto-style10">「マイコンボードに転送」ボタンを押します。エラーが出たら解析が必要です。</p>
-<p style="width: 475px; height: 612px">
-<img alt="" height="611" src="boad_sent.png" width="470" /></p>
-<p class="auto-style10">コンソール画面にテキストメッセージが流れ、test_led.cのプログラムをML620Q504用が読める<br />
-プログラムに変換（コンパイル）します。</p>
+<h3 class="auto-style10"><strong class="auto-style10">10. </strong>「マイコンボードに転送」ボタンをクリックします。</h3>
+<p class="auto-style10">エラーが出た場合は、解析が必要です。</p>
+<p class="auto-style10"><img alt="" src="boad_sent.jpg" />&nbsp;</p>
+<p class="auto-style10">コンソール画面にテキストメッセージが流れ、test_led.cのプログラムを<span class="auto-style10">16bitローパワーマイコン</span>（ML620Q504）が読める
+プログラムに変換（コンパイル）されます。<br />
+ML620Q504は、マイコンボードに搭載されているラピスセミコンダクタオリジナルの汎用16bitローパワーマイコンです。</p>
+<p class="auto-style10"><img alt="" src="console1.jpg" /></p>
 <p class="auto-style10">正常にコンパイルが完了すると</p>
-<p class="auto-style10">convert success<br />
-start upload</p>
-<p class="auto-style10">というメッセージが表示され、ボードのオレンジ色のLEDが点灯します。<br />
+<p class="auto-style10">convert success</p>
+<p class="auto-style10">boot mode<br />
+start upload...</p>
+<p class="auto-style10">というメッセージが表示されます。</p>
+<p class="auto-style10"><img alt="" src="console2.jpg" /></p>
+<p class="auto-style10">メッセージが表示されると、マイコンボードのオレンジ色のLEDが点灯します。<br />
 この状態は、マイコンボードがプログラムを受信するモードに入ったことを示しています。<br />
 <br />
-続いて、ML620Q504が内蔵しているFlashメモリにPCから送信されたプログラムを書込みします。<br />
-書き込み中は青色LEDがONします。<br />
+続いて、ML620Q504が内蔵しているFlashメモリにPCから送信されたプログラムが書き込まれます。<br />
+書き込み中は青色LEDが点滅します。<br />
 <br />
-しばらくすると、オレンジ色のLEDが消灯し、青色LEDが1秒間隔でONします。</p>
+書き込みが完了すると、オレンジ色のLEDが消灯し、青色LEDが1秒間隔で点滅します。</p>
 <p style="width: 482px; height: 450px">
 <img alt="" class="auto-style6" height="446" src="blue_led.jpg" width="517" /></p>
-<p class="auto-style10">これで、<strong>作成したプログラムが正常にマイコンボードで動作している</strong>という事です。</p>
+<p class="auto-style10">点滅すれば、作成したプログラムが正常にマイコンボードで動作しています。<br />
+これでLEDを1秒間隔でON/OFFをするプログラムを作成できました。</p>
 <br/>
-<p class="auto-style9"><strong>3-9. Lazurite IDEによって作成されるファイル</strong></p>
-<table class="auto-style3" style="width: 100%">
-	<tr>
-		<td class="auto-style12" style="width: 125px">
-		<p>test_led.c</p>
-		</td>
-		<td class="auto-style12">
-		<p>プロジェクトのソースファイルです。</p>
-		</td>
-	</tr>
-	<tr>
-		<td class="auto-style12" style="width: 125px">
-		<p>test_led.ssf</p>
-		</td>
-		<td class="auto-style12">
-		<p>使用しているプロジェクト、オプション、使用するライブラリ等が記載されているファイルです。</p>
-		</td>
-	</tr>
-	<tr>
-		<td class="auto-style12" style="width: 125px">
-		<p>_prn</p>
-		</td>
-		<td class="auto-style12">
-		<p>コンパイル時に作成される中間ファイルです。</p>
-		</td>
-	</tr>
-	<tr>
-		<td class="auto-style12" style="width: 125px">
-		<p>obj</p>
-		</td>
-		<td class="auto-style12">
-		<p>コンパイル時に作成される中間ファイルです。</p>
-		</td>
-	</tr>
-	<tr>
-		<td class="auto-style12" style="width: 125px">
-		<p>test_led.abs</p>
-		</td>
-		<td class="auto-style12">
-		<p>ML620Q504のデバッカが使用するファイルです。<br />
-		uEASEを使用すると、プログラムの途中でbreakをかけたり、内部メモリの状態を見たりすることができます。</p>
-		</td>
-	</tr>
-	<tr>
-		<td class="auto-style12" style="width: 125px; height: 26px;">
-		<p>test_led.bin</p>
-		</td>
-		<td class="auto-style12" style="height: 26px">
-		<p>Binary形式のML620Q504用プログラムファイルです。</p>
-		</td>
-	</tr>
-	<tr>
-		<td class="auto-style12" style="width: 125px">
-		<p>test_led.hex</p>
-		</td>
-		<td class="auto-style12">
-		<p>INTEL HEX方式のML620Q504用プログラムファイルです。</p>
-		</td>
-	</tr>
-	<tr>
-		<td class="auto-style12" style="width: 125px; height: 63px;">
-		<p>test_led.map</p>
-		</td>
-		<td class="auto-style12" style="height: 63px">
-		<p>U16のコンパイラが作成するMAPファイルです。ROM/RAMの使用状況などが、テキスト形式で保存されています。</p>
-		</td>
-	</tr>
-	<tr>
-		<td class="auto-style12" style="width: 125px">
-		<p>test_led_led_.c</p>
-		</td>
-		<td class="auto-style4">
-		<p><span class="auto-style11">作成したプログラムの最後にアンダーバーが付与されたファイルです。</span><br class="auto-style11" />
-		<span class="auto-style11">これは、C言語のコンパイルで必要なヘッダファイルの情報をtest_led.cに付与したファイルです。ML620Q504のプログラムを生成するときは、本ファイルを使用しています。</span><span class="auto-style2"><br />
-		このファイルはコンパイルする度にtest_led.cとtest_led.ssfから自動で生成されるため、このファイルを変更しても本来のプログラムは更新されません。注意してください。</span></p>
-		</td>
-	</tr>
-</table>
-<p>&nbsp;</p>
-<p class="auto-style10">test_led.cとtest_led.ssf以外のファイルを消去してもまったく同じ条件が再現できるので問題ありません。</p>
-<p>&nbsp;</p>
+
 
 
 
