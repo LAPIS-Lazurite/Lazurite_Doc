@@ -37,6 +37,11 @@ body{
 .line{
 	text-decoration:line-through;
 }
+.auto-style10 {
+	font-size: large;
+	font-family: メイリオ;
+	color: #666666;
+}
 </style>
 
 <script>
@@ -56,211 +61,277 @@ body{
 
 <h1>
 <img height="33" src="Lazurite_logo.png" width="145" class="auto-style1" />
-<span class="auto-style2">Lazurite Pi Gatewayの立上げ方法/起動方法</span></h1>
+<span class="auto-style2">Lazurite Pi Gatewayの立上げ方法/使用方法</span></h1>
 <br/>
 
-<p class="auto-style6">本ページでは、Lazurite Pi Gatewayの立ち上げ方法と起動方法について説明します。&nbsp;</p>
+<p class="auto-style6">ここでは、Lazurite Pi Gatewayの立ち上げ方法と使用方法について説明します。&nbsp;</p>
 <br/>
 <hr/>
-<h3 class="auto-style5">1. まず、HPからRaspberry Pi用のイメージファイルをダウンロードします。</h3>
+<h3 class="auto-style5">Raspberry Pi用イメージファイルのダウンロード</h3>
+<p class="auto-style6">事前準備として、Raspberry Pi用のイメージファイルをダウンロードしておきます。</p>
+<p class="auto-style6">&nbsp;</p>
+<h3 class="auto-style5">1. Raspberry Pi用のイメージファイルをダウンロードします。次のページを開きます。</h3>
+<p class="auto-style6"><a href="http://www.lapis-semi.com/lazurite-jp/">
+Lazurite　ホームページ</a><br />
+</p>
+<p class="auto-style6">
 <br/>
-<p class="auto-style5"><strong>１－１．LazuriteのTOPページ上部のダウンロードメニューをクリックします。</strong></p>
+</p>
+<h3 class="auto-style5"><strong>2．LazuriteのTOPページ上部の「ダウンロード」をクリックします。</strong></h3>
 <p class="auto-style5">
 <img alt="" height="269" src="download.png" width="717" />&nbsp;</p>
 <br/>
-<p class="auto-style6"><strong class="auto-style6">１－２．お持ちのRaspberry Pi のタイプにあわせて選び、イメージファイルをダウンロードしてください。</strong></p>
+<h3 class="auto-style5"><strong class="auto-style5">3．お持ちのRaspberry Pi のタイプにあわせてイメージファイルを選び、「ダウンロード」をクリックします。</strong></h3>
 <p class="auto-style6">
 <img alt="" height="316" src="download2.png" width="771" />&nbsp;</p>
 <br/>
-<p class="auto-style6"><strong>１－３．ダウンロードしたら、ZIPファイルを解凍し以下のファイルを展開しておきます。</strong></p>
+<p class="auto-style5"><strong class="auto-style5">4．ダウンロードしたZIPファイルを解凍し、次のファイルを展開しておきます。</strong></p>
 <p class="auto-style6">
-<img alt="" height="194" src="download_ZIP.png" width="533" />&nbsp;</p>
+<img alt="" src="download_ZIP.jpg" /></p>
 <br/>
-<br/>
-<h3 class="auto-style5">２．win32DiskImagerのダウンロードとMicroSDカードへのイメージファイルの書き込み</h3>
-<br/>
-<p class="auto-style5"><strong>２－１．以下のページを開きます。</strong>&nbsp;</p>
+<hr/>
+<h3 class="auto-style5">win32DiskImagerのダウンロードとインストール</h3>
+<p class="auto-style6">
+事前準備として、イメージファイルの書き込みソフトであるwin32DiskImagerをダウンロード、インストールしておきます。</p>
+<h3 class="auto-style5">１．次のページを開きます。&nbsp;</h3>
 <p>
 <a href="https://osdn.jp/projects/sfnet_win32diskimager/" target="_blank"class="auto-style7">Win32DsikImager 
 ダウンロード</a>&nbsp;</p>
 <br/>
-<p class="auto-style6"><strong>
-２－２．ダウンロード一覧から【Win32DiskImager-0.9.5-install.exe】というファイルを選んで<br />
-ダウンロードしてください。</strong></p>
+<h3 class="auto-style5">２．「ダウンロードファイル一覧」をクリックします。</h3>
 <p class="auto-style6">
 <img alt="" height="171" src="Win32DiskImager.install3.png" width="563" /></p>
-<br/>
-<br/>
+<h3 class="auto-style5">3．一覧から「Win32DiskImager-0.9.5-install.exe」をクリックし、
+ダウンロードします。</h3>
 <p class="auto-style6">
 <img alt="" height="336" src="Win32DiskImager.install.png" width="509" /></p>
 <br/>
-<p class="auto-style6"><strong>２－３．ダウンロードしたファイルを　【管理者として実行】　します。</strong></p>
+<h3 class="auto-style5">4．ダウンロードしたファイルを右クリックし、「管理者として実行」を選択します。</h3>
 <p class="auto-style6">
 <img alt="" height="444" src="Win32DiskImager8-2.png" width="530" /></p>
 <br/>
-<p class="auto-style6"><strong>２－４．次のセットアップウィザードが出てきますので、画面の通りに進めてください。</strong></p>
+<h3 class="auto-style5">5．次のセットアップウィザードが表示されますので、画面の通りに進めてください。「Next」をクリックします。</h3>
 <p class="auto-style6">
-<img alt="" height="386" src="Win32DiskImager1.png" width="499" /></p>
-<br/>
+<img alt="" height="386" src="Win32DiskImager1.png" width="499" /> </p>
+<h3 class="auto-style5">6．「I accept the agreement」をクリックし、「Next」をクリックします。</h3>
 <p class="auto-style6">
 <img alt="" height="387" src="Win32DiskImager2.png" width="499" /></p>
-<br/>
+<h3 class="auto-style5">７．「Next」をクリックします。<br/>
+</h3>
 <p class="auto-style6">
 <img alt="" height="386" src="Win32DiskImager3.png" width="499" /></p>
-<br/>
+<h3 class="auto-style5">８．「Next」をクリックします。<br/>
+</h3>
 <p class="auto-style6">
 <img alt="" height="387" src="Win32DiskImager4.png" width="495" /></p>
-<br/>
+<h3 class="auto-style5">9．「create a desktop icon」にチェックを入れ、「Next」をクリックします。<br/>
+</h3>
 <p class="auto-style6">
 <img alt="" height="387" src="Win32DiskImager5.png" width="498" /></p>
-<br/>
+<h3 class="auto-style5">10．「Install」をクリックします。</h3>
 <p class="auto-style6">
 <img alt="" height="387" src="Win32DiskImager6.png" width="502" /></p>
-<br/>
+<h3 class="auto-style5">11．「Finish」をクリックします。<br/>
+</h3>
 <p class="auto-style6">
 <img alt="" height="386" src="Win32DiskImager7.png" width="505" /></p>
-<br/>
-<br/>
-<p class="auto-style6"><strong>２－５．ダウンロードした　Win32DiskImager　を【管理者として実行】します。</strong></p>
+<p class="auto-style6">これでwin32DiskImagerをインストールできました。</p>
+<hr/>
+<h3 class="auto-style5">MicroSDカードへのイメージファイルの書き込み</h3>
+<p class="auto-style6">win32DiskImageを使ってRaspberry Pi のイメージファイルをMicroSDカードへ書き込みます。<br/>
+</p>
+<h3 class="auto-style5"><strong>1．パソコンにMicroSDカードをセットします。</strong></h3>
+<h3 class="auto-style5">２．WindowsのプログラムメニューからWin32DiskImagerを右クリックし、「管理者として実行」を選択します。<br/>
+</h3>
 <p class="auto-style6">
 <img alt="" height="324" src="Win32DiskImager9.png" width="444" /></p>
-<br/>
-<br/>
-<p class="auto-style6"><strong>２－６．先ほどLazuriteのHPからダウンロードした　【150714_rpi2.img】ファイルを<br />
-ファイルマークから開きます。</strong></p>
+<h3 class="auto-style5">3．ファイルマークをクリックします。</h3>
 <p class="auto-style6">
 <img alt="" height="213" src="Win32DiskImager10.png" width="424" /></p>
-<br/>
+<h3 class="auto-style5">4．イメージファイルxxxxxx_rpi2.imgを選択し、「開く」をクリックします。</h3>
+<h3 class="auto-style5"><img alt="" src="open_imagefile.jpg" /><br/>
+</h3>
+<h3 class="auto-style5"><strong>5．「Write」をクリックして、マイクロSDカードにイメージファイルを書き込みます。</strong></h3>
 <p class="auto-style6">
-<img alt="" height="332" src="Win32DiskImager11.png" width="476" /></p>
-<br/>
-<br/>
-<p class="auto-style6"><strong>２－７．マイクロSDカードに【Write】ボタンからイメージファイルを書き込みます。</strong></p>
+<img alt="" src="write_imagefile.jpg" /></p>
 <p class="auto-style6">
-<img alt="" height="210" src="Win32DiskImager13.png" width="418" /></p>
-<br/>
+<strong>6．「Yes」をクリックします。</strong></p>
 <p class="auto-style6">
 <img alt="" height="209" src="Win32DiskImager14.png" width="416" /></p>
+<h3 class="auto-style5"><strong>７．</strong>書き込みが終了すると次の画面が表示されるので「OK」をクリックします。</h3>
+<p class="auto-style6"><img alt="" src="write_imagefile2.jpg" /></p>
+<h3 class="auto-style5">８<strong>．「Exit」をクリックしてWin32DiskImagerを終了します。</strong></h3>
+<p class="auto-style6"><img alt="" src="write_imagefile3.jpg" /><br/>
+</p>
+<hr/>
 <br/>
-<br/>
-<h3 class="auto-style5">３. Raspberry PiとLazurite Pi Gatewayを組み立ててください。</h3>
-<br/>
-<p class="auto-style5"><strong>３－１. 組み立て前</strong></p>
+<h3 class="auto-style5">Lazurite Pi Gatewayの立ち上げ方法</h3>
+<p class="auto-style6">Lazurite Pi Gatewayの立ち上げ方法について説明します。</p>
+<h3 class="auto-style5">1. Raspberry PiとLazurite Pi Gatewayを次のように組み立てます。</h3>
+<p class="auto-style5">&nbsp;組み立て前</p>
 <p class="auto-style5">
 <img height="529" src="LazuritePiGateay_parts.jpg" width="704" /></p>
 <br/>
-<p><strong class="auto-style5">３－２. 組み立て後</strong></p>
+<p class="auto-style5">組み立て後</p>
 <p>
 <img src="LazuritePi_buildup.png" height="516" width="691" /></p>
-<br/>
-<p><strong class="auto-style5">３－３. モニターやキーボード等を接続した後</strong></p>
+<p>
+&nbsp;</p>
+<p class="auto-style5">
+配線後</p>
+<p class="auto-style5">
+<img alt="" height="391" src="haisen01.JPG" width="800" /></p>
+<p class="auto-style5">MicroSDの差し込み</p>
+<p><img alt="" height="514" src="haisen02.JPG" width="741" /></p>
+<h3 class="auto-style5">
+2. Raspberry PiにDCアダプタを接続し、電源を入れます。<br/>
+</h3>
+<h3 class="auto-style5">
+<img alt="" height="442" src="haisen03.JPG" width="692" /></h3>
+<p class="auto-style5">Raspberry Piが立ち上がります。</p>
 <p style="width: 712px; height: 520px">
 <img src="LazuritePi_complete.jpg" height="516" width="691" /></p>
-<br/>
-<p style="width: 709px; height: 473px">
-<img alt="" height="466" src="haisen.png" width="699" />&nbsp;</p>
-<br/>
-<br/>
-<h3 class="auto-style5">4. Raspberry Piを立ち上げた後、ディスク容量の拡張を行います。</h3>
-<br/>
-<p class="auto-style6"><strong>４－１. Raspberry Piへのログイン</strong></p>
+<h3 class="auto-style5">&nbsp;</h3>
+<h3 class="auto-style5">3. ディスク容量を拡張します。以下、モニタ画面で操作します。</h3>
+<p class="auto-style5">&nbsp;</p>
+<h3 class="auto-style5"><strong>4．Raspberry Piへログインします。</strong></h3>
+<p class="auto-style6">次のように入力します。</p>
 <p class="auto-style6">Raspberry Pi&nbsp;&nbsp; login:&nbsp; pi⏎</p>
 <p class="auto-style6">Password: raspberry⏎ (パスワードは初期設定のままです。ここで入力しても文字は表示されません。）</p>
-<br/>
-<br/>
-<h4 class="auto-style6">４－２. コンソール画面が起動したら raspi-configを起動します。</h4>
-<p class="auto-style7"><a href="mailto:pi@raspberry~$">
-<span class="auto-style8">pi@raspberry~$</span></a><span class="auto-style8">&nbsp; のあとに以下のコマンドを実行します。</span></p>
+<p class="auto-style6">&nbsp;</p>
+<<<<<<< HEAD
+<h3 class="auto-style5">５. コンソール画面が起動したら raspi-configを起動します。<a href="mailto:pi@raspberry~$"><span class="auto-style6">pi@raspberry~$</span></a><span class="auto-style6">&nbsp; のあとに次のコマンドを入力します。</span></h3>
+=======
+<h3 class="auto-style5">５. コンソール画面が起動したら raspi-configを起動します。<a href="mailto:pi@raspberry~$"><span class="auto-style8">pi@raspberry~$</span></a><span class="auto-style8">&nbsp; のあとに次のコマンドを入力します。</span></h3>
+>>>>>>> f0629d34ef36f0326a2385f0c73a0b84aa046239
 <p class="auto-style5">sudo raspi-config⏎</p>
-<p class="auto-style5">次の画面が起動したら、1. Expand Filesystemを選択してenterキーを押してください。<br />
-その後、画面が切り替わるので再起動をしてください</p>
-<p>
-<img height="309" src="raspiconfig.jpg" width="636" />&nbsp;</p>
-<p class="auto-style5">自分で再起動をする方法は次の通りです。</p>
-<p class="auto-style5">再起動:&nbsp;&nbsp;&nbsp; sudo rebood⏎</p>
-<p><span class="auto-style5">シャットダウン:&nbsp;&nbsp;&nbsp; sudo shutdown -h now⏎</span><br class="auto-style5" />
-<span class="auto-style5">再起動をするには、シャットダウン後に電源を抜き、もう一度投入してください。</span></p>
-<p class="auto-style5">以上で準備は完了です。</p>
-<br/>
-<br/>
-<h3 class="auto-style6">5. Lazurite Pi Gatewayを起動する前に、送信機であるLazurite Sub-GHzの準備をします。</h3>
-<br/>
-<p class="auto-style6"><strong>５－１. Lazurite Sub-GHzを起動し、無線モジュールを接続します。</strong></p>
+<p class="auto-style5">
+<img alt="" height="427" src="raspi-config.png" width="655" /></p>
+<p class="auto-style5">&nbsp;</p>
+<p class="auto-style5">次の画面が表示されます。</p>
+<p class="auto-style5">
+<img height="309" src="raspiconfig.jpg" width="636" /></p>
+<h3 class="auto-style5">５. ディスク容量を拡張するので、「1. Expand Filesystem」を選択して「enter」キーを押します。</h3>
+<p class="auto-style5">&nbsp;</p>
+<h3 class="auto-style5">6. 「&lt;OK&gt;」を選択して「enter」キーを押します。</h3>
+<h3 class="auto-style5">
+<img alt="" height="294" src="raspi-config２.png" width="478" /></h3>
+<p class="auto-style5">これでディスク容量が拡張されました。</p>
+<h3 class="auto-style5">7. 再起動します。「&lt;Finish&gt;」を選択します。</h3>
+<p class="auto-style5">
+<img height="309" src="raspiconfig2.jpg" width="636" /></p>
+<p class="auto-style5">&nbsp;</p>
+<h3 class="auto-style5">８.「&lt;Yes&gt;」を選択して「enter」キーを押します。<br />
+</h3>
+<p class="auto-style5">
+<img alt="" height="305" src="raspi-config３.png" width="482" /></p>
+<p class="auto-style5">
+これで再起動されました。</p>
+<p class="auto-style5">
+&nbsp;</p>
+<h3 class="auto-style5">コマンド入力で再起動をする方法（1）</h3>
+<p class="auto-style5">手順8で「&lt;No&gt;」を選択して「enter」キーを押し、次のコマンドを入力することでも再起動できます。</p>
+<p class="auto-style5">再起動:&nbsp;&nbsp;&nbsp; sudo reboot⏎</p>
+<p class="auto-style5"><img alt="" height="425" src="reboot.png" width="658" /></p>
+<p class="auto-style5">&nbsp;</p>
+<h3 class="auto-style5">コマンド入力で再起動をする方法（2）</h3>
+<p class="auto-style5">シャットダウンしてから再起動する方法は次の通りです。<br />
+次のコマンドを入力することで、シャットダウンできます。</p>
+<p><span class="auto-style5">シャットダウン:&nbsp;&nbsp;&nbsp; sudo shutdown -h now⏎</span></p>
+<p><img alt="" height="429" src="shutdown.png" width="657" /></p>
+<p><span class="auto-style5">シャットダウンしたら、DCアダプタを抜いて電源を切ります。<br />
+もう一度DCアダプタをつないで電源を入れると、再起動できます。</span></p>
+<p>&nbsp;</p>
+<hr/>
+<h3 class="auto-style5">Lazurite Pi Gatewayの使用方法</h3>
+<p class="auto-style5">ここでは、Lazurite Sub-GHzからデータを送信し、Lazurite Pi 
+Gatewayで受信する方法について説明します。<br/>
+</p>
+<h3 class="auto-style6">Lazurite Sub-GHzの準備</h3>
+<p class="auto-style5">Lazurite Sub-GHzからデータを送信する手順を説明します。</p>
+<h3 class="auto-style6"><strong>１. Lazurite Sub-GHzに無線モジュールを接続します。</strong></h3>
 <p>
 <img src="LazuriteSubGHz_buildup.png" height="409" width="554" /></p>
-<br/>
-<p class="auto-style6"><strong>５－２. サンプルプログラムであるWelcome_SubGHzを書き込みます。</strong>&nbsp;</p>
-<p class="auto-style6">まず、サンプルプログラムの受信機のアドレスを自機のアドレスに変更してから書き込みます。</p>
-<p class="auto-style6">１）ファイル→プロジェクトのサンプル→SubGHz→Welcome_SubGHz をクリックして<br />
-&nbsp;&nbsp;&nbsp; 「Welcome_SubGHz」のファイルを開きます。</p>
+<h3 class="auto-style6"><strong>１. USBケーブルでPCと<strong class="auto-style6">Lazurite 
+Sub-GHzを</strong>接続します。</strong></h3>
+<h3 class="auto-style6"><br/>
+</h3>
+<h3 class="auto-style6"><strong class="auto-style6">２. サンプルプログラムである「Welcome_SubGHz」を<strong>Lazurite 
+Sub-GHzに</strong>書き込みます。 Windowsのプログラムメニューから、Lazurite IDEを起動します。</strong></h3>
+<p class="auto-style6">&nbsp;</p>
+<h3 class="auto-style5"><strong>3. Lazurite IDEの「ツール」メニューから「シリアル通信」、「通信ポート」を選択し、「COMxxx」を選択します。</strong></h3>
+<p><img alt="" src="toolmenu_serial.jpg" height="550" width="672" /></p>
+<h3 class="auto-style5">4.「ファイル」メニューから「プロジェクトのサンプル」、「03.SubGHz」を選択し、「Welcome_SubGHz 
+」を選択します。</h3>
 <p class="auto-style6">
-<img alt="" height="536" src="welcome_to_subghz.png" width="453" /></p>
-<br/>
-<p class="auto-style6">２）出てきたテキストコードをコピーして、テキストエディタに貼り付けます。</p>
+<img alt="" src="toolmenu_file.jpg" height="550" longdesc="toolmenu_file.jpg" width="672" /></p>
+<p class="auto-style6">サンプルプログラムが表示されます。</p>
 <p class="auto-style6">
-<img alt="" height="550" src="welcome_to_subghz2.png" width="488" /></p>
-<br/>
-<p class="auto-style6">３）HOST_ADDRESSのアドレス部分を自機のアドレスに変更します。（0x＋下四桁）</p>
+<img alt="" height="550" src="toolmenu2.jpg" width="672" /></p>
 <p class="auto-style6">
-<img alt="" height="526" src="welcome_to_subghz3.png" width="699" /></p>
-<p class="auto-style6"><span class="auto-style5">（↑画像は、サクラエディタを使用しています。）</span></p>
-<br/>
+&nbsp;</p>
+<h3 class="auto-style5">５.サンプルプログラムの受信機のアドレス（HOST_ADDRESSのアドレス部分）を、受信機である 
+Raspberry Piのアドレスに変更します。</h3>
 <p class="auto-style6">
-<img height="448" src="reference/myAddr.png" width="315" /></p>
-<br/>
-<p style="width: 652px; height: 58px" class="auto-style5">４）変更後、新規フォルダを作成し、デスクトップなどに名前をつけて保存してください。<strong>その際、ファイルの拡張子を『.c』としてください。</strong><br />
-</p>
-<p style="width: 652px; height: 38px" class="auto-style5">
-（LazuriteIDEが自動でいくつかファイルを作成するため、フォルダを作っておいた方が作業がしやすいです。）</p>
-<br/>
-<p style="width: 652px; height: 29px" class="auto-style5">５）LazuriteIDEから、保存したファイルを開きます。</p>
+<img alt="" height="550" src="toolmenu3.jpg" width="672" /></p>
+<p class="auto-style6">アドレスの記載場所</p>
 <p class="auto-style6">
-<img alt="" height="549" src="welcome_to_subghz4.png" width="489" /></p>
-<br/>
-<p class="auto-style6">ライブラリ内の  <span class="line">「MsTimer2 」</span>※「SPI」「Wire」にチェックを入れてください。</p>
-<p class="auto-style6">※新しいLazuriteIDEでは不要になりました。</p>
+<img alt="" height="437" src="host_address.JPG" width="793" /></p>
+<h3 class="auto-style5">6.「マイコンボードに転送」ボタンをクリックします。<br/>
+</h3>
 <p class="auto-style6">
-<img alt="" height="548" src="welcome_to_subghz5.png" width="490" /></p>
-<br/>
-<p class="auto-style6"><span class="auto-style5">６）プログラムの書き込み化が完了したら送信機の準備も完了です。</span><br class="auto-style5" />
-<span class="auto-style5">&nbsp;&nbsp;&nbsp;
-『マイコンボードに転送ボタン』をクリックすると、1秒に1回、青色のLEDが点灯し</span><br class="auto-style5" />
-<span class="auto-style5">&nbsp;&nbsp;&nbsp;&nbsp;
+<img alt="" height="550" src="tensou.jpg" width="672" /></p>
+<p class="auto-style6">
+正常にコンパイルが完了するとコンソール画面に</p>
+<p class="auto-style10">onvert success</p>
+<p class="auto-style10">boot mode<br />
+start upload...</p>
+<p class="auto-style10">というメッセージが表示されます。</p>
+<p class="auto-style6">
+<img alt="" src="console2.jpg" height="550" width="583" /></p>
+<p class="auto-style6">これでサンプルプログラム「Welcome_SubGHz 」の書き込み化が完了し、送信機であるLazurite 
+Sub-GHzの準備ができました。<br class="auto-style5" />
+<span class="auto-style5">&nbsp;1秒に1回、青色のLEDが点滅し、
 920MHz帯の周波数で、"Welcome to 
-Lazurite Sub-GHz"というメッセージを送信します。</span></p>
+Lazurite Sub-GHz"というメッセージを送信しています。</span></p>
+<p class="auto-style6">&nbsp;</p>
+<h3 class="auto-style5">Lazurite Pi Gatewayでの受信</h3>
+<span class="auto-style5">Lazurite Pi Gatewayで"Welcome to Lazurite 
+Sub-GHz"というメッセージを受信するには、Rubyを利用する場合とPythonを利用する場合の2通りがあります。ここでは順番に受信方法を説明します。</span><br/>
 <br/>
 <br/>
-<h3 class="auto-style5">６. Raspberry PiにLazurite Pi Gatewayを接続します。</h3>
+<h3 class="auto-style5">受信方法1.Rubyの場合</h3>
+<h4 class="auto-style5">サンプルプログラムの受信</h4>
+<h3 class="auto-style5">1.<span class="auto-style5">Lazurite Pi Gatewayを立ち上げます。</span></h3>
+<p class="auto-style5">&nbsp;</p>
+<h3 class="auto-style5">2.次のコマンドを入力し、ドライバを有効にします。<br/>
+</h3>
+<p class="auto-style5">sudo insmod ~/driver/sub-ghz/DRV_802154.ko</p>
 <br/>
-<br/>
-<h3 class="auto-style5">７. サンプルプログラムの起動(Ruby編)</h3>
-<br/>
-<p class="auto-style5"><strong>１）Raspberry Piを起動して下さい。</strong></p>
-<br/>
-<p class="auto-style5"><strong>２）ドライバを有効化します。</strong></p>
-<p class="auto-style5">$ sudo insmod ~/driver/sub-ghz/DRV_802154.ko</p>
-<br/>
-<p class="auto-style5"><strong>３）rubyのフォルダに移動し、SerialMonitorを起動します。</strong></p>
-<p class="auto-style5">$ cd ruby⏎</p>
-<p class="auto-style5">$ sudo ./SerialMonitor.rb⏎</p>
-<p class="auto-style5">次のようなメッセージを受信したら成功です。CTRL+c(CTRLボタンを押しながら、cを押す）で<br />
-アプリケーションを終了することができます。</p>
+<h3 class="auto-style5"><strong>3.rubyのフォルダに移動し、SerialMonitorを起動します。</strong></h3>
+<p class="auto-style5">&nbsp;cd ruby⏎</p>
+<p class="auto-style5">&nbsp;sudo ./SerialMonitor.rb⏎</p>
+<p class="auto-style5">次のようなメッセージを受信したら成功です。「CTRL」ボタンを押しながら「C」押すと、
+アプリケーションを終了できます。</p>
 <p class="auto-style5">
 <img src="SerialMonitor.png" height="179" width="690" /></p>
 <p class="auto-style5">sudo 
 は管理者権限でプログラムを実行するためにつけるコマンドです。<br />
 ドライバからデータを読み込むために管理者権限が必要になります。</p>
-<br/>
-<p class="auto-style5"><strong>４）アプリケーションの終了</strong></p>
-<p class="auto-style5">Ctrl + Cを押してアプリケーションを終了します。</p>
-<br/>
-<p class="auto-style5"><strong>５）ドライバの無効化</strong></p>
-<p class="auto-style5">&nbsp;Lazurite 
-Sub-GHzから信号を出した状態のままアプリケーションを終了して放置すると、<br />
+<h3><strong class="auto-style5">4.<strong>ドライバを無効にして終了します。次のコマンドを入力し、ドライバを無効にします。</strong></strong></h3>
+<p class="auto-style5">sudo rmmod DRV_802154⏎</p>
+<p class="auto-style5">Lazurite Sub-GHzから信号を出した状態のままアプリケーションを終了して放置すると、<br />
 メモリーに受信データが保存され続けてしまい、システムが不安定になる可能性があります。</p>
 <p class="auto-style5">そのため、使用しない場合はドライバーを一度、uninstallしてください。</p>
+<p class="auto-style5">&nbsp;</p>
+<h4 class="auto-style5"><strong class="auto-style5">アプリケーションの終了</strong></h4>
+<p class="auto-style5">「CTRL」ボタンを押しながら「C」押すと、
+アプリケーションを終了できます。</p>
 <br/>
-<table style="width: 100%" class="auto-style5">
+<h4 class="auto-style5"><strong>ドライバの無効化</strong></h4>
+<p class="auto-style5">次のコマンドでドライバを無効にしたり有効にしたりできます。</p>
+<br/>
+<table style="width: 100%" class="auto-style6">
 	<tr>
 		<td style="width: 233px" class="auto-style8">ドライバ無効化する方法</td>
 		<td class="auto-style8">sudo rmmod DRV_802154⏎</td>
@@ -273,37 +344,37 @@ Sub-GHzから信号を出した状態のままアプリケーションを終了�
 <p>
 <img alt="" height="134" src="insmod.png" width="595" /></p>
 <br/>
-<br/>
-<h3 class="auto-style5"><strong>８．サンプルプログラムの起動方法（Python編）</strong></h3>
-<br/>
-<p class="auto-style5"><strong>１) Raspberry Pi　のデスクトップ画面から[Menu]→[Programming]→[Python3]を開きます。</strong></p>
+<h3 class="auto-style5">受信<strong>方法2．Pythonの場合</strong></h3>
+<h3 class="auto-style5">1.Lazurite Pi Gatewayを立ち上げます。</h3>
+<p class="auto-style5">&nbsp;</p>
+<h3 class="auto-style5">2.次のコマンドを入力し、GUI画面を立ち上げます。</h3>
+<p class="auto-style5">&nbsp;startx</p>
+<p class="auto-style5">&nbsp;</p>
+<h3 class="auto-style5">3.<strong>Raspberry Pi　のデスクトップ画面から「Menu」、「Programming」を選択し、「Python3」を選択します。</strong></h3>
 <p style="width: 666px; height: 549px">
 <img alt="" height="537" src="pi_Pyton3.png" width="647" />&nbsp;</p>
 <br/>
-<p class="auto-style5"><strong>２）Python　Shell　の画面が表示されたら、[File]→[Open]から[Python]を開き<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [gateway.py]を開きます。</strong></p>
+<h3 class="auto-style5"><strong>3．「File」から「Open」を選択します。</strong></h3>
 <p>
 <img alt="" height="707" src="RapsberryPi_file_open.png" width="688" />&nbsp;</p>
-<br/>
+<h3 class="auto-style5"><strong>4．「python」から「gateway.py」を選択し「Open」をクリックします。</strong><br/>
+</h3>
 <p style="width: 447px; height: 299px">
 <img alt="" height="282" src="Raspberry_gateway.py.png" width="418" />&nbsp;</p>
-<br/>
-<p class="auto-style5"><strong>３）[Run]→[Run Module]をクリックすると、Lazurite　Gateway 
-の画面が開くので<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Start]ボタンをクリックすると、Lazurite　Sub-GHzから送信された「Welcome 
-to Lazurite Sub-GHz」<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; のメッセージが表示されます。</strong></p>
+<h3 class="auto-style5">5.<strong>[Run]から[Run Module]をクリックします。</strong></h3>
 <p style="width: 483px; height: 495px">
-<img alt="" height="482" src="Rapsberry_program.png" width="469" />&nbsp;</p>
-<br/>
+<img alt="" height="482" src="Rapsberry_program.png" width="469" /></p>
+<strong class="auto-style5">6．「Start」ボタンをクリックします。</strong><br/>
 <p style="width: 718px; height: 480px">
 &nbsp;<img alt="" height="416" src="Raspberry_Gatewayprogram_start2.png" width="710" /></p>
-<p class="auto-style5"><strong>４）プログラムの終了方法</strong></p>
-<p class="auto-style5">STOPボタンを押した後にアプリケーションを閉じてください。<br />
+<p class="auto-style5">Lazurite　Sub-GHzから送信された「Welcome to Lazurite 
+Sub-GHz」のメッセージが表示されます。</p>
+<p class="auto-style5"><img alt="" height="421" src="python.png" width="724" /></p>
+<h3 class="auto-style5">7.<strong class="auto-style5">「Stop」ボタンをクリックします。</strong></h3>
+<p class="auto-style5"><img alt="" src="phthon2.jpg" /></p>
+<p class="auto-style5">&nbsp;</p>
+<p class="auto-style5">アプリケーションが終了します。<br />
 STOPしないとアプリケーションを終了することが出来ません。</p>
-<br/>
-<p class="auto-style5">※サンプルプログラムの起動は（Ruby編）（Python編）どちらでもできます。</p>
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
