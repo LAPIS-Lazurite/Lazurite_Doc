@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="ja" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Lazurite Pi Gatewayの立ち上げ方法/起動方法</title>
+<style type="text/css">
+body{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.auto-style5 {
+	color: #666666;
+	font-family: メイリオ;
+}
+.auto-style6 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style8 {
+	color: #666666;
+}
+.line{
+	text-decoration:line-through;
+}
+.auto-style2 {
+	color: #666666;
+	font-family: メイリオ;
+	font-weight: normal;
+}
+.step-style {
+	font-family: メイリオ;
+	font-size: large;
+	font-weight: bold;
+	color: #666666;
+}
+.auto-style11 {
+	font-size: large;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+<h1>
+<img height="33" src="../Lazurite_logo.png" width="145" class="auto-style2" /><span class="auto-style2">
+Raspberry Piをシリアルで制御しWi-Fiを設定する </span></h1>
+<p><span class="auto-style6">ここでは、PCとRaspberry Piをシリアル通信で接続してPCのコンソールに出力し、Wi-Fiを設定するまでについて説明します。</span></p>
+<p><span class="auto-style6">Raspberry 
+Piはモニターやキーボードを接続してコンピューターとして使用できるだけでなく、Gatewayとしても使用できます。Gatewayとして使用するのであればモニターやキーボードは不要です。</span></p>
+<p><span class="auto-style6">シリアルケーブルを接続してPCからRaspberry Piを制御する方法と、その方法を用いてWi-Fiを設定する方法を紹介します。</span></p>
+<hr/>
+
+<h3 class="auto-style5">事前準備1．イメージファイルのMicroSDカードへの書き込み</h3>
+<p class="auto-style2">
+Raspberry Pi のイメージファイルをMicroSDカードへ書き込み、Raspberry 
+Piに接続しておきます。</p>
+<p class="auto-style2">イメージファイルの書き込み方法は、「<a href="../Pi_setup_guide.html">Lazurite Pi Gatewayの立上げ方法/使用方法</a>」の「<a href="../Pi_setup_guide.html#Raspberry_Pi用イメージファイルのダウンロード">Raspberry Pi用イメージファイルのダウンロード</a>」、「<a href="../Pi_setup_guide.html#win32DiskImagerのダウンロードとインストール">win32DiskImagerのダウンロードとインストール</a>」、「<a href="../Pi_setup_guide.html#MicroSDカードへのイメージファイルの書き込み">MicroSDカードへのイメージファイルの書き込み</a>」を参照してください。<br />
+</p>
+<p class="auto-style2">MicroSDの接続方法は「<a href="../Pi_setup_guide.html">Lazurite Pi Gatewayの立ち上げ方法</a>」の「<a href="../Pi_setup_guide.html#MicroSDの差し込み">MicroSDの差し込み</a>」を参照してください。</p>
+<p class="auto-style2">&nbsp;</p>
+<h3 class="auto-style5">事前準備2.Tera Termのインストール</h3>
+<p class="auto-style5">
+<span style="color: rgb(51, 51, 51); font-family: 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif; font-size: 16.1px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 28.98px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;">
+Raspberry Piにシリアル接続するためのソフトであるTera Termをダウンロード、インストールします。</span></p>
+<p class="step-style">
+１．次のページを開きます。</p>
+<p style="font-size: 16.1px; line-height: 1.8; margin: 0px 0px 1.6em; padding: 0px; color: rgb(51, 51, 51); font-family: 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<a href="https://osdn.jp/projects/ttssh2/" style="color: rgb(0, 108, 216); text-decoration: none;">
+Tera Term ダウンロード</a></p>
+<p class="step-style">
+２．「ダウンロードファイル一覧」をクリックします。</p>
+<p class="auto-style5">
+<img src="tera_term_download.jpg" /></p>
+<p class="step-style">
+3．一覧から最新のteraterm-x.xx.exeをクリックし、
+ダウンロードします。</p>
+<p class="auto-style5">ここではteraterm-4.89.exeを選択してインストールすることにします。</p>
+<p class="auto-style5"><img src="tera_term_download2.jpg" /></p>
+<p class="step-style">4．ダウンロードしたteraterm-x.xx.exeをクリックし、
+画面の通りに進めてインストールします。</p>
+<p class="auto-style5"><img src="tera_term_download3.jpg" /></p>
+<p class="auto-style5">次の画面が表示されれば、Tera Termをインストールは完了です。</p>
+<p class="auto-style5"><img src="tera_term_download4.jpg" /></p>
+<p class="step-style">
+&nbsp;</p>
+<p class="step-style">
+事前準備3.Tera Termの準備</p>
+<p class="auto-style5">
+Tera Termを使用してRaspberry Piにシリアル接続する準備をします。</p>
+<p class="step-style">
+1．WindowsのプログラムメニューからTera Termを選択します。</p>
+<p class="step-style">
+<strong>2．接続方法を設定します。「シリアル」をチェックし、「OK」をクリックします。</strong></p>
+<p class="auto-style5">
+<img height="491" src="tera_term_serialport3.png" width="672" /></p>
+<p class="step-style">
+3．通信速度を設定します。<strong>「設定」メニュー</strong>から<strong>「シリアルポート」</strong>を選択します。</p>
+<p style="font-size: 16.1px; line-height: 1.8; margin: 0px 0px 1.6em; padding: 0px; color: rgb(51, 51, 51); font-family: 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<img height="490" src="tera_term_serialport.png" width="671" /></p>
+<p class="step-style">
+4．ボー・レートから<strong>「115200」を選択し、「OK」をクリックします。</strong></p>
+<p class="auto-style5">
+<img height="491" src="tera_term_serialport2.png" width="675" /></p>
+<p class="auto-style5">
+<span style="color: rgb(51, 51, 51); font-family: 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif; font-size: 16.1px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 28.98px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;">
+これでTera Termを使用してRaspberry Piにシリアル接続する準備ができました。</span></p>
+<hr/>
+<h3 class="auto-style5"><span class="auto-style6">Raspberry Piの起動方法</span></h3>
+<h4 class="auto-style5">準備するもの</h4>
+<ul class="auto-style2">
+	<li>Raspberry Pi2</li>
+	<li>Wi-Fiドングル (Raspberry Pi2と接続済）</li>
+	<li>Lazurite Pi Gateway(Raspberry Pi2と接続済）</li>
+	<li>マイクロUSBケーブル 2本</li>
+	<li>Raspberry Pi用電源(1A以上)</li>
+	<li>
+	<a href="https://www.switch-science.com/catalog/1032/" style="opacity: 0.8; color: rgb(0, 108, 216); text-decoration: underline; font-family: 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif; font-size: 16.1px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 28.98px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;" target="_blank">FTDI USBシリアル変換アダプタ(5V/3.3V切り替え機能付き)</a></li>
+	<li>ジャンパワイヤ(オス～メス)</li>
+</ul>
+<p><img alt="" src="prepare.jpg" /></p>
+<h3 class="auto-style5">&nbsp;</h3>
+<h3 class="auto-style5">1.FTDI USBシリアル変換<span class="auto-style11">アダプタのジャンパを</span><strong>3.3V</strong>にします。</h3>
+<p style="font-size: 16.1px; line-height: 1.8; margin: 0px 0px 1.6em; padding: 0px; color: rgb(51, 51, 51); font-family: 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<img height="342" src="FTDI%20USB1.jpg" width="664" /></p>
+<h3 class="step-style">2.Raspberry PiとFTDI USBシリアル変換アダプタをジャンパワイヤを接続します。</h3>
+<p class="auto-style6">
+Raspberry Pi側 &nbsp; &nbsp; &lt;—–&gt; &nbsp;FTDI USBシリアル変換アダプタ<br />
+6pin &nbsp; &nbsp;GND &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GND<br />
+8pin &nbsp; &nbsp;TX(送信) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RX(受信)<br />
+10pin &nbsp; RX(受信) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;TX(送信)<br/>
+</p>
+<h3 class="auto-style5">&nbsp;</h3>
+<h4 class="auto-style5">Raspberry Pi側</h4>
+<p class="auto-style5"><img height="774" src="FTDI%20USB2.jpg" width="774" /></p>
+<h4 class="auto-style5">FTDI USBシリアル変換アダプタ側</h4>
+<p class="auto-style5"><img height="774" src="FTDI%20USB3.jpg" width="774" /></p>
+<p class="step-style">&nbsp;</p>
+<p class="step-style"><span class="step-style"><strong>3.FTDI 
+USBシリアル変換アダプタとPCをマイクロUSBケーブルで接続します</strong></span>。</p>
+<p class="auto-style6">
+★画像を入れる★</p>
+<p class="auto-style6">
+&nbsp;</p>
+<p class="auto-style5"><span class="step-style"><strong>4.Raspberry 
+PiにUSB電源を挿入します。</strong></span></p>
+<p class="auto-style5">★画像を入れる★</p>
+<p class="auto-style5">Raspberry Piが起動し、Tera Termの画面に起動画面が表示されます。<br />
+</p>
+<h3 class="auto-style5"><img height="495" src="console_login.png" width="677" /></h3>
+<h3 class="auto-style5">
+&nbsp;</h3>
+<h3 class="auto-style5">5. 以下、Tera Tarmのコンソール画面で操作します。<strong>Raspberry Piへログインします。</strong></h3>
+<p class="auto-style6">次のように入力します。</p>
+<p class="auto-style6">Raspberry Pi&nbsp;&nbsp; login:&nbsp; pi⏎</p>
+<p class="auto-style6">Password: raspberry⏎ (パスワードは初期設定のままです。ここで入力しても文字は表示されません。）</p>
+&nbsp;
+<h3 class="auto-style5">6. ディスク容量を拡張します。 </h3>
+<p class="auto-style6">SDカードにイメージファイルを書き込んでから初めてRaspberry 
+Piを起動したときは、Raspi-configコマンドを実行してディスクイメージを拡張してください。</p>
+<h3 class="auto-style5">raspi-configを起動します。<a href="mailto:pi@raspberry~$"><span class="auto-style6">pi@raspberry~$</span></a><span class="auto-style6">&nbsp; のあとに次のコマンドを入力します。</span></h3>
+<h3 class="auto-style5">sudo raspi-config⏎</h3>
+<h3 class="auto-style5">&nbsp;</h3>
+<h3 class="auto-style5">7. ディスク容量を拡張するので、「1. Expand Filesystem」を選択して「enter」キーを押します。</h3>
+<p class="auto-style5"><img src="tera_term_config.jpg" /></p>
+<h3 class="auto-style5">6. 「&lt;了解&gt;」を選択して「enter」キーを押します。</h3>
+<h3 class="auto-style5">
+<img src="tera_term_config2.jpg" /></h3>
+<p class="auto-style5">&nbsp;</p>
+<h3 class="auto-style5">7. 再起動します。「&lt;Finish&gt;」を選択して「enter」キーを押します。</h3>
+<p class="auto-style5">
+<img src="reboot.jpg" /></p>
+<p class="auto-style5">&nbsp;</p>
+<h3 class="auto-style5">８.「&lt;はい&gt;」を選択して「enter」キーを押します。<br />
+</h3>
+<p class="auto-style5">
+<img src="reboot2.jpg" /></p>
+<p class="auto-style5">
+再起動され、ディスク容量が拡張されます。</p>
+<hr/>
+<h3 class="auto-style5">Wi-Fiの設定</h3>
+<p class="auto-style5">
+ｘｘｘｘｘｘｘｘｘ</p>
+<p>&nbsp;</p>
+<hr/>
+<h3 class="auto-style5">Lazurite Pi Gatewayの使用方法</h3>
+<p class="auto-style5">ここでは、Lazurite Sub-GHzからデータを送信し、Lazurite Pi 
+Gatewayで受信する方法について説明します。<br/>
+</p>
+<h4 class="auto-style5">Lazurite Sub-GHzの準備</h4>
+<p class="auto-style5">Lazurite Sub-GHzからデータを送信する手順については、「<span class="auto-style2"><a href="../Pi_setup_guide.html">Lazurite Pi Gatewayの立上げ方法/使用方法</a></span>」の「<a href="../Pi_setup_guide.html#Lazurite_Sub-GHzの準備">Lazurite Sub-GHzの準備</a>」を参照してください。</p>
+<p class="auto-style6">&nbsp;</p>
+<h4 class="auto-style5">Lazurite Pi Gatewayでの受信</h4>
+<span class="auto-style5">Lazurite Pi Gatewayで"Welcome to Lazurite 
+Sub-GHz"というメッセージを受信する方法を説明します。</span><br/>
+<br/>
+<h3 class="auto-style5">1.Tera Tarmのコンソール画面で次のコマンドを入力し、ドライバを有効にします。<br/>
+</h3>
+<p class="auto-style5">sudo insmod ~/driver/sub-ghz/DRV_802154.ko⏎</p>
+<br/>
+<h3 class="auto-style5"><strong>2.rubyのフォルダに移動し、SerialMonitorを起動します。</strong></h3>
+<p class="auto-style5">&nbsp;cd ruby⏎</p>
+<p class="auto-style5">&nbsp;sudo ./SerialMonitor.rb⏎</p>
+<p class="auto-style5">次のようなメッセージを受信したら成功です。「CTRL」ボタンを押しながら「C」押すと、
+アプリケーションを終了できます。</p>
+<p class="auto-style5">
+<img src="ruby.gif" /></p>
+<p class="auto-style5">※sudo 
+は管理者権限でプログラムを実行するためにつけるコマンドです。<br />
+　
+ドライバからデータを読み込むために管理者権限が必要になります。</p>
+<p class="auto-style5">※受信機の<strong>青色</strong>ＬＥＤが点灯していると受信はできている状態です。<br />
+　受信機の<strong>オレンジ</strong>ＬＥＤが点灯していると正常にデータを受け取りＡＣＫ信号を<br />
+　返している状態となります。</p>
+<p class="auto-style5"><img src="blueLED_orangeLED.jpg" /></p>
+<p class="auto-style5">&nbsp;</p>
+<h3><strong class="auto-style5">4.ドライバを無効にして終了します。次のコマンドを入力し、ドライバを無効にします。</strong></h3>
+<p class="auto-style5">sudo rmmod DRV_802154⏎</p>
+<p class="auto-style5">Lazurite Sub-GHzから信号を出した状態のままアプリケーションを終了して放置すると、<br />
+メモリーに受信データが保存され続けてしまい、システムが不安定になる可能性があります。</p>
+<p class="auto-style5">そのため、使用しない場合はドライバーを一度、uninstallしてください。</p>
+<p class="auto-style5">&nbsp;</p>
+<h4 class="auto-style5"><strong class="auto-style5">アプリケーションの終了</strong></h4>
+<p class="auto-style5">「CTRL」ボタンを押しながら「C」押すと、
+アプリケーションを終了できます。</p>
+<br/>
+<h4 class="auto-style5"><strong>ドライバの無効化</strong></h4>
+<p class="auto-style5">次のコマンドでドライバを無効にしたり有効にしたりできます。</p>
+<br/>
+<table style="width: 100%" class="auto-style6">
+	<tr>
+		<td style="width: 233px" class="auto-style8">ドライバ無効化する方法</td>
+		<td class="auto-style8">sudo rmmod DRV_802154⏎</td>
+	</tr>
+	<tr>
+		<td style="width: 233px" class="auto-style8">ドライバを有効化する方法</td>
+		<td class="auto-style8">sudo insmod ~/driver/sub-ghz/DRV_802154.ko</td>
+	</tr>
+</table>
+<p>
+<img alt="" height="134" src="../insmod.png" width="595" /></p>
+<h3 style="margin: 0px 0px 0.7em; padding: 0px 0px 0.4em; clear: both; font-size: 22.12px; font-weight: bold; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(221, 221, 221); color: rgb(51, 51, 51); font-family: 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+&nbsp;</h3>
+<h3 class="auto-style5">補足事項</h3>
+<p style="font-size: 16.1px; line-height: 1.8; margin: 0px 0px 1.6em; padding: 0px; color: rgb(51, 51, 51); font-family: 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+既にお手持ちのRaspberry Piでシリアルコンソールを有効にするのは以下の手順で行えます。<br />
+1) pi@raspberrypi:~$ sudo raspi-config<br />
+2) 「8 Advanced Options」を選択<br />
+3) 「A8 Serial」を選択<br />
+4) 「 Would you like a login shell to be accessible over 
+serial?」と聞かれるので「はい」「Yes」を選択</p>
+<br/>
+<p>&nbsp;</p>
+
+</body>
+
+</html>
