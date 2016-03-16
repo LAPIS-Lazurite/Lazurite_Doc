@@ -5,18 +5,6 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>LazGem</title>
 <style type="text/css">
-.auto-style1 {
-	vertical-align: middle;
-}
-.auto-style18 {
-	font-family: メイリオ;
-	color: #666666;
-}
-.auto-style20 {
-	margin-left: 40px;
-	color: #666666;
-	font-family: メイリオ;
-}
 .auto-style21 {
 	margin-left: 40px;
 }
@@ -26,16 +14,8 @@
 	margin-right: 0px;
 	margin-top: 1px;
 }
-.auto-style23 {
-	margin-left: 80px;
-	color: #666666;
-	font-family: メイリオ;
-}
 .auto-style24 {
 	margin-left: 80px;
-}
-.auto-style25 {
-	color: #FF0000;
 }
 .auto-style26 {
 	border-style: solid;
@@ -47,9 +27,6 @@
 	margin-right: 0px;
 	margin-top: 1px;
 }
-.auto-style28 {
-	color: #000000;
-}
 code
 	{font-family:"ＭＳ ゴシック";
 	}
@@ -58,64 +35,6 @@ code
 
 <body>
 
-<h1>
-<img height="45" src="../../IEEE802154/Lazurite_logo1.png" width="195" class="auto-style1" /> 
-LazGem (Ruby Library for Lazurite Pi Gateway)</h1>
-<hr />
-<p class="auto-style18">LazGemはLazurite Pi Gateway用のruby libraryです。</p>
-<h2>インストール方法</h2>
-<p class="auto-style21">1) Lazurite Pi Gateway用ドライバファイルを更新してください</p>
-<p class="auto-style24">以下の赤字部分を実行していきます。</p>
-<p class="auto-style24">#以降はコメントなので入力する必要はありません</p>
-<p class="auto-style24"><span class="auto-style28">pi@raspberrypi ~ $ </span>
-<span class="auto-style25">cd driver/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-#driverのディレクトに移動します</span><br class="auto-style25" />
-<span class="auto-style28">pi@raspberrypi ~/driver $ </span>
-<span class="auto-style25">git clone 
-git://github.com/LAPIS-Lazurite/LazDriver.git&nbsp;&nbsp;&nbsp; 
-#GitHubのサーバーから無線モジュール用ドライバファイルを取得します</span><br class="auto-style25" />
-Cloning into 'LazDriver'...<br />
-remote: Counting objects: 55, done.<br />
-remote: Compressing objects: 100% (35/35), done.<br />
-remote: Total 55 (delta 16), reused 55 (delta 16), pack-reused 0<br />
-Receiving objects: 100% (55/55), 128.18 KiB | 203 KiB/s, done.<br />
-Resolving deltas: 100% (16/16), done.<br />
-<span class="auto-style28">pi@raspberrypi ~/driver $</span><span class="auto-style25"> 
-cd LazDriver/&nbsp;&nbsp;&nbsp; #ダウンロードしたドライバファイルのフォルダに移動します</span><br />
-<span class="auto-style28">pi@raspberrypi ~/driver/LazDriver $ </span>
-<span class="auto-style25">make&nbsp;&nbsp;&nbsp; #ドライバファイルをビルドします。</span><br />
-make -C /lib/modules/3.18.10-v7/build SUBDIRS=/home/pi/driver/LazDriver modules<br />
-make[1]: Entering directory '/usr/src/linux-rpi-3.18.y'<br />
-CC [M] /home/pi/driver/LazDriver/drv-802154e.o<br />
-CC [M] /home/pi/driver/LazDriver/mac-802154e.o<br />
-CC [M] /home/pi/driver/LazDriver/phy-bp3596.o<br />
-CC [M] /home/pi/driver/LazDriver/i2c-bp3596.o<br />
-CC [M] /home/pi/driver/LazDriver/spi-bp3596.o<br />
-CC [M] /home/pi/driver/LazDriver/ieee802154e.o<br />
-LD [M] /home/pi/driver/LazDriver/DRV_802154.o<br />
-Building modules, stage 2.<br />
-MODPOST 1 modules<br />
-CC /home/pi/driver/LazDriver/DRV_802154.mod.o<br />
-LD [M] /home/pi/driver/LazDriver/DRV_802154.ko<br />
-make[1]: Leaving directory '/usr/src/linux-rpi-3.18.y'</p>
-<p class="auto-style24">&nbsp;</p>
-<p class="auto-style20">&nbsp;2) LazGemのインストール</p>
-<p class="auto-style23">sudo gem install LazGem⏎</p>
-<h2>サンプルプログラムの実行</h2>
-<h3 class="auto-style21">1) サンプルプログラムをダウンロードします</h3>
-<p class="auto-style23">cd ⏎<br />
-ダウンロードするフォルダに移動し次のコマンドを実行してください。<br />
-git clone git://github.com/LAPIS-Lazurite/LazGem⏎</p>
-<h3 class="auto-style21">2) サンプルプログラムを実行します。</h3>
-<p class="auto-style23">cd LazGem\sample⏎<br />
-./sample_tx.rb　または、 ./sample_rx.rb</p>
-<p class="auto-style23">送信用サンプルプログラム&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-sample_tx.rb<br />
-受信用サンプルプログラム&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sample_rx.rb</p>
-<p class="auto-style23">送信用サンプルプログラムは正しい送信先に合わせてプログラムの18行目のrxAddr(受信アドレス)を変更してください。</p>
-<p class="auto-style23">
-<img alt="" height="602" src="sample_tx_rb.png" width="546" /></p>
-<p class="auto-style23">&nbsp;</p>
 <h2>API仕様</h2>
 <h3>クラス&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LazGem::Device</h3>
 <h4>device_open(ch,panid,pwr,rate,mode)</h4>
