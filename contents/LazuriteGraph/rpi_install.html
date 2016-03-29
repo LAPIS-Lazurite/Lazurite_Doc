@@ -49,12 +49,6 @@ h2
 	text-align: center;
 }
 
-.auto-style10 {
-	font-family: メイリオ;
-	color: #666666;
-	margin-left: 40px;
-	text-align: center;
-}
 .auto-style11 {
 	text-decoration: underline;
 }
@@ -87,45 +81,76 @@ h2
 <h1>
 <a href="http://www.lapis-semi.com/lazurite-jp/">
 <img height="45" src="../Lazurite_logo.png" width="197" class="auto-style1" /></a> 
-<span class="auto-style2">Lazurite Graphのインストール方法</span></h1>
+<span class="auto-style2">Raspberry Piへのインストール方法</span></h1>
 <p class="auto-style5">概要</p>
 <ol>
 	<li class="auto-style5"><a href="#1._LazuriteGraphについて">LazuriteGraphについて</a></li>
 	<li class="auto-style5"><a href="#2._LazuriteGraphのインストール方法">LazuriteGraphのインストール方法</a></li>
-	<li class="auto-style5"><a href="#3._使用許諾">使用許諾</a></li>
+	<li class="auto-style5"><a href="#3._使用方法">使用方法</a></li>
+	<li class="auto-style5"><a href="#4._使用許諾">使用許諾</a></li>
 </ol>
 <hr />
 <h1 class="auto-style11"><a name="1._LazuriteGraphについて">1. LazuriteGraphについて</a></h1>
 <p class="auto-style8">特定の書式に従って送信される数値データをリアルタイムにグラフ化することができるツールです。最大で４つのグラフを同時に表示することができ、グラフのタイトルや、グラフ毎に軸の数、ラベルを任意に設定することができます。</p>
+<p class="auto-style8">Raspberry Pi用は920MHz無線から受信したデータのグラフ表示も可能です。</p>
 <p class="auto-style9">
 <img alt="" height="496" src="graphtool.png" width="630" /></p>
 <p class="auto-style5">&nbsp;</p>
 <h1><a href="#2._LazuriteGraphのインストール方法" name="2._LazuriteGraphのインストール方法">
 <span class="auto-style12">2. LazuriteGraphのインストール方法</span></a></h1>
-<p class="auto-style8">1. ダウンロードページからLazuriteGraphのzipファイルをダウンロードしてください。</p>
-<p class="auto-style8">2. ダウンロードしたzipファイルを解凍します。</p>
-<p class="auto-style8"><img alt="" height="493" src="unzip.png" width="614" />&nbsp;</p>
-<p class="auto-style8">解凍後のファイルがこちら</p>
+<p class="auto-style8">1. コンソール画面で次のコマンドをにゅうりょくして、インストーラ用スクリプトをダウンロードします。</p>
+<p class="auto-style8">pi@raspberrypi ~ $ git clone 
+git://github.com/LAPIS-Lazurite/LazuriteInstaller⏎</p>
+<p class="auto-style8">Cloning into 'LazuriteInstaller'...<br />
+remote: Counting objects: 17, done.<br />
+remote: Compressing objects: 100% (10/10), done.<br />
+remote: Total 17 (delta 4), reused 12 (delta 2), pack-reused 0<br />
+Receiving objects: 100% (17/17), done.<br />
+Resolving deltas: 100% (4/4), done.</p>
+<p class="auto-style8">2. LazuriteGraphのインストーラーが保存されているフォルダに移動します。</p>
+<p class="auto-style8">pi@raspberrypi ~ $ cd LazuriteInstaller/LazuriteGraph/⏎</p>
 <p class="auto-style8">
-<img alt="" height="263" src="unzippedfolder.png" width="593" />&nbsp;</p>
+3. インストーラ用スクリプトを実行します。<br />
+実行するとSTEP1～STEP10まで実行され、最後まで実行したらインストール完了です。</p>
 <p class="auto-style8">
-3. これらのファイルをLazuriteIDEがインストールされているフォルダに移動します。</p>
+pi@raspberrypi ~/LazuriteInstaller/LazuriteGraph $ ./install.sh⏎</p>
 <p class="auto-style8">
-LazuriteIDEは通常であれば <a href="file:///c:/LazuriteIDE">c:\LazuriteIDE</a>にインストールされています。</p>
+STEP1:: get LazDriver from github<br />
+Cloning into 'LazDriver'...<br />
+remote: Counting objects: 88, done.<br />
+remote: Compressing objects: 100% (6/6), done.<br />
+<br />
+......<br />
+<br />
+./src/com/lapis_semi/lazurite/LazuriteGraph/ComChart.java:33: 警告: [serial] 直 
+列化可能なクラスComChartには、serialVersionUIDが定義されていません<br />
+public class ComChart extends JFrame implements 
+SerialPortEventListener,SubGHzEventListener {<br />
+^<br />
+警告26個<br />
+<br />
+STEP10:: enabling SubGHz tab<br />
+<br />
+Complete !!</p>
 <p class="auto-style8">
-途中でこのようなメッセージが表示されますが、「はい」を選択してください。</p>
-<p class="auto-style10">
-<img alt="" height="560" src="JavaFolderMarge.png" width="496" /></p>
+(補足)&nbsp;<br />
+STEP9のコンパイルで警告が表示されますが問題はありません。LazuriteIDEのjavaのバージョンは1.6ですが、Raspberry 
+Pi側は1.8でバージョンが異なるために警告が表示される個所があります。</p>
+<h1>
+<a name="3._使用方法">3. 使用方法</a></h1>
 <p class="auto-style8">
-</p>
+コンソール画面から実行する場合は次のコマンドを実行してください。</p>
 <p class="auto-style8">
-4. ファイル移動後の結果はこのようになります。</p>
+pi@raspberrypi ~ $ cd ~/java/LazuriteGraph/<br />
+pi@raspberrypi ~/java/LazuriteGraph $ ./LazuriteGraph</p>
 <p class="auto-style8">
-<img alt="" height="481" src="complete.png" width="619" /></p>
+GUIから実行する場合はファイルマネージャからLazuriteGraphを実行してください。</p>
 <p class="auto-style8">
-以上でインストールは完了です。</p>
+絵を挿入</p>
+<p class="auto-style8">
+&nbsp;</p>
 
-<h1><a name="3._使用許諾">3. 使用許諾</a></h1>
+<h1><a name="4._使用許諾">4. 使用許諾</a></h1>
 <p class="auto-style13">LazuriteGraphはLazuriteIDEに拡張して使用するソフトウエアです。</p>
 <p class="auto-style13">MITライセンスに準じて配布しています。</p>
 
