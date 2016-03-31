@@ -51,6 +51,7 @@ h2
 
 .auto-style11 {
 	text-decoration: underline;
+	font-family: メイリオ;
 }
 .auto-style12 {
 	color: #000000;
@@ -58,6 +59,44 @@ h2
 
 .auto-style13 {
 	margin-left: 40px;
+}
+
+.auto-style15 {
+	margin-left: 40px;
+	text-align: center;
+}
+.auto-style17 {
+	font-family: メイリオ;
+}
+.auto-style18 {
+	font-family: メイリオ;
+	color: #666666;
+	margin-left: 40px;
+	text-align: center;
+}
+
+.auto-style21 {
+	text-align: left;
+}
+.auto-style22 {
+	text-align: center;
+}
+
+.auto-style24 {
+	text-align: center;
+	font-weight: bold;
+	color: #800000;
+	font-family: メイリオ;
+}
+.auto-style25 {
+	color: #800000;
+}
+.auto-style27 {
+	text-align: center;
+	font-family: メイリオ;
+}
+.auto-style29 {
+	color: #666666;
 }
 
 </style>
@@ -96,9 +135,9 @@ h2
 <p class="auto-style9">
 <img alt="" height="496" src="graphtool.png" width="630" /></p>
 <p class="auto-style5">&nbsp;</p>
-<h1><a href="#2._LazuriteGraphのインストール方法" name="2._LazuriteGraphのインストール方法">
+<h1 class="auto-style17"><a href="#2._LazuriteGraphのインストール方法" name="2._LazuriteGraphのインストール方法">
 <span class="auto-style12">2. LazuriteGraphのインストール方法</span></a></h1>
-<p class="auto-style8">1. コンソール画面で次のコマンドをにゅうりょくして、インストーラ用スクリプトをダウンロードします。</p>
+<p class="auto-style8">1. Raspberry Piのコンソール画面で次のコマンドを入力して、インストーラ用スクリプトをダウンロードします。</p>
 <p class="auto-style8">pi@raspberrypi ~ $ git clone 
 git://github.com/LAPIS-Lazurite/LazuriteInstaller⏎</p>
 <p class="auto-style8">Cloning into 'LazuriteInstaller'...<br />
@@ -113,7 +152,7 @@ Resolving deltas: 100% (4/4), done.</p>
 3. インストーラ用スクリプトを実行します。<br />
 実行するとSTEP1～STEP10まで実行され、最後まで実行したらインストール完了です。</p>
 <p class="auto-style8">
-pi@raspberrypi ~/LazuriteInstaller/LazuriteGraph $ ./install.sh⏎</p>
+pi@raspberrypi ~/LazuriteInstaller/LazuriteGraph $ ./install.sh</p>
 <p class="auto-style8">
 STEP1:: get LazDriver from github<br />
 Cloning into 'LazDriver'...<br />
@@ -136,23 +175,114 @@ Complete !!</p>
 (補足)&nbsp;<br />
 STEP9のコンパイルで警告が表示されますが問題はありません。LazuriteIDEのjavaのバージョンは1.6ですが、Raspberry 
 Pi側は1.8でバージョンが異なるために警告が表示される個所があります。</p>
-<h1>
+<h1 class="auto-style17">
 <a name="3._使用方法">3. 使用方法</a></h1>
+<h2 class="auto-style17">
+３－１．起動方法</h2>
 <p class="auto-style8">
+３－１．
 コンソール画面から実行する場合は次のコマンドを実行してください。</p>
 <p class="auto-style8">
-pi@raspberrypi ~ $ cd ~/java/LazuriteGraph/<br />
-pi@raspberrypi ~/java/LazuriteGraph $ ./LazuriteGraph</p>
-<p class="auto-style8">
-GUIから実行する場合はファイルマネージャからLazuriteGraphを実行してください。</p>
-<p class="auto-style8">
-絵を挿入</p>
+pi@raspberrypi ~ $ cd ~/java/LazuriteGraph/⏎<br />
+pi@raspberrypi ~/java/LazuriteGraph $ ./LazuriteGraph⏎</p>
 <p class="auto-style8">
 &nbsp;</p>
-
+<h2 class="auto-style17">
+３－２．
+GUIから実行する場合はファイルマネージャからLazuriteGraphを実行してください。</h2>
+<p class="auto-style8">ファイルマネージャーを開きます。</p>
+<p class="auto-style15"><img alt="" height="213" src="1.png" width="443" /></p>
+<p class="auto-style8">LazuriteGraphがインストールされているフォルダを開きます。</p>
+<p class="auto-style18">
+<img alt="" height="233" src="2.png" width="579" /></p>
+<p class="auto-style8">
+続いて、LazuriteGraphのフォルダを開きます</p>
+<p class="auto-style18">
+<img alt="" height="159" src="3.png" width="202" />&nbsp;</p>
+<p class="auto-style8">
+LazuriteGraphをクリックして開きます。</p>
+<p class="auto-style18">
+<img alt="" height="249" src="4.png" width="595" />&nbsp;</p>
+<p class="auto-style8">LazuriteGraphをクリックして開きます。</p>
+<p class="auto-style18"><img height="185" src="5.png" width="648" /></p>
+<p class="auto-style8" style="height: 48px">『端末で実行する』を選択するとコンソール画面に出力されるログが見れます。<br />
+『実行』を選択するとコンソール画面は表示されません。</p>
+<p class="auto-style8">
+LazuriteGraphが開きました。</p>
+<p class="auto-style18">
+<img alt="" height="480" src="6.png" width="603" /></p>
+<p class="auto-style8">
+&nbsp;</p>
+<h2>
+<span class="auto-style17">３－３．使い方</span></h2>
+<p class="auto-style8">Lazurite IDEを開きます。</p>
+<p class="auto-style8">開くとダイアログが表示されるので、これを閉じます。</p>
+<p class="auto-style22" style="width: 672px">
+<img alt="" height="218" src="7-1.png" width="322" /></p>
+<p class="auto-style8">閉じると、新規作成画面になります。</p>
+<p class="auto-style22" style="width: 665px">
+<img alt="" height="333" src="8.png" width="389" /></p>
+<p class="auto-style8"><span class="auto-style29">続いて、ファイル → プロジェクトのサンプル → 04.ROHM_Sensor → Axis10_subghz（赤四角部分）の順に選択します。</span></p>
+<p class="auto-style21">
+　　　　　　　　　　　<img alt="" height="385" src="9.png" width="523" /></p>
+<p class="auto-style27" style="width: 616px">
+<strong>　　　　　　　　　　　<span class="auto-style25">※《　参照１　》</span></strong></p>
+<p class="auto-style8"><span class="auto-style29">選択すると、プログラムが読み込まれます。</span></p>
+<p class="auto-style22">
+<img alt="" height="179" src="10.png" width="427" /></p>
+<p class="auto-style21">
+&nbsp;</p>
+<p class="auto-style8"><span class="auto-style5">続いて、プログラム内の"HOST ADDRESS"に送信元の数字を入力します。</span></p>
+<p class="auto-style8">写真の場所の数字下４桁部分を入力してください。その際、”0×”は消さないで下さい。</p>
+<p class="auto-style22">
+<img alt="" height="111" src="11.png" width="550" /></p>
+<p class="auto-style22">
+&nbsp;</p>
+<p class="auto-style22">
+<img alt="" height="443" src="IMG1.jpg" width="625" /></p>
+<p class="auto-style8"></p>
+<p class="auto-style8"><span class="auto-style29">続いて、ツール → シリアル通信 → COM186（表示されたもの）　の順に選択します。</span></p>
+<p class="auto-style22" style="width: 734px">
+<img alt="" height="139" src="12.png" width="612" /></p>
+<p class="auto-style8">マイコンボード通信をクリックします。</p>
+<p class="auto-style22" style="width: 735px">
+<img alt="" height="78" src="13.png" width="264" /></p>
+<p class="auto-style8">実行画面が表示されます。</p>
+<p class="auto-style22" style="width: 738px">
+　<img alt="" height="127" src="14.png" width="331" /></p>
+<p class="auto-style8"><span class="auto-style29">これで、Lazurite IDEの操作は終了です。</span></p>
+<p class="auto-style8">続いて、３－１の起動方法に沿って、LazuriteGraphを開きます。</p>
+<p class="auto-style22">
+<img alt="" height="312" src="15.png" width="477" /></p>
+<p class="auto-style8"><span class="auto-style29">File → OPEN を選択します。</span></p>
+<p class="auto-style22" style="width: 619px">
+<img alt="" height="127" src="16.png" width="293" />&nbsp;</p>
+<p class="auto-style8" style="width: 619px">続いて、10axis.graphを選択して開きます。</p>
+<p class="auto-style18" style="width: 709px">
+<img alt="" height="443" src="17.png" width="576" /></p>
+<p class="auto-style24" style="width: 619px">
+　　
+※《　参照２　》</p>
+<p class="auto-style8" style="width: 619px">SubGHzを選択し、"texAddr"に送信先の数字を入力します。</p>
+<p class="auto-style8" style="width: 619px">数字は写真の場所の数字16桁全てを入力してください。</p>
+<p class="auto-style8" style="width: 619px">入力後、startをクリックします。</p>
+<p class="auto-style18" style="width: 619px">
+<img alt="" height="353" src="18.png" width="477" /></p>
+<p class="auto-style22" style="width: 713px">
+<img alt="" height="354" src="IMG2.jpg" width="489" /></p>
+<p class="auto-style22" style="width: 713px">
+<img alt="" height="329" src="IMG3.jpg" width="437" /></p>
+<p class="auto-style8" style="width: 713px"><span class="auto-style29">10axis graphが表示されます。</span></p>
+<p class="auto-style22" style="width: 713px">
+<img alt="" height="317" src="19.png" width="468" /></p>
+<p class="auto-style8" style="width: 713px">※10axis graph以外を表示させる時は、《参照１》で他のプロジェクトのサンプル、《参照２》で他のグラフファイルを選択して下さい。</p>
+<p class="auto-style8" style="width: 713px">なお、《参照１》のプロジェクトのサンプルは、Axis10_subghz（赤）・ BM1383GLV_subghz（黄）・ 
+BM1422GMV_subghz（緑）・ KXG03_subghz（紫）・ RPR0521_subghz（青）のみです。</p>
+<p class="auto-style21" style="width: 713px">
+&nbsp;</p>
 <h1><a name="4._使用許諾">4. 使用許諾</a></h1>
-<p class="auto-style13">LazuriteGraphはLazuriteIDEに拡張して使用するソフトウエアです。</p>
-<p class="auto-style13">MITライセンスに準じて配布しています。</p>
+<p class="auto-style13"><span class="auto-style5">LazuriteGraphはLazuriteIDEに拡張して使用するソフトウエアです</span><span class="auto-style29">。</span></p>
+<p class="auto-style8">MITライセンスに準じて配布しています。</p>
 
 </body>
 
