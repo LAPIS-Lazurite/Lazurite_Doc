@@ -338,7 +338,8 @@ rx_addr_typeにより、送信PANID、送信アドレス、受信PANID、<br />
 	</tr>
 </table>
 <p class="auto-style18">PANIDの有無は、tx_addr_type, rx_addr_type, 
-panid_compの情報に応じて次のようになっています。</p>
+panid_compの情報に応じて次のようになっています。<br />
+(2016.4.12 表が間違っていたので改訂しました)</p>
 <table class="auto-style12" style="width: 690px">
 	<tr>
 		<td style="width: 106px" class="auto-style14">&nbsp;</td>
@@ -367,69 +368,74 @@ panid_compの情報に応じて次のようになっています。</p>
 		<td style="width: 133px; height: 8px;" class="auto-style13">なし</td>
 		<td class="auto-style13" style="width: 129px; height: 8px;">なし</td>
 		<td class="auto-style13" style="width: 116px; height: 8px;">0</td>
-		<td class="auto-style13" style="width: 123px; height: 8px;">なし</td>
 		<td class="auto-style13" style="width: 174px; height: 8px;">なし</td>
+		<td class="auto-style13" style="width: 123px; height: 8px;">なし</td>
 	</tr>
 	<tr>
 		<td style="width: 106px" class="auto-style13">1</td>
 		<td style="width: 133px" class="auto-style13">なし</td>
 		<td class="auto-style13" style="width: 129px">なし</td>
 		<td class="auto-style13" style="width: 116px">1</td>
-		<td class="auto-style13" style="width: 123px">なし</td>
 		<td class="auto-style13" style="width: 174px">あり</td>
+		<td class="auto-style13" style="width: 123px">なし</td>
 	</tr>
 	<tr>
 		<td style="width: 106px" class="auto-style13">2</td>
 		<td style="width: 133px" class="auto-style13">なし</td>
 		<td class="auto-style13" style="width: 129px">あり</td>
 		<td class="auto-style13" style="width: 116px">0</td>
-		<td class="auto-style13" style="width: 123px">あり</td>
 		<td class="auto-style13" style="width: 174px">なし</td>
+		<td class="auto-style13" style="width: 123px">あり</td>
 	</tr>
 	<tr>
 		<td style="width: 106px" class="auto-style13">3</td>
 		<td style="width: 133px" class="auto-style13">なし</td>
 		<td class="auto-style13" style="width: 129px">あり</td>
 		<td class="auto-style13" style="width: 116px">1</td>
-		<td class="auto-style13" style="width: 123px">なし</td>
 		<td class="auto-style13" style="width: 174px">なし</td>
+		<td class="auto-style13" style="width: 123px">なし</td>
 	</tr>
 	<tr>
 		<td style="width: 106px" class="auto-style13">4</td>
 		<td style="width: 133px" class="auto-style13">あり</td>
 		<td class="auto-style13" style="width: 129px">なし</td>
 		<td class="auto-style13" style="width: 116px">0</td>
-		<td class="auto-style13" style="width: 123px">なし</td>
 		<td class="auto-style13" style="width: 174px">あり</td>
+		<td class="auto-style13" style="width: 123px">なし</td>
 	</tr>
 	<tr>
 		<td style="width: 106px" class="auto-style13">5</td>
 		<td style="width: 133px" class="auto-style13">あり</td>
 		<td class="auto-style13" style="width: 129px">なし</td>
 		<td class="auto-style13" style="width: 116px">1</td>
-		<td class="auto-style13" style="width: 123px">なし</td>
 		<td class="auto-style13" style="width: 174px">なし</td>
+		<td class="auto-style13" style="width: 123px">なし</td>
 	</tr>
 	<tr>
 		<td style="width: 106px" class="auto-style13">6</td>
 		<td style="width: 133px" class="auto-style13">あり</td>
 		<td class="auto-style13" style="width: 129px">あり</td>
 		<td class="auto-style13" style="width: 116px">0</td>
-		<td class="auto-style13" style="width: 123px">なし</td>
 		<td class="auto-style13" style="width: 174px">あり</td>
+		<td class="auto-style13" style="width: 123px">なし</td>
 	</tr>
 	<tr>
 		<td style="width: 106px" class="auto-style13">7</td>
 		<td style="width: 133px" class="auto-style13">あり</td>
 		<td class="auto-style13" style="width: 129px">あり</td>
 		<td class="auto-style13" style="width: 116px">1</td>
-		<td class="auto-style13" style="width: 123px">なし</td>
 		<td class="auto-style13" style="width: 174px">なし</td>
+		<td class="auto-style13" style="width: 123px">なし</td>
 	</tr>
 </table>
 <br/>
 <h3 class="auto-style18">3. Lazurite Sub-GHzの実例</h3>
-<p>&nbsp;</p>
+<p class="auto-style2">LazuriteではデフォルトのMACヘッダは0xA821です。</p>
+<ul>
+	<li>
+	<p class="auto-style2">受信したデータをシリアル出力すると「0x21,0xA8, ....」になります。</p>
+	</li>
+</ul>
 
 <h1>&nbsp;</h1>
 
