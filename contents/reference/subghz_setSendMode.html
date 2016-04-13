@@ -149,21 +149,25 @@ td{
 アドレスモードを4(送信機のアドレスを省略)にして送信する初期設定のサンプルプログラムです。<br />
 送信機のアドレスが無いために受信機がACKを送信しません。</p>
 	<p>
-<TEXTAREA wrap="off" name="empty" style="width: 591px; height: 89px" class="auto-style1">setup() {
+<TEXTAREA wrap="off" name="empty" style="width: 591px; height: 144px" class="auto-style1">setup() {
+	SUBGHZ_PARAM param;
+
 	SubGHz.init();
-	SubGHz.getSendMode(&param);
+	SubGHz.getSendMode( & param);
 	param.addrType = 4;
-	SubGHz.setSendMode(&param);
+	SubGHz.setSendMode( & param);
 }
 
 </TEXTAREA></p>
 <p class="auto-style1">&nbsp;</p>
 	<p class="auto-style1">送信に失敗したとき、３回再送する設定する場合の初期化方法です。</p>
-<TEXTAREA wrap="off" name="empty0" style="width: 591px; height: 89px" class="auto-style1" cols="20" rows="1">setup() {
+<TEXTAREA wrap="off" name="empty0" style="width: 591px; height: 142px" class="auto-style1" cols="20">setup() {
+	SUBGHZ_PARAM param;
+
 	SubGHz.init();
-	SubGHz.getSendMode(&param);
+	SubGHz.getSendMode( & param);
 	param.txRetry = 3;
-	SubGHz.setSendMode(&param);
+	SubGHz.setSendMode( & param);
 }
 
 </TEXTAREA><br/>
