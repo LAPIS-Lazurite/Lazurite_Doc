@@ -49,6 +49,10 @@
 td{
 	padding:0px 5px;
 }
+.auto-style15 {
+	font-family: メイリオ;
+	margin-left: 40px;
+}
 </style>
 
 <script>
@@ -95,7 +99,10 @@ td{
 		<p>tx.rssi</p>
 		</td>
 		<td class="auto-style13">
-		<p>ACK受信した時の電波強度を0～255で示したものです。値が大きいほど電波強度が強いことを示しています。</p>
+		<p>
+		ACK受信した時の電波強度を0～255で示したものです。RSSIの値は0～255で、最大値255は受信時のパワーが-35dBm付近であることを示しています。<br />
+		以降 約-0.25dB毎にRSSIが1下がります。<br />
+		なお、送信時のパワーは設定によって異なり、20mW時は0dBm、1mW時は-13dBmとなっています。</p>
 		</td>
 	</tr>
 	<tr>
@@ -124,7 +131,10 @@ td{
 		<p>rx.rssi</p>
 		</td>
 		<td class="auto-style13">
-		<p>最後に受信した際の電波強度を0～255で示したものです。値が大きいほど電波強度が強いことを示しています。</p>
+		<p>
+		受信した時の電波強度を0～255で示したものです。RSSIの値は0～255で、最大値255は受信時のパワーが-35dBm付近であることを示しています。<br />
+		以降 約-0.25dB毎にRSSIが1下がります。<br />
+		なお、送信時のパワーは設定によって異なり、20mW時は0dBm、1mW時は-13dBmとなっています。</p>
 		</td>
 	</tr>
 	<tr>
@@ -137,12 +147,17 @@ td{
 	</tr>
 </table>
 <p class="auto-style1">&nbsp;</p>
+	<p class="auto-style15">&nbsp;</p>
 <h3 class="auto-style11">戻り値</h3>
 <p class="auto-style12">なし</p>
 <p class="auto-style11"><strong>サンプル</strong></p>
-<p class="auto-style12">TBD</p>
+<p class="auto-style12">送信時のACKを受信した際のRSSIは以下のように知ることができます。</p>
 <p>
-<TEXTAREA wrap="off" name="empty" style="width: 591px; height: 591px" class="auto-style1"></TEXTAREA></p>
+<TEXTAREA wrap="off" name="empty" style="width: 591px; height: 341px" class="auto-style1">uint8_t rssi;
+SUBGHZ_STATUS tx;
+SubGHz.getStatus(&tx,NULL);
+
+rssi = tx.rssi;</TEXTAREA></p>
 <p>&nbsp;</p>
 <br/>
 <br/>
