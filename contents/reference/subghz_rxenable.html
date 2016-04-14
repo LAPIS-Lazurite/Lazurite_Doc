@@ -22,9 +22,6 @@
 	color: #666666;
 	font-family: メイリオ;
 }
-.auto-style8 {
-	border: 1px solid #000000;
-}
 .auto-style10 {
 	color: #666666;
 	font-weight: normal;
@@ -39,6 +36,15 @@
 	color: #666666;
 	margin-bottom:40px;
 	margin-left:40px;
+}
+
+td{
+	padding:0px 5px;
+}
+
+.auto-style18 {
+	margin-left: 40px;
+	font-family: メイリオ;
 }
 
 </style>
@@ -73,76 +79,11 @@ int status, uint16_t size));</p>
 <h3 class="auto-style11">パラメータ</h3>
 <h4 class="auto-style11">&nbsp;&nbsp;&nbsp; void (*callback)(uint8_t rssi, int status, uint16_t size)</h4>
 <p class="auto-style12">受信時のcallback関数を指定します。通常はNULLで使用してください。</p>
-<h3>戻り値</h3>
-<table style="width: 100%" class="auto-style7">
-	<tr>
-		<td class="auto-style8">戻り値</td>
-		<td class="auto-style8">意味</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_OK</td>
-		<td class="auto-style8">正常に終了</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_RESET_FAIL</td>
-		<td class="auto-style8">リセット失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_SETUP_FAIL</td>
-		<td class="auto-style8">内部 セットアップ関数の失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_SLEEP_FAIL</td>
-		<td class="auto-style8">内部 スリープ関数の失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_WAKEUP_FAIL</td>
-		<td class="auto-style8">内部 wakeup関数の失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_MYADDR_FAIL</td>
-		<td class="auto-style8">内部 アドレス取得関数の失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_SETFIL_FAIL</td>
-		<td class="auto-style8">内部 アドレスフィルタ設定関数の失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_TX_COMP_FAIL</td>
-		<td class="auto-style8">送信CALLBACKの失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_TX_FAIL</td>
-		<td class="auto-style8">送信失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_TX_ACK_FAIL</td>
-		<td class="auto-style8">送信後のACK受信失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_RX_ENB_FAIL</td>
-		<td class="auto-style8">受信ENB関数の失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_RX_DIS_FAIL</td>
-		<td class="auto-style8">受信Disable関数の失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_RX_COMP_FAIL</td>
-		<td class="auto-style8">受信callback関数の失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_PANID</td>
-		<td class="auto-style8">PANIDエラー</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_ERR_ADDRTYPE</td>
-		<td class="auto-style8">ADDRESSエラー</td>
-	</tr>
-</table>
+<h3 class="auto-style10"><strong>戻り値</strong></h3>
+<p class="auto-style18"><a href="subghz_msg.html">SUBGHZ_MSG 変数</a>を参照してください。</p>
 <br/>
 <h3 class="auto-style11">サンプル</h3>
-<p class="auto-style7">TBD</p>
+<p class="auto-style7">サンプルプログラム Print_SubGHz.cを参照してください。</p>
 <p>
 <TEXTAREA wrap="off" name="empty" style="width: 591px; height: 591px" class="auto-style1"></TEXTAREA></p>
 <p>&nbsp;</p>

@@ -22,9 +22,6 @@
 	font-family: メイリオ;
 	color: #666666;
 }
-.auto-style8 {
-	border: 1px solid #000000;
-}
 .auto-style10 {
 	color: #666666;
 	font-weight: normal;
@@ -42,6 +39,33 @@
 }
 td{
 	padding:0px 5px;
+}
+
+.auto-style13 {
+	font-family: メイリオ;
+	color: #666666;
+	margin-left: 40px;
+}
+.auto-style14 {
+	margin-left: 80px;
+	text-align: left;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style15 {
+	text-align: left;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style16 {
+	font-family: メイリオ;
+	color: #666666;
+	text-align: center;
+}
+
+.auto-style18 {
+	margin-left: 40px;
+	font-family: メイリオ;
 }
 
 </style>
@@ -73,103 +97,29 @@ uint8_t *data, uint16_t len, void (*callback)(uint8_t rssi, uint8_t status));</p
 <h3 class="auto-style11">仕様</h3>
 <p class="auto-style12">データを送信するための関数です。</p>
 <h3 class="auto-style11">パラメータ</h3>
-<h4 class="auto-style11">&nbsp;&nbsp;&nbsp; uint8_t ch</h4>
-<p class="auto-style7">使用する周波数を設定します。</p>
 <h4 class="auto-style11">&nbsp;&nbsp;&nbsp; uint16_t panid</h4>
 <p class="auto-style7">
 送信先PANIDを指定します。自機と異なるPANIDを設定するとACKを受け取ることができなくなるので注意してください。</p>
 <h4 class="auto-style11">&nbsp;&nbsp;&nbsp; uint16_t dstAddr</h4>
-<p class="auto-style7">送信先アドレスを指定します。</p>
-<p class="auto-style7">送信先アドレスはSubGHzモジュールに記載されているアドレスの下位16bitを使用します。<br />
-（BP3596モジュールに貼ってあるシールのMNOPの位置に記載されている値が使用するアドレスです。実際は実際にはABCD..ではなく合計64bitの固有のアドレスがHEX表記されています。)</p>
-<p class="auto-style1"><img height="448" src="myAddr.png" width="315" /></p>
-<h4 class="auto-style11">&nbsp;&nbsp;&nbsp; SUBGHZ_POWER txPower</h4>
-<p class="auto-style7">送信パワーを設定します。</p>
-<table class="auto-style7" style="width: 100%">
-	<tr>
-		<td class="auto-style8">設定値</td>
-		<td class="auto-style8">送信パワー</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_PWR_20MW</td>
-		<td class="auto-style8">20mW</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_PWR_1MW</td>
-		<td class="auto-style8">1mW</td>
-	</tr>
-</table>
+	<p class="auto-style13">
+	送信先(受信機)のアドレスを指定します。無線モジュールに16進数で8バイト(16文字)の値が、その無線モジュール固有のmacアドレスです。Lazuriteには下位2バイト(4文字)を入力してください。</p>
+	<h4 class="auto-style16"><img height="448" src="myAddr.png" width="315" /></h4>
+<h4 class="auto-style11">&nbsp;&nbsp;&nbsp; uint8_t *data</h4>
+<p class="auto-style14">送信データの先頭アドレス(ポインタ)を指定してください。</p>
+	<p class="auto-style15">&nbsp;&nbsp; <strong>&nbsp;uint16_t len</strong></p>
+	<p class="auto-style14">dataの長さを指定してください。<br />
+	Lazuriteで一回に送信できるデータのサイズはヘッダ情報を含めて250バイトです。<br />
+	ヘッダ情報はデフォルトで11バイト</p>
+	<p class="auto-style15">&nbsp; <strong>&nbsp; void (*callback)(uint8_t rssi, 
+	uint8_t status)</strong></p>
+	<p class="auto-style14">受信完了時にコールバックされる関数を指定することができます。通常はNULLを指定してください。<br />
+	callback処理内では割り込みを使用することができないため、通常の処理をこの中に入れないようお願いします。</p>
 <h4 class="auto-style11">&nbsp;&nbsp;&nbsp; void (*callback)(uint8_t rssi, uint8_t status)</h4>
 <p class="auto-style12">受信完了時のcallback関数を指定します。<br />
 通常はNULLで使用してください。</p>
-<h3 class="auto-style11">戻り値</h3>
-<table style="width: 100%" class="auto-style11">
-	<tr>
-		<td class="auto-style8">戻り値</td>
-		<td class="auto-style8">意味</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_OK</td>
-		<td class="auto-style8">正常に終了</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_RESET_FAIL</td>
-		<td class="auto-style8">リセット失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_SETUP_FAIL</td>
-		<td class="auto-style8">内部 セットアップ関数の失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_SLEEP_FAIL</td>
-		<td class="auto-style8">内部 スリープ関数の失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_WAKEUP_FAIL</td>
-		<td class="auto-style8">内部 wakeup関数の失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_MYADDR_FAIL</td>
-		<td class="auto-style8">内部 アドレス取得関数の失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_SETFIL_FAIL</td>
-		<td class="auto-style8">内部 アドレスフィルタ設定関数の失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_TX_COMP_FAIL</td>
-		<td class="auto-style8">送信CALLBACKの失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_TX_FAIL</td>
-		<td class="auto-style8">送信失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_TX_ACK_FAIL</td>
-		<td class="auto-style8">送信後のACK受信失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_RX_ENB_FAIL</td>
-		<td class="auto-style8">受信ENB関数の失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_RX_DIS_FAIL</td>
-		<td class="auto-style8">受信Disable関数の失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_RX_COMP_FAIL</td>
-		<td class="auto-style8">受信callback関数の失敗</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_PANID</td>
-		<td class="auto-style8">PANIDエラー</td>
-	</tr>
-	<tr>
-		<td class="auto-style8">SUBGHZ_ERR_ADDRTYPE</td>
-		<td class="auto-style8">ADDRESSエラー</td>
-	</tr>
-</table>
-<p>&nbsp;</p>
+<h3 class="auto-style10"><strong>戻り値</strong></h3>
+<p class="auto-style18"><a href="subghz_msg.html">SUBGHZ_MSG 変数</a>を参照してください。</p>
+	<p class="auto-style18">&nbsp;</p>
 <h3 class="auto-style11">サンプル</h3>
 <p class="auto-style7">サンプルプログラムのWelcome_SubGHzで使用しています。</p>
 <p class="auto-style7">3秒に1回、send_dataに格納された"Welcome to Lazurite 
