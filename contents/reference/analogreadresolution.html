@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>analogReadResolution</title>
+<style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style6 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style7 {
+	margin-left: 40px;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style8 {
+	font-family: メイリオ;
+	color: #666666;
+}
+td{
+	padding:5px;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<div id="contents">
+<h1>&nbsp;<span class="auto-style6">analogReadResolution(mode)</span></h1>
+<br/>
+<h3 class="auto-style6"><strong>詳細</strong></h3>
+<p class="auto-style7">void analogReadResolution(uint8_t mode);</p>
+<h3 class="auto-style6"><strong>仕様</strong></h3>
+<p class="auto-style7">analogReadで読み込むAD変換値のモードを指定します。</p>
+	<p class="auto-style7">8~16を指定することができ、初期値は10に設定されています。</p>
+	<p class="auto-style7">
+	Lazuriteに内蔵されているADコンバータは12bitなので、初期状態では10bitに丸め込みをして出力しています。</p>
+<p>&nbsp;</p>
+<h3 class="auto-style6"><strong>パラメータ</strong></h3>
+<p class="auto-style8"><strong>&nbsp;&nbsp; uint8_t </strong>mode</p>
+<p class="auto-style8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+8~16を指定可能です。</p>
+	<p class="auto-style1">&nbsp;</p>
+<h3 class="auto-style6"><strong>戻り値</strong></h3>
+<p class="auto-style7">なし</p>
+	<p class="auto-style1">&nbsp;</p>
+<p>&nbsp;</p>
+<h3 class="auto-style6"><strong>サンプル</strong></h3>
+<p class="auto-style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; なし</p>
+<p class="auto-style1">&nbsp;</p>
+<p>
+<TEXTAREA wrap="off" name="empty" style="width: 617px; height: 378px" class="auto-style1" tabindex="4"></TEXTAREA></p>
+<p>&nbsp;</p>
+</div>
+</body>
+
+</html>

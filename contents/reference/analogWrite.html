@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>analogWrite</title>
+<style type="text/css">
+#contents{
+    width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style6 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style7 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style8 {
+	margin-left: 40px;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style12 {
+	color: #666666;
+}
+td{
+	padding:0px 10px;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<div id="contents">
+<h1 class="auto-style6">analogWrite(pin, value)</h1>
+<br/>
+<h3 class="auto-style7">詳細</h3>
+<p class="auto-style8">void analogWrite(uint8_t pin, uint8_t val);</p>
+<h3 class="auto-style7">仕様</h3>
+<p class="auto-style8">指定したpinの番号からvalで指定した0~255段階のPWM信号を出力します。<br />
+PWMの基本周波数は約490Hzに設定されています。</p>
+<p>&nbsp;</p>
+<h3 class="auto-style6"><strong>パラメータ</strong></h3>
+<p class="auto-style7"><strong>&nbsp;&nbsp; uint8_t pin</strong></p>
+<p class="auto-style7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ピン番号を指定します。pin 
+3~10を使用することができます。</p>
+	<p class="auto-style7">&nbsp;</p>
+<p class="auto-style7"><strong>&nbsp;&nbsp; uint8_t val</strong></p>
+<p class="auto-style12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 入出力を指定します</p>
+<p class="auto-style1">&nbsp;</p>
+<h3 class="auto-style12"><strong class="auto-style7">戻り値</strong></h3>
+<p class="auto-style8">なし</p>
+<p>&nbsp;</p>
+<h3 class="auto-style7">サンプル</h3>
+<p class="auto-style8">
+Lazuriteの3番PINに接続したLEDを0/255～32/255の明るさで徐々に明るくしたり、暗くしたりするプログラムです。</p>
+	<p class="auto-style8">&nbsp;</p>
+<p>
+<TEXTAREA wrap="off" name="empty" style="width: 600px; height: 399px" class="auto-style1">#include "led_pwm_ide.h"		// Additional Header
+
+uint8_t val;
+bool up;
+void setup() {
+  // put your setup code here, to run once:
+  val = 0;
+  up = true;
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+ if((up)&&(val!=32)) {
+ 	val++;
+ } else if ((up)&& (val == 32)) {
+ 	up = false;
+ 	val--;
+ } else if ((!up) && (val != 0)) {
+ 	val--; 
+ } else if ((!up) && (val == 0)) {
+ 	val++;
+ 	up = true;
+ } else {up = true,val=0;}
+ analogWrite(3,val);
+ delay(100);
+}
+</TEXTAREA></p>
+<p>&nbsp;</p>
+</div>
+<br/>
+<br/>
+<br/>
+</body>
+
+</html>
