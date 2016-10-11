@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Serial920J</title>
+<style type="text/css">
+.auto-style5 {
+	text-align: center;
+}
+.auto-style1 {
+	font-size: large;
+}
+.auto-style6 {
+	font-family: メイリオ;
+	color: #666666;
+	font-weight: normal;
+}
+#contents{
+	width:auto;
+	margin-left:3em;
+	margin-right:3em;
+}
+.auto-style9 {
+	color: #666666;
+	font-family: メイリオ;
+}
+td{
+    border-style:dotted;
+    border-color:gray;
+    padding:5px;
+    border-width:thin;	
+}
+h2{
+	font-size:large;
+	margin:1em 0.5em 0.5em 0.3em;
+	border-bottom:1px solid #666666;	
+	font-weight:normal;
+}
+td a{
+	color:#006CD8;
+	font-size:medium;
+}
+.auto-style10 {
+	border-style: solid;
+	border-width: 1px;
+}
+.auto-style11 {
+	border-width: 0px;
+}
+</style>
+</head>
+
+<body>
+
+<h1 class="auto-style5">
+<img height="45" src="../Lazurite_logo.png" width="197" class="auto-style1" />　<span class="auto-style6">Lazurite920J 
+初期プログラム、インタフェース仕様</span></h1>
+<hr />
+<br/>
+<div id="contents">
+<p class="auto-style9">&nbsp;</p>
+<table style="width: 100%">
+	<tr>
+	<td valign="top" style="width: 35%" class="auto-style9">
+		<h2>概要</h2>
+		Serial920Jは、UART経由で920MHzの無線通信が使用できるLazurite920J用プログラムです。<br />
+		その他にも、Lazuriteに搭載されたI2C、SPI、GPIOなどもUART経由で使用することが出来ます。<br />
+		出荷時のbaudrateは9600bpsに設定されています。<br />
+		<br />
+		<h2>コマンド仕様</h2>
+		UART経由で次の書式でデータを入力してください。<br />
+		コマンドはASCII文字列で送信してください<br />
+		コマンド、およびデータはすべてカンマ区切りとし、最後に改行コードを送信してください。<br />
+		無効コマンドは無視されて出力が返りません。有効コマンドは、入力されたコマンドを返し、最後にカンマ区切りで戻り値を返します。<br />
+		<br />
+		&lt;例&gt; 26番ピンについている青色LEDをONする場合<br />
+		pm,26,o(オー)<br />
+		dw,26,1<br />
+		<h3><strong>シリアル通信関連</strong><br />
+		</h3>
+		<p>シリアル通信のボーレートの設定を行います。出荷時は9600bpsです。</p>
+		<p>出荷時のシリアル入出力のボーレートは9600に設定されています。</p>
+		<p>Lazurite 920Jは、電源投入後に115200bpsで設定されているボーレートを送信します。<br />
+		続いて、設定されいる通信速度に変更して「welcome」というメッセージを送信します。</p>
+		<p>ボーレートは コマンドで設定することができます。また、その設定値はML620Q504HのデータFlash領域(セクター=0, 
+		アドレス=0x0000と0x0001)に格納されています。データFlashを消去すると、ボーレートの設定も消えるので注意してください。</p>
+		設定されているボーレートが数値が設定可能な値ではなかった場合、115200になります。<br />
+		<br />
+		設定可能なボーレート：<br />
+		9600, 19200, 28800, 38400, 57600, 115200<br />
+		<br />
+		&lt;例&gt;<br />
+		ボーレートを115200bpsに設定する。<br />
+		sb,115200<br />
+		コマンド送信後にモジュールをリセットしてください。<br />
+		<table>
+			<tr>
+				<td>コマンド体系</td>
+				<td>動作</td>
+				<td>パラメータ</td>
+			</tr>
+			<tr>
+				<td style="height: 182px">sb,baud<br />
+				戻り値:<br />
+				コマンド,メッセージ</td>
+				<td style="height: 182px">ボーレートの設定を行います。<br />
+				本コマンドを送信した後は、必ずモジュールをリセットしてください。</td>
+				<td style="height: 182px">baud = 転送速度<br />
+				次の転送速度を設定することが出来ます。<br />
+				9600, 19200, 28800, 38400, 57600, 115200, </td>
+			</tr>
+			</table>
+		<h3>GPIO関連</h3>
+		<table>
+			<tr>
+				<td>コマンド体系</td>
+				<td>動作</td>
+				<td>パラメータ</td>
+			</tr>
+			<tr>
+				<td>pm,pin,o(オー)/i/pd/pu/hz<br />
+				戻り値:<br />
+				コマンドと同じ</td>
+				<td>pinが示す端子を出力/入力/pulldown付入力/pullup付入力/Hi-Zに切り替えます。</td>
+				<td>pin=端子番号<br />
+				o(オー)/i/pd/pu/hz:<br />
+				o = 出力<br />
+				i = 入力<br />
+				pd = pulldown付入力<br />
+				pu = pullup付入力<br />
+				hz = Hi-Z</td>
+			</tr>
+			<tr>
+				<td>dw,pin,1/0<br />
+				戻り値:<br />
+				コマンドと同じ</td>
+				<td>pinからHighまたはLowを出力します</td>
+				<td>pin=端子番号<br />
+				1/0:<br />
+				1 = HIGH出力<br />
+				0 = LOW出力</td>
+			</tr>
+			<tr>
+				<td>dr,pin<br />
+				戻り値:<br />
+				コマンド,0/1</td>
+				<td>pinの端子レベルを返します</td>
+				<td>pin=端子番号<br />
+				0/1:<br />
+				0=LOWレベル<br />
+				1=HIGHレベル</td>
+			</tr>
+		</table>
+		<h3>
+		<br />
+		920MHz関連</h3>
+		<p>SubGHz関連の関数を実行します。各関数の詳細はLazuriteIDEの各関数の仕様を参照してください。</p>
+		<p>&lt;例&gt; <br />
+		PANID=0xabcd,受信機=0x1234に”hello"の文字列を送信する</p>
+		<p>sgi<br />
+		sgb,36,0xabcd,100,20<br />
+		w,hello<br />
+		sgs,0xabcd,0x1234</p>
+		<br />
+		<table class="auto-style11">
+			<tr>
+				<td class="auto-style10" style="width: 331px">コマンド体系</td>
+				<td class="auto-style10">動作</td>
+				<td class="auto-style10">パラメータ</td>
+			</tr>
+			<tr>
+				<td class="auto-style10" style="width: 331px; height: 86px">sgi<br />
+				戻り値:<br />
+				コマンドと同じ</td>
+				<td class="auto-style10" style="height: 86px">
+				<a href="../reference/subghz_init.html">SubGHz.init()</a>と同じです。<br />
+				プログラムが起動したら実行してください</td>
+				<td class="auto-style10" style="height: 86px"></td>
+			</tr>
+			<tr>
+				<td class="auto-style10" style="width: 331px">
+				sgb,ch,panid,rate,pwr<br />
+				戻り値:<br />
+				コマンドと同じ</td>
+				<td class="auto-style10">
+				<a href="../reference/subghz_begin.html">
+				SubGHz.begin(ch,panid,rate,pwr)</a>を実行しています。</td>
+				<td class="auto-style10">ch=無線周波数<br />
+				panid=自機PANID<br />
+				rate=ビットレート<br />
+&nbsp;(50 or 100)<br />
+				pwr = 送信パワー<br />
+&nbsp;(1 or 20)</td>
+			</tr>
+			<tr>
+				<td class="auto-style10" style="width: 331px">sbs,panid,addr<br />
+				戻り値:<br />
+				コマンド,0/1</td>
+				<td class="auto-style10">
+				<a href="../reference/subghz_send.html">
+				SubGHz.send(panid,addr,payload,size)</a>を実行しています。<br />
+				payloadとサイズはw、またはwbで予め設定しておく必要があります。</td>
+				<td class="auto-style10">panid=受信機のPANID<br />
+				addr=受信機のアドレス</td>
+			</tr>
+			<tr>
+				<td class="auto-style10" style="width: 331px">sgre<br />
+				戻り値:<br />
+				コマンド</td>
+				<td class="auto-style10">
+				SubGHz.rxEnable()を実行します</td>
+				<td class="auto-style10">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="auto-style10" style="width: 331px">sgra<br />
+				戻り値:<br />
+				コマンド</td>
+				<td class="auto-style10">
+				SubGHz.rxEnable()を実行します。本モードを設定すると、受信時に自動的にシリアル出力を行います。受信時の書式は次の通りです。<br />
+				受信時のデータフォーマットは次の通りです。受信バイト数は無線で受信したバイト数であり、シリアル出力するバイト数ではありません。また、payloadの最後に改行コードが付与されます。<br />
+				受信時にシリアル出力されるデータフォーマットは以下の通りです。<br />
+				sgout,受信バイト数,<br />
+				header,seq_num,rx_panid,rx_addr,tx_panid,tx_addr,payload</td>
+				<td class="auto-style10">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="auto-style10" style="width: 331px">sgrd<br />
+				戻り値:<br />
+				コマンド</td>
+				<td class="auto-style10">
+				SubGHz.rxDisable()を実行します</td>
+				<td class="auto-style10">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="auto-style10" style="width: 331px">w,payload<br />
+				戻り値:<br />
+				コマンド</td>
+				<td class="auto-style10">
+				改行コードまでの任意文字列を送信します。最大で240文字程度を送信することが出来ます。</td>
+				<td class="auto-style10">payload=任意の文字列</td>
+			</tr>
+			<tr>
+				<td class="auto-style10" style="width: 331px">wb,size<br />
+				改行の後、size分のバイナリデータ<br />
+				戻り値:<br />
+				コマンド</td>
+				<td class="auto-style10">
+				size分のバイナリデータを送信します</td>
+				<td class="auto-style10">size=バイナリデータのバイト数</td>
+			</tr>
+			<tr>
+				<td class="auto-style10" style="width: 331px">sgr<br />
+				戻り値:<br />
+				sgr,受信データ</td>
+				<td class="auto-style10">
+				受信したASCIIデータを取得します。受信データの書式は次のようになっています。payloadの最後に、改行コードが付与されます。<br />
+				sgr,header,seq_num,rx_panid,rx_addr,tx_panid,tx_addr,payload</td>
+				<td class="auto-style10">header=MACヘッダ<br />
+				seq_num=シーケンス番号<br />
+				rx_panid=受信機のPANID<br />
+				rx_addr=受信機のアドレス<br />
+				tx_panid=送信機のPANID<br />
+				tx_addr=送信機のアドレス<br />
+				payload=受信したデータ</td>
+			</tr>
+			<tr>
+				<td class="auto-style10" style="width: 331px">sgrb<br />
+				戻り値:<br />
+				sgrb,size<br />
+				以降、受信したバイナリデータ</td>
+				<td class="auto-style10">
+				受信したバイナリデータを取得します。sgrb,sizeに続き、バイナリデータを受信します。バイナリデータはMACヘッダを含むIEEE802.15.4eのフォーマットで出力されます。</td>
+				<td class="auto-style10">size=受信したデータのサイズ</td>
+			</tr>
+			<tr>
+				<td class="auto-style10" style="width: 331px">sgc<br />
+				戻り値:<br />
+				コマンドと同じ</td>
+				<td class="auto-style10">
+				<a href="../reference/subghz_close.html">SubGHz.close()</a>を実行します。</td>
+				<td class="auto-style10">&nbsp;&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="auto-style10" style="width: 331px">sggs<br />
+				戻り値:<br />
+				sggs,tx_status,tx_rssi,rx_status,rx_rssi</td>
+				<td class="auto-style10">
+				<a href="../reference/subghz_getstatus.html">SubGHz.getStatus()</a>を実行し、エラーステータスや受信感度(RSSI)の値を取得します</td>
+				<td class="auto-style10">tx_status=送信ステータス<br />
+				tx_rssi=送信後のACKの電波強度<br />
+				rx_status=受信ステータス<br />
+				rx_rssi=受信データの電波強度</td>
+			</tr>
+			<tr>
+				<td class="auto-style10" style="width: 331px">sggsm<br />
+				戻り値:<br />
+				sggsm,addrType,senseTime,txRetry,txInterval,myAddress,ccaWait</td>
+				<td class="auto-style10">
+				<a href="../reference/subghz_getSendMode.html">
+				SubGHz.getSendMode()</a>を実行し、送信モードの取得を行います。</td>
+				<td class="auto-style10">&nbsp;&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="auto-style10" style="width: 331px">sgssm,at/tr,val<br />
+				戻り値:<br />
+				コマンドと同じ</td>
+				<td class="auto-style10">
+				<a href="../reference/subghz_setSendMode.html">
+				SubGHz.setSendMode()</a>で送信モードを設定します。SubGHz.setSendMode()と異なり、1回のコマンドで一つのパラメタしか更新することが出来ません。。</td>
+				<td class="auto-style10">at/tr:<br />
+				設定するパラメータを指定してください。valの値が反映されます。<br />
+				at=AddressType<br />
+				tr=Tx Retry</td>
+			</tr>
+		</table>
+		<h2><br />
+		<br />
+		Arduino用サンプルソースコード</h2>
+		<p>arduinoから送信するプログラムのサンプル　　　　　<a href="mini_arduino2.zip">ダウンロードはこちら</a></p>
+		<p>&nbsp;</p>
+		<h2>Lazurite 920J 初期プログラムのソースコード</h2>
+		<p>後から書きこみたい場合はLazurite mini writerを使用して書き込みを行ってください。　　　　<a href="Serial920J_161003.zip">ダウンロードはこちら</a></p>
+		</td>
+</table>
+
+<p>&nbsp;</p>
+</div>
+
+</body>
+
+</html>

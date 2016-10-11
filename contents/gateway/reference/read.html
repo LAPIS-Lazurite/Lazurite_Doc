@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>analogRead</title>
+<style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style6 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style7 {
+	margin-left: 40px;
+	font-family: メイリオ;
+	color: #666666;
+}
+td{
+	padding:5px;
+}
+.auto-style9 {
+	border-collapse: collapse;
+	border: 0px dashed rgb(187, 187, 187);
+}
+.auto-style10 {
+	border: 1px solid rgb(187, 187, 187);
+	padding: 6px 24px;
+}
+.auto-style11 {
+	font-family: メイリオ;
+	color: #666666;
+	text-align: left;
+}
+.auto-style12 {
+	margin-left: 40px;
+	font-family: メイリオ;
+	color: #666666;
+	text-align: left;
+}
+.auto-style13 {
+	margin-left: 80px;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style14 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+	margin-left: 40px;
+}
+.auto-style15 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+	margin-left: 80px;
+}
+.auto-style16 {
+	border-collapse: collapse;
+	border-right-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+}
+.auto-style17 {
+	border-style: solid;
+	border-width: 1px;
+}
+.auto-style18 {
+	border: 1px solid rgb(187, 187, 187);
+	padding: 6px 24px;
+	font-size: 16px;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
+Linux用API日本語リファレンス</span></h1>
+<hr />
+<div id="contents">
+<h1><span class="auto-style6">read()またはread(*raw,*size)</span></h1>
+<br/>
+<h3 class="auto-style6"><strong>詳細</strong></h3>
+	<table class="auto-style9" style="color: rgb(68, 68, 68); font-family: Georgia, &quot;Bitstream Charter&quot;, serif; line-height: 1.5; border-spacing: 0px; margin: 0px -1px 24px 0px; text-align: left; width: 638.889px; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;" width="305">
+		<tbody style="color: rgb(68, 68, 68); font-family: Georgia, &quot;Bitstream Charter&quot;, serif; line-height: 1.5;">
+			<tr style="color: rgb(68, 68, 68); font-family: Georgia, &quot;Bitstream Charter&quot;, serif; line-height: 1.5;">
+				<td class="auto-style10" style="color: rgb(68, 68, 68); font-family: inherit; line-height: 1.5; font-size: 16px;" width="101">
+				&nbsp;</td>
+				<td class="auto-style10" style="color: rgb(68, 68, 68); font-family: inherit; line-height: 1.5; font-size: 16px;" width="83">
+				クラス<br style="color: rgb(68, 68, 68); font-family: Georgia, &quot;Bitstream Charter&quot;, serif; line-height: 1.5;" />
+				namespace</td>
+				<td class="auto-style10" style="color: rgb(68, 68, 68); font-family: inherit; line-height: 1.5; font-size: 16px;" width="121">
+				関数名</td>
+			</tr>
+			<tr style="color: rgb(68, 68, 68); font-family: Georgia, &quot;Bitstream Charter&quot;, serif; line-height: 1.5;">
+				<td class="auto-style10" style="color: rgb(68, 68, 68); font-family: inherit; line-height: 1.5; font-size: 16px;">
+				共有ライブラリ</td>
+				<td class="auto-style10" style="color: rgb(68, 68, 68); font-family: inherit; line-height: 1.5; font-size: 16px;">
+				lazurite</td>
+				<td class="auto-style10" style="color: rgb(68, 68, 68); font-family: inherit; line-height: 1.5; font-size: 16px;">
+				int lazurite_read (void* raw, uint16_t* size)</td>
+			</tr>
+			<tr style="color: rgb(68, 68, 68); font-family: Georgia, &quot;Bitstream Charter&quot;, serif; line-height: 1.5;">
+				<td class="auto-style10" style="color: rgb(68, 68, 68); font-family: inherit; line-height: 1.5; font-size: 16px;">
+				Ruby</td>
+				<td class="auto-style10" style="color: rgb(68, 68, 68); font-family: inherit; line-height: 1.5; font-size: 16px;">
+				LazGem</td>
+				<td class="auto-style18" style="line-height: 1.5; ">
+				LazGem.read()</td>
+			</tr>
+			<tr style="color: rgb(68, 68, 68); font-family: Georgia, &quot;Bitstream Charter&quot;, serif; line-height: 1.5;">
+				<td class="auto-style10" style="color: rgb(68, 68, 68); font-family: inherit; line-height: 1.5; font-size: 16px;">
+				Python</td>
+				<td class="auto-style10" style="color: rgb(68, 68, 68); font-family: inherit; line-height: 1.5; font-size: 16px;">
+				PyLaz</td>
+				<td class="auto-style10" style="color: rgb(68, 68, 68); font-family: inherit; line-height: 1.5; font-size: 16px;">
+				PyLaz.read</td>
+			</tr>
+			<tr style="color: rgb(68, 68, 68); font-family: Georgia, &quot;Bitstream Charter&quot;, serif; line-height: 1.5;">
+				<td class="auto-style10" style="color: rgb(68, 68, 68); font-family: inherit; line-height: 1.5; font-size: 16px;">
+				JAVA</td>
+				<td class="auto-style10" style="color: rgb(68, 68, 68); font-family: inherit; line-height: 1.5; font-size: 16px;">
+				Liblzaurite</td>
+				<td class="auto-style10" style="color: rgb(68, 68, 68); font-family: inherit; line-height: 1.5; font-size: 16px;">
+				int Liblazurite.read (byte[] raw, short[] size)</td>
+			</tr>
+	</table>
+	<br class="Apple-interchange-newline" />
+<p class="auto-style7">&nbsp;</p>
+<h3 class="auto-style6"><strong>機能</strong></h3>
+	<p class="auto-style14">データの読み出しを行います。readはパケット単位での読み出しとなります。</p>
+	<p class="auto-style14">
+	readをするとドライバ内にバッファされている一番古いパケットを返します。ドライバは読み出しが完了したパケットのデータを廃棄を破棄し、そのデータ受信時のRSSIや時刻情報を読み出しできるようにします。</p>
+<p class="auto-style7">共有ライブラリ、JAVA</p>
+	<p class="auto-style13">読み出すデータはrawに格納され、データ長はsizeに格納されます。<br />
+	データを格納するメモリとして関数を呼び出す前にメモリ領域を256バイト確保し、その先頭ポインタを関数の引数にしてください。</p>
+	<p class="auto-style7">Ruby、Python</p>
+	<p class="auto-style13">
+	読み出したデータは戻り値として返します。RubyはHASH型、PythonはDIC型を渡しますので、必要な要素を取り出して使用してください。</p>
+<p>&nbsp;</p>
+<h3 class="auto-style6"><strong>パラメータ (共有ライブラリ、JAVA)</strong></h3>
+	<p class="auto-style7">raw</p>
+	<p class="auto-style13">rawデータを格納するメモリのポインタを渡します。<br />
+	256バイト以上を確保してください。</p>
+	<p class="auto-style7">size</p>
+	<p class="auto-style13">rawデータのサイズを返しますshort型のポインタを渡してください</p>
+<h3 class="auto-style6"><strong>戻り値</strong></h3>
+	<p class="auto-style14">共有ライブラリ、JAVA</p>
+	<p class="auto-style15">0以上&nbsp; 受信したデータのバイト数<br />
+	0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; データなし<br />
+	0以下&nbsp; エラー</p>
+	<p class="auto-style14">Python</p>
+	<p class="auto-style15">DIC型のデータを返します。データを受信しないときは空のデータを返します。</p>
+	<p class="auto-style14">Ruby</p>
+	<p class="auto-style15">0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	データを受信していません<br />
+	HASH型データ&nbsp;&nbsp;&nbsp; 受信したデータを返します</p>
+	<p class="auto-style11"><strong>例外(Javaのみ)</strong></p>
+	<p class="auto-style12">IOException　　失敗</p>
+	<p class="auto-style11"><strong>Ruby, Pythonの受信データフォーマット</strong></p>
+	<p class="auto-style12">HASH/DIC型でデータを返します。以下に示すkeyを含んでいます。</p>
+	<p class="auto-style12">
+	<table border="0" cellpadding="0" cellspacing="0" class="auto-style16" style="width: 508pt" width="677">
+		<colgroup>
+			<col style="mso-width-source:userset;mso-width-alt:5536;width:130pt" width="173" />
+			<col style="mso-width-source:userset;mso-width-alt:16128;width:378pt" width="504" />
+		</colgroup>
+		<tr height="19">
+			<td id="LC43" class="auto-style17" height="19" width="173">データ</td>
+			<td class="auto-style17" width="504">用途</td>
+		</tr>
+		<tr height="19">
+			<td class="auto-style17" height="19">
+			<span style="box-sizing: border-box">header</span></td>
+			<td class="auto-style17">16bitのMACヘッダ情報です</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">frame_type</span></td>
+			<td class="auto-style17">MACヘッダ内のframe_typeを抽出したデータです</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">sec_enb</span></td>
+			<td class="auto-style17">MACヘッダ内のsec_enbフラグを抽出したデータです</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">pending</span></td>
+			<td class="auto-style17">MACヘッダ内のpendingフラグを抽出したデータです</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">ack_req</span></td>
+			<td class="auto-style17">MACヘッダ内のACKフラグを抽出したデータです</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">panid_comp</span></td>
+			<td class="auto-style17">MACヘッダ内のPANID_COMPフラグを抽出したデータです</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">seq_comp</span></td>
+			<td class="auto-style17">MACヘッダ内のseq_compフラグを抽出したデータです</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">ielist</span></td>
+			<td class="auto-style17">MACヘッダ内のielistフラグを抽出したデータです</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">tx_addr_type<span style="mso-spacerun:yes">&nbsp;</span></span></td>
+			<td class="auto-style17">MACヘッダ内のtx_addr_typeフラグを抽出したデータです</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">frame_ver</span></td>
+			<td class="auto-style17">MACヘッダ内のframe_verフラグを抽出したデータです</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">rx_addr_type<span style="mso-spacerun:yes">&nbsp;</span></span></td>
+			<td class="auto-style17">MACヘッダ内のrx_addr_typeフラグを抽出したデータです</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">seq_num</span></td>
+			<td class="auto-style17">IEEE802154eのシーケンサ番号です</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">addr_type</span></td>
+			<td class="auto-style17">アドレスのタイプを0~7で示したデータです。</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">rx_panid</span></td>
+			<td class="auto-style17">受信側PANIDのデータです。</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">rx_addr<span style="mso-spacerun:yes">&nbsp;</span></span></td>
+			<td class="auto-style17">受信アドレスです。</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">tx_panid</span></td>
+			<td class="auto-style17">送信側PANIDのデータです。</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">tx_addr</span></td>
+			<td class="auto-style17">送信アドレスです。</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			<span style="box-sizing: border-box">payload<span style="mso-spacerun:yes">&nbsp;</span></span></td>
+			<td class="auto-style17">rawデータの中でpayloadが格納されているオフセットアドレスを示します。</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			sec</td>
+			<td class="auto-style17">データを受信した時間(秒)を示します。1971年1月1日 
+			0時0分0秒を0とする時間です。</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			nsec</td>
+			<td class="auto-style17">受信した時刻のnsec単位の時間を示します。</td>
+		</tr>
+		<tr height="18">
+			<td class="auto-style17" height="18">
+			rssi</td>
+			<td class="auto-style17">受信したデータのrssiを示します</td>
+		</tr>
+		</table>
+	</p>
+<p>&nbsp;</p>
+</div>
+</body>
+
+</html>

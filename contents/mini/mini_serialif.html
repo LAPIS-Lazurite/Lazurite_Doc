@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>analogRead</title>
+<style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style6 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+td{
+	padding:5px;
+}
+.auto-style9 {
+	border: 1px solid #000000;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
+mini 920J リファレンス</span></h1>
+<hr />
+<div id="contents">
+<h1>Lazurite mini 920J Serial interface</h1>
+	<p>Lazurite mini 
+	920Jは、シリアルインタフェースから様々な機能を制御できるプログラムが搭載されています。本ページは、そのコマンド体系のドキュメントです。</p>
+	。<table class="auto-style9" style="width: 100%">
+		<tr>
+			<td class="auto-style9">機能</td>
+			<td class="auto-style9">シリアルインタフェース</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">端子のモード変更</td>
+			<td class="auto-style9">"pm",pin,mode⏎<br />
+			pin: 端子番号<br />
+			mode:<br />
+&nbsp;&nbsp; "o"=OUTPUT<br />
+&nbsp; "i" = INPUT<br />
+&nbsp; "pu" = INPUT_PULLUP<br />
+&nbsp; "pd"= INPUT_PULLDOWN<br />
+			例:<br />
+&nbsp; pm,25,o</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">端子の値を変更する</td>
+			<td class="auto-style9">"dw",pin,val⏎<br />
+			pin: 端子番号<br />
+			val:<br />
+&nbsp; 1=HIGH<br />
+&nbsp; 0=LOW<br />
+			例:<br />
+&nbsp; dw,25,0</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">端子の値を読み出す</td>
+			<td class="auto-style9">"dr",pin⏎<br />
+			pin: 端子番号</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">送信バッファにテキストデータを転送する。</td>
+			<td class="auto-style9">"w",データ列⏎<br />
+			例:<br />
+&nbsp; helloという文字がバッファに入ります<br />
+&nbsp; w,hello</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">送信バッファにバイナリのデータを転送する。</td>
+			<td class="auto-style9">"wb",size⏎　+ binary data<br />
+			size: 転送するデータ量(max=230)<br />
+			例:<br />
+&nbsp; wb,5⏎<br />
+&nbsp; バイナリデータ列<br />
+			バッファにはバイナリのデータ列が格納されます。<br />
+			テキストデータの場合、改行コードやNULLコードを入れることが出来ないので、そのデータを格納するときはこちらのコマンドを使用してください。</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">SubGHz関数の初期化</td>
+			<td class="auto-style9">"sgi"⏎</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">SubGHzの初期設定</td>
+			<td class="auto-style9">"sgb",ch,panid,rate,pwr⏎<br />
+			ch: チャンネル番号<br />
+			panid: 自機のPANID<br />
+			rate: ビットレート<br />
+			　　50=50kbps<br />
+&nbsp;&nbsp; 100=100kbps<br />
+			pwr:　送信パワー<br />
+&nbsp;&nbsp;&nbsp; 1=1mW<br />
+&nbsp;&nbsp; 20=20mW<br />
+			例:<br />
+&nbsp; 24ch, PANIDを0xABCD, 100kbps, 20mWモードで通信する場合<br />
+&nbsp; sgb,24,0xABCD,100,20</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">SubGHzの送信</td>
+			<td class="auto-style9">"sgs",panid,addr⏎<br />
+			送信用バッファに格納されているデータをPANID, ADDRESSで指定されたモジュールに転送します。<br />
+			例:<br />
+&nbsp; PANID=0xABCD, 送信アドレス=0x9043に送信バッファのデータを送信する場合<br />
+&nbsp; sgs,0xABCD, 0x9043</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">SubGHzの受信を有効にする。</td>
+			<td class="auto-style9">"sgre"⏎</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">SubGHzの受信を無効にする。</td>
+			<td class="auto-style9">"sgrd"⏎</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">SubGHzの送信モードを変更する。</td>
+			<td class="auto-style9">"sgssm",param,val⏎<br />
+			param:<br />
+&nbsp; "at"=送信するときのアドレスタイプを指定します<br />
+&nbsp; "st"=センスタイムです。通常は指定しないでください。<br />
+&nbsp; "tr"=送信再送回数を指定します。<br />
+&nbsp; "ti"=再送間隔を指定します。通常は指定しないで下さい。<br />
+&nbsp; "cw"=CCAのWait時間を指定します。通常は指定しないでください。<br />
+			val: paramで指定したデータの値</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">SubGHzの送信モードを取得する。</td>
+			<td class="auto-style9">"sgsm"⏎<br />
+			戻り値:<br />
+			sggsm,6,20,0,500,0x9043,7<br />
+			アドレスタイプ=6<br />
+			センスタイム=20<br />
+			再送回数=0<br />
+			再送間隔=500ms<br />
+			自機アドレス=0x9043<br />
+			cca Wwait時間= 7<br />
+			</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">SubGHzをスタンバイ状態にする。</td>
+			<td class="auto-style9">"sgc"⏎</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">SubGHzのステータスを読み出す。</td>
+			<td class="auto-style9">"sggs"⏎<br />
+			戻り値:<br />
+&nbsp; sggs,a,b,c,d<br />
+&nbsp; a=送信結果のステータス<br />
+&nbsp; b=送信後にACKを受信した際のRSSI<br />
+&nbsp; c=受信結果のステータス<br />
+			　d=受信時のRSSI</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">SubGHzのMACアドレスを読み出す</td>
+			<td class="auto-style9">"sggma"⏎<br />
+			戻り値:<br />
+&nbsp; sggma,0x9043<br />
+			　自機アドレス=0x9043</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">受信データを文字列で読み出す</td>
+			<td class="auto-style9">"sgr"⏎<br />
+			戻り値:<br />
+&nbsp; sgr,hello<br />
+&nbsp; "hello"の文字列を受信しました。</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">受信データをバイナリで読み出す</td>
+			<td class="auto-style9">"sgrb"⏎<br />
+			戻り値:<br />
+&nbsp; sgrb,size⏎+バイナリデータ列<br />
+&nbsp; size=受信データサイズ<br />
+&nbsp; 改行コードに続いて、受信したバイナリデータが返ります。</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">マイコンボードのリセット</td>
+			<td class="auto-style9">"rst"⏎</td>
+		</tr>
+		<tr>
+			<td class="auto-style9">&nbsp;</td>
+			<td class="auto-style9">&nbsp;</td>
+		</tr>
+	</table>
+&nbsp;&nbsp;&nbsp;
+<p>&nbsp;</p>
+</div>
+</body>
+
+</html>
