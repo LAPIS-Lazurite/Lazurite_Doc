@@ -1,0 +1,459 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="ja" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>About frequency of 920MHz</title>
+<style type="text/css">
+body{
+	width:850px;
+	margin-right:auto;
+	margin-left:auto;
+}
+.auto-style1 {
+	vertical-align: middle;
+}
+.auto-style17 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style18 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style19 {
+	color: black;
+	font-size: 11.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: "ＭＳ Ｐゴシック", monospace;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	border-left: .5pt solid windowtext;
+	border-right: .5pt solid windowtext;
+	border-top: .5pt solid windowtext;
+	border-bottom-style: none;
+	border-bottom-color: inherit;
+	border-bottom-width: medium;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+.auto-style20 {
+	color: black;
+	font-size: 11.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: "ＭＳ Ｐゴシック", monospace;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	border: .5pt solid windowtext;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+.auto-style21 {
+	color: black;
+	font-size: 11.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: "ＭＳ Ｐゴシック", monospace;
+	text-align: general;
+	vertical-align: middle;
+	white-space: nowrap;
+	border-left: .5pt solid windowtext;
+	border-right: .5pt solid windowtext;
+	border-top: .5pt solid windowtext;
+	border-bottom: 2.0pt double windowtext;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+.auto-style22 {
+	color: black;
+	font-size: 11.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: "ＭＳ Ｐゴシック", monospace;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	border-left: .5pt solid windowtext;
+	border-right: .5pt solid windowtext;
+	border-top: .5pt solid windowtext;
+	border-bottom: 2.0pt double windowtext;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+.auto-style23 {
+	color: black;
+	font-size: 11.0pt;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	font-family: "ＭＳ Ｐゴシック", monospace;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	border-left: .5pt solid windowtext;
+	border-right: .5pt solid windowtext;
+	border-top-style: none;
+	border-top-color: inherit;
+	border-top-width: medium;
+	border-bottom: .5pt solid windowtext;
+	padding-left: 1px;
+	padding-right: 1px;
+	padding-top: 1px;
+}
+.auto-style24 {
+	font-family: メイリオ;
+	color: #666666;
+	margin-left: 40px;
+}
+.auto-style25 {
+	margin-left: 40px;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+<h1>
+<img height="45" src="Lazurite_logo1.png" width="195" class="auto-style1" /> 
+<span class="auto-style17">920MHz特定小電力のチャンネルと周波数</span></h1>
+<hr />
+<p class="auto-style18">920MHz特定小電力に関する技術情報です。</p>
+<br/>
+<h2>チャンネル、周波数、ビットレートについて</h2>
+<p class="auto-style25">920MHz特定小電力は各チャンネルに周波数が割り当てられています。</p>
+<p class="auto-style25">チャンネル１つあたり200kHzの帯域となっています。</p>
+<p class="auto-style24">50kbpsで送受信するときは、ch一つを使用して50kbpsのデータ転送を行います。</p>
+<p class="auto-style24">
+<img alt="" height="219" src="subghz_50kbps.png" width="403" /></p>
+<p class="auto-style24">100kbpsで送受信するときは、隣のチャンネルも100kbpsのデータ転送を行います。</p>
+<p class="auto-style24">
+<img alt="" height="254" src="subghz_100kbps.png" width="447" /></p>
+<p class="auto-style24">
+たとえば24chで100kbpsの設定を行うと24chと25chを使用して送受信を行います。そのため、24chを使用して100kbpsを送受信している間は25chを使用することが出来なくなります。</p>
+<p class="auto-style24">&nbsp;</p>
+<h3>chと周波数の一覧表</h3>
+<p class="auto-style24">&nbsp;</p>
+<p class="auto-style18">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse:
+ collapse;width:429pt" width="570" align="center">
+	<colgroup>
+		<col style="width:54pt" width="72" />
+		<col style="mso-width-source:userset;mso-width-alt:4416;width:104pt" width="138" />
+		<col style="mso-width-source:userset;mso-width-alt:4416;width:104pt" width="138" />
+		<col style="mso-width-source:userset;mso-width-alt:4160;width:98pt" width="130" />
+		<col style="mso-width-source:userset;mso-width-alt:2944;width:69pt" width="92" />
+	</colgroup>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style19" height="37" rowspan="2" style="height: 27.75pt; width: 54pt" width="72">
+		CH</td>
+		<td class="auto-style20" colspan="2" style="width: 208pt" width="276">
+		50kbps選択時</td>
+		<td class="auto-style20" colspan="2" style="width: 167pt" width="222">
+		100kbps選択時</td>
+	</tr>
+	<tr height="19" style="height:14.25pt">
+		<td class="auto-style21" height="19" style="height: 14.25pt;">中心周波数(MHz)</td>
+		<td class="auto-style22">帯域(MHz)</td>
+		<td class="auto-style21">中心周波数(MHz)</td>
+		<td class="auto-style22">帯域(MHz)</td>
+	</tr>
+	<tr height="19" style="height:14.25pt">
+		<td class="auto-style23" height="19" style="height: 14.25pt">24</td>
+		<td class="auto-style23">920.6</td>
+		<td class="auto-style23">0.2</td>
+		<td class="auto-style23">920.7</td>
+		<td class="auto-style23">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">25</td>
+		<td class="auto-style20">920.8</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">920.9</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">26</td>
+		<td class="auto-style20">921</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">921.1</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">27</td>
+		<td class="auto-style20">921.2</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">921.3</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">28</td>
+		<td class="auto-style20">921.4</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">921.5</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">29</td>
+		<td class="auto-style20">921.6</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">921.7</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">30</td>
+		<td class="auto-style20">921.8</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">921.9</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">31</td>
+		<td class="auto-style20">922</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">922.1</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">32</td>
+		<td class="auto-style20">922.2</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">使用不可</td>
+		<td class="auto-style20">使用不可</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">33</td>
+		<td class="auto-style20">922.4</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">922.5</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">34</td>
+		<td class="auto-style20">922.6</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">922.7</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">35</td>
+		<td class="auto-style20">922.8</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">922.9</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">36</td>
+		<td class="auto-style20">923</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">923.1</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">37</td>
+		<td class="auto-style20">923.2</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">923.3</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">38</td>
+		<td class="auto-style20">923.4</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">923.5</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">39</td>
+		<td class="auto-style20">923.6</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">923.7</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">40</td>
+		<td class="auto-style20">923.8</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">923.9</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">41</td>
+		<td class="auto-style20">924</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">924.1</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">42</td>
+		<td class="auto-style20">924.2</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">924.3</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">43</td>
+		<td class="auto-style20">924.4</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">924.5</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">44</td>
+		<td class="auto-style20">924.6</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">924.7</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">45</td>
+		<td class="auto-style20">924.8</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">924.9</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">46</td>
+		<td class="auto-style20">925</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">925.1</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">47</td>
+		<td class="auto-style20">925.2</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">925.3</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">48</td>
+		<td class="auto-style20">925.4</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">925.5</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">49</td>
+		<td class="auto-style20">925.6</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">925.7</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">50</td>
+		<td class="auto-style20">925.8</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">925.9</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">51</td>
+		<td class="auto-style20">926</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">926.1</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">52</td>
+		<td class="auto-style20">926.2</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">926.3</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">53</td>
+		<td class="auto-style20">926.4</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">926.5</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">54</td>
+		<td class="auto-style20">926.6</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">926.7</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">55</td>
+		<td class="auto-style20">926.8</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">926.9</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">56</td>
+		<td class="auto-style20">927</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">927.1</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">57</td>
+		<td class="auto-style20">927.2</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">927.3</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">58</td>
+		<td class="auto-style20">927.4</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">927.5</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">59</td>
+		<td class="auto-style20">927.6</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">927.7</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">60</td>
+		<td class="auto-style20">927.8</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">927.9</td>
+		<td class="auto-style20">0.4</td>
+	</tr>
+	<tr height="18" style="height:13.5pt">
+		<td class="auto-style20" height="18" style="height: 13.5pt;">61</td>
+		<td class="auto-style20">928</td>
+		<td class="auto-style20">0.2</td>
+		<td class="auto-style20">使用不可</td>
+		<td class="auto-style20">使用不可</td>
+	</tr>
+</table>
+</p>
+<p class="auto-style18">&nbsp;</p>
+<p class="auto-style18">&nbsp;</p>
+
+</body>
+
+</html>

@@ -58,17 +58,18 @@ div.contents{
 日本語リファレンス</span></h1>
 <hr />
 <div id="contents">
-<h1 class="auto-style6">delay()</h1>
+<h1 class="auto-style6">delayMicroseconds()</h1>
 <br/>
 <h3 class="auto-style6"><strong>詳細</strong></h3>
-<p class="auto-style9">void delay(unsigned long ms)</p>
+<p class="auto-style9">void delayMicroseconds(unsigned long us)</p>
 <h3 class="auto-style6"><strong>仕様</strong></h3>
-<p class="auto-style7">delay()は指定の時間、プログラムを停止します。時間の単位はミリ秒です。(1秒=1000ミリ秒)</p>
-<p class="auto-style7">delay()の間も外部割込みは有効です。</p>
-<p class="auto-style7">delay()と似た機能で消費電力が低いsleep()があります。sleep()については<a href="sleep.html">こちら</a>参照してください。</p>
+<p class="auto-style7">delayMicroseconds()は指定の時間、プログラムを停止します。時間の単位はマイクロ秒です。(1秒=1,000,000マイクロ秒)</p>
+<p class="auto-style7">delayMicroseconds()の間も外部割込みは有効です。<br />
+delayMicroseconds()は、loopにより時間をカウントしています。関数実行中に割込みが発生した場合、その時間はカウント停止するため、delay時間が長くなります。<br />
+delayやsleepはタイマーによって時間を待っているため、割込みの処理の有無によらず設定した時間の待ち時間になります。</p>
 <p class="auto-style8"><strong>パラメータ</strong></p>
-<p class="auto-style8"><strong>unsigned long ms</strong></p>
-<p class="auto-style7">ミリ秒単位で時間を指定します。</p>
+<p class="auto-style8"><strong>unsigned long us</strong></p>
+<p class="auto-style7">マイクロ秒単位で時間を指定します。</p>
 <h3 class="auto-style8">戻り値</h3>
 <p class="auto-style7">なし</p>
 <h3 class="auto-style8">サンプル</h3>
@@ -85,9 +86,9 @@ void setup(void)
 void loop(void)
 {
 	digitalWrite(BLUE_LED,HIGH);
-	delay(1000);
+	delayMicroseconds(1000000);
 	digitalWrite(BLUE_LED,LOW);
-	delay(1000);
+	delayMicroseconds(1000000);
 }
 </TEXTAREA></p>
 <p class="auto-style1">&nbsp;</p>
