@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>RTC</title>
+<style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style2 {
+	border: 1px solid #000000;
+	margin-left: 40px;
+}
+.auto-style3 {
+	border: 1px solid #000000;
+}
+.auto-style7 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style8 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style9 {
+	margin-left: 40px;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style11 {
+	border: 1px solid #000000;
+	text-align: center;
+	color: #666666;
+	font-family: メイリオ;
+}
+.auto-style12 {
+	font-family: メイリオ;
+}
+td{
+	padding:0px 5px;
+}
+</style>
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style7">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<div id="contents">
+<h1 class="auto-style7">RTC</h1>
+<br/>
+<h3 class="auto-style8">概要</h3>
+<p class="auto-style9">RTCライブラリは、ML620Q504Hの16bitタイマを用いてソフトウェアでRTC(Real Time Clock)を実現するための関数群です。</p>
+
+<p class="auto-style9">消費電力を低減させるため、RTCは毎秒ではなく<b>2秒毎</b>に更新しています。Lazuriteのスリープ中もRTCは動作します。Lazuriteがリセットされた場合、日時情報は初期化されます。初期値は<b>"2017年1月1日(日) 0時0分0秒"</b>です。</p>
+
+<p class="auto-style9">本ライブラリにはアラーム機能があり、指定の日時で指定した関数を呼び出すことができます。</p>
+<p class="auto-style9">本ライブラリを使用するためには、LazuriteIDE上の左ペイン(ライブラリ)から、"RTC"のチェックボックスを有効にしてください。
+<br>※<a href="SD.html">SDカード</a>ライブラリはファイル/フォルダの操作でタイムスタンプが必要で、本ライブラリを使用しています。</p>
+
+<p class="auto-style1">&nbsp;</p>
+<h3 class="auto-style8">関数</h3>
+<table class="auto-style2" style="width: 90%">
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">RTC.begin();</p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">RTCの使用を開始するための関数です。本関数を実行するとRTCは定期更新を開始します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">RTC.setTime(hours, minutes, seconds);</p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">時刻を設定する関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">RTC.setDate(day,  month, year)</p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">日付を設定する関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">unsigned char RTC.getHours()</p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">時を取得する関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">unsigned char RTC.getMinutes()</p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">分を取得する関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">unsigned char RTC.getSeconds()</p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">秒を取得する関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">unsigned char RTC.getYear()</p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">年を取得する関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">unsigned char RTC.getMonth()</p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">月を取得する関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">unsigned char RTC.getDay()</p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">日を取得する関数です。</p>
+		</td>
+	</tr>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">RTC.setAlarmTime(hours, minutes, seconds);</p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">アラームの時刻を設定する関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">RTC.setAlarmDate(day,  month, year)</p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">アラームの日付を設定する関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">RTC.enableAlarm(alarmMatch)</p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">アラームをalarmMatchタイプで有効にする関数です。タイプは以下が利用できます。<br>
+		<ul class="auto-style7">
+		<li>MATCH_SS&nbsp;=秒が一致</li>
+		<li>MATCH_MMSS&nbsp;=分/秒が一致</li>
+		<li>MATCH_HHMMSS&nbsp;=時/分/秒が一致</li>
+		<li>MATCH_DDHHMMSS&nbsp;=日/時/分/秒が一致</li>
+		<li>MATCH_MMDDHHMMSS&nbsp;=月/日/時/分/秒が一致</li>
+		<li>MATCH_YYMMDDHHMMSS&nbsp;=年/月/日/時/分/秒が一致</li>
+		</ul>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">RTC.disableAlarm()</p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">アラームを無効にする関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">RTC.attachInterrupt(callback)</p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">アラームが一致したときに実行するcallback関数を割り付ける関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">RTC.detachInterrupt()</p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">アラームが一致したときに実行する関数の割り付けを無効にする関数です。disableAlarm()を内部で呼び出し、アラームは無効になりますので、再度割り付ける際にはenableAlarm()を実行する必要があります。</p>
+		</td>
+	</tr>
+	</table>
+<p class="auto-style8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; Arduinoと差異がある関数です。<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
++&nbsp;&nbsp;&nbsp; Arduinoになく、Lazuriteにある関数です。&nbsp; </p>
+<p class="auto-style1">&nbsp;</p>
+<h3 class="auto-style8">サンプル</h3>
+<p class="auto-style9">SimpleRTC</p>
+<p class="auto-style9">本サンプルは、RTCの日時を設定し、RTC情報をシリアルモニタに表示します。</p>
+<p>&nbsp;</p>
+<p class="auto-style9">SimpleRTCAlarm</p>
+<p class="auto-style9">本サンプルは、RTCの日時とアラームの時刻を設定し、MATCH_HHMMSSで有効にします。時/分/秒が一致したらalarmMatch関数が実行されて、シリアルモニタに"Alarm Match!"と表示されます。</p>
+<p>&nbsp;</p>
+</div>
+</body>
+
+</html>

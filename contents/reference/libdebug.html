@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>libdebug</title>
+<style type="text/css">
+#contents{
+	width:850px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style7 {
+	margin-left: 40px;
+	text-align: left;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style10 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style11 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style12{
+	font-family: メイリオ;
+	color: #666666;
+	margin-bottom:40px;
+	margin-left:40px;
+}
+td{
+	padding:0px 5px;
+}
+
+.auto-style13 {
+	font-family: メイリオ;
+	color: #666666;
+	margin-bottom: 40px;
+}
+.auto-style15 {
+	border-width: 0px;
+}
+.auto-style19 {
+	border-style: solid;
+	border-width: 1px;
+}
+
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style10">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<div id="contents">
+<h2 class="auto-style10">libdebugライブラリ</h2>
+<br/>
+<h3 class="auto-style11">詳細</h3>
+<p class="auto-style7">プログラムのデバックを簡単に行えるようになるライブラリです。</p>
+<h3 class="auto-style11">仕様</h3>
+<p class="auto-style12">使用するプログラムの先頭で、次のオプションを有効にする必要があります。<br />
+#define LIB_DEBUG</p>
+	<p class="auto-style12">
+	BREAKの個所で停止するときは、次のオプションを入力します。BREAKの個所で停止せず、そのまま継続するときは、次のオプションを指定しません。<br />
+	#define BREAK_MODE</p>
+	<p class="auto-style12">
+	LIB_DEBUGのマクロを無効にすると、これらの関数はすべてビルド時に消去されるため、デバックコードを消す必要はありません。</p>
+<h3 class="auto-style11">関数</h3>
+	<table class="auto-style15" style="width: 100%">
+		<tr>
+			<td class="auto-style19" style="width: 296px">関数</td>
+			<td class="auto-style19">説明</td>
+		</tr>
+		<tr>
+			<td class="auto-style19" style="width: 296px">BREAK(文字列);</td>
+			<td class="auto-style19">
+			BREAK_MODEオプション指定時は、指定した文字列を出力した後に、シリアルから改行コードが入力されるまで待ちます。</td>
+		</tr>
+		<tr>
+			<td class="auto-style19" style="width: 296px">BREAKL(文字列, 数字, 基数);</td>
+			<td class="auto-style19">
+			文字列を表示した後に、数字を指定した基数で出力した後に、シリアルから改行コードが入力されるまで待ちます。<br />
+			BREAKL("Hello = ",255,HEX);<br />
+			を挿入すると、「Hello = FF」と出力した後に、改行コードが入力されるまで待ちます。</td>
+		</tr>
+		<tr>
+			<td class="auto-style19" style="width: 296px">BREAKD(文字列, 数字, 基数);</td>
+			<td class="auto-style19">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="auto-style19" style="width: 296px">BREAKE(文字列, 外部関数)</td>
+			<td class="auto-style19">文字列を出力した後に、改行が入力するまで待ちます。<br />
+			改行を待っている間、外部関数を実行します。<br />
+			BREAKE("Hello", ext());<br />
+			補足: BREAK関数はマクロを利用しているため、関数ポインタではなく、実行する関数をそのまま指定する必要があります。</td>
+		</tr>
+	</table>
+	<p class="auto-style13">&nbsp;</p>
+	<p class="auto-style13"><strong>サンプルプログラム</strong></p>
+	<p class="auto-style12">libdebug_sample.cというプログラムを作成してみました。</p>
+	<p class="auto-style12">libdebugのライブラリを有効にするチェックボックスを入れます。<br />
+	また、プログラムの先頭に</p>
+	<p class="auto-style12">
+	このサンプルプログラムでは、ENTERキーを押すとプログラムが流れて、LEDのON/OFFが変化します。繰り返した回数もBREAK時に出力します。</p>
+	<p class="auto-style12">
+<TEXTAREA wrap="off" name="empty" style="width: 591px; height: 591px" class="auto-style1" cols="20" rows="1" tabindex="4">#define LIB_DEBUG
+#define BREAK_MODE
+
+#include "libdebug_sample_ide.h"		// Additional Header
+
+void setup() {
+  // put your setup code here, to run once
+  Serial.begin(115200);
+  pinMode(26,OUTPUT);
+  BREAK("Click for LED ON");
+  BREAKL("HELLO=",255,HEX);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  static unsigned char blue_led=0;
+  static int i=0;
+  
+  digitalWrite(26,LOW);
+  BREAKL("Click for LED OFF. Cycle = ",i,DEC);
+
+  digitalWrite(26,HIGH);
+  BREAK("Click for LED ON");
+  i++;
+}
+</TEXTAREA></p>
+	<p class="auto-style13">&nbsp;</p>
+	<p class="auto-style13">&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

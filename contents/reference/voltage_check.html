@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>voltage_check</title>
+<style type="text/css">
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style6 {
+	font-family: メイリオ;
+	font-weight: normal;
+	color: #666666;
+}
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style8 {
+	color: #666666;
+	font-family: メイリオ;
+}
+.auto-style7 {
+	margin-left: 40px;
+	color: #666666;
+	font-family: メイリオ;
+	margin-bottom:30px;
+}
+td{
+	padding:5px;
+}
+.auto-style9 {
+	margin-left: 40px;
+	color: #666666;
+	font-family: メイリオ;
+	margin-bottom: 30px;
+	text-align: center;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style6">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<div id="contents">
+<h1 class="auto-style6"><span lang="EN-US">voltage_check</span>(level)</h1>
+<br/>
+<h3 class="auto-style8">詳細</h3>
+<p class="auto-style7">uint8_t voltage_check(uint8_t level);</p>
+<h3 class="auto-style8">仕様</h3>
+<p class="auto-style7">電源電圧の測定を行う関数です。</p>
+	<p class="auto-style7">
+	電源電圧の測定は"level"で指定された電圧を下回っているかを判定します。電源電圧の方が低い場合は、判定レベルを1段階下げて再度測定を行います。電源電圧が判定レベルを上回ると測定を停止し、その時に判定していたlevelを戻り値で返します。</p>
+	<p class="auto-style7">
+	一回の電圧判定に必要な時間は約400usecなので、下図の場合は5回判定を行う為、約2msの測定時間がかかります。</p>
+	<p class="auto-style9">
+	<img alt="" height="524" src="voltage_check.png" width="860" /></p>
+<h3 class="auto-style8">パラメータ</h3>
+<h4 class="auto-style8">&nbsp;&nbsp;&nbsp; uint8_t level</h4>
+<p class="auto-style7">測定を開始する電圧レベルを指定します。</p>
+<br/>
+	<h3 class="auto-style8">戻り値</h3>
+<p class="auto-style7">電源電圧が判定レベルを上回ったら測定を停止し、その時のlevelの数値を返します。</p>
+<h3 class="auto-style8">サンプル</h3>
+<p class="auto-style7">サンプルプログラムの01.Basics\voltage_check\voltage_check.cで使用しています.</p>
+<p>
+<TEXTAREA wrap="off" name="empty" style="width: 559px; height: 321px" class="auto-style1" cols="20" rows="1">void print_voltage(uint8_t level) {
+	Serial.print("Current VDD voltage : ");
+	switch (level) {
+	case VLS_UNDER_1_898:
+		Serial.println("< 1.898V");
+		break;
+	case VLS_1_898:
+		Serial.println("1.898 ~ 2.000V");
+		break;
+	case VLS_2_000:
+		Serial.println("2.000 ~ 2.093V");
+		break;
+	case VLS_2_093:
+		Serial.println("2.093 ~ 2.196V");
+		break;
+	case VLS_2_196:
+		Serial.println("2.196 ~ 2.309V");
+		break;
+	case VLS_2_309:
+		Serial.println("2.309 ~ 2.409V");
+		break;
+	case VLS_2_409:
+		Serial.println("2.409 ~ 2.605V");
+		break;
+	case VLS_2_605:
+		Serial.println("2.605 ~ 2.800V");
+		break;
+	case VLS_2_800:
+		Serial.println("2.800 ~ 3.068V");
+		break;
+	case VLS_3_068:
+		Serial.println("3.068 ~ 3.394V");
+		break;
+	case VLS_3_394:
+		Serial.println("3.394 ~ 3.797V");
+		break;
+	case VLS_3_797:
+		Serial.println("3.797 ~ 4.226V");
+		break;
+	case VLS_4_226:
+		Serial.println("4.226 ~ 4.667V");
+		break;
+	case VLS_4_667:
+		Serial.println("> 4.667V");
+		break;
+	default:
+		Serial.println("unknown");
+		break;
+	}
+}
+
+void setup() {
+	Serial.begin(115200);
+}
+
+void loop() {
+	uint8_t level;
+
+	level = voltage_check(VLS_4_667);		// start checking from 4.667V
+	print_voltage(level);
+	sleep(3000);
+}
+</TEXTAREA></p>
+</div>
+<p>&nbsp;</p>
+
+</body>
+
+</html>
