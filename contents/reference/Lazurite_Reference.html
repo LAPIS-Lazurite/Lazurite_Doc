@@ -333,7 +333,7 @@ table.dataflash{
 		<a href="timer2_stop.html">timer2.stop()</a><br />
 		<a href="timer2_wait_event_timeout.html">
 		timer2.wait_event_timeout(*flag, ms)</a><br />
-		<br />
+		⇒(2017.3.29)次回の更新時にtimer2.wait_event_timeout関数は無くなります。代わりに、ライブラリではなく本体に組み込まれて、wait_event_timeout(*flag,ms)で動作するようになります。また、タイマーはtimer2を使用するのではなく、sleep関数で使用しているタイマーを共用して使用します。<br />
 		<h2>SDカードライブラリ(SD)</h2>
 		<span class="auto-style26">SDカードを使用できるライブラリです。</span><br />
 		<br />

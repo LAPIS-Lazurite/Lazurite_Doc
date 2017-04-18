@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>ble</title>
+<style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style2 {
+	border: 1px solid #000000;
+	margin-left: 40px;
+}
+.auto-style3 {
+	border: 1px solid #000000;
+}
+.auto-style7 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style8 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style9 {
+	margin-left: 40px;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style11 {
+	border: 1px solid #000000;
+	text-align: center;
+	color: #666666;
+	font-family: メイリオ;
+}
+.auto-style12 {
+	font-family: メイリオ;
+}
+td{
+	padding:0px 5px;
+}
+.auto-style13 {
+	border: 1px solid #000000;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style14 {
+	margin-left: 80px;
+}
+</style>
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style7">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<div id="contents">
+<h1 class="auto-style7">BLE BluetoohSmart for Lazurite </h1>
+<br/>
+<h3 class="auto-style8">概要</h3>
+<p class="auto-style1">&nbsp;<span class="auto-style8">bleはLazuriteBLE専用のAPIで、BluetoothSmart対応無線モジュール 
+MK71251-02を使用してスマートフォンとデータの通信を行うことが出来るAPIセットです。</span></p>
+<p class="auto-style9">
+MK71251-02はSerial(UART)で制御可能な超低消費電力BLEモジュールのため、基本的な関数セットはSerialを踏襲したAPIになっています。</p>
+<p class="auto-style9">
+LazuriteにはUARTが２種類搭載されておりLazurite 
+BLEではSerialの方を使用します。そのため、BLEを有効にするとPCとの接続は出来なくなりますが、GPIOの0と1は汎用GPIOとして使用することが出来ます。</p>
+	<p class="auto-style9">
+	本関数ではラピスセミコンダクタのシリアル通信プロトコル 
+	VSSPPを使用してデータが送信することが出来ます。本プロトコルには、送達確認等のプロトコルは実装されていません。</p>
+<h3 class="auto-style8">関数</h3>
+<table class="auto-style2" style="width: 80%">
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p>+</p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">
+		<a href="Serial_begin.html">ble</a><a href="ble_begin.html" target="_blank">.begin();</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">BLEの初期化をする関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 18px">
+		<p>+</p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 18px">
+		<p class="auto-style12">
+		<a href="ble_available.html" target="_blank">int ble.available();</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">BLE用受信バッファの残りサイズを読み出す関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 22px;">
+		<p>+</p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 22px;">
+		<p class="auto-style12">
+		<a href="ble_read.html" target="_blank">int ble.read();</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 22px;">
+		<p class="auto-style8">BLE用受信データを値を読み出す関数です。読み出したデータは消去されます。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 20px">
+		<p>+</p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 20px">
+		<p class="auto-style12">
+		<a href="ble_peek.html" target="_blank">int ble.peek();</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 20px">
+		<p class="auto-style8">BLE用受信バッファの値を消去せずに読み出します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 20px">
+		<p>+</p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 20px">
+		<p class="auto-style12">
+		<a href="ble_flush.html" target="_blank">void ble.flush();</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 22px;">
+		<p class="auto-style8">BLE用受信バッファを初期化します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 20px">
+		<p class="auto-style8">+</p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 20px">
+		<p class="auto-style12">
+		<a href="ble_print.html" target="_blank">ble.print(data);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 18px">
+		<p class="auto-style8">BLE経由で文字列を送信します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 20px">
+		<p class="auto-style8">+</p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 20px">
+		<p class="auto-style12">
+		<a href="ble_print.html" target="_blank">ble.println(data);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 22px;">
+		<p class="auto-style8">BLE経由で文字列を送信し、最後に改行します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 20px">
+		<p class="auto-style8">+</p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 20px">
+		<p class="auto-style12">
+		<a href="ble_print_long.html" target="_blank">ble.print_long(data,fmt);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 22px;">
+		<p class="auto-style8">BLE経由でlong型のデータを文字列として出力する関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 22px">
+		<p class="auto-style8">+</p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 22px">
+		<p class="auto-style12">
+		<a href="ble_print_long.html" target="_blank">ble.println_long(data,fmt);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 22px;">
+		<p class="auto-style8">BLE経由でlong型のデータを文字列として出力し、最後に改行します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 20px">
+		<p class="auto-style8">+</p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 20px">
+		<p class="auto-style12">
+		<a href="ble_print_double.html" target="_blank">ble.print_double(data, digit);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 22px;">
+		<p class="auto-style8">BLE経由でdouble型浮動小数点のデータを文字列として出力します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; ">
+		<p class="auto-style8">+</p>
+		</td>
+		<td class="auto-style3" style="width: 467px; ">
+		<p class="auto-style12">
+		<a href="ble_print_double.html" target="_blank">ble.println_double(data, digit);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; ">
+		<p class="auto-style8">BLE経由でdouble型浮動小数点のデータを文字列として出力し、最後に改行します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; ">
+		<p class="auto-style8">+</p>
+		</td>
+		<td class="auto-style3" style="width: 467px; ">
+		<p class="auto-style12">
+		<a href="ble_write.html" target="_blank">size_t ble.write(data, quantity);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; ">
+		<p class="auto-style8">構造体のデータを所定のバイト数送信する関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 21px">
+		<p class="auto-style8">+</p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 21px">
+		<p class="auto-style12">
+		<a href="ble_write_byte.html" target="_blank">size_t ble.write_byte(data);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 21px;">
+		<p class="auto-style8">1バイトのデータを送信します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 20px">
+		<p class="auto-style8">+</p>
+		</td>
+		<td class="auto-style3" style="width: 467px; height: 20px">
+		<p class="auto-style12">
+		<a href="ble_tx_available.html" target="_blank">int ble.tx_available();</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 22px;">
+		<p class="auto-style8">送信バッファの残りバイト数を返します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 20px">
+		+</td>
+		<td class="auto-style3" style="width: 467px; height: 20px">
+		<p class="auto-style12">
+		<a href="ble_tx_available.html" target="_blank">int ble.getStatus();</a></p>
+		</td>
+		<td class="auto-style3" style="width: 673px; height: 22px;">
+		<p class="auto-style8">BLEのステータスを取得します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 20px">
+		+</td>
+		<td class="auto-style3" style="width: 467px; height: 20px">
+		<p class="auto-style12">
+		<a href="ble_tx_available.html" target="_blank">ble.advertising(on);</a></p>
+		</td>
+		<td class="auto-style13" style="width: 673px; height: 22px;">
+		BLEのアドバタイズの開始／終了を設定します。</td>
+	</tr>
+	<tr>
+		<td class="auto-style11" style="width: 34px; height: 20px">
+		&nbsp;</td>
+		<td class="auto-style3" style="width: 467px; height: 20px">
+		&nbsp;</td>
+		<td class="auto-style3" style="width: 673px; height: 22px;">
+		&nbsp;</td>
+	</tr>
+	</table>
+<h3 class="auto-style8">サンプルプログラムの使用方法</h3>
+<p class="auto-style1">Lazurite IDEの03.BLE --&gt; echoを参照してください。</p>
+	<p class="auto-style1">本プログラムを使用してスマートフォンと通信を行う手順は、</p>
+	<p class="auto-style14">1. iOSまたはAndroidのLAPIS Semiconductorが提供しているBLE 
+	TOOLをダウンロードしてください。</p>
+	<p class="auto-style14">2. echoのサンプルプログラムをLazurite BLEに書き込みしてください。</p>
+	<p class="auto-style14">3. 本サンプルプログラムでは、リセット後にアドバタイズを開始します。BLE 
+	TOOLを起動すると、LAPIS ML7125-002 
+	App....といった名称のモジュールが表示されますので、それをタッチするとコネクションが成立します。この時、Lazurite 
+	BLE側はアドバタイズ状態(status = 2)から、コネクション状態(status = 3)に移行します。</p>
+	<p class="auto-style14">4. スマートフォンの画面が切り替わり、LAPIS Serial Port 
+	Profileを選択すると、データの入出力が可能になります。この画面で入力したデータが、BLE経由でLazurite 
+	BLEに送信された後、同じデータがエコーバックされます。</p>
+	<p class="auto-style14">5. 
+	コネクションを切断するときは、スマートフォン側の画面を右にスワイプすると、一つ前の画面に戻り、アドバタイズを検出する画面に戻るとコネクションが切断されます。この時、Lazurite 
+	BLE側は待機状態(status = 1)に戻ります。</p>
+	<p class="auto-style1">
+	また、電源投入してBLEの初期化が行い、アドバタイズを行わないときは、前は2秒毎に2回赤いLEDが点滅します。<br />
+	アドバタイズを開始すると、赤いLEDが2秒ごとに1回点灯します。<br />
+	コネクション成立後は、赤いLEDは点滅しません。</p>
+<p class="auto-style1">&nbsp;</p>
+<p class="auto-style1">
+<TEXTAREA wrap="off" name="empty" style="width: 593px; height: 398px" class="auto-style1">#include "echo_ide.h"		// Additional Header
+
+#define BLUE_LED	26
+#define ORANGE_LED	25
+
+void setup() {
+  // put your setup code here, to run once:
+
+
+	pinMode(BLUE_LED,OUTPUT);
+	pinMode(ORANGE_LED,OUTPUT);
+
+	ble.begin();
+//	ble.advertising(true);
+	
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  	// 
+	if(ble.getStatus() == 1) {
+		ble.advertising(true);
+	}
+	if(ble.available())
+	{
+		ble.write_byte(ble.read());
+	}
+}
+</TEXTAREA></p>
+<p class="auto-style1">&nbsp;</p>
+<p class="auto-style1">&nbsp;</p>
+<p class="auto-style1">&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+</body>
+
+</html>
