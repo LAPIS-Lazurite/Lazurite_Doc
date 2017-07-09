@@ -4,47 +4,74 @@
 <head>
 <meta content="ja" http-equiv="Content-Language" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>TOP</title>
+<title>Lazurite TOP</title>
 <style type="text/css">
 .auto-style1 {
+	vertical-align: middle;
+}
+.auto-style2 {
 	margin-left: 40px;
 }
 </style>
-<base target="main" />
 </head>
 
 <body>
 
-<h2><a href="gateway/reference/top.html">TOP</a></h2>
-<h2>LazDriver<br />
-(kernel driver)</h2>
-<h3 class="auto-style1"><a href="gateway/reference/LazDriver.html">install</a></h3>
-<p class="auto-style1"><a href="gateway/reference/LazDriver_spec.html">specification</a></p>
-<p class="auto-style1">
-<a href="https://github.com/LAPIS-Lazurite/LazDriver" target="_blank">source 
-code</a></p>
-<h2>liblazurite<br />
-(linux 共有ライブラリ)</h2>
-<h3 class="auto-style1"><a href="gateway/reference/LazGem_install.html">install</a></h3>
-<h3 class="auto-style1">
-<a href="https://github.com/LAPIS-Lazurite/liblazurite" target="_blank">source code</a></h3>
-<h2>&nbsp;</h2>
-<h2>LazGem<br />
-(Ruby)</h2>
-<h3 class="auto-style1"><a href="gateway/reference/LazGem_install.html">install</a></h3>
-<h3 class="auto-style1">
-<a href="https://github.com/LAPIS-Lazurite/LazGem" target="_blank">source code</a></h3>
-<h2>LazuriteJava<br />
-(JAVA)</h2>
-<h3 class="auto-style1"><a href="gateway/reference/LazuriteJava_install.html">install</a></h3>
-<h3 class="auto-style1">
-<a href="https://github.com/LAPIS-Lazurite/LazuriteJava" target="_blank">source code</a></h3>
-<h2>PyLaz<br />
-(python)</h2>
-<h3 class="auto-style1"><a href="gateway/reference/LazGem_install.html">install</a></h3>
-<p class="auto-style1"><a href="gateway/reference/PyLaz_api.html">Specification</a></p>
-<h3 class="auto-style1">
-<a href="https://github.com/LAPIS-Lazurite/PyLaz" target="_blank">source code</a></h3>
+<h1><img height="45" src="Lazurite_logo.png" width="197" class="auto-style1" />　Lazuriteについて</h1>
+<hr />
+<p>&nbsp;</p>
+<p>LazuriteはIoTを簡単に実現することができる開発キット／リファレンスデザインです。</p>
+<p>回路はオープンハードウエア、ソフトウエアもオープンソースで開発しています。<br />
+Lazurite IDE、Rasberry Pi用の無線モジュールドライバソフトの双方ともGPLまたはLGPLのライセンスに基づき配布しています。</p>
+<p>&nbsp;</p>
+<p><img height="452" src="Lazurite_system.jpg" width="947" /></p>
+<p>&nbsp;</p>
+
+<p class="auto-style2">&nbsp;</p>
+<h1>Lazurite IDE</h1>
+<h3>1. ソフトウエアのダウンロード方法</h3>
+<p class="auto-style2">Lazuriteのダウンロードサイトよりインストーラーをダウンロードしてください。</p>
+<p class="auto-style2">
+インストーラーのファイル名は、setup_001001_2015Jun15.exe です。</p>
+<h3>2 Lazurite IDEでダウンロードしたソフトウエアのライセンス情報</h3>
+<p class="auto-style2">Lazurite 
+Sub-GHz用のファームウエアである、LazuriteIDE\hardware、LazuriteIDE\librariesは、マイコン用のファームウエアです。マイコン用のファームウエハは、LGPL(Lesser 
+GPL)に基づき配布しています。<br />
+LazuriteIDE\BINのフォルダ内のファイルは、それぞれのソフトウエアのライセンスに基づき再配布しています。</p>
+<h3><a href="InstallGuide.html">3. インストールの方法</a></h3>
+<h3><a href="IDE/How_to_use.html">4. プログラム作成方法</a></h3>
+<h3><a href="reference/Lazurite_Reference.html">5. Lazurite 関数リファレンス</a></h3>
+<h3>6. サンプルプログラムの解説</h3>
+<p>&nbsp;</p>
+<h1>Lazurite Sub-GHz</h1>
+<h3>回路図</h3>
+<p class="auto-style2">Lazurite SubGHz　<a href="sch/150406_1933_LAZURITE_SUBGHZ_REV2.pdf">回路図</a></p>
+<p class="auto-style2">Lazurite 920J　<a href="sch/LAZURITE_920J_SCH_1.pdf">回路図</a>　　<a href="sch/Lazurite920J_Outline.pdf">概略仕様</a></p>
+<p class="auto-style2">Lazurite Pi Gateway　<a href="sch/RaspberryPi_GatewayA.pdf">回路図</a></p>
+<h1>Lazurite Pi Gateway</h1>
+
+<h3>ご使用する前に</h3>
+<p>Lazurite Pi Gatwayを使用するためには、次のものを揃える必要があります。</p>
+<ol>
+	<li>Raspberry Pi (B+, A+)またはRaspberry Pi2　(26pinのRaspberry Pi 
+	Bには対応していません</li>
+	<li>Raspberry Pi用の備品 (電源、マイクロUSBコネクタ、８GB以上のマイクロSDカード、モニター、キーボード、マウス等）</li>
+</ol>
+<p>これは弊社の開発環境です。</p>
+<p><img src="LazuritePi_complete.jpg" height="516" width="691" /></p>
+<p>&nbsp;</p>
+<p><a href="RasPiSetupGuide.html">1. Lazurite Pi Gatewayを使用する環境を立ち上げる</a></p>
+<p>2. API reference</p>
+<p class="auto-style2"><a href="gateway/reference/default.html">2-1. 
+Ruby , Python, C言語 共有ライブラリ, JAVA</a></p>
+<p class="auto-style2"><a href="RasPiNodeRed.html">2-2. Node-RED</a></p>
+<p>&nbsp;</p>
+<h1>無線関連　技術情報</h1>
+<p class="auto-style2"><a href="IEEE802154/ieee802154e_format.html">1. 
+IEEE 802.15.4eについて</a></p>
+<p class="auto-style2"><a href="subghz/BP3596A_外付けアンテナリスト_150511.pdf">
+2. Lazurite Sub-GHz 技適取得済　外付けアンテナリスト</a></p>
+<p>&nbsp;</p>
 
 </body>
 

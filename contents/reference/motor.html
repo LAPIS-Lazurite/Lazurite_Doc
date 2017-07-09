@@ -94,10 +94,10 @@ td{
 <p class="auto-style11">※本関数はLazurite専用の関数です。</p>
 <br/>
 <p class="auto-style8"><strong>HardwareServo</strong></p>
-<p class="auto-style1"><img height="221" src="hardware_servo.png" width="682" /></p>
+<p class="auto-style1"><img height="221" src="motor/hardware_servo.png" width="682" /></p>
 <p class="auto-style11"><strong>HardwareHBridge</strong></p>
 <p class="auto-style1">
-<img height="224" src="hardware_hbridge.png" width="682" /></p>
+<img height="224" src="motor/hardware_hbridge.png" width="682" /></p>
 <p class="auto-style1">
 <span class="auto-style10">HardwareServoは、ML620Q504の周期を生成するためのタイマーとしてTM45を使用し、出力信号を生成するためにFTMを使用します。1つのFTMで最大2本の出力まで生成することができ、FTM0から順番に必要な信号の本数分だけFTMを使用します。上図の場合、3本のServo用信号を生成していますので、FTM0とFTM1を使用することになります。</span><br class="auto-style10" />
 <span class="auto-style10">また、上図ではFTM1は1本のPWM信号しか使用していませんが、FTM1の残りの1本を別の機能で使用することはできません。</span></p>
@@ -124,7 +124,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		&nbsp;</td>
 		<td class="auto-style13" style="width: 504px; height: 18px">
 		<p class="auto-style12">
-		<a href="hsv_init.html"target="_blank">hsv.init(num, period)</a></p>
+		<a href="motor/hsv_init.html"target="_blank">hsv.init(num, period)</a></p>
 		</td>
 		<td class="auto-style3" style="width: 673px; height: 18px">
 		<p class="auto-style10">HardwareServoの初期化を行います。numは出力する本数 1～8を、periodは周期(us)を指定します。</p>
@@ -135,7 +135,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		</td>
 		<td class="auto-style13" style="width: 504px; height: 21px">
 		<p class="auto-style12">
-		<a href="hsv_attach.html"target="_blank">hsv.attach(ch,pin)</a></p>
+		<a href="motor/hsv_attach.html"target="_blank">hsv.attach(ch,pin)</a></p>
 		</td>
 		<td class="auto-style3" style="width: 673px; height: 21px">
 		<p class="auto-style10">chで指定されたチャンネルのPWM信号を、pinで指定された端子から出力します。</p>
@@ -146,7 +146,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		&nbsp;</td>
 		<td class="auto-style13" style="width: 504px; height: 18px">
 		<p class="auto-style12">
-		<a href="hsv_detach.html"target="_blank">hsv.detach(pin, level)</a></p>
+		<a href="motor/hsv_detach.html"target="_blank">hsv.detach(pin, level)</a></p>
 		</td>
 		<td class="auto-style3" style="width: 673px; height: 18px">
 		<p class="auto-style10">端子をPWM信号から解放し、levelによって指定された信号を出力します。</p>
@@ -157,7 +157,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		&nbsp;</td>
 		<td class="auto-style13" style="width: 504px; height: 18px">
 		<p class="auto-style12">
-		<a href="hsv_start.html"target="_blank">hsv.start()</a></p>
+		<a href="motor/hsv_start.html"target="_blank">hsv.start()</a></p>
 		</td>
 		<td class="auto-style3" style="width: 673px; height: 18px">
 		<p class="auto-style10">Servo用PWM信号の出力を開始します。</p>
@@ -168,7 +168,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		&nbsp;</td>
 		<td class="auto-style13" style="width: 504px; height: 18px">
 		<p class="auto-style12">
-		<a href="hsv_stop.html"target="_blank">hsv.stop()</a></p>
+		<a href="motor/hsv_stop.html"target="_blank">hsv.stop()</a></p>
 		</td>
 		<td class="auto-style3" style="width: 673px; height: 18px">
 		<p class="auto-style10">Servo用PWM信号の出力を停止します。本関数を実行した周期内は信号出力が継続し、その次のタイミングから出力が停止します。</p>
@@ -179,7 +179,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		&nbsp;</td>
 		<td class="auto-style13" style="width: 504px; height: 18px">
 		<p class="auto-style12">
-		<a href="hsv_close.html"target="_blank">hsv.close()</a></p>
+		<a href="motor/hsv_close.html"target="_blank">hsv.close()</a></p>
 		</td>
 		<td class="auto-style3" style="width: 673px; height: 18px">
 		<p class="auto-style10">Servo制御に使用するタイマーへのクロック供給を停止し、スタンバイ状態にします。</p>
@@ -190,7 +190,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		&nbsp;</td>
 		<td class="auto-style13" style="width: 504px; height: 18px">
 		<p class="auto-style12">
-		<a href="hsv_write.html"target="_blank">hsv.write(ch,time)</a></p>
+		<a href="motor/hsv_write.html"target="_blank">hsv.write(ch,time)</a></p>
 		</td>
 		<td class="auto-style3" style="width: 673px; height: 18px">
 		<p class="auto-style10">指定されたchの時間を設定します。</p>
@@ -201,7 +201,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		&nbsp;</td>
 		<td class="auto-style13" style="width: 504px; height: 18px">
 		<p class="auto-style12">
-		<a href="hsv_update.html"target="_blank">hsv.update()</a></p>
+		<a href="motor/hsv_update.html"target="_blank">hsv.update()</a></p>
 		</td>
 		<td class="auto-style3" style="width: 673px; height: 18px">
 		<p class="auto-style10">動作中に値を更新するための関数です。hhb.update()関数と同じ機能のため、ServoとH-Bridgeモータの値を変更した後に1回、hhb.update()またはhsv.update()を実行してください。</p>
@@ -226,7 +226,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		&nbsp;</td>
 		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>
-		<a href="hhb_init.html"target="_blank"><span class="auto-style12">hhb.init(num, period)</span></a></p>
+		<a href="motor/hhb_init.html"target="_blank"><span class="auto-style12">hhb.init(num, period)</span></a></p>
 		</td>
 		<td class="auto-style13" style="width: 673px; height: 18px">
 		<p>HardwareServoの初期化を行います。numは出力する本数 1～8を、periodは周期(us)を指定します。</p>
@@ -237,7 +237,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		&nbsp;</td>
 		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>
-		<a href="hhb_attach.html"target="_blank"><span class="auto-style12">hhb.attach(ch,pin1,pin2)</span></a></p>
+		<a href="motor/hhb_attach.html"target="_blank"><span class="auto-style12">hhb.attach(ch,pin1,pin2)</span></a></p>
 		</td>
 		<td class="auto-style13" style="width: 673px; height: 18px">
 		<p>chで指定されたチャンネルのPWM信号を、pinで指定された端子から出力します。</p>
@@ -248,7 +248,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		&nbsp;</td>
 		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>
-		<a href="hhb_detach.html"target="_blank"><span class="auto-style12">hhb.detach(pin1,pin2,level1,level2)</span></a></p>
+		<a href="motor/hhb_detach.html"target="_blank"><span class="auto-style12">hhb.detach(pin1,pin2,level1,level2)</span></a></p>
 		</td>
 		<td class="auto-style13" style="width: 673px; height: 18px">
 		<p>端子をPWM信号から解放し、levelによって指定された信号を出力します。</p>
@@ -259,7 +259,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		&nbsp;</td>
 		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>
-		<a href="hhb_start.html"target="_blank"><span class="auto-style12">hhb.start(ch)</span></a></p>
+		<a href="motor/hhb_start.html"target="_blank"><span class="auto-style12">hhb.start(ch)</span></a></p>
 		</td>
 		<td class="auto-style13" style="width: 673px; height: 18px">
 		<p>Servo用PWM信号の出力を開始します。</p>
@@ -270,7 +270,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		&nbsp;</td>
 		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>
-		<a href="hhb_stop.html"target="_blank"><span class="auto-style12">hhb.stop(ch)</span></a></p>
+		<a href="motor/hhb_stop.html"target="_blank"><span class="auto-style12">hhb.stop(ch)</span></a></p>
 		</td>
 		<td class="auto-style13" style="width: 673px; height: 18px">
 		<p>Servo用PWM信号の出力を停止します。本関数を実行した周期内は信号出力が継続し、その次のタイミングから出力が停止します。</p>
@@ -281,7 +281,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		&nbsp;</td>
 		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>
-		<a href="hhb_close.html"target="_blank"><span class="auto-style12">hhb.close(ch)</span></a></p>
+		<a href="motor/hhb_close.html"target="_blank"><span class="auto-style12">hhb.close(ch)</span></a></p>
 		</td>
 		<td class="auto-style13" style="width: 673px; height: 18px">
 		<p>Servo用PWM信号のブロックをスタンバイします。</p>
@@ -292,7 +292,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		&nbsp;</td>
 		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>
-		<a href="hhb_write.html"target="_blank"><span class="auto-style12">hhb.write(ch,time)</span></a></p>
+		<a href="motor/hhb_write.html"target="_blank"><span class="auto-style12">hhb.write(ch,time)</span></a></p>
 		</td>
 		<td class="auto-style13" style="width: 673px; height: 18px">
 		<p>指定されたchの時間を設定します。</p>
@@ -303,7 +303,7 @@ HardwareHBridgeは、任意のFTMを指定することができ、1つのFTMで�
 		&nbsp;</td>
 		<td class="auto-style13" style="width: 386px; height: 18px">
 		<p>
-		<a href="hhb_update.html"target="_blank"><span class="auto-style12">hhb.update()</span></a></p>
+		<a href="motor/hhb_update.html"target="_blank"><span class="auto-style12">hhb.update()</span></a></p>
 		</td>
 		<td class="auto-style13" style="width: 673px; height: 18px">
 		<p>動作中に値を更新するための関数です。hhb.update()関数と同じ機能のため、ServoとH-Bridgeモータの値を変更した後に1回、hhb.update()またはhsv.update()を実行してください。</p>

@@ -153,7 +153,7 @@ table.dataflash{
 		<td style="width: 19%" valign="top" class="auto-style9" >
 		<h2>GPIO</h2>
 		<span class="auto-style21">GPIOはGereneral Purpose Input　Output(汎用入出力端子)の略で、ほとんどのマイコンの端子がこの機能を搭載しています。
-以下の関数によって、pinMode関数によって端子を入力モードにすると、digitalRead関数で端子の状態を読み出すことができます。また、出力モードのときは端子からHIGH/LOWレベルを出力することができます。
+pinMode関数によって端子を入力モードにすると、digitalRead関数で端子の状態を読み出すことができます。また、出力モードのときは端子からHIGH/LOWレベルを出力することができます。
 このモードで読み取ったり、出力したりできるのは、HIGHまたはLOWのみです。</span><br />
               <br/>
         <ul>
@@ -285,27 +285,41 @@ table.dataflash{
 		</span>
 		<a href="I2C.html"target="_blank"><span class="auto-style12">I2Cインタフェース※</span></a><span class="auto-style12"><br />
 		</span>
-		<h2>SubGHz(920MHz)　※</h2>
+		<h2><a href="subghz/subghz.html">SubGHz(920MHz)</a>　※</h2>
         <span class="auto-style21">SubGHzはIEEE802.15.4eのプロトコルで920MHzの無線通信を行うための関数群です。SubGHz(920MHz)に関する技術資料は<a href="../IEEE802154/ieee802154e_format.html">こちらを</a>参照してください。</span>
 		<br/>
 		<br />
-		<a href="subghz_init.html"target="_blank">SUBGHZ_MSG SubGHz.init();</a><br />
-		<a href="subghz_begin.html"target="_blank">SUBGHZ_MSG SubGHz.begin(ch, panid, rate, 
+		<a href="subghz/subghz_init.html"target="_blank">SUBGHZ_MSG SubGHz.init();</a><br />
+		<a href="subghz/subghz_begin.html"target="_blank">SUBGHZ_MSG SubGHz.begin(ch, panid, rate, 
 		txPower);</a><br />
-		<a href="subghz_close.html"target="_blank">SUBGHZ_MSG SubGHz.close();</a><br />
-		<a href="subghz_send.html"target="_blank">SUBGHZ_MSG SubGHz.send(panid, dstAddr, *data, 
+		<a href="subghz/subghz_close.html"target="_blank">SUBGHZ_MSG SubGHz.close();</a><br />
+		<a href="subghz/subghz_send.html"target="_blank">SUBGHZ_MSG SubGHz.send(panid, dstAddr, *data, 
 		length, *callback);</a><br />
-		<a href="subghz_rxenable.html"target="_blank">SUBGHZ_MSG SubGHz.rxEnable(*callback);</a><br />
-		<a href="subghz_rxdisable.html"target="_blank">SUBGHZ_MSG SubGHz.rxDisable();</a><br />
-		<a href="subghz_readdata.html"target="_blank">short SubGHz.readData(*data, max_size);</a><br />
-		<a href="subghz_getmyaddress.html"target="_blank">uint16_t SubGHz.getMyAddress(void);</a><br />
-		<a href="subghz_getstatus.html"target="_blank">void SubGHz.getStatus(*tx, *rx)</a><br />
-		<a href="subghz_getSendMode.html" target="_blank">SUBGHZ_MSG SubGHz.getSendMode(*param);</a><br />
-		<a href="subghz_setSendMode.html" target="_blank">SUBGHZ_MSG SubGHz.setSendMode(*param);</a><br />
-		<a href="subghz_msgOut.html">void SubGHz.msgOut(SUBGHZ_MSG msg) ;</a><br />
-		<a href="subghz_decMac.html">void SubGHz.decMac(*mac,*raw,raw_len) ;</a><br />
+		<a href="subghz/subghz_send64.html" target="_blank">SUBGHZ_MSG SubGHz.send64be(*dstAddr, *data, 
+		length, *callback);</a><br />
+		<a href="subghz/subghz_send64.html" target="_blank">SUBGHZ_MSG SubGHz.send64le(*dstAddr, *data, 
+		length, *callback);</a><br />
+		<a href="subghz/subghz_rxenable.html"target="_blank">SUBGHZ_MSG SubGHz.rxEnable(*callback);</a><br />
+		<a href="subghz/subghz_rxdisable.html"target="_blank">SUBGHZ_MSG SubGHz.rxDisable();</a><br />
+		<a href="subghz/subghz_readdata.html"target="_blank">short SubGHz.readData(*data, max_size);</a><br />
+		<a href="subghz/subghz_getmyaddress.html"target="_blank">uint16_t SubGHz.getMyAddress(void);</a><br />
+		<a href="subghz/subghz_setMyAddress.html" target="_blank">void SubGHz.setMyAddress(myAddr);</a><br />
+		<a href="subghz/subghz_getMyAddr64.html"><span class="auto-style17">
+		SUBGHZ_MSG</span></a><a href="subghz/subghz_getMyAddr64.html" target="_blank"> SubGHz.getMyAddr64(*myAddr);</a><br />
+		<a href="subghz/subghz_getstatus.html"target="_blank">void SubGHz.getStatus(*tx, *rx)</a><br />
+		<a href="subghz/subghz_setPromiscuous.html">SUBGHZ_MSG 
+		SubGHz.setPromiscuous(bool on);</a><br />
+		<a href="subghz/subghz_setAckReq.html">SUBGHZ_MSG SubGHz.setAckReq(bool 
+		on);</a><br />
+		<a href="subghz/subghz_setBroadcastEnb.html" target="_blank">SUBGHZ_MSG 
+		SubGHz.setBroadcastEnb(bool on);</a><br />
+		<a href="subghz/subghz_getSendMode.html" target="_blank">SUBGHZ_MSG SubGHz.getSendMode(*param);</a><br />
+		<a href="subghz/subghz_setSendMode.html" target="_blank">SUBGHZ_MSG SubGHz.setSendMode(*param);</a><br />
+		<a href="subghz/subghz_setKey.html" target="_blank">SUBGHZ_MSG SubGHz.setKey(*key);</a><br />
+		<a href="subghz/subghz_msgOut.html">void SubGHz.msgOut(SUBGHZ_MSG msg) ;</a><br />
+		<a href="subghz/subghz_decMac.html">void SubGHz.decMac(*mac,*raw,raw_len) ;</a><br />
 		<br />
-		<a href="subghz.html"target="_blank">サンプルプログラムの解説</a><br/>
+		<a href="subghz/subghz.html"target="_blank">サンプルプログラムの解説</a><br/>
 		<br />
 		<h2>モーター制御ライブラリ</h2>
 		<span class="auto-style21">ML620Q504の多機能タイマー(FTM0～FTM3)を使用し、２種類のモーターを制御するためのライブラリです。HardwareHBridge、HardwareServo共に1usecの時間精度でパルス幅を制御することができ、また割込み処理などによる影響で信号幅がずれるようなことが無いために、モータ制御に最適な関数です。analogWrite関数も同じ多機能タイマーを使用するため、排他使用となるので注意してください。</span>
@@ -313,15 +327,15 @@ table.dataflash{
 		<br />
 		<span class="auto-style12">
 		<a href="motor.html"target="_blank">モーター制御関連(H-Bridge/Servo)※</a></span><br />
-		<a href="hsv_init.html"target="_blank">hsv.init(num, period)</a> <br />
-		<a href="hsv_attach.html"target="_blank">hsv.attach(ch,pin)</a> <br />
-		<a href="hsv_detach.html"target="_blank">hsv.detach(pin, level)</a>
+		<a href="motor/hsv_init.html"target="_blank">hsv.init(num, period)</a> <br />
+		<a href="motor/hsv_attach.html"target="_blank">hsv.attach(ch,pin)</a> <br />
+		<a href="motor/hsv_detach.html"target="_blank">hsv.detach(pin, level)</a>
 		<br />
-		<a href="hsv_start.html"target="_blank">hsv.start()</a> <br />
-		<a href="hsv_stop.html"target="_blank">hsv.stop()</a> <br />
-		<a href="hsv_close.html"target="_blank">hsv.close()</a> <br />
-		<a href="hsv_write.html"target="_blank">hsv.write(ch,time)</a><br />
-        <a href="hsv_update.html"target="_blank">hsv.update()</a>				
+		<a href="motor/hsv_start.html"target="_blank">hsv.start()</a> <br />
+		<a href="motor/hsv_stop.html"target="_blank">hsv.stop()</a> <br />
+		<a href="motor/hsv_close.html"target="_blank">hsv.close()</a> <br />
+		<a href="motor/hsv_write.html"target="_blank">hsv.write(ch,time)</a><br />
+        <a href="motor/hsv_update.html"target="_blank">hsv.update()</a>				
 	<br />
 		<br />
 		<h2>タイマー割込み用ライブラリ(MsTimer2)</h2>
