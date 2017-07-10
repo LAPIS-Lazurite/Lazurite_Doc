@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>SUBGHZ_MSG</title>
+<style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style10 {
+	font-weight: normal;
+	color: #666666;
+	font-family: メイリオ;
+}
+.auto-style11 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: normal;
+	color: #666666;
+}
+.auto-style12 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style13{
+	font-family: メイリオ;
+	color: #666666;
+    margin-bottom:40px;
+    margin-left:40px;
+}
+td{
+	padding:0px 5px;
+}
+.auto-style7 {
+	margin-left: 40px;
+	text-align: left;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style14 {
+	font-family: メイリオ;
+	color: #666666;
+	margin-bottom: 40px;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style10">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<div id="contents">
+<h2 class="auto-style11">SUBGHZ_MSG 変数</h2>
+<br/>
+<h3 class="auto-style12">詳細</h3>
+<p class="auto-style13">SubGHz関連の関数を実行したときに返されるパラメータです。</p>
+<table style="width: 100%" class="auto-style7">
+	<tr>
+		<td class="auto-style8">戻り値</td>
+		<td class="auto-style8">値</td>
+		<td class="auto-style8">意味</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_OK</td>
+		<td class="auto-style8">0</td>
+		<td class="auto-style8">正常に終了</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_RESET_FAIL</td>
+		<td class="auto-style8">1</td>
+		<td class="auto-style8">リセット失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_SETUP_FAIL</td>
+		<td class="auto-style8">2</td>
+		<td class="auto-style8">内部 セットアップ関数の失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_SLEEP_FAIL</td>
+		<td class="auto-style8">3</td>
+		<td class="auto-style8">内部 スリープ関数の失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_WAKEUP_FAIL</td>
+		<td class="auto-style8">4</td>
+		<td class="auto-style8">内部 wakeup関数の失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_MYADDR_FAIL</td>
+		<td class="auto-style8">5</td>
+		<td class="auto-style8">内部 アドレス取得関数の失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_SETFIL_FAIL</td>
+		<td class="auto-style8">6</td>
+		<td class="auto-style8">内部 アドレスフィルタ設定関数の失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_TX_COMP_FAIL</td>
+		<td class="auto-style8">7</td>
+		<td class="auto-style8">送信CALLBACKの失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_TX_FAIL</td>
+		<td class="auto-style8">8</td>
+		<td class="auto-style8">送信失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_TX_CCA_FAIL</td>
+		<td class="auto-style8">9</td>
+		<td class="auto-style8">CCA失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_TX_ACK_FAIL</td>
+		<td class="auto-style8">10</td>
+		<td class="auto-style8">送信後のACK受信失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_RX_ENB_FAIL</td>
+		<td class="auto-style8">11</td>
+		<td class="auto-style8">受信ENB関数の失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_RX_DIS_FAIL</td>
+		<td class="auto-style8">12</td>
+		<td class="auto-style8">受信Disable関数の失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_RX_COMP_FAIL</td>
+		<td class="auto-style8">13</td>
+		<td class="auto-style8">受信callback関数の失敗</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_PANID</td>
+		<td class="auto-style8">14</td>
+		<td class="auto-style8">PANIDエラー</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_ERR_ADDRTYPE</td>
+		<td class="auto-style8">15</td>
+		<td class="auto-style8">ADDRESSタイプエラー</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_TTL_SEND_OVR</td>
+		<td class="auto-style8">16</td>
+		<td class="auto-style8">送信総和エラー</td>
+	</tr>
+</table>
+	<p class="auto-style13">&nbsp;</p>
+	<p class="auto-style14"><strong>CCAエラーについて</strong></p>
+	<p class="auto-style13">
+	CCA(キャリアセンス)とは、送信前に一定の時間、他の機器が周波数を使用していないかチェックするすることを指します。CCA失敗のエラーというのは、他の危機が周波数を利用していたために送信できなかった時に発生するエラーです。</p>
+	<p class="auto-style14"><strong>送信総和エラー</strong></p>
+	<p class="auto-style13">ARIB 
+	STD-108のなかで一つの送信機は一時間の中で10%しか電波を放出してはいけないという決まりがあります。送信総和エラーは、最初に電波を発してから1時間以内に既定量の電波を放出したために、新たなデータを送信することができない、というエラーが発生していることを指します。</p>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

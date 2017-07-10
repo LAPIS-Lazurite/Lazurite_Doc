@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>SubGHz.begin</title>
+<style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style7 {
+	margin-left: 40px;
+	text-align: left;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: #666666;
+}
+.auto-style8 {
+	border: 1px solid #000000;
+}
+.auto-style10 {
+	font-weight: normal;
+	color: #666666;
+	font-family: メイリオ;
+}
+.auto-style11 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: normal;
+	color: #666666;
+}
+.auto-style12 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style13{
+	font-family: メイリオ;
+	color: #666666;
+    margin-bottom:40px;
+    margin-left:40px;
+}
+td{
+	padding:0px 5px;
+}
+.auto-style18 {
+	margin-left: 40px;
+	font-family: メイリオ;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style10">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<div id="contents">
+<h2 class="auto-style11">SUBGHZ_MSG SubGHz.begin(ch, panid, rate, txPower); 
+</h2>
+<br/>
+<h3 class="auto-style12">詳細</h3>
+<p class="auto-style13">SUBGHZ_MSG SubGHz.begin(uint8_t ch, uint16_t panid, 
+SUBGHZ_RATE rate, SUBGHZ_POWER txPower);</p>
+<h3 class="auto-style12">仕様</h3>
+<p class="auto-style13">SubGHzのモジュールの初期設定を行う関数です。使用するチャンネル、自機のPANID、ビットレート、出力パワーの設定を行います。init関数後、またはclose関数後に実行してください。</p>
+<h3 class="auto-style12">パラメータ</h3>
+<h4 class="auto-style12">&nbsp;&nbsp;&nbsp; uint8_t ch</h4>
+<p class="auto-style7">使用する周波数を設定します。</p>
+<h4 class="auto-style12">&nbsp;&nbsp;&nbsp; uint16_t panid</h4>
+<p class="auto-style7">自機のPANIDを設定します。PANIDは、0x0000 ～ 0xFFFEまで任意に指定することができます。<br />
+0xFFFFはグローバルPANIDとなっており、PANIDを無効化するために使用します。</p>
+<h4 class="auto-style12">SUBGHZ_RATE rate</h4>
+<p class="auto-style7">ビットレートを設定します。</p>
+<p class="auto-style7">ビットレートは次の2種類を指定することができます。</p>
+<table class="auto-style7" style="width: 100%">
+	<tr>
+		<td class="auto-style8">設定値</td>
+		<td class="auto-style8">ビットレート</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_100KBPS</td>
+		<td class="auto-style8">100kbps</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_50KBPS</td>
+		<td class="auto-style8">50kbps</td>
+	</tr>
+</table>
+<p class="auto-style1">&nbsp;</p>
+<h4 class="auto-style12">SUBGHZ_POWER txPower</h4>
+<p class="auto-style7">送信パワーを設定します。</p>
+<table class="auto-style7" style="width: 100%">
+	<tr>
+		<td class="auto-style8">設定値</td>
+		<td class="auto-style8">送信パワー</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_PWR_20MW</td>
+		<td class="auto-style8">20mW</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">SUBGHZ_PWR_1MW</td>
+		<td class="auto-style8">1mW</td>
+	</tr>
+</table>
+<p>&nbsp;</p>
+<h3 class="auto-style10">戻り値</h3>
+<p class="auto-style18"><a href="subghz_msg.html">SUBGHZ_MSG 変数</a>を参照してください。</p>
+	<p>&nbsp;</p>
+<h3 class="auto-style12">サンプル</h3>
+<p class="auto-style7">サンプルプログラムのWelcome_SubGHzです。</p>
+<p class="auto-style7">3秒に1回、send_dataに格納された"Welcome to Lazurite 
+Sub-GHz\r\n"を送信し、送信処理中にLEDをONしています。</p>
+<p class="auto-style7">LEDは、26番の端子に接続されている青色LEDを使用しています。</p>
+<p class="auto-style7">
+SubGHzの周波数はCH=36を使用し、自機並びに送信先のPANIDを0xABCDに、送信先のアドレスは0x079Dとなっています。</p>
+<p>
+<TEXTAREA wrap="off" name="empty" style="width: 591px; height: 591px" class="auto-style1">//******************************************
+//  sample software
+//******************************************
+//*****************************************************
+// Local definition
+//*****************************************************
+
+#define LED 26
+#define SUBGHZ_CH		36
+#define PANID			0xABCD
+#define HOST_ADDRESS	0x079D
+
+unsigned char send_data[] = {"Welcome to Lazurite Sub-GHz\r\n"};
+
+void setup(void)
+{
+	
+	SubGHz.init();					// initializing Sub-GHz
+	
+	pinMode(LED,OUTPUT);			// setting of LED
+	digitalWrite(LED,HIGH);			// setting of LED
+}
+
+void loop(void)
+{
+	// Initializing
+	SubGHz.begin(SUBGHZ_CH, PANID,  SUBGHZ_100KBPS, SUBGHZ_PWR_1MW);			// setup Sub-GHz
+	
+	// preparing data
+	digitalWrite(LED,LOW);														// LED ON
+	SubGHz.send(PANID, HOST_ADDRESS, &send_data, sizeof(send_data),NULL);		// send data
+	digitalWrite(LED,HIGH);														// LED off
+	
+	// close
+	SubGHz.close();																// power down Sub-GHz
+	
+	sleep(3000);																// sleep
+
+	return;
+}
+
+</TEXTAREA></p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

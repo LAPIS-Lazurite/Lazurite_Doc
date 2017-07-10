@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>ble.write_byte(data)</title>
+<style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style8 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style9 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style10 {
+	margin-left: 40px;
+	font-family: メイリオ;
+	color: #666666;
+	margin-bottom:40px;
+}
+.auto-style11{
+	margin-left: 40px;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style16 {
+	border-width: 0px;
+}
+.auto-style17 {
+	border-style: solid;
+	border-width: 1px;
+}
+.auto-style15 {
+	font-family: メイリオ;
+	color: #666666;
+	margin-left: 40px;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style8">Lazurite 
+日本語リファレンス</span></h1>
+<hr/>
+<div id="contents">
+<h1 class="auto-style8">BLE.setTxPower(pwr)<br />
+BLE.getTxPower(*pwr)</h1>
+<br/>
+<h3 class="auto-style9">詳細</h3>
+<p class="auto-style10">int BLE.setTxPower(char pwr);<br />
+int BLE.getTxPower(char *pwr);</p>
+<h3 class="auto-style9">仕様</h3>
+<p class="auto-style11">
+BLE.setTxPower関数は出力パワーの設定を行います。<br />
+BLE.getTxPower関数は出力パワーの取得を行います。</p>
+<p class="auto-style10">
+本設定はDEEPSLEEP時以外に変更することが出来ません。それ以外はエラーが返ります。</p>
+	<p class="auto-style10">
+	<table class="auto-style16" style="width: 84%">
+		<tr>
+			<td class="auto-style17" style="width: 180px">pwr</td>
+			<td class="auto-style17" style="width: 287px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="auto-style17" style="width: 180px">0</td>
+			<td class="auto-style17" style="width: 287px">0dBm（デフォルト）</td>
+		</tr>
+		<tr>
+			<td class="auto-style17" style="width: 180px">1</td>
+			<td class="auto-style17" style="width: 287px">-6dBm</td>
+		</tr>
+		<tr>
+			<td class="auto-style17" style="width: 180px">2</td>
+			<td class="auto-style17" style="width: 287px">-12dBm</td>
+		</tr>
+		<tr>
+			<td class="auto-style17" style="width: 180px">3</td>
+			<td class="auto-style17" style="width: 287px">-18dBm</td>
+		</tr>
+	</table>
+	</p>
+<h3 class="auto-style9">パラメータ</h3>
+<h4 class="auto-style9">&nbsp;&nbsp; char pwr (設定時のみ)</h4>
+<p class="auto-style10">送信パワーを指定します。</p>
+<h4 class="auto-style9">&nbsp;&nbsp; char *pwr (取得時のみ)</h4>
+<p class="auto-style10">送信パワーを取得するポインタを指定します。</p>
+<h3 class="auto-style9">戻り値</h3>
+<p class="auto-style15">0= 設定成功</p>
+	<p class="auto-style15">0&lt; エラー状態を返します。<br />
+	　-2 ~ -4：　シリアル送信不可能なモード、（mode * -1)が返ります。<br />
+	　-100～：　パラメータのエラー<br />
+	　-200～：　無線モジュールとの通信エラーが発生したため、モジュールをリセットして復帰した</p>
+<br/>
+<br/>
+</div>
+</body>
+
+</html>

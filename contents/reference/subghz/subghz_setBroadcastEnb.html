@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>SubGHz.setBroadcastEnb</title>
+<style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style7 {
+	margin-left: 40px;
+	text-align: left;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style9 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style10 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style11{
+	font-family: メイリオ;
+	color: #666666;
+    margin-bottom:40px;
+    margin-left:40px
+}
+td{
+	padding:0px 5px;
+}
+.auto-style12 {
+	font-family: メイリオ;
+	color: #666666;
+	margin-bottom: 40px;
+	margin-left: 80px
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style9">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<div id="contents">
+<h1 class="auto-style9">SubGHz.setBroadcastEnb (on)</h1>
+<br/>
+<h3 class="auto-style10">詳細</h3>
+<p class="auto-style7">SUBGHZ_MSG SubGHz.setBroadcastEnb(bool on);</p>
+<h3 class="auto-style10">仕様</h3>
+<p class="auto-style11">ブロードキャスト受信の通知を有効/無効に切り替えることが出来る関数です。<br />
+ブロードキャストは、PANIDが0xFFFF、送信先が0xFFFFの時は全受信機が受け取る情報として送信されます。Broadcastは外部システムも使用している可能性もあるため、本関数により通知を無効にすることが出来ます。デフォルトはtrue(有効)です。</p>
+	<p class="auto-style11">
+	本パラメータによらず、groupcast(PANID=一致、送信先=0xFFFF)は受信することが出来ます。</p>
+<h3 class="auto-style10">パラメータ</h3>
+<p class="auto-style11">bool on</p>
+	<p class="auto-style12">true:&nbsp;&nbsp; ブロードキャストで受信した時に通知します。<br />
+	false:&nbsp;&nbsp; ブロードキャストで受信した時はデータを通知しません。</p>
+<h3 class="auto-style10">戻り値</h3>
+	<p class="auto-style11">常時、SUBGHZ_OKを返します。</p>
+<p>&nbsp;</p>
+<h3 class="auto-style10">サンプル</h3>
+	<p class="auto-style1">なし<br/>
+<br/>
+	</p>
+</div>
+
+</body>
+
+</html>

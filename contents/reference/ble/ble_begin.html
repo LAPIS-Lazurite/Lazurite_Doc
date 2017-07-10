@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>ble.begin</title>
+<style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style7 {
+	font-family: メイリオ;
+	font-weight: normal;
+	color: #666666;
+}
+.auto-style8 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style9 {
+	margin-left: 40px;
+	color: #666666;
+	font-family: メイリオ;
+}
+.auto-style10 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style12 {
+	margin-left: 40px;
+	color: #666666;
+	font-family: メイリオ;
+	font-weight: normal;
+	margin-bottom:40px;
+}
+.auto-style13 {
+	margin-left: 80px;
+	color: #666666;
+	font-family: メイリオ;
+	font-weight: normal;
+	margin-bottom: 40px;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style7">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<div id="contents">
+<h1 class="auto-style7">BLE.begin (*callback)</h1>
+<br/>
+<h3 class="auto-style8">詳細</h3>
+<p class="auto-style9">void BLE.begin(void (*callback)(void));</p>
+<h3 class="auto-style8">仕様</h3>
+<p class="auto-style9">BluetoothSMARTモジュール MK71251-02を初期化する関数です。</p>
+<h3 class="auto-style10">パラメータ</h3>
+<h4 class="auto-style10">&nbsp;&nbsp;&nbsp; void (*callback)(void)</h4>
+	<h4 class="auto-style12">スマートフォンからの操作により状態が変化したときのコールバック関数です。<br />
+	BLE.setTxFlowCtrl(on)関数の状態によって、コールバック関数が呼び出されるタイミングが代わります。<br />
+	NULLを設定すると状態変化によるcallback関数は呼び出されません。</h4>
+	<p class="auto-style12">on=trueの場合</p>
+	<p class="auto-style13">・ADVERTISEからCONNECTに変化した時<br />
+	・CONNECTからDEEPSLEEPに変化した時<br />
+	・SERIAL_CONNECTからDEEPSLEEPに変化した時</p>
+	<p class="auto-style12">on=falseの場合</p>
+	<p class="auto-style13">・ADVERTISEからCONNECTに変化した時<br />
+	・CONNECTからDEEPSLEEPに変化した時<br />
+	・SERIAL_CONNECTからDEEPSLEEPに変化した時<br />
+	・CONNECTからSERIAL_CONNECTに変化した時<br />
+	・SERIAL_CONNECTからCONNECTに変化した時</p>
+<h3 class="auto-style8">戻り値</h3>
+<p class="auto-style9">なし</p>
+<br/>
+<br/>
+</div>
+</body>
+
+</html>

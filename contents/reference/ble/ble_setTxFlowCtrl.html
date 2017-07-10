@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>ble.write_byte(data)</title>
+<style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style8 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style9 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style10 {
+	margin-left: 40px;
+	font-family: メイリオ;
+	color: #666666;
+	margin-bottom:40px;
+}
+.auto-style11{
+	margin-left: 40px;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style15 {
+	font-family: メイリオ;
+	color: #666666;
+	margin-left: 40px;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style8">Lazurite 
+日本語リファレンス</span></h1>
+<hr/>
+<div id="contents">
+<h1 class="auto-style8">BLE.setTxFlowCtrl(on)</h1>
+<br/>
+<h3 class="auto-style9">詳細</h3>
+<p class="auto-style10">void BLE.setTxFlowCtrl(bool on);</p>
+<h3 class="auto-style9">仕様</h3>
+<p class="auto-style11">
+フロー制御のON/OFFを切り替える関数です。</p>
+	<p class="auto-style11">
+BLEモジュール MK71251-02は、BLEで接続中にアプリがLAPIS 
+VSSPPモードを抜けたときと、フロー制御によりデータ送信バッファがフルになった時、GPIO2端子がLになります。Lazurite 
+BLEはGPIO2端子が変化したときの動作に２つのモードがあり、本関数はそのモードを切り替える関数です。</p>
+<p class="auto-style10">
+フロー制御をONに設定すると、GPIO2がLになった状態をBLEモジュールの送信バッファがFULLと認識してデータの通信を停止し、GPIO2がHになったらデータ送信を再開します。本モードは確実に大量のデータを送信したいときに有効です。<br />
+ただし、アプリ側がVSSPPモードではない状態でデータ送信を開始するとデータが欠ける可能性があるので注意をしてください。</p>
+	<p class="auto-style10">
+	フロー制御をOFFに設定すると、GPIO2端子がLになったらアプリ側がVSSPPモードではないと判断し、データ送信を中止して、データ送信用バッファをクリアします。</p>
+	<p class="auto-style10">
+	フロー制御の設定はいつでも設定可能です。</p>
+<h3 class="auto-style9">パラメータ</h3>
+<h4 class="auto-style9">&nbsp;&nbsp; bool on</h4>
+<p class="auto-style10">フロー制御を有効にするときはtrueを、無効にするときはfalseを設定してください。</p>
+<h3 class="auto-style9">戻り値</h3>
+<p class="auto-style15">なし</p>
+<br/>
+<br/>
+</div>
+</body>
+
+</html>

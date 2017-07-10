@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>SubGHz.setKey</title>
+<style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style7 {
+	margin-left: 40px;
+	text-align: left;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style9 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style10 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style11{
+	font-family: メイリオ;
+	color: #666666;
+    margin-bottom:40px;
+    margin-left:40px
+}
+td{
+	padding:0px 5px;
+}
+.auto-style12 {
+	font-family: メイリオ;
+	color: #666666;
+	margin-bottom: 40px;
+	margin-left: 80px
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style9">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<div id="contents">
+<h1 class="auto-style9">SUBGHZ_MSG SubGHz.setKey (char *key)</h1>
+<br/>
+<h3 class="auto-style10">詳細</h3>
+<p class="auto-style7">SUBGHZ_MSG SubGHz.setKey(char *key);</p>
+<h3 class="auto-style10">仕様</h3>
+<p class="auto-style11">AES通信をするためのKEYを設定します。</p>
+<h3 class="auto-style10">パラメータ</h3>
+<p class="auto-style11">char *key</p>
+	<p class="auto-style12">AES128bitのKEYが格納されているメモリの先頭ポインタを指定します。<br />
+	または、NULLを設定するとAESは無効になります。</p>
+<h3 class="auto-style10">戻り値</h3>
+	<p class="auto-style11">常時、SUBGHZ_OKが返ります。</p>
+<p>&nbsp;</p>
+<h3 class="auto-style10">サンプル</h3>
+<p class="auto-style1">
+アドレスモードを4(送信機のアドレスを省略)にして送信する初期設定のサンプルプログラムです。<br />
+送信機のアドレスが無いために受信機がACKを送信しません。</p>
+	<p>
+<TEXTAREA wrap="off" name="empty" style="width: 591px; height: 144px" class="auto-style1">setup() {
+	SUBGHZ_PARAM param;
+
+	SubGHz.init();
+	SubGHz.getSendMode( & param);
+	param.addrType = 4;
+	SubGHz.setSendMode( & param);
+}
+
+</TEXTAREA></p>
+<p class="auto-style1">&nbsp;</p>
+	<br/>
+<br/>
+</div>
+
+</body>
+
+</html>

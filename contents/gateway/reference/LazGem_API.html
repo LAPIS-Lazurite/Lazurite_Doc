@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>LazGem</title>
+<style type="text/css">
+.auto-style21 {
+	margin-left: 40px;
+}
+.auto-style22 {
+	border: 0px solid #000000;
+	margin-left: 40px;
+	margin-right: 0px;
+	margin-top: 1px;
+}
+.auto-style24 {
+	margin-left: 80px;
+}
+.auto-style26 {
+	border-style: solid;
+	border-width: 1px;
+}
+.auto-style27 {
+	border: 0px solid #000000;
+	margin-left: 80px;
+	margin-right: 0px;
+	margin-top: 1px;
+}
+code
+	{font-family:"ＭＳ ゴシック";
+	}
+</style>
+</head>
+
+<body>
+
+<h2>API仕様</h2>
+<h3>クラス&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LazGem::Device</h3>
+<h4>device_open(ch,panid,pwr,rate,mode)</h4>
+<p class="auto-style21">設定した条件で920MHzのデバイスドライバをopenします。</p>
+<table class="auto-style22" style="width: 787px">
+	<tr>
+		<td class="auto-style26">ch</td>
+		<td class="auto-style26">チャンネル 24~61を指定してください。<br />
+		何も指定しないと 36を使用します。<br />
+		ただし、100kbpsのときはch=33を指定しないでください。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">panid</td>
+		<td class="auto-style26">PANIDを指定します。任意の0x0000 ～ 0xFFFFを指定してください。<br />
+		何も指定しないと0xABCDになります。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">pwr</td>
+		<td class="auto-style26">出力パワーを指定します。 1または20を指定してください。<br />
+		1のときの送信パワーは1mW(0dBm)、20のときは20mW(13dBm)になります。<br />
+		何も指定しないと20mWになります。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">rate</td>
+		<td class="auto-style26">ビットレートを指定します。50または100を指定してください。<br />
+		50のときは50kbps、100のときは100kbpsになります。<br />
+		何も指定しないと100kbpsになります。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">mode</td>
+		<td class="auto-style26">2、または3を指定してください。</td>
+	</tr>
+</table>
+<p class="auto-style21">&nbsp;</p>
+<h4>device_close()</h4>
+<p class="auto-style21">ロードしたモジュールをunloadします。</p>
+<p class="auto-style21">&nbsp;</p>
+<h4>read()</h4>
+<p class="auto-style21">データの読み出しを行います。</p>
+<p class="auto-style21">引数:</p>
+<p class="auto-style24">なし</p>
+<p class="auto-style21">戻り値</p>
+<p class="auto-style24">-1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+データを受信していないことを示します。</p>
+<p class="auto-style24">Hash[]でデータを返します。以下のキーに対応しています。</p>
+<table class="auto-style27" style="width: 787px">
+	<tr>
+		<td class="auto-style26">HASHキー</td>
+		<td class="auto-style26">データ</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"Command"</td>
+		<td class="auto-style26">通常は3が戻ってきます</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"Time"</td>
+		<td class="auto-style26">受信した時刻の年月日、秒単位の時刻が戻ります。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"usec"</td>
+		<td class="auto-style26">受信した時刻のusecの単位が返ります。0～999,999が有効範囲です。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"Area"</td>
+		<td class="auto-style26">"JP"が返ります。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"ch"</td>
+		<td class="auto-style26">チャンネル(周波数)です。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"rate"</td>
+		<td class="auto-style26">現在のビットレートです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"pwr"</td>
+		<td class="auto-style26">送信パワーの設定値です。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"header"</td>
+		<td class="auto-style26">受信したデータのmacヘッダーです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"rxPanid"</td>
+		<td class="auto-style26">
+		受信機のPANIDです。rxPanidが-1のとき、受信したデータは受信用PANIDを含んでいません。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"rxAddrType"</td>
+		<td class="auto-style26">
+		受信アドレスのアドレスタイプが返ります。1は8bitモード、2は16bitモード、3は64bitモードです。<br />
+		0は受信アドレスが含まれていないことを示します。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"rxAddr"</td>
+		<td class="auto-style26">受信機のアドレスです。rxAddrTypeの値に従ったデータになります。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"txPanid"</td>
+		<td class="auto-style26">
+		送信機のPANIDです。rxPanidが-1のとき、送信したデータは送信用PANIDを含んでいません。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"txAddrType"</td>
+		<td class="auto-style26">
+		送信アドレスのアドレスタイプが返ります。1は8bitモード、2は16bitモード、3は64bitモードです。<br />
+		0は送信アドレスが含まれていないことを示します。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"txAdd"</td>
+		<td class="auto-style26">送信機のアドレスです。rxAddrTypeの値に従ったデータになります。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"rssi"</td>
+		<td class="auto-style26">受信時のRSSI(信号強度)を返します。値は0～255で、255が最大です。<br />
+		RSSIは、約-35dBmより大きな値で受信したときに255となり、以降-0.25dBm下がるごとに値が1小さくなります。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"payload"</td>
+		<td class="auto-style26">受信したペイロードです。</td>
+	</tr>
+</table>
+<h4>write(packet)</h4>
+<p class="auto-style21">引数</p>
+<p class="auto-style24">packetをHASH形式で指定します。</p>
+<table class="auto-style27" style="width: 787px">
+	<tr>
+		<td class="auto-style26">HASHキー</td>
+		<td class="auto-style26">データ</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"rxAddr"</td>
+		<td class="auto-style26">受信機のアドレスです。rxAddrTypeの値に従ったデータになります。</td>
+	</tr>
+	<tr>
+		<td class="auto-style26">"payload"</td>
+		<td class="auto-style26">受信したペイロードです。</td>
+	</tr>
+</table>
+<p class="auto-style21">戻り値</p>
+<p class="auto-style24">なし</p>
+<p class="auto-style21">例外</p>
+<p class="auto-style24">パラメータに異常があるか、ACKを受信しないとLAZURITE_ERRORを返します。<br />
+エラーの内容は文字列にて表示されますので、それに応じて対処してください。<br />
+例外処理の内容は今後、変わりますので注意してください。</p>
+<p class="auto-style24">&nbsp;</p>
+
+</body>
+
+</html>

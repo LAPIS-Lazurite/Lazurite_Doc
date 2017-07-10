@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>ble.write_byte(data)</title>
+<style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style8 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style9 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style10 {
+	margin-left: 40px;
+	font-family: メイリオ;
+	color: #666666;
+	margin-bottom:40px;
+}
+.auto-style11{
+	margin-left: 40px;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style13 {
+	border-width: 0px;
+}
+.auto-style18 {
+	border-style: solid;
+	border-width: 1px;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style8">Lazurite 
+日本語リファレンス</span></h1>
+<hr/>
+<div id="contents">
+<h1 class="auto-style8">BLE.setLedConfig(*config)<br />
+BLE.getLedConfig(*config)</h1>
+<br/>
+<h3 class="auto-style9">詳細</h3>
+<p class="auto-style10">void BLE.setLedConfig(struct BLE_LED_CONFIG *conf);<br />
+void BLE.getLedConfig(struct BLE_LED_CONFIG *conf);</p>
+<h3 class="auto-style9">仕様</h3>
+<p class="auto-style11">
+BLE.setLedConfig関数はBLEの状態に応じて変化するLEDの点滅制御を変えることが出来る関数です。<br />
+BLE.getLedConfig関数はLEDの点滅制御を取得する関数です。</p>
+	<p class="auto-style11">
+	struct BLE_LED_CONFIGは、次のデータで構成されています。</p>
+	<p class="auto-style11">
+	struct BLE_LED_CONFIG {<br />
+&nbsp;&nbsp;&nbsp; struct BLE_LED_PARAM sleep;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	// DEEPSLEEP時のLED設定<br />
+&nbsp;&nbsp;&nbsp; struct BLE_LED_PARAM advertise;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	// ADVERTISE時のLED設定&nbsp; <br />
+&nbsp;&nbsp;&nbsp; struct BLE_LED_PARAM connect;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	// CONNECT時のLED設定&nbsp; <br />
+&nbsp;&nbsp;&nbsp; struct BLE_LED_PARAM serial_connect;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	// SERIAL_CONNECT時のLED設定&nbsp; <br />
+	};</p>
+	<p class="auto-style11">
+	各モードのLED設定は、次のパラメータで構成されています。</p>
+	<p class="auto-style11">
+	struct BLE_LED_PARAM {<br />
+&nbsp;&nbsp;&nbsp; uint8_t cycle;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	// LED制御のサイクル(0または奇数)<br />
+&nbsp;&nbsp;&nbsp; uint8_t pin;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	// LED制御の端子 <br />
+&nbsp;&nbsp;&nbsp; uint8_t on_time;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	// ON時間 <br />
+&nbsp;&nbsp;&nbsp; uint8_t off_time;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	// OFF時間 <br />
+	};</p>
+	<p class="auto-style11">
+	<img alt="" height="314" src="ble_led_ctrl.png" width="762" /></p>
+<h3 class="auto-style9">パラメータ</h3>
+<h4 class="auto-style9">&nbsp;&nbsp; struct BLE_LED_CONFIG&nbsp; *config</h4>
+<p class="auto-style10">LEDの設定情報の構造体が保存されているポインタ。</p>
+	<table class="auto-style13" style="width: 100%">
+		<tr>
+			<td class="auto-style18">config.sleep.cycle</td>
+			<td class="auto-style18">DEEPSLEEP中のLED制御回数</td>
+		</tr>
+		<tr>
+			<td class="auto-style18">config.sleep.pin</td>
+			<td class="auto-style18">DEEPSLEEP中のLED制御端子</td>
+		</tr>
+		<tr>
+			<td class="auto-style18">config.sleep.on_time</td>
+			<td class="auto-style18">DEEPSLEEP中のLEDのON時間</td>
+		</tr>
+		<tr>
+			<td class="auto-style18">config.sleep.off_time</td>
+			<td class="auto-style18">DEEPSLEEP中のLEDのOFF時間</td>
+		</tr>
+		<tr>
+			<td class="auto-style18" style="height: 22px">config.advertise.cycle</td>
+			<td class="auto-style18" style="height: 22px">ADVERTISE中のLED制御回数</td>
+		</tr>
+		<tr>
+			<td class="auto-style18">config.advertise.pin</td>
+			<td class="auto-style18">ADVERTISE中のLED制御端子</td>
+		</tr>
+		<tr>
+			<td class="auto-style18">config.advertise.on_time</td>
+			<td class="auto-style18">ADVERTISE中のLEDのON時間</td>
+		</tr>
+		<tr>
+			<td class="auto-style18">config.advertise.off_time</td>
+			<td class="auto-style18">ADVERTISE中のLEDのOFF時間</td>
+		</tr>
+		<tr>
+			<td class="auto-style18">config.connect.cycle</td>
+			<td class="auto-style18">CONNECT中のLED制御回数</td>
+		</tr>
+		<tr>
+			<td class="auto-style18">config.connect.pin</td>
+			<td class="auto-style18">CONNECT中のLED制御端子</td>
+		</tr>
+		<tr>
+			<td class="auto-style18">config.connect.on_time</td>
+			<td class="auto-style18">CONNECT中のLEDのON時間</td>
+		</tr>
+		<tr>
+			<td class="auto-style18">config.connect.off_time</td>
+			<td class="auto-style18">CONNECT中のLEDのOFF時間</td>
+		</tr>
+		<tr>
+			<td class="auto-style18">config.serial_connect.cycle</td>
+			<td class="auto-style18">SERIAL_CONNECT中のLED制御回数</td>
+		</tr>
+		<tr>
+			<td class="auto-style18">config.serial_connect.pin</td>
+			<td class="auto-style18">SERIAL_CONNECT中のLED制御端子</td>
+		</tr>
+		<tr>
+			<td class="auto-style18">config.serial_connect.on_time</td>
+			<td class="auto-style18">SERIAL_CONNECT中のLEDのON時間</td>
+		</tr>
+		<tr>
+			<td class="auto-style18">config.serial_connect.off_time</td>
+			<td class="auto-style18">SERIAL_CONNECT中のLEDのOFF時間</td>
+		</tr>
+	</table>
+<h3 class="auto-style9">戻り値</h3>
+<p class="auto-style10">なし</p>
+<br/>
+</div>
+</body>
+
+</html>

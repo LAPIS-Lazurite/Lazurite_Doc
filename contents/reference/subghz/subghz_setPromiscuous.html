@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>SubGHz.setPromiscuous</title>
+<style type="text/css">
+#contents{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style7 {
+	margin-left: 40px;
+	text-align: left;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style9 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style10 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style11{
+	font-family: メイリオ;
+	color: #666666;
+    margin-bottom:40px;
+    margin-left:40px
+}
+td{
+	padding:0px 5px;
+}
+.auto-style12 {
+	font-family: メイリオ;
+	color: #666666;
+	margin-bottom: 40px;
+	margin-left: 80px
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style9">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<div id="contents">
+<h1 class="auto-style9">SubGHz.setPromiscuous (on)</h1>
+<br/>
+<h3 class="auto-style10">詳細</h3>
+<p class="auto-style7">SUBGHZ_MSG SubGHz.setPromiscuous(bool on);</p>
+<h3 class="auto-style10">仕様</h3>
+<p class="auto-style11">無差別受信モードを設定する関数です。</p>
+<h3 class="auto-style10">パラメータ</h3>
+<p class="auto-style11">bool on</p>
+	<p class="auto-style12">
+	trueを設定すると無差別モードで受信を行います。無差別モードに設定をすると、全アドレスのデータを受信することが出来ますが、自分あての無線でもACKを返さなくなります。<br />
+	falseは通常のモードです。</p>
+	<p class="auto-style12">本関数はSubGHz.init()関数とSubGHz.begin(...)関数の間で実行してください。</p>
+<h3 class="auto-style10">戻り値</h3>
+	<p class="auto-style11">常にSUBGHZ_OKを返します。</p>
+<p>&nbsp;</p>
+<h3 class="auto-style10">サンプル</h3>
+<p class="auto-style1">
+Sniffer_SubGHzを参照してください。無差別モードで受信を開始するためのサンプルプログラムです。</p>
+	<p>
+<TEXTAREA wrap="off" name="empty" style="width: 591px; height: 349px" class="auto-style1">#include "Sniffer_SubGHz_ide.h"		// Additional Header
+
+#define SUBGHZ_CH	36
+#define SUBGHZ_PANID	0xABCD
+uint8_t rx_data[256];
+uint32_t last_recv_time = 0;
+SUBGHZ_STATUS rx;							// structure for getting rx status
+#define BLUE_LED	26
+
+void print_hex_func(uint8_t data)
+{
+	if(data == 0) Serial.print("00");
+	else if(data < 16) {
+		Serial.print("0");
+		Serial.print_long(data,HEX);
+	} else {
+		Serial.print_long(data,HEX);
+	}
+	
+
+}
+
+void setup(void)
+{
+	SUBGHZ_MSG msg;
+	uint8_t myAddr[8];
+
+	Serial.begin(115200);
+	
+	msg = SubGHz.init();
+	if(msg != SUBGHZ_OK)
+	{
+		SubGHz.msgOut(msg);
+		while(1){ }
+	}
+	
+	SubGHz.getMyAddr64(myAddr);
+	Serial.print("myAddress = ");
+	print_hex_func(myAddr[0]);
+	print_hex_func(myAddr[1]);
+	Serial.print(" ");
+	print_hex_func(myAddr[2]);
+	print_hex_func(myAddr[3]);
+	Serial.print(" ");
+	Serial.print(" ");
+	print_hex_func(myAddr[4]);
+	print_hex_func(myAddr[5]);
+	Serial.print(" ");
+	print_hex_func(myAddr[6]);
+	print_hex_func(myAddr[7]);
+	Serial.println("");
+	
+	SubGHz.setPromiscuous(true);
+	
+	msg = SubGHz.begin(SUBGHZ_CH, SUBGHZ_PANID,  SUBGHZ_100KBPS, SUBGHZ_PWR_20MW);
+	if(msg != SUBGHZ_OK)
+	{
+		SubGHz.msgOut(msg);
+		while(1){ }
+	}
+	msg = SubGHz.rxEnable(NULL);
+	if(msg != SUBGHZ_OK)
+	{
+		SubGHz.msgOut(msg);
+		while(1){ }
+	}
+	
+	pinMode(BLUE_LED,OUTPUT);
+	digitalWrite(BLUE_LED,HIGH);
+	
+	Serial.println("TIME	HEADER	SEQ	PANID	RX_ADDR	TX_ADDR	RSSI	PAYLOAD");
+	Serial.println("-----------------------------------------------------------------------------------------------------------------");
+	
+	return;
+}
+
+void loop(void)
+{
+	SUBGHZ_MAC_PARAM mac;
+	short rx_len;
+	short index=0;
+	uint16_t data16;
+	
+	rx_len = SubGHz.readData(rx_data,sizeof(rx_data));
+	rx_data[rx_len]=0;
+	if(rx_len>0)
+	{
+		digitalWrite(BLUE_LED, LOW);
+		SubGHz.getStatus(NULL,&rx);										// get status of rx
+		SubGHz.decMac(&mac,rx_data,rx_len);
+		Serial.print_long(millis(),DEC);
+		Serial.print("\t");
+
+		Serial.print_long(mac.mac_header.fc16,HEX);
+		Serial.print("\t");
+
+		Serial.print_long(mac.seq_num,HEX);
+		Serial.print("\t");
+
+		Serial.print_long(mac.dst_panid,HEX);
+		Serial.print("\t");
+
+		print_hex_func(mac.dst_addr[7]);
+		print_hex_func(mac.dst_addr[6]);
+		print_hex_func(mac.dst_addr[5]);
+		print_hex_func(mac.dst_addr[4]);
+		print_hex_func(mac.dst_addr[3]);
+		print_hex_func(mac.dst_addr[2]);
+		print_hex_func(mac.dst_addr[1]);
+		print_hex_func(mac.dst_addr[0]);
+		Serial.print("\t");
+
+		print_hex_func(mac.src_addr[7]);
+		print_hex_func(mac.src_addr[6]);
+		print_hex_func(mac.src_addr[5]);
+		print_hex_func(mac.src_addr[4]);
+		print_hex_func(mac.src_addr[3]);
+		print_hex_func(mac.src_addr[2]);
+		print_hex_func(mac.src_addr[1]);
+		print_hex_func(mac.src_addr[0]);
+		Serial.print("\t");
+
+		Serial.print_long(rx.rssi,DEC);
+		Serial.print("\t");
+		
+		Serial.print(mac.payload);
+		// print ln
+		Serial.println("");
+		digitalWrite(BLUE_LED, HIGH);
+	}
+	
+	
+	return;
+}
+
+</TEXTAREA></p>
+<p class="auto-style1">&nbsp;</p>
+	<br/>
+<br/>
+</div>
+
+</body>
+
+</html>

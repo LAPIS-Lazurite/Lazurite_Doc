@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>LazGem</title>
+<style type="text/css">
+.auto-style1 {
+	vertical-align: middle;
+}
+.auto-style18 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style21 {
+	margin-left: 40px;
+}
+.auto-style23 {
+	margin-left: 80px;
+	color: #666666;
+	font-family: メイリオ;
+}
+.auto-style24 {
+	margin-left: 80px;
+}
+code
+	{font-family:"ＭＳ ゴシック";
+	}
+.auto-style25 {
+	margin-left: 80px;
+	color: #FF0000;
+}
+.auto-style26 {
+	color: #FF0000;
+}
+.auto-style27 {
+	color: #000000;
+}
+</style>
+</head>
+
+<body>
+
+<h1>
+&nbsp;</h1>
+<h1>
+<img height="45" src="../../IEEE802154/Lazurite_logo1.png" width="195" class="auto-style1" /> 
+LazuriteJavaのインストール方法</h1>
+<hr />
+<p class="auto-style18">LazuriteJavaはLazurite Pi Gateway用のJava Libraryです。</p>
+<h2><strong>&nbsp;LazuriteJavaのインストール</strong></h2>
+<p class="auto-style21">#の後ろはコメントなので実行する必要はありません。<br />
+赤字部分を実行してください。<br />
+ここでは、ホームディレクトリの下の"java"フォルダで作業しています。</p>
+<p class="auto-style21">1) ソースコードを取得します。</p>
+<p class="auto-style25">git clone git://github.com/LAPIS-Lazurite/LazuriteJava⏎</p>
+<p class="auto-style21">2) JAVAのライブラリをインストールします。</p>
+<p class="auto-style24"><span class="auto-style26">cd LazuriteJava⏎</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+#フォルダの中に移動します</p>
+<p class="auto-style23"><span class="auto-style27">pi@raspberrypi 
+~/java/LazuriteJava $ </span><span class="auto-style26">ls⏎ </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+#フォルダの中身を確認すると2つのファイルと、2つのフォルダがあります。<br />
+Makefile README.md lib sample</p>
+<p class="auto-style23">pi@raspberrypi ~/java/LazuriteJava $
+<span class="auto-style26">make&nbsp; </span><span class="auto-style27">&nbsp; 
+#プログラムをビルドします。</span><br />
+/usr/bin/javac -g -Xlint lib/com/lapis_semi/lazurite/io/SubGHzEventListener.java 
+lib/com/lapis_semi/lazurite/io/sample_serial.java 
+lib/com/lapis_semi/lazurite/io/sample_raw2.java 
+lib/com/lapis_semi/lazurite/io/common.java 
+lib/com/lapis_semi/lazurite/io/mac_info.java 
+lib/com/lapis_semi/lazurite/io/RawEventObject.java 
+lib/com/lapis_semi/lazurite/io/SubGHz.java 
+lib/com/lapis_semi/lazurite/io/sample_raw.java 
+lib/com/lapis_semi/lazurite/io/RawEventListener.java 
+lib/com/lapis_semi/lazurite/io/SubGHzEventObject.java 
+lib/com/lapis_semi/lazurite/io/Raw.java 
+lib/com/lapis_semi/lazurite/io/CtrlDeviceList.java</p>
+<p class="auto-style24">pi@raspberrypi ~/java/LazuriteJava $
+<span class="auto-style26">make install&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span class="auto-style27">#ビルドした結果からjarファイルを作成し、javaのフォルダにインストールします。</span><br />
+jar cvf SubGHz.jar -C lib/ com<br />
+マニフェストが追加されました<br />
+com/を追加中です(入=0)(出=0)(0%格納されました)<br />
+com/lapis_semi/を追加中です(入=0)(出=0)(0%格納されました)<br />
+com/lapis_semi/lazurite/を追加中です(入=0)(出=0)(0%格納されました)<br />
+com/lapis_semi/lazurite/io/を追加中です(入=0)(出=0)(0%格納されました)<br />
+com/lapis_semi/lazurite/io/CtrlDeviceList.javaを追加中です(入=3367)(出=970)(71% 収縮されました)<br />
+com/lapis_semi/lazurite/io/SubGHzEventListener.classを追加中です(入=251)(出=166)(33%収縮されました)<br />
+com/lapis_semi/lazurite/io/Raw.classを追加中です(入=4762)(出=2387)(49%収縮されました)<br />
+com/lapis_semi/lazurite/io/CtrlDeviceList.classを追加中です(入=4493)(出=2348)(47%収縮されました)<br />
+com/lapis_semi/lazurite/io/Raw$Main_Raw.classを追加中です(入=3150)(出=1556)(50% 収縮されました)<br />
+com/lapis_semi/lazurite/io/sample_raw.javaを追加中です(入=2267)(出=845)(62%収縮 されました)<br />
+com/lapis_semi/lazurite/io/SubGHz.javaを追加中です(入=4866)(出=1517)(68%収縮されました)<br />
+com/lapis_semi/lazurite/io/common.javaを追加中です(入=846)(出=403)(52%収縮されました)<br />
+com/lapis_semi/lazurite/io/mac_info.javaを追加中です(入=2783)(出=852)(69%収縮さ れました)<br />
+com/lapis_semi/lazurite/io/SubGHz.classを追加中です(入=6424)(出=3107)(51%収縮さ れました)<br />
+com/lapis_semi/lazurite/io/mac_info.classを追加中です(入=2483)(出=1502)(39%収縮 されました)<br />
+com/lapis_semi/lazurite/io/SubGHzEventObject.classを追加中です(入=708)(出=436)(38%収縮されました)<br />
+com/lapis_semi/lazurite/io/Raw.javaを追加中です(入=5732)(出=1702)(70%収縮されま した)<br />
+com/lapis_semi/lazurite/io/sample_serial$1.classを追加中です(入=1118)(出=613)(45%収縮されました)<br />
+com/lapis_semi/lazurite/io/RawEventObject.classを追加中です(入=704)(出=438)(37% 収縮されました)<br />
+com/lapis_semi/lazurite/io/sample_raw2.classを追加中です(入=3167)(出=1744)(44%収縮されました)<br />
+com/lapis_semi/lazurite/io/sample_raw2.javaを追加中です(入=2340)(出=784)(66%収縮されました)<br />
+com/lapis_semi/lazurite/io/sample_raw.classを追加中です(入=3583)(出=1876)(47%収 縮されました)<br />
+com/lapis_semi/lazurite/io/SubGHzEventObject.javaを追加中です(入=414)(出=238)(42%収縮されました)<br />
+com/lapis_semi/lazurite/io/sample_serial.javaを追加中です(入=1516)(出=674)(55%収縮されました)<br />
+com/lapis_semi/lazurite/io/common.classを追加中です(入=1300)(出=774)(40%収縮されました)<br />
+com/lapis_semi/lazurite/io/sample_serial.classを追加中です(入=2354)(出=1179)(49%収縮されました)<br />
+com/lapis_semi/lazurite/io/Makefileを追加中です(入=348)(出=243)(30%収縮されまし た)<br />
+com/lapis_semi/lazurite/io/RawEventObject.javaを追加中です(入=435)(出=253)(41%収縮されました)<br />
+com/lapis_semi/lazurite/io/SubGHz.jarを追加中です(入=101367)(出=80357)(20%収縮されました)<br />
+com/lapis_semi/lazurite/io/RawEventListener.javaを追加中です(入=168)(出=131)(22%収縮されました)<br />
+com/lapis_semi/lazurite/io/RawEventListener.classを追加中です(入=247)(出=173)(29%収縮されました)<br />
+com/lapis_semi/lazurite/io/sample_raw2$1.classを追加中です(入=1021)(出=579)(43% 収縮されました)<br />
+com/lapis_semi/lazurite/io/jexeを追加中です(入=70)(出=63)(10%収縮されました)<br />
+com/lapis_semi/lazurite/io/SubGHzEventListener.javaを追加中です(入=169)(出=124)(26%収縮されました)<br />
+com/lapis_semi/lazurite/io/sample_raw$1.classを追加中です(入=1100)(出=613)(44%収縮されました)<br />
+com/lapis_semi/lazurite/io/SerialChart.bakを追加中です(入=5574)(出=1895)(66%収縮されました)<br />
+sudo cp SubGHz.jar /usr/lib/jvm/jdk-8-oracle-arm-vfp-hflt/jre/lib/ext</p>
+<p class="auto-style23">以上で完了です。<br />
+javaのバージョンが異なるとインストールフォルダが異なります。javaのバージョンが異なるときは、以下の赤字部分を変更し、インストール先を環境に合わせて変更して下さい。</p>
+<p class="auto-style23">sudo cp SubGHz.jar <span class="auto-style26">
+/usr/lib/jvm/jdk-8-oracle-arm-vfp-hflt/jre/lib/ext</span></p>
+<h2>サンプルプログラムの実行</h2>
+<h3 class="auto-style21">1) サンプルプログラムが格納されているフォルダに移動します。</h3>
+<p class="auto-style23">pi@raspberrypi ~/java/LazuriteJava $
+<span class="auto-style26">cd sample/⏎</span><br />
+pi@raspberrypi ~/java/LazuriteJava/sample $ <span class="auto-style26">ls&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+#ビルド用のmakefileと3種類のサンプルプログラムがあります。</span><br />
+Makefile sample_raw.java sample_raw2.java sample_serial.java</p>
+<p class="auto-style23">pi@raspberrypi ~/java/LazuriteJava/sample $
+<span class="auto-style26">make⏎&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+#サンプルプログラムをビルドします。</span><br />
+/usr/bin/javac -g -Xlint ./sample_serial.java ./sample_raw2.java 
+./sample_raw.java</p>
+<h3 class="auto-style21">2) サンプルプログラムの実行方法</h3>
+<p class="auto-style23">送信用サンプルプログラム&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+作成未<br />
+受信用サンプルプログラム<br />
+・sample_raw.rb<br />
+　パケット受信のサンプルプログラムの例です。&nbsp; mainルーチンで常時受信用バッファを監視しています。<br />
+・sample_raw2.rb<br />
+　パケット受信のサンプルプログラムの例です。Rawレベルドライバから受信時にイベントが発生する例です。 <br />
+・sample_serial.rb<br />
+　固定の送信アドレスからのデータだけを受信するモードのサンプルです。<br />
+&nbsp;&nbsp; シリアルライブラリに似たインタフェースのため扱いやすいモードです。</p>
+
+</body>
+
+</html>

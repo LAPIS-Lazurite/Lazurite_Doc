@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="ja" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>インストールの方法</title>
+<style type="text/css">
+body{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+h2
+	{margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:10.5pt;
+	font-family:"Arial","sans-serif";
+	font-weight:normal;
+	margin-left: 0mm;
+	margin-right: 0mm;
+	margin-top: 0mm;
+}
+.auto-style1 {
+	vertical-align: middle;
+}
+.auto-style5 {
+	font-family: メイリオ;
+	color: #666666;
+}
+
+.auto-style7 {
+	font-family: メイリオ;
+	color: #666666;
+	font-size: x-large;
+}
+
+.auto-style9 {
+	border-width: 0px;
+	margin-left: 109px;
+}
+.auto-style14 {
+	border-style: solid;
+	border-width: 1px;
+}
+.auto-style15 {
+	border-width: 0px;
+	margin-left: 29px;
+}
+.auto-style16 {
+	border-width: 0px;
+}
+.auto-style17 {
+	border-width: 0px;
+	margin-left: 80px;
+}
+.auto-style18 {
+	border-width: 0px;
+	margin-left: 69px;
+}
+.auto-style19 {
+	font-weight: normal;
+}
+
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+
+<body style="width: 1146px; margin-left: 111px; margin-right: 10px">
+
+<h1>
+<span class="auto-style19">
+<img height="45" src="Lazurite_logo.png" width="197" class="auto-style1" /></span>
+<span class="auto-style19">Node-RED用ライブラリ(node-red-contrib-lazurite)の仕様<strong> </strong> 
+</span></h1>
+<p class="auto-style5">概要</p>
+<ol>
+	<li class="auto-style5"><a href="#1._ノードの一覧">ノードの一覧</a></li>
+	<li class="auto-style5"><a href="#2._Lazurite_RXノード">Lazurite Rxノード</a></li>
+	<li class="auto-style5"><a href="#3._Lazurite_TXノード">Lazurite Txノード</a></li>
+	<li class="auto-style5"><a href="#4._Lazurite_TX64ノード">Lazurite Tx64ノード</a></li>
+	<li class="auto-style5"><a href="#5._Lazurite_Node_Config">Lazurite Node 
+	Config</a></li>
+	<li class="auto-style5"><a href="#6._RasPi_Shutdown">RasPi Shutdown</a></li>
+	<li class="auto-style5"><a href="#7._RasPi_Reboot">RasPi Reboot</a></li>
+	<li class="auto-style5"><a href="#8._Lazurite_Calcurator">Lazurite 
+	Calcurator</a></li>
+</ol>
+<hr />
+<p class="auto-style7"><a name="1._ノードの一覧">1. ノードの一覧</a></p>
+<table class="auto-style9" style="width: 85%">
+	<tr>
+		<td class="auto-style14">ノードの名前</td>
+		<td class="auto-style14">機能</td>
+	</tr>
+	<tr>
+		<td class="auto-style14"><a href="#2._Lazurite_RXノード">Lazurite RX</a></td>
+		<td class="auto-style14">Lazuriteの920MHz無線を受信するためのノードです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14"><a href="#3._Lazurite_TXノード">Lazurite TX</a></td>
+		<td class="auto-style14">
+		Lazuriteで送信をするためのノードです。PANIDと16bitショートアドレスで送信します。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14"><a href="#4._Lazurite_TX64ノード">Lazurite TX64</a></td>
+		<td class="auto-style14">
+		Lazuriteで送信をするためのノードです。PANIDと64bitのMACアドレスで送信します。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14"><a href="#5._Lazurite_Node_Config">Lazurite 
+		Node Config</a></td>
+		<td class="auto-style14">Lazurite SubGHz用サンプルプログラムと連動して動かすことが出来るノードです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14"><a href="#6._RasPi_Shutdown">RasPi Shutdown</a></td>
+		<td class="auto-style14">Raspberry Piをシャットダウンするノードです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14"><a href="#7._RasPi_Reboot">RasPi reboot</a></td>
+		<td class="auto-style14">Raspberry Piを再起動するノードです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14"><a href="#8._Lazurite_Calcurator">Lazurite 
+		Calcurator</a></td>
+		<td class="auto-style14">簡単な計算をするためのノードです</td>
+	</tr>
+</table>
+<p class="auto-style7"><a name="2._Lazurite_RXノード">2. Lazurite RXノード</a></p>
+<p class="auto-style15">Lazuriteの受信用ノードです。</p>
+<p class="auto-style15">1. GUI</p>
+<p class="auto-style15">2. 入力側の仕様</p>
+<p class="auto-style18">なし</p>
+<p class="auto-style15">3. 出力側の仕様</p>
+<p class="auto-style18">・1パケットずつ受信するモード</p>
+<table class="auto-style17" style="width: 91%">
+	<tr>
+		<td class="auto-style14" style="height: 19px">msg.payload</td>
+		<td class="auto-style14" style="height: 19px">受信データです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.seq_num</td>
+		<td class="auto-style14">受信したパケットに含まれているシーケンス番号です。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.dst_panid</td>
+		<td class="auto-style14">送信先のPANIDです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.dst_addr</td>
+		<td class="auto-style14">受信先のアドレスです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.src_panid</td>
+		<td class="auto-style14">送信元とのPANIDです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.src_addr</td>
+		<td class="auto-style14">送信元のアドレスです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.rssi</td>
+		<td class="auto-style14">
+		受信感度です。値は0～255で、255が受信感度が高く、受信感度が悪くなると値が小さくなります。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.sec</td>
+		<td class="auto-style14">ドライバが受信した時の時刻(1970年1月1日 
+		0時0分0秒を0として、経過時間を秒で表したLinuxの標準時刻)です。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.nsec</td>
+		<td class="auto-style14">ドライバが受信した時の時刻のナノ秒単位(10^-9)の時間です。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.header</td>
+		<td class="auto-style14">受信したデータMACヘッダです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.payload_len</td>
+		<td class="auto-style14">受信したpayloadのデータ長です。</td>
+	</tr>
+</table>
+<p class="auto-style18">・パケットをまとめて受信するモード</p>
+<table class="auto-style17" style="width: 91%">
+	<tr>
+		<td class="auto-style14" style="height: 19px">msg.length</td>
+		<td class="auto-style14" style="height: 19px">
+		受信したパケットの数です。1つのJSONデータに4つのデータが含まれているとき、length=4となります。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.payload</td>
+		<td class="auto-style14">受信したデータが配列になります。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.payload[n].tag</td>
+		<td class="auto-style14">
+		受信したパケットのタグ番号です。1つのJSONデータに4つのデータが含まれているとき、受信したパケットの順番に0～3が割り振られます。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.payload[n].header</td>
+		<td class="auto-style14">受信したデータMACヘッダです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.payload[n].seq_num</td>
+		<td class="auto-style14">受信したパケットに含まれているシーケンス番号です。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.payload[n].dst_panid</td>
+		<td class="auto-style14">送信先のPANIDです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.payload[n].dst_addr</td>
+		<td class="auto-style14">受信先のアドレスです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.payload[n].src_panid</td>
+		<td class="auto-style14">送信元とのPANIDです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.payload[n].src_addr</td>
+		<td class="auto-style14">送信元のアドレスです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.payload[n].payload</td>
+		<td class="auto-style14">受信したデータです。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.payload[n].rssi</td>
+		<td class="auto-style14">
+		受信感度です。値は0～255で、255が受信感度が高く、受信感度が悪くなると値が小さくなります。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.payload[n].sec</td>
+		<td class="auto-style14">ドライバが受信した時の時刻(1970年1月1日 
+		0時0分0秒を0として、経過時間を秒で表したLinuxの標準時刻)です。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.payload[n].nsec</td>
+		<td class="auto-style14">ドライバが受信した時の時刻のナノ秒単位(10^-9)の時間です。</td>
+	</tr>
+	<tr>
+		<td class="auto-style14">msg.payload[n].payload_len</td>
+		<td class="auto-style14">受信したpayloadのデータ長です。</td>
+	</tr>
+	</table>
+<p class="auto-style7"><a name="3._Lazurite_TXノード">3. Lazurite TXノード</a></p>
+<p class="auto-style15">Lazuriteの受信用ノードです。</p>
+<p class="auto-style15">1. GUI</p>
+<p class="auto-style15">2. 入力側の仕様</p>
+<p class="auto-style15">3. 出力側の仕様</p>
+<p class="auto-style16">&nbsp;</p>
+<p class="auto-style7"><a name="4._Lazurite_TX64ノード">4. Lazurite TX64ノード</a></p>
+<p class="auto-style15">Lazuriteの受信用ノードです。</p>
+<p class="auto-style15">1. GUI</p>
+<p class="auto-style15">2. 入力側の仕様</p>
+<p class="auto-style15">3. 出力側の仕様</p>
+<p class="auto-style16">&nbsp;</p>
+<p class="auto-style7"><a name="5._Lazurite_Node_Config">5. Lazurite Node Config</a></p>
+<p class="auto-style15">Lazuriteの受信用ノードです。</p>
+<p class="auto-style15">1. GUI</p>
+<p class="auto-style18">&nbsp;</p>
+<p class="auto-style15">2. 入力側の仕様</p>
+<p class="auto-style18">&nbsp;</p>
+<p class="auto-style15">3. 出力側の仕様</p>
+<p class="auto-style18">&nbsp;</p>
+<p class="auto-style7"><a name="6._RasPi_Shutdown">6. RasPi Shutdown</a></p>
+<p class="auto-style15">Raspberry Piをシャットダウンするノードです</p>
+<p class="auto-style15">1. 入力側の仕様</p>
+<p class="auto-style18">信号が入力されたらシャットダウンします</p>
+<p class="auto-style15">3. 出力側の仕様</p>
+<p class="auto-style17">なし</p>
+<p class="auto-style7"><a name="7._RasPi_Reboot">7. RasPi Reboot</a></p>
+<p class="auto-style15">Raspberry Piをリブートするノードです。</p>
+<p class="auto-style15">1. 入力側の仕様</p>
+<p class="auto-style18">信号が入力されたらRaspberry Piをリブートします。</p>
+<p class="auto-style15">2. 出力側の仕様</p>
+<p class="auto-style18">なし</p>
+<p class="auto-style7"><a name="8._Lazurite_Calcurator">8. Lazurite Calcurator</a></p>
+<p class="auto-style15">簡単な計算を行うノードです。</p>
+<p class="auto-style15">1. GUI</p>
+<p class="auto-style15">&nbsp;</p>
+<p class="auto-style15">1. 入力側の仕様</p>
+<p class="auto-style18">信号が入力されたらRaspberry Piをリブートします。</p>
+<p class="auto-style15">2. 出力側の仕様</p>
+<p class="auto-style18">なし</p>
+
+</body>
+
+</html>

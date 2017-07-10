@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="ja" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>インストールの方法</title>
+<style type="text/css">
+body{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+h2
+	{margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:10.5pt;
+	font-family:"Arial","sans-serif";
+	font-weight:normal;
+	margin-left: 0mm;
+	margin-right: 0mm;
+	margin-top: 0mm;
+}
+.auto-style1 {
+	vertical-align: middle;
+}
+.auto-style2 {
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family: メイリオ;
+	font-weight: normal;
+	color: #666666;
+}
+.auto-style5 {
+	font-family: メイリオ;
+	color: #666666;
+}
+
+.auto-style7 {
+	font-family: メイリオ;
+	color: #666666;
+	font-size: x-large;
+}
+
+.auto-style8 {
+	font-family: メイリオ;
+	color: #666666;
+	margin-left: 40px;
+}
+.auto-style9 {
+	font-family: メイリオ;
+	color: #666666;
+	margin-left: 80px;
+}
+.auto-style10 {
+	font-family: メイリオ;
+	color: #666666;
+	margin-left: 120px;
+}
+
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+
+<body>
+
+<h1>
+<img height="45" src="Lazurite_logo.png" width="197" class="auto-style1" /> 
+<span class="auto-style2">Raspberry Pi環境のセットアップ</span></h1>
+<h1>概要</h1>
+<ol>
+	<li class="auto-style5"><a href="#1._Raspberry_Piのセットアップ">Raspberry 
+	Piのセットアップ</a></li>
+	<li class="auto-style5"><a href="#2._Lazurite関連ソフトウエアのインストール">
+	Lazurite関連ソフトウエアのインストール(node-red以外)</a></li>
+	<li class="auto-style5"><a href="#3._Node-RED用ライブラリのインストール">
+	Node-RED用ライブラリのインストール</a></li>
+</ol>
+<hr />
+<p class="auto-style7"><strong><a name="1._Raspberry_Piのセットアップ">1. Raspberry 
+Piのセットアップ</a></strong></p>
+<p>&nbsp;</p>
+<p class="auto-style7"><strong><a name="2._Lazurite関連ソフトウエアのインストール">2. 
+Lazurite関連ソフトウエアのインストール</a></strong></p>
+<p>&nbsp;</p>
+<p class="auto-style7"><strong><a name="3._Node-RED用ライブラリのインストール">3. 
+Node-RED用ライブラリのインストール</a></strong></p>
+<p class="auto-style8">Lazuriteのライブラリを使用しますので、あらかじめこちらの作業を完了しておいてください。</p>
+<p class="auto-style8">1. 一度もNode-REDを起動したことが無い場合は、一度Node-REDを起動してください。</p>
+<p class="auto-style9">$ node-red</p>
+<p class="auto-style9">画像</p>
+<p class="auto-style9">起動したら、Ctrl-CでNode-REDを終了します。</p>
+<p class="auto-style8">2.Node-REDのフォルダが作られていることを確認してください。</p>
+<p class="auto-style9">$ cd ~/.node-red<br />
+$ ls</p>
+<p class="auto-style9">画像</p>
+<p class="auto-style8">3. Node-RED用ライブラリのインストール</p>
+<p class="auto-style9">3-1. npmパッケージインストール</p>
+<p class="auto-style10">$ npm install node-red-contrib-lazurite</p>
+<p class="auto-style9">3-2. githubからインストール</p>
+<p class="auto-style10">$ cd ~/.node-red/node_modules<br />
+$ git clone git://github.com/LAPIS-Lazurite/node-red-contrib-lazurite<br />
+$ cd node-red-contrib-lazurite</p>
+<p class="auto-style10">画像</p>
+<p class="auto-style10">$ node-gyp rebuild</p>
+<p class="auto-style10">画像</p>
+<p class="auto-style9">補足: npmとnode-gypでエラーが発生する場合はソフトウエアのインストールを行ってください。</p>
+<p class="auto-style10">$ sudo apt-get install -y npm node-gyp</p>
+<p class="auto-style10">画像</p>
+<p class="auto-style5">2. サンプルプログラムを作る</p>
+<p class="auto-style8">1. サンプルプログラムを使用するために必要なnod-red-dashboardのインストール</p>
+<p class="auto-style9">$ cd ~/.node-red</p>
+<p class="auto-style9">$ npm install node-red-contrib-lazurite</p>
+<p class="auto-style8">2. Node-REDを起動する</p>
+<p class="auto-style9">$ node-red</p>
+<p class="auto-style8">3. Raspberry 
+Piでブラウザ起動して、アドレスに「http://localhost:1880」を入力してください。</p>
+<p class="auto-style9">画像</p>
+<p class="auto-style8">4. Lazuriteのパッケージがインストールされている事を確認します。</p>
+<p class="auto-style9">画像</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

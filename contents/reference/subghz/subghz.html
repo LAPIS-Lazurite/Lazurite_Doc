@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>SubGHz（920MHz）</title>
+<style type="text/css">
+.contents{
+	margin-left:20px;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style2 {
+	border: 1px solid #000000;
+	margin-left: 40px;
+	font-family: メイリオ;
+}
+.auto-style6 {
+	border: 1px solid #000000;
+	text-align: center;
+}
+.auto-style3 {
+	border: 1px solid #000000;
+}
+.auto-style7 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style8 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style9 {
+	margin-left: 40px;
+	color: #666666;
+	font-family: メイリオ;
+}
+.auto-style10 {
+	color: #666666;
+}
+.auto-style11 {
+	border: 1px solid #000000;
+	color: #666666;
+}
+.auto-style12 {
+	margin-left: 80px;
+	color: #666666;
+	font-family: メイリオ;
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style7">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<div class="contents">
+<h1 class="auto-style7">SubGHz(920MHz)</h1>
+<h3 class="auto-style8">概要</h3>
+<p class="auto-style9">SubGHzはIEEE802.15.4eのプロトコルで920MHzの無線通信を行うための関数群です。</p>
+<p class="auto-style9">SubGHz(920MHz)に関する技術資料はこちらを参照してください。</p>
+<h3 class="auto-style8">関数</h3>
+<table class="auto-style2" style="width: 80%">
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style11" style="width: 630px; height: 18px">
+		<p>
+		<a href="subghz_init.html"target="_blank">SUBGHZ_MSG SubGHz.init();</a></p>
+		</td>
+		<td class="auto-style3" style="width: 510px; height: 18px">
+		<p><span class="auto-style10">SubGHz無線の初期化を行う関数です。</span><br class="auto-style10" />
+		<span class="auto-style10">リセット後に実行してください。</span></p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style11" style="width: 630px; height: 18px">
+		<p>
+		<a href="subghz_begin.html"target="_blank">SUBGHZ_MSG SubGHz.begin(ch, panid, rate,txPower);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 510px; height: 18px">
+		<p class="auto-style10">SubGHzの初期設定を行う関数です。使用するチャンネル、自機のPANID、ビットレート、出力パワーの設定を行います。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 18px">
+		<p></p>
+		</td>
+		<td class="auto-style11" style="width: 630px; height: 18px">
+		<p>
+		<a href="subghz_close.html"target="_blank">SUBGHZ_MSG SubGHz.close();</a></p>
+		</td>
+		<td class="auto-style3" style="width: 510px; height: 18px">
+		<p class="auto-style10">SubGHzの無線を終了する関数です。関数実行後は、RFやクロックを停止し、低消費電力の状態になります。再度使用するためにはbegin関数を実行してください。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 22px;">
+		<p></p>
+		</td>
+		<td class="auto-style11" style="width: 630px; height: 22px;">
+		<p>
+		<a href="subghz_send.html"target="_blank">SUBGHZ_MSG SubGHz.send(panid, dstAddr, *data, 
+		length, *callback);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		<p class="auto-style10">送信先のPANID, ADDRESSを設定してデータを送信する関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 22px;">
+		<p>new</p>
+		</td>
+		<td class="auto-style11" style="width: 630px; height: 22px;">
+		<p>
+		<a href="subghz_send64.html" target="_blank">SUBGHZ_MSG SubGHz.send64be(*dstAddr, *data, 
+		length, *callback);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		<p class="auto-style10">
+		64bitアドレスモードでデータの送信を行います。dstAddrをビックエンディアンで指定します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 22px;">
+		<p>new</p>
+		</td>
+		<td class="auto-style11" style="width: 630px; height: 22px;">
+		<p>
+		<a href="subghz_send64.html" target="_blank">SUBGHZ_MSG SubGHz.send64le(*dstAddr, *data, 
+		length, *callback);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		<p class="auto-style10">
+		64bitアドレスモードでデータの送信を行います。dstAddrをリトルエンディアンで指定します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 20px">
+		<p></p>
+		</td>
+		<td class="auto-style11" style="width: 630px; height: 20px">
+		<p>
+		<a href="subghz_rxenable.html"target="_blank">SUBGHZ_MSG SubGHz.rxEnable(*callback);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 510px; height: 20px">
+		<p class="auto-style10">受信を有効にする関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 20px">
+		<p></p>
+		</td>
+		<td class="auto-style11" style="width: 630px; height: 20px">
+		<p>
+		<a href="subghz_rxdisable.html"target="_blank">SUBGHZ_MSG SubGHz.rxDisable();</a></p>
+		</td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		<p class="auto-style10">受信を終了する関数です。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 20px">
+		<p></p>
+		</td>
+		<td class="auto-style11" style="width: 630px; height: 20px">
+		<p>
+		<a href="subghz_readdata.html"target="_blank">short SubGHz.readData(*data, max_size);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 510px; height: 18px">
+		<p class="auto-style10">データの読み出しを行う関数です。戻り値が負の時はデータを受信していません。戻り値が正の時はデータを受信したことを示しており、*dataのポインタが示すメモリに、最大max_sizeの長さで受信データを格納します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 20px">
+		<p></p>
+		</td>
+		<td class="auto-style11" style="width: 630px; height: 20px">
+		<p>
+		<a href="subghz_getmyaddress.html"target="_blank">uint16_t SubGHz.getMyAddress(void);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		<p class="auto-style10">16bitの自機アドレスを戻します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 20px">
+		new</td>
+		<td class="auto-style11" style="width: 630px; height: 20px">
+		<p>
+		<a href="subghz_setMyAddress.html">SUBGHZ_MSG SubGHz.setMyAddress(myAddr);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		<p class="auto-style10">自機アドレスを設定します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 20px">
+		new</td>
+		<td class="auto-style11" style="width: 630px; height: 20px">
+		<p>
+		<a href="subghz_getMyAddr64.html" target="_blank">void SubGHz.getMyAddr64(*myAddr);</a></p>
+		</td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		<p class="auto-style10">64bitの自機アドレスを取得します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 20px">
+		<p></p>
+		</td>
+		<td class="auto-style11" style="width: 630px; height: 20px">
+		<p>
+		<a href="subghz_getstatus.html"target="_blank">void SubGHz.getStatus(*tx, *rx)</a></p>
+		</td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		<p><span class="auto-style10">送信(tx)、受信(rx)のステータスを戻します。</span><br class="auto-style10" />
+		<span class="auto-style10">この関数で受信時のrssiの値を得ることができます。</span></p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 20px">
+		<p>new</p>
+		</td>
+		<td class="auto-style11" style="width: 630px; height: 20px">
+		<p>
+		<a href="subghz_setPromiscuous.html">SUBGHZ_MSG SubGHz.setPromiscous(on)</a></p>
+		</td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		<p><span class="auto-style10">無差別受信モードを設定します。本設定を行うとデータ受信時にACKも返しません。</span></p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 20px">
+		<p>new</p>
+		</td>
+		<td class="auto-style11" style="width: 630px; height: 20px">
+		<p>
+		<a href="subghz_setAckReq.html">SUBGHZ_MSG SubGHz.setAckReq(on)</a></p>
+		</td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		<p class="auto-style10">ACKによる送達確認の有効/無効を設定します。</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 20px">
+		<p>new</p>
+		</td>
+		<td class="auto-style11" style="width: 630px; height: 20px">
+		<p>
+		<a href="subghz_setBroadcastEnb.html">SUBGHZ_MSG SubGHz.setBroadcastEnb(on)</a></p>
+		</td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		<p><span class="auto-style10">ブロードキャスト受信時の通知の有効/無効を切り替える関数です。</span></p>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 20px">
+		&nbsp;</td>
+		<td class="auto-style11" style="width: 630px; height: 20px">
+		<a href="subghz_getSendMode.html" target="_blank">SUBGHZ_MSG SubGHz.getSendMode(*param);</a></td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		<span class="auto-style10">無線用パラメータを取得する関数です。</span></td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 20px">
+		&nbsp;</td>
+		<td class="auto-style11" style="width: 630px; height: 20px">
+		<a href="subghz_setSendMode.html" target="_blank">SUBGHZ_MSG SubGHz.setSendMode(*param);</a></td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		<span class="auto-style10">無線用パラメータを設定する関数です。</span></td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 20px">
+		new</td>
+		<td class="auto-style11" style="width: 630px; height: 20px">
+		<a href="subghz_setKey.html">SUBGHZ_MSG SubGHz.setKey(*key)</a></td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		AES128bitのKEYを設定する関数です</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 20px">
+		&nbsp;</td>
+		<td class="auto-style11" style="width: 630px; height: 20px">
+		<a href="subghz_msgOut.html">void SubGHz.msgOut(msg);</a></td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		SUBGHZ_MSGのパラメータを入力すると、その内容に従ってメッセージをSerial出力する関数です。</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 20px">
+		&nbsp;</td>
+		<td class="auto-style11" style="width: 630px; height: 20px">
+		<a href="subghz_decMac.html">void SubGHz.decMac(*mac,*data,size);</a></td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		受信したデータを各要素に分解する関数です。</td>
+	</tr>
+	<tr>
+		<td class="auto-style6" style="width: 37px; height: 20px">
+		&nbsp;</td>
+		<td class="auto-style11" style="width: 630px; height: 20px">
+		<a href="subghz_msg.html">SUBGHZ_MSG変数</a></td>
+		<td class="auto-style3" style="width: 510px; height: 22px;">
+		SubGHz関連の関数を実行したときの戻り値に関する説明です。</td>
+	</tr>
+	</table>
+<p class="auto-style9">本関数群はLazurite専用の関数です。</p>
+<h3 class="auto-style8">アドレスについて</h3>
+	<p class="auto-style9">
+	2017年5月12日版のソフトウエア以降のバージョンでは、ショートアドレスモードと、64bitアドレスモードの２つの方法で通信をすることが出来るようになりました。</p>
+	<p class="auto-style9">ショートアドレスモード</p>
+	<p class="auto-style12">ショートアドレスモードは、自機が属しているPANIDと、16bitの短縮アドレスで通信をします。</p>
+	<p class="auto-style12">LazuriteのPANIDは、サンプルプログラムの場合 
+	0xABCDを用いていますが、PANIDは0x0000～0xFFFDまで任意の値を設定することが出来ます。0xFFFFはブロードキャスト用のPANIDです。0xFFFFEは使用しないでください。</p>
+	<p class="auto-style12">
+	Lazuriteのショートアドレスは、初期状態では無線モジュールが保持する64bitアドレスの下位16bitが設定されていますが、setMyAddressで自機アドレスを変更することが出来るようになりました。</p>
+	<p class="auto-style9">64bitアドレスモード</p>
+	<p class="auto-style12">
+	64bitアドレスモードは、無線モジュールに書き込まれている64bitのアドレスをすべて指定して通信を行うモードです。64bitアドレスのモードでは、PANIDは使用されません。</p>
+	<p class="auto-style12">&nbsp;</p>
+<h3 class="auto-style8">サンプルプログラムの解説</h3>
+<h4 class="auto-style10">1)データ送信 (Welcome_SubGHz)</h4>
+<p class="auto-style9">「Welcome to Lazurite Sub-GHz」というメッセージを送信するサンプルプログラムです。</p>
+<p class="auto-style1">&nbsp;</p>
+<h4 class="auto-style10">2-1)データ受信 (Read_SubGHz)</h4>
+<p class="auto-style9">受信したデータをシリアルでPCに文字列を表示するサンプルプログラムです。</p>
+	<p class="auto-style8">2-2)データ受信(Print_SubGHz)</p>
+	<p class="auto-style9">受信した文字列データをPC側に文字列表示するサンプルプログラムです。</p>
+	<p class="auto-style9">&nbsp;</p>
+<h4 class="auto-style10">3) データ受信(Sniffer_SubGHz)</h4>
+<p class="auto-style9">
+Sniffer_SubGHzは使用しているチャンネルの全データをロギングしてPCに表示するサンプルプログラムです。ACKやLazurite 
+Sub-GHzが非対応のデータもすべて表示することができます。Sniffer_SubGHzで受信を行ってもACKを返さないので注意してください。</p>
+<p class="auto-style9">（注意）<br />
+ロギング処理に時間をかけたり、頻繁にデータを受信すると動作が不安定になりますので注意して使用してください。</p>
+
+
+
+</html>

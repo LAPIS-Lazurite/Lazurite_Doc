@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>SubGHz.send64</title>
+<style type="text/css">
+#contents{
+	width:850px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style5 {
+	text-align: center;
+}
+.auto-style7 {
+	margin-left: 40px;
+	text-align: left;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style10 {
+	color: #666666;
+	font-weight: normal;
+	font-family: メイリオ;
+}
+.auto-style11 {
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style12{
+	font-family: メイリオ;
+	color: #666666;
+	margin-bottom:40px;
+	margin-left:40px;
+}
+td{
+	padding:0px 5px;
+}
+
+.auto-style13 {
+	font-family: メイリオ;
+	color: #666666;
+	margin-left: 40px;
+}
+.auto-style14 {
+	margin-left: 80px;
+	text-align: left;
+	font-family: メイリオ;
+	color: #666666;
+}
+.auto-style15 {
+	text-align: left;
+	font-family: メイリオ;
+	color: #666666;
+}
+
+.auto-style18 {
+	margin-left: 40px;
+	font-family: メイリオ;
+}
+
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-8147436-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<h1 class="auto-style5">
+<img height="35" src="../../Lazurite_logo.png" width="179" class="auto-style1" />　<span class="auto-style10">Lazurite 
+日本語リファレンス</span></h1>
+<hr />
+<div id="contents">
+<h2 class="auto-style10">SUBGHZ_MSG SubGHz.send64le(dstAddr, *data, length, *callback);<br />
+SUBGHZ_MSG SubGHz.send64be(dstAddr, *data, length, *callback);</h2>
+<br/>
+<h3 class="auto-style11">詳細</h3>
+<p class="auto-style7">SUBGHZ_MSG SubGHz.send64le(uint8_t *dstAddr, 
+uint8_t *data, uint16_t len, void (*callback)(uint8_t rssi, uint8_t status));<br />
+SUBGHZ_MSG SubGHz.send64be(uint8_t *dstAddr, 
+uint8_t *data, uint16_t len, void (*callback)(uint8_t rssi, uint8_t status));</p>
+<h3 class="auto-style11">仕様</h3>
+<p class="auto-style12">64bitのMACアドレスでデータを送信するための関数です。<br />
+send64leは、dstAddrをリトルエンディアンで指定します。<br />
+send64beは、dstAddrをビックエンディアンで指定します。</p>
+	<p class="auto-style12">ビックエンディアン指定する場合<br />
+	uint8_t dstAddr[8] = {0x00, 0x1D, 0x12, 0x90, 0x00,0x03,0x66, 0x70};</p>
+	<p class="auto-style12">リトルエンディアン指定する場合<br />
+	uint8_t dstAddr[8] = {0x70,0x66,0x03,0x00,0x90,0x12,0x1D,0x00};</p>
+	<p class="auto-style12">
+	<img alt="" height="498" src="bp3596a.png" width="407" /></p>
+<h3 class="auto-style11">パラメータ</h3>
+<h4 class="auto-style11">&nbsp;&nbsp;&nbsp; uint8_t *dstAddr</h4>
+	<p class="auto-style13">
+	64bit (8バイト)の送信先アドレスが格納された配列の先頭ポインタを指定してください。</p>
+<h4 class="auto-style11">&nbsp;&nbsp;&nbsp; uint8_t *data</h4>
+<p class="auto-style14">送信データの先頭アドレス(ポインタ)を指定してください。</p>
+	<p class="auto-style15">&nbsp;&nbsp; <strong>&nbsp;uint16_t len</strong></p>
+	<p class="auto-style14">dataの長さを指定してください。<br />
+	Lazuriteで一回に送信できるデータのサイズはヘッダ情報を含めて250バイトです。<br />
+	</p>
+	<p class="auto-style15">&nbsp; <strong>&nbsp; void (*callback)(uint8_t rssi, 
+	uint8_t status)</strong></p>
+	<p class="auto-style14">受信完了時にコールバックされる関数を指定することができます。通常はNULLを指定してください。<br />
+	callback処理内では割り込みを使用することができないため、通常の処理をこの中に入れないようお願いします。</p>
+<h4 class="auto-style11">&nbsp;&nbsp;&nbsp; void (*callback)(uint8_t rssi, uint8_t status)</h4>
+<p class="auto-style12">受信完了時のcallback関数を指定します。<br />
+通常はNULLで使用してください。</p>
+<h3 class="auto-style10"><strong>戻り値</strong></h3>
+<p class="auto-style18"><a href="subghz_msg.html">SUBGHZ_MSG 変数</a>を参照してください。</p>
+	<p class="auto-style18">&nbsp;</p>
+<h3 class="auto-style11">サンプル</h3>
+<p class="auto-style7">サンプルプログラムのWelcome_SubGHz64で使用しています。</p>
+<p class="auto-style7">このサンプルプログラムでは、 001d 1290 0004 7fadのアドレスに 
+64bitアドレスでデータを送信しています。</p>
+<p>
+<TEXTAREA wrap="off" name="empty" style="width: 673px; height: 591px" class="auto-style1">#include "Welcome_SubGHz64_ide.h"		// Additional Header
+
+#define LED 26						// pin number of Blue LED
+#define SUBGHZ_CH		36			// channel number (frequency)
+#define SUBGHZ_PANID	0xabcd		// panid
+#define HOST_ADDRESS	{0x00,0x1d,0x12,0x90,0x00,0x04,0x7f,0xad}		// distination address
+
+uint8_t host[] = HOST_ADDRESS;
+
+unsigned char send_data[] = {"Welcome to Lazurite Sub-GHz\r\n"};
+
+void setup(void)
+{
+	SubGHz.init();					// initializing Sub-GHz
+	Serial.begin(115200);
+	pinMode(LED,OUTPUT);			// setting of LED
+	digitalWrite(LED,HIGH);			// setting of LED
+}
+
+void loop(void)
+{
+	SUBGHZ_MSG msg;
+	// Initializing
+	SubGHz.begin(SUBGHZ_CH, SUBGHZ_PANID,  SUBGHZ_100KBPS, SUBGHZ_PWR_20MW);		// start Sub-GHz
+	
+	// preparing data
+	digitalWrite(LED,LOW);														// LED ON
+	msg=SubGHz.send64be(host, &send_data, sizeof(send_data),NULL);// send data
+	digitalWrite(LED,HIGH);														// LED off
+	SubGHz.msgOut(msg);
+	
+	// close
+	SubGHz.close();																// Sub-GHz module sets into power down mode.
+	
+	sleep(1000);																// sleep
+
+	return;
+}
+
+</TEXTAREA></p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>
