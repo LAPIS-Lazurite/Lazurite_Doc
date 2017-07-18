@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -77,48 +77,70 @@ h2
 <body>
 
 <h1>
-<img height="45" src="Lazurite_logo.png" width="197" class="auto-style1" /> 
+<img height="45" src="../../Lazurite_logo.png" width="197" class="auto-style1" /> 
 <span class="auto-style2">Raspberry Pi環境のセットアップ</span></h1>
 <h1>概要</h1>
 <ol>
-	<li class="auto-style5"><a href="#1._Raspberry_Piのセットアップ">Raspberry 
-	Piのセットアップ</a></li>
 	<li class="auto-style5"><a href="#2._Lazurite関連ソフトウエアのインストール">
 	Lazurite関連ソフトウエアのインストール(node-red以外)</a></li>
 	<li class="auto-style5"><a href="#3._Node-RED用ライブラリのインストール">
 	Node-RED用ライブラリのインストール</a></li>
 </ol>
 <hr />
-<p class="auto-style7"><strong><a name="1._Raspberry_Piのセットアップ">1. Raspberry 
-Piのセットアップ</a></strong></p>
-<p>&nbsp;</p>
-<p class="auto-style7"><strong><a name="2._Lazurite関連ソフトウエアのインストール">2. 
+<br class="Apple-interchange-newline" />
+<p class="auto-style7"><strong><a name="2._Lazurite関連ソフトウエアのインストール">1. 
 Lazurite関連ソフトウエアのインストール</a></strong></p>
-<p>&nbsp;</p>
-<p class="auto-style7"><strong><a name="3._Node-RED用ライブラリのインストール">3. 
+<p class="auto-style8">１．インストーラーをダウンロードします。</p>
+<p class="auto-style8">以下のコマンドを入力します。</p>
+<p class="auto-style8">$ git clone 
+git://github.com/LAPIS-Lazurite/LazuriteInstaller</p>
+<p class="auto-style8">
+<img alt="" height="176" src="installer.png" width="651" /></p>
+<p class="auto-style8">２．Raspberry Piの設定</p>
+<p class="auto-style8">以下のコマンドを入力します。</p>
+<p class="auto-style8">$ cd LazuriteInstaller<br />
+$ ./setup.sh</p>
+<p class="auto-style8">
+<img alt="" height="108" src="installer2.png" width="651" /></p>
+<p class="auto-style8">
+<img alt="" height="323" src="installer4.png" width="605" /></p>
+<p class="auto-style8">下図は完了後の画面です。完了後に再起動して下さい。</p>
+<p class="auto-style8">
+<img alt="" height="320" src="installer3.png" width="575" /></p>
+<p class="auto-style8">再起動後、以下のコマンドを入力して下さい。</p>
+<p class="auto-style8">$ cd LazuriteInstaller<br />
+$ ./install.sh</p>
+<p class="auto-style7"><strong><a name="3._Node-RED用ライブラリのインストール">2. 
 Node-RED用ライブラリのインストール</a></strong></p>
 <p class="auto-style8">Lazuriteのライブラリを使用しますので、あらかじめこちらの作業を完了しておいてください。</p>
 <p class="auto-style8">1. 一度もNode-REDを起動したことが無い場合は、一度Node-REDを起動してください。</p>
 <p class="auto-style9">$ node-red</p>
-<p class="auto-style9">画像</p>
+<p class="auto-style9">
+<img alt="" height="325" src="nodeinstaller.png" width="616" /></p>
 <p class="auto-style9">起動したら、Ctrl-CでNode-REDを終了します。</p>
 <p class="auto-style8">2.Node-REDのフォルダが作られていることを確認してください。</p>
 <p class="auto-style9">$ cd ~/.node-red<br />
 $ ls</p>
-<p class="auto-style9">画像</p>
+<p class="auto-style9">
+<img alt="" height="301" src="nodeinstaller2.png" width="616" /></p>
 <p class="auto-style8">3. Node-RED用ライブラリのインストール</p>
 <p class="auto-style9">3-1. npmパッケージインストール</p>
 <p class="auto-style10">$ npm install node-red-contrib-lazurite</p>
+<p class="auto-style10">
+<img alt="" height="579" src="nodeinstaller3.png" width="742" /></p>
 <p class="auto-style9">3-2. githubからインストール</p>
 <p class="auto-style10">$ cd ~/.node-red/node_modules<br />
 $ git clone git://github.com/LAPIS-Lazurite/node-red-contrib-lazurite<br />
 $ cd node-red-contrib-lazurite</p>
-<p class="auto-style10">画像</p>
+<p class="auto-style10">
+<img alt="" height="144" src="nodeinstaller4.png" width="832" /></p>
 <p class="auto-style10">$ node-gyp rebuild</p>
-<p class="auto-style10">画像</p>
+<p class="auto-style10">
+<img alt="" height="558" src="nodeinstaller5.png" width="825" /></p>
 <p class="auto-style9">補足: npmとnode-gypでエラーが発生する場合はソフトウエアのインストールを行ってください。</p>
 <p class="auto-style10">$ sudo apt-get install -y npm node-gyp</p>
-<p class="auto-style10">画像</p>
+<p class="auto-style10">
+<img alt="" height="292" src="nodeinstaller6.png" width="826" /></p>
 <p class="auto-style5">2. サンプルプログラムを作る</p>
 <p class="auto-style8">1. サンプルプログラムを使用するために必要なnod-red-dashboardのインストール</p>
 <p class="auto-style9">$ cd ~/.node-red</p>
@@ -127,10 +149,11 @@ $ cd node-red-contrib-lazurite</p>
 <p class="auto-style9">$ node-red</p>
 <p class="auto-style8">3. Raspberry 
 Piでブラウザ起動して、アドレスに「http://localhost:1880」を入力してください。</p>
-<p class="auto-style9">画像</p>
+<p class="auto-style9">
+<img alt="" height="110" src="nodeinstaller7.png" width="664" /></p>
 <p class="auto-style8">4. Lazuriteのパッケージがインストールされている事を確認します。</p>
-<p class="auto-style9">画像</p>
-<p>&nbsp;</p>
+<p class="auto-style9">
+<img alt="" height="497" src="nodeinstaller8.png" width="664" /></p>
 
 </body>
 
