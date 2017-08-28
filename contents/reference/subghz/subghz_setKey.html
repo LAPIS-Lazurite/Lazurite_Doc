@@ -71,8 +71,50 @@ td{
 <br/>
 <h3 class="auto-style10">詳細</h3>
 <p class="auto-style7">SUBGHZ_MSG SubGHz.setKey(char *key);</p>
-<h3 class="auto-style10">仕様</h3>
-<p class="auto-style11">AES通信をするためのKEYを設定します。</p>
+<h3 class="auto-style10">AESによる通信の概要</h3>
+<p class="auto-style11">LazuriteではAESにより暗号化したデータで通信をすることが可能です。<br />
+暗号化するためのKEY（鍵)は固定となっており、プログラム上から送信機／受信機に共通の暗号化キーを埋め込んで置くことで、その間の無線を暗号化することが出来ます。</p>
+	<p class="auto-style11">
+	<img alt="" height="424" src="abstruct_about_AES.png" width="703" /></p>
+<p class="auto-style11">
+KEY(鍵)の情報は任意の128bitデータですが、次のプログラムを使用すると任意の数字からKEY情報を生成することが出来ます。</p>
+	<p class="auto-style11">Windows側:<br />
+	LazuriteIDE\bin\aes_keygen.exe<br />
+	<br />
+	Linux側:<br />
+	cd ~/driver/LazDriver/aes_keygen/aes_keygen&nbsp;&nbsp;&nbsp; #フォルダに移動<br />
+	./aes_keygen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	#実行<br />
+	初めて使用するときは、aes_keygenのプログラムをビルドしてください。<br />
+	フォルダに移行後、<br />
+	make<br />
+	で、aes_keygenのプログラムをビルドすることが出来ます。</p>
+	<p class="auto-style11">実行して任意の数値を入力すると以下のようになります。</p>
+	<p class="auto-style11">
+	Linux側、LazuriteSubGHz側の双方の書式に併せた鍵情報が表示されるので、それをプログラムに貼り付けて使用してください。</p>
+	<p class="auto-style11">
+<TEXTAREA wrap="off" name="empty" style="width: 591px; height: 271px" class="auto-style1" cols="20">Please input seeds of key[1-2147483647] or [0x00000001-0xFFFFFFFF]
+or q(exit)::1
+seeds = 1
+Seeds for Lazurite Pi Gateway::
+07a45e454318b6d4a9d5449f3b342bda
+
+Seeds for Lazurite SubGHz::
+static const unsigned char key[] = {0x07,0xa4,0x5e,0x45,0x43,0x18,0xb6,0xd4,0xa9
+,0xd5,0x44,0x9f,0x3b,0x34,0x2b,0xda};
+
+
+Please input seeds of key[1-2147483647] or [0x00000001-0xFFFFFFFF]
+or q(exit)::</TEXTAREA></p>
+	<p class="auto-style11">・プログラムの先頭にkeyの宣言を貼り付けます。<br />
+	static const unsigned char key[] = 
+	{0x07,0xa4,0x5e,0x45,0x43,0x18,0xb6,0xd4,0xa9<br />
+	,0xd5,0x44,0x9f,0x3b,0x34,0x2b,0xda};<br />
+	<br />
+	・keyの設定<br />
+	SubGHz.begin()のまえに、「SubGHz.setKey(key);」を追加して鍵情報をセットしてください。</p>
+	<h3 class="auto-style10">仕様</h3>
+<p class="auto-style11">AES通信をするためのKEYを設定します。128bitのAESキーが格納されているデータの先頭ポインタを指定してください。</p>
 <h3 class="auto-style10">パラメータ</h3>
 <p class="auto-style11">char *key</p>
 	<p class="auto-style12">AES128bitのKEYが格納されているメモリの先頭ポインタを指定します。<br />
@@ -82,19 +124,9 @@ td{
 <p>&nbsp;</p>
 <h3 class="auto-style10">サンプル</h3>
 <p class="auto-style1">
-アドレスモードを4(送信機のアドレスを省略)にして送信する初期設定のサンプルプログラムです。<br />
-送信機のアドレスが無いために受信機がACKを送信しません。</p>
+なし</p>
 	<p>
-<TEXTAREA wrap="off" name="empty" style="width: 591px; height: 144px" class="auto-style1">setup() {
-	SUBGHZ_PARAM param;
-
-	SubGHz.init();
-	SubGHz.getSendMode( & param);
-	param.addrType = 4;
-	SubGHz.setSendMode( & param);
-}
-
-</TEXTAREA></p>
+	&nbsp;</p>
 <p class="auto-style1">&nbsp;</p>
 	<br/>
 <br/>

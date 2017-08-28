@@ -48,6 +48,16 @@ h2
 	margin-left: 40px;
 }
 
+.auto-style9 {
+	font-family: メイリオ;
+	color: #666666;
+	margin-left: 80px;
+}
+
+.auto-style12 {
+	text-align: right;
+}
+
 </style>
 
 <script>
@@ -68,23 +78,35 @@ h2
 
 <h1>
 <img height="45" src="../../Lazurite_logo.png" width="197" class="auto-style1" /> 
-<span class="auto-style2">Raspberry Pi環境のセットアップ</span></h1>
+<span class="auto-style2">Raspberry Pi ネットワークとIOの設定</span></h1>
 <h1>概要</h1>
 <ol>
-	<li class="auto-style5"><a href="#1._Raspberry_Piのセットアップ">Raspberry 
-	Piのセットアップ</a></li>
-	<li class="auto-style5"><a href="#2._Lazurite関連ソフトウエアのインストール">
-	Lazurite関連ソフトウエアのインストール(node-red以外)</a></li>
-	<li class="auto-style5"><a href="#3._Node-RED用ライブラリのインストール">
-	Node-RED用ライブラリのインストール</a></li>
+	<li class="auto-style5"><a href="#ネットワークの設定">ネットワークの設定</a></li>
+	<li class="auto-style5"><a href="#Raspberry_Piの初期設定">Raspberry Piの初期設定</a></li>
 </ol>
 <hr />
-<p class="auto-style7"><strong>ネットワークの設定</strong></p>
+<p class="auto-style7"><strong><a name="ネットワークの設定">ネットワークの設定</a></strong></p>
 <p class="auto-style8">インターネットの接続をして下さい。</p>
 <p class="auto-style8">Wifiは画面右上の次の場所から接続できます。</p>
 <p class="auto-style8"><img alt="" height="283" src="wifi.png" width="292" /></p>
-<p class="auto-style7"><strong><a name="1._Raspberry_Piのセットアップ">Raspberry 
-Piの</a>初期設定</strong></p>
+<p class="auto-style8">&nbsp;</p>
+<p class="auto-style7"><strong>アップデート</strong></p>
+<p class="auto-style8">次のコマンドを入力してLinuxカーネルの更新を行ってください。</p>
+<p class="auto-style8">sudo apt-get update<br />
+sudo apt-get upgrade</p>
+<p class="auto-style8">&nbsp;</p>
+<p class="auto-style7"><a name="Raspberry_Piの初期設定0"><strong>日本語</strong></a><strong><a name="Raspberry_Piの初期設定0">環境のインストール</a></strong></p>
+<p class="auto-style8">１．日本語フォントのインストール</p>
+<p class="auto-style9">次のコマンドを実行してください。</p>
+<p class="auto-style9">sudo apt-get install -y ttf-kochi-gothic 
+xfonts-intl-japanese xfonts-intl-japanese-big xfonts-kaname</p>
+<p class="auto-style8">２．日本語入力環境のインストール</p>
+<p class="auto-style9">日本語と英語は SHIFT+スペースキーで切り替えることが出来ます。</p>
+<p class="auto-style9">sudo apt-get install -y uim uim-anthy </p>
+<p class="auto-style8">
+<img alt="" height="417" src="io_setting.png" width="753" /></p>
+<p class="auto-style7"><strong><a name="Raspberry_Piの初期設定">Raspberry 
+Piの初期設定</a></strong></p>
 <p class="auto-style8">１．キーボードの設定</p>
 <p class="auto-style8">１－１．menu→Preferences→Keyboard and Mouseの順にクリックします。 </p>
 <p class="auto-style8">
@@ -101,7 +123,13 @@ Pi&nbsp;Configurationの順にクリックします。 </p>
 <p class="auto-style8">
 <img alt="" height="348" src="japanese.png" width="335" /></p>
 <p class="auto-style8">２－２．「Raspberry Pi 
-Configuration」の画面が開いたら、「Localisation」をクリックします。 </p>
+Configuration」の画面が開いたら、「Interface」をクリックします。</p>
+<p class="auto-style8">&nbsp;(この画面だけ日本語で申し訳ございません）</p>
+<p class="auto-style8">Lazurite Pi Gatewayは、SPIとI2Cの双方を使用していますので、両方とも有効にしてください。</p>
+<p class="auto-style8">
+<img alt="" height="417" src="io_setting.png" width="753" /></p>
+<p class="auto-style8">&nbsp;</p>
+<p class="auto-style8">２－３．続いて、「Localisation」をクリックします。 </p>
 <p class="auto-style8">
 <img alt="" height="333" src="configuration2.png" width="551" /></p>
 <p class="auto-style8">２－３．「Localisation」内の①～③の項目を変更します。 </p>
@@ -115,6 +143,15 @@ Configuration」の画面が開いたら、「Localisation」をクリックし�
 <img alt="" height="335" src="configuration7.png" width="597" /></p>
 <p class="auto-style8">
 <img alt="" height="334" src="configuration8.png" width="617" /></p>
+<br />
+<br />
+<table style="width: 100%">
+	<tr>
+		<td>前[<a href="http://www.lapis-semi.com/lazurite-jp/contents/gateway/setup/RasPiSetup.html">Raspberry 
+		Piを起動する</a>]</td>
+		<td class="auto-style12">[<a href="http://www.lapis-semi.com/lazurite-jp/contents/gateway/setup/RasPiInstall.html">Lazurite用ソフトウエアのインストール</a>」次</td>
+	</tr>
+</table>
 <br class="Apple-interchange-newline" />
 
 </body>
