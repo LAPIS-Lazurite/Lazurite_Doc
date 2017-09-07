@@ -62,6 +62,15 @@ h2
 	text-align: right;
 }
 
+.auto-style13 {
+	font-family: メイリオ;
+	color: #666666;
+	font-size: large;
+}
+.auto-style14 {
+	margin-left: 40px;
+}
+
 </style>
 
 <script>
@@ -85,14 +94,23 @@ h2
 <span class="auto-style2">Raspberry Pi環境のセットアップ</span></h1>
 <h1>概要</h1>
 <ol>
-	<li class="auto-style5"><a href="#2._Lazurite関連ソフトウエアのインストール">
-	Lazurite関連ソフトウエアのインストール(node-red以外)</a></li>
-	<li class="auto-style5"><a href="#3._Node-RED用ライブラリのインストール">
-	Node-RED用ライブラリのインストール</a></li>
+	<li class="auto-style5"><a href="#1._Lazurite関連ソフトウエアのインストール">Lazurite関連ソフトウエアのインストール(node-red以外)</a></li>
+	<li class="auto-style5"><a href="#2._Node-RED用ライブラリのインストール">Node-RED用ライブラリのインストール</a></li>
+</ol>
+<p class="auto-style14">2-1.<a href="#2-1._Node-RED上からライブラリをインストール">
+Node-RED上からライブラリをインストール</a> </p>
+<p class="auto-style14">2-2.<a href="#2-2._Node-RED用ライブラリを手動でnpmインストール">Node-RED用ライブラリを手動でnpmインストール 
+ 
+</a></p>
+<p class="auto-style14">2-3.<a href="#2-3._Node-RED用ライブラリを手動でgithubからインストール">Node-RED用ライブラリを手動でgithubからインストール</a>
+</p>
+<ol>
+	<li class="auto-style5" value="3"><a href="#3._サンプルプログラムを作る">サンプルプログラムを作る 
+	</a></li>
 </ol>
 <hr />
 <br class="Apple-interchange-newline" />
-<p class="auto-style7"><strong><a name="2._Lazurite関連ソフトウエアのインストール">1. 
+<p class="auto-style7"><strong><a name="1._Lazurite関連ソフトウエアのインストール">1. 
 Lazurite関連ソフトウエアのインストール</a></strong></p>
 <p class="auto-style8">１．インストーラーをダウンロードします。</p>
 <p class="auto-style8">以下のコマンドを入力します。</p>
@@ -114,8 +132,34 @@ $ ./setup.sh</p>
 <p class="auto-style8">再起動後、以下のコマンドを入力して下さい。</p>
 <p class="auto-style8">$ cd LazuriteInstaller<br />
 $ ./install.sh</p>
-<p class="auto-style7"><strong><a name="3._Node-RED用ライブラリのインストール">2. 
+<p class="auto-style7"><strong><a name="2._Node-RED用ライブラリのインストール">2. 
 Node-RED用ライブラリのインストール</a></strong></p>
+<p class="auto-style8">2-1. / 2-2. / 2-3. のどれでもインストール出来ますが、2-1.の方が簡単です。</p>
+<p class="auto-style13"><strong><a name="2-1._Node-RED上からライブラリをインストール">2-1. Node-RED上からライブラリをインストール</a></strong></p>
+<p class="auto-style8">Lazuriteのライブラリを使用しますので、あらかじめこちらの作業を完了しておいてください。</p>
+<p class="auto-style8">1.以下の手順で Node-REDを起動します。</p>
+<p class="auto-style8">①メニュー→②プログラミング→③NodeｰRED</p>
+<p class="auto-style8">
+<img alt="" height="314" src="library1.png" width="377" /></p>
+<p class="auto-style8">２. Node-REDのコマンド画面が開いたら、ブラウザを立ち上げ④のアドレスを貼り付け実行します。</p>
+<p class="auto-style8">
+<img alt="" height="280" src="library2.png" width="450" /></p>
+<p class="auto-style8">３．ブラウザ上でNode-REDの画面が開いたら、画面右側の⑤をクリックし、⑥の『パレットの管理』を開きます。</p>
+<p class="auto-style8">
+<img alt="" height="330" src="library4.png" width="640" /></p>
+<p class="auto-style8">
+４．⑦のノードの追加タブをクリックして、⑧にnode-red-contrib-lazuriteと入力すると⑨が出てくるので選択して⑩のノードの追加をクリックします。</p>
+<p class="auto-style8">
+<img alt="" height="204" src="library5.png" width="509" /></p>
+<p class="auto-style8">５．下記のメッセージが表示されたら⑪の追加、⑫の閉じるをクリックします。</p>
+<p class="auto-style8">
+<img alt="" height="164" src="library6.png" width="406" /></p>
+<p class="auto-style8">
+<img alt="" height="276" src="library8.png" width="509" /></p>
+<p class="auto-style8">６．画面左に⑬のLazurite のノードが作成されていればインストール完了です。</p>
+<p class="auto-style8">
+<img alt="" height="405" src="library9.png" width="628" /></p>
+<p class="auto-style13"><strong><a name="2-2._Node-RED用ライブラリを手動でnpmインストール">2-2. Node-RED用ライブラリを手動でnpmインストール</a></strong></p>
 <p class="auto-style8">Lazuriteのライブラリを使用しますので、あらかじめこちらの作業を完了しておいてください。</p>
 <p class="auto-style8">1. 一度もNode-REDを起動したことが無い場合は、一度Node-REDを起動してください。</p>
 <p class="auto-style9">$ node-red</p>
@@ -132,8 +176,8 @@ $ ls</p>
 <p class="auto-style10">$ npm install node-red-contrib-lazurite</p>
 <p class="auto-style10">
 <img alt="" height="579" src="nodeinstaller3.png" width="742" /></p>
-<p class="auto-style9">3-2. githubからインストール</p>
-<p class="auto-style10">$ cd ~/.node-red/node_modules<br />
+<p class="auto-style13"><strong><a name="2-3._Node-RED用ライブラリを手動でgithubからインストール">2-3. Node-RED用ライブラリを手動でgithubからインストール</a></strong></p>
+<p class="auto-style9">$ cd ~/.node-red/node_modules<br />
 $ git clone git://github.com/LAPIS-Lazurite/node-red-contrib-lazurite<br />
 $ cd node-red-contrib-lazurite</p>
 <p class="auto-style10">
@@ -145,7 +189,9 @@ $ cd node-red-contrib-lazurite</p>
 <p class="auto-style10">$ sudo apt-get install -y npm node-gyp</p>
 <p class="auto-style10">
 <img alt="" height="292" src="nodeinstaller6.png" width="826" /></p>
-<p class="auto-style5">2. サンプルプログラムを作る</p>
+<p class="auto-style5">&nbsp;</p>
+<p class="auto-style7"><strong><a name="3._サンプルプログラムを作る">3. 
+サンプルプログラムを作る</a></strong></p>
 <p class="auto-style8">1. サンプルプログラムを使用するために必要なnode-red-dashboardのインストール</p>
 <p class="auto-style9">$ cd ~/.node-red</p>
 <p class="auto-style9">$ npm install node-red-dashboard</p>
